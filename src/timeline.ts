@@ -1,0 +1,42 @@
+import { IBlueprintSegmentLine, IBlueprintSegmentLineItem } from './runningOrder'
+
+export { TriggerType } from 'superfly-timeline/dist/enums/enums'
+export { TimelineObject, TimelineTrigger, TimelineKeyframe } from 'superfly-timeline/dist/resolver/timeline'
+
+export enum PlayoutTimelinePrefixes {
+	SEGMENT_LINE_GROUP_PREFIX = 'sl_group_',
+	SEGMENT_LINE_GROUP_FIRST_ITEM_PREFIX = 'sl_group_firstobject_',
+	SEGMENT_LINE_ITEM_GROUP_PREFIX = 'sli_group_',
+	SEGMENT_LINE_ITEM_GROUP_FIRST_ITEM_PREFIX = 'sli_group_firstobject_'
+}
+
+export function getSlGroupId (sl: IBlueprintSegmentLine | string) {
+	if (typeof sl === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_PREFIX + sl
+	return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_PREFIX + sl._id
+}
+export function getSliGroupId (sli: IBlueprintSegmentLineItem | string) {
+	if (typeof sli === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_PREFIX + sli
+	return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_PREFIX + sli._id
+}
+export function getSlFirstObjectId (sl: IBlueprintSegmentLine | string) {
+	if (typeof sl === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_FIRST_ITEM_PREFIX + sl
+	return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_FIRST_ITEM_PREFIX + sl._id
+}
+export function getSliFirstObjectId (sli: IBlueprintSegmentLineItem | string) {
+	if (typeof sli === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_FIRST_ITEM_PREFIX + sli
+	return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_FIRST_ITEM_PREFIX + sli._id
+}
+
+export enum TimelineObjHoldMode {
+	NORMAL = 0,
+	ONLY = 1, // Only use when in HOLD
+	EXCEPT = 2 // Only use when not in HOLD
+}
+
+export interface TimelineObjCoreExt {
+	originalLLayer?: string | number // TODO- should this be exposed?
+	/** Restrict object usage according to whether we are currently in a hold */
+	holdMode?: TimelineObjHoldMode
+	isAbstract?: boolean // TODO- should this be exposed?
+	isBackground?: boolean // TODO- should this be exposed?
+}

@@ -1,0 +1,2 @@
+
+export type Time = number

@@ -1,0 +1,27 @@
+{
+  "name": "tv-automatoion-sofie-blueprints-integration",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "installclean": "yarn unlink:all & yarn cleancache && yarn --check-files",
+    "buildclean": "yarn installclean && yarn build",
+    "build": "trash dist && yarn build:main",
+    "build:main": "tsc -p tsconfig.json",
+    "lint": "tslint --project tsconfig.jest.json --config tslint.json"
+  },
+  "engines": {
+    "node": ">=4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.1",
+    "trash-cli": "^1.4.0",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.1.5"
+  },
+  "dependencies": {
+    "superfly-timeline": "^6.0.2",
+    "tv-automation-mos-connection": "^0.3.8",
+    "underscore": "^1.9.1"
+  }
+}
