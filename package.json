@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "superfly-timeline": "^6.0.2",
-    "tv-automation-mos-connection": "^0.3.8",
+    "mos-connection": "^0.3.8",
     "underscore": "^1.9.1"
   }
 }

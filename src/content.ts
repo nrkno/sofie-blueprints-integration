@@ -1,5 +1,7 @@
 import { Time } from './common'
-import { SomeTimelineObject } from '../common'
+// import { SomeTimelineObject } from '../common'
+
+type SomeTimelineObject = any // TODO
 
 export namespace RundownAPI {
 	/** The type of the source layer, used to enable specific functions for special-type layers */

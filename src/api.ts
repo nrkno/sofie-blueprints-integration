@@ -1,4 +1,4 @@
-import * as MOS from 'tv-automation-mos-connection'
+import * as MOS from 'mos-connection'
 
 import {
 	IBlueprintRunningOrder,

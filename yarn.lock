@@ -730,6 +730,20 @@ moment@^2.20.1:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
   integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
 
+mos-connection@^0.3.8:
+  version "0.3.17"
+  resolved "https://registry.yarnpkg.com/mos-connection/-/mos-connection-0.3.17.tgz#5c7baf592121161f4399fdc73519a23eaf5ec2a6"
+  integrity sha1-XHuvWSEhFh9Dmf3HNRmiPq9ewqY=
+  dependencies:
+    "@types/xml2js" "^0.4.2"
+    "@types/xml2json" "^0.10.0"
+    "@types/xmlbuilder" "^0.0.32"
+    moment "^2.20.1"
+    tslib "^1.6.0"
+    xml2js "^0.4.19"
+    xml2json "^0.11.2"
+    xmlbuilder "^9.0.7"
+
 mount-point@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/mount-point/-/mount-point-3.0.0.tgz#665cb9edebe80d110e658db56c31d0aef51a8f97"
@@ -1282,20 +1296,6 @@ tsutils@^3.0.0:
   integrity sha512-CvWEadl8VwlxOq6F3hfNbGrrRVSAjN2EPCEBgcbCUVDUxmwkV5254OGKsITNxDz8IGDQPAw7YJMtBHniHu2tbA==
   dependencies:
     tslib "^1.8.1"
-
-tv-automation-mos-connection@^0.3.8:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/tv-automation-mos-connection/-/tv-automation-mos-connection-0.3.8.tgz#d12f745a8f29ec193616cc7a87a00846f23e2280"
-  integrity sha1-0S90Wo8p7Bk2Fsx6h6AIRvI+IoA=
-  dependencies:
-    "@types/xml2js" "^0.4.2"
-    "@types/xml2json" "^0.10.0"
-    "@types/xmlbuilder" "^0.0.32"
-    moment "^2.20.1"
-    tslib "^1.6.0"
-    xml2js "^0.4.19"
-    xml2json "^0.11.2"
-    xmlbuilder "^9.0.7"
 
 typescript@^3.1.5:
   version "3.1.5"
