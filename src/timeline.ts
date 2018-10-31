@@ -2,6 +2,7 @@ import { IBlueprintSegmentLine, IBlueprintSegmentLineItem } from './runningOrder
 
 export { TriggerType } from 'superfly-timeline/dist/enums/enums'
 export { TimelineObject, TimelineTrigger, TimelineKeyframe } from 'superfly-timeline/dist/resolver/timeline'
+import { TimelineObject } from 'superfly-timeline/dist/resolver/timeline'
 
 export enum PlayoutTimelinePrefixes {
 	SEGMENT_LINE_GROUP_PREFIX = 'sl_group_',
@@ -33,7 +34,7 @@ export enum TimelineObjHoldMode {
 	EXCEPT = 2 // Only use when not in HOLD
 }
 
-export interface TimelineObjCoreExt {
+export interface TimelineObjectCoreExt extends TimelineObject {
 	originalLLayer?: string | number // TODO- should this be exposed?
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode

@@ -1,7 +1,5 @@
 import { Time } from './common'
-// import { SomeTimelineObject } from '../common'
-
-type SomeTimelineObject = any // TODO
+import { TimelineObjectCoreExt } from './timeline'
 
 export namespace RundownAPI {
 	/** The type of the source layer, used to enable specific functions for special-type layers */
@@ -32,8 +30,10 @@ export interface MetadataElement {
 }
 
 export interface BaseContent {
-	[key: string]: Array<SomeTimelineObject> | number | string | boolean | object | undefined | null
-	timelineObjects?: Array<SomeTimelineObject>
+	[key: string]: Array<TimelineObjectCoreExt> | number | string | boolean | object | undefined | null
+	timelineObjects?: Array<TimelineObjectCoreExt>
+	// We leave it up to the blueprints to ensure that each all of their types implement this interface but more strongly typed
+	// If we were to enforce it here then this lib and core would need to be aware of every type
 }
 
 export type SomeContent = VTContent
@@ -60,21 +60,21 @@ export interface VTContent extends BaseContent {
 	loop?: boolean
 	sourceDuration: number
 	metadata?: Array<MetadataElement>
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface CameraContent extends BaseContent {
 	studioLabel: string
 	switcherInput: number | string
 	thumbnail?: string
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface RemoteContent extends BaseContent {
 	studioLabel: string
 	switcherInput: number | string
 	thumbnail?: string
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface ScriptContent extends BaseContent {
@@ -91,7 +91,7 @@ export interface GraphicsContent extends BaseContent {
 	thumbnail?: string
 	templateData?: object
 	metadata?: Array<MetadataElement>
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface NoraPayload {
@@ -111,7 +111,7 @@ export interface NoraPayload {
 
 export interface NoraContent extends BaseContent {
 	payload: NoraPayload
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface SplitsContent extends BaseContent {
@@ -122,7 +122,7 @@ export interface SplitsContent extends BaseContent {
 		studioLabel: string
 		switcherInput: number | string
 	}>
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface AudioContent extends BaseContent {
@@ -132,12 +132,12 @@ export interface AudioContent extends BaseContent {
 	loop?: boolean
 	sourceDuration: number
 	metadata?: Array<MetadataElement>
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface CameraMovementContent extends BaseContent {
 	cameraConfiguration: any
-	timelineObjects: Array<SomeTimelineObject>
+	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
 export interface LowerThirdContent extends GraphicsContent {
