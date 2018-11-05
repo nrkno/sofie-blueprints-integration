@@ -5,7 +5,7 @@ import {
 	IBlueprintSegmentLine, IMessageBlueprintSegmentLine,
 	IBlueprintSegmentLineItem, IBlueprintSegmentLineAdLibItem
 } from './runningOrder'
-import { ExternalMessageQueueObj } from './message'
+import { IBlueprintExternalMessageQueueObj } from './message'
 
 import { TimelineObject } from './timeline'
 
@@ -13,7 +13,7 @@ export interface BlueprintCollection {
 	Baseline: (context: BaselineContext) => BaselineResult
 	RunStory: (context: RunStoryContext, story: MOS.IMOSROFullStory) => StoryResult | null
 	PostProcess: (context: PostProcessContext) => PostProcessResult
-	Message: (context: MessageContext, runningOrder: IBlueprintRunningOrder, takeSegmentLine: IBlueprintSegmentLine, previousSegmentLine: IBlueprintSegmentLine | null) => ExternalMessageQueueObj[] | null
+	Message: (context: MessageContext, runningOrder: IBlueprintRunningOrder, takeSegmentLine: IBlueprintSegmentLine, previousSegmentLine: IBlueprintSegmentLine | null) => IBlueprintExternalMessageQueueObj[] | null
 	Version: string
 }
 
@@ -23,7 +23,7 @@ export interface ICommonContext {
 	getHashId: (stringToBeHashed?: string | number) => string
 	unhashId: (hash: string) => string
 	getLayer: (type: LayerType, key: string) => string // TODO - remove
-	getConfig: () => IStudioConfigItem[]
+	getConfig: () => {[key: string]: string}
 	error: (message: string) => void
 	warning: (message: string) => void
 	getNotes: () => Array<any>
@@ -68,10 +68,4 @@ export enum LayerType {
 	Source,
 	Output,
 	LLayer
-}
-
-export interface IStudioConfigItem {
-	_id: string
-	/** Value */
-	value: string
 }

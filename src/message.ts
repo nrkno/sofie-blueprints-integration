@@ -1,30 +1,4 @@
-import { Time } from './common'
-
-export interface ExternalMessageQueueObj {
-	_id: string
-	/** Id of the studio this message originates from */
-	studioId: string
-	/** (Optional) id of the running order this message originates from */
-	roId?: string
-	/** At this time the message will be removed */
-	expires: Time
-	/** Time of message creation */
-	created: Time
-	/** Number of times the message tried to be sent */
-	tryCount: number
-	/** Time of last send try: */
-	lastTry?: Time
-	/** If message send failed, last error message */
-	errorMessage?: string
-	/** If message send failed, last error message timestamp */
-	errorMessageTime?: number
-	/** Time of succeeded send: */
-	sent?: Time
-	/** Reply from receiver */
-	sentReply?: any
-	/** If true, wont retry no more */
-	errorFatal?: boolean
-
+export interface IBlueprintExternalMessageQueueObj {
 	/** Type of message */
 	type: 'soap' | 'slack'
 	/** Receiver details */
@@ -32,7 +6,7 @@ export interface ExternalMessageQueueObj {
 	/** Messate details */
 	message: any
 }
-export interface ExternalMessageQueueObjSOAP extends ExternalMessageQueueObj {
+export interface ExternalMessageQueueObjSOAP extends IBlueprintExternalMessageQueueObj {
 	type: 'soap'
 	receiver: {
 		url: string

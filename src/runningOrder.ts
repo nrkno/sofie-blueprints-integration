@@ -57,22 +57,16 @@ export interface IMessageBlueprintSegmentLine extends IBlueprintSegmentLine {
 	subTypeVariant?: string
 
 	/** Playout timings, in here we log times when playout happens */
-	timings?: SegmentLineTimings
+	timings?: IMessageBlueprintSegmentLineTimings
 }
 
-export interface SegmentLineTimings {
+export interface IMessageBlueprintSegmentLineTimings {
 	/** Point in time the SegmentLine was taken, (ie the time of the user action) */
-	take: Array<Time>,
-	/** Point in time the "take" action has finished executing */
-	takeDone: Array<Time>,
+	take: Array<Time>
 	/** Point in time the SegmentLine started playing (ie the time of the playout) */
-	startedPlayback: Array<Time>,
+	startedPlayback: Array<Time>
 	/** Point in time the SegmentLine stopped playing (ie the time of the user action) */
-	takeOut: Array<Time>,
-	/** Point in time the SegmentLine stopped playing (ie the time of the playout) */
-	stoppedPlayback: Array<Time>,
-	/** Point in time the SegmentLine was set as Next (ie the time of the user action) */
-	next: Array<Time>
+	takeOut: Array<Time>
 }
 export enum SegmentLineHoldMode {
 	NONE = 0,

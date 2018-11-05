@@ -1,25 +1,23 @@
 import { Time } from './common'
 import { TimelineObjectCoreExt } from './timeline'
 
-export namespace RundownAPI {
-	/** The type of the source layer, used to enable specific functions for special-type layers */
-	export enum SourceLayerType {
-		UNKNOWN 		= 0,
-		CAMERA 			= 1,
-		VT 				= 2,
-		REMOTE 			= 3,
-		SCRIPT 			= 4,
-		GRAPHICS 		= 5,
-		SPLITS 			= 6,
-		AUDIO 			= 7,
-		CAMERA_MOVEMENT = 8,
-		METADATA 		= 9,
-		LOWER_THIRD		= 10,
-		LIVE_SPEAK		= 11,
-		MIC				= 12,
-		TRANSITION		= 13,
-		LIGHTS			= 14
-	}
+/** The type of the source layer, used to enable specific functions for special-type layers */
+export enum SourceLayerType {
+	UNKNOWN 		= 0,
+	CAMERA 			= 1,
+	VT 				= 2,
+	REMOTE 			= 3,
+	SCRIPT 			= 4,
+	GRAPHICS 		= 5,
+	SPLITS 			= 6,
+	AUDIO 			= 7,
+	CAMERA_MOVEMENT = 8,
+	METADATA 		= 9,
+	LOWER_THIRD		= 10,
+	LIVE_SPEAK		= 11,
+	MIC				= 12,
+	TRANSITION		= 13,
+	LIGHTS			= 14
 }
 
 export interface MetadataElement {
@@ -118,7 +116,7 @@ export interface SplitsContent extends BaseContent {
 	dveConfiguration: any
 	/** Array of contents, 0 index is DVE art */
 	boxSourceConfiguration: Array<(VTContent | CameraContent | RemoteContent | GraphicsContent) & {
-		type: RundownAPI.SourceLayerType
+		type: SourceLayerType
 		studioLabel: string
 		switcherInput: number | string
 	}>
