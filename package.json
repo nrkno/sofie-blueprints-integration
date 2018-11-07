@@ -20,7 +20,7 @@
     "typescript": "^3.1.5"
   },
   "dependencies": {
-    "superfly-timeline": "^6.0.2",
+    "superfly-timeline": "^6.0.3",
     "mos-connection": "^0.6.2",
     "underscore": "^1.9.1"
   }

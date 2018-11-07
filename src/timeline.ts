@@ -1,8 +1,7 @@
 import { IBlueprintSegmentLine, IBlueprintSegmentLineItem } from './runningOrder'
 
-export { TriggerType } from 'superfly-timeline/dist/enums/enums'
-export { TimelineObject, TimelineTrigger, TimelineKeyframe } from 'superfly-timeline/dist/resolver/timeline'
-import { TimelineObject } from 'superfly-timeline/dist/resolver/timeline'
+export { TriggerType, TimelineObject, TimelineTrigger, TimelineKeyframe } from 'superfly-timeline'
+import { TimelineObject } from 'superfly-timeline'
 
 export enum PlayoutTimelinePrefixes {
 	SEGMENT_LINE_GROUP_PREFIX = 'sl_group_',
