@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.1.4...0.1.5) (2018-11-08)
+
+
+### Bug Fixes
+
+* attempt to fix npm package not including dist files ([744b2b6](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/744b2b6))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/v0.1.3...v0.1.4) (2018-11-08)
 
