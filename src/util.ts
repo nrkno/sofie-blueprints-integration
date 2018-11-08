@@ -1,5 +1,9 @@
 import * as _ from 'underscore'
 
+export enum iterateDeeplyEnum {
+	CONTINUE = '$continue'
+}
+
 /**
  * Iterates deeply through object or array
  * @param obj the object or array to iterate through
@@ -41,8 +45,4 @@ export async function iterateDeeplyAsync (obj: any, iteratee: (val: any, key?: s
 	} else {
 		return newValue
 	}
-}
-
-export enum iterateDeeplyEnum {
-	CONTINUE = '$continue'
 }
