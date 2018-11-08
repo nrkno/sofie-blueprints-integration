@@ -59,5 +59,9 @@
     "superfly-timeline": "^6.0.3",
     "mos-connection": "^0.6.2",
     "underscore": "^1.9.1"
+  },
+  "standard-version": {
+    "message": "chore(release): %s [skip ci]",
+    "tagPrefix": ""
   }
 }
