@@ -13,6 +13,10 @@ export interface IBlueprintRunningOrder {
 	expectedDuration?: number
 }
 
+export interface BlueprintRuntimeArguments {
+	[key: string]: string
+}
+
 export interface IBlueprintSegmentLine {
 	/** ID of the SegmentLine */
 	_id: string

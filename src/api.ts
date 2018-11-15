@@ -3,7 +3,8 @@ import * as MOS from 'mos-connection'
 import {
 	IBlueprintRunningOrder,
 	IBlueprintSegmentLine, IMessageBlueprintSegmentLine,
-	IBlueprintSegmentLineItem, IBlueprintSegmentLineAdLibItem
+	IBlueprintSegmentLineItem, IBlueprintSegmentLineAdLibItem,
+	BlueprintRuntimeArguments
 } from './runningOrder'
 import { IBlueprintExternalMessageQueueObj } from './message'
 
@@ -33,6 +34,7 @@ export interface BaselineContext extends ICommonContext {
 }
 export interface RunStoryContext extends ICommonContext {
 	segmentLine: IBlueprintSegmentLine
+	getRuntimeArguments: () => BlueprintRuntimeArguments
 
 	// TODO - remove these getSegmentLine* as it could cause problems when moving a sl
 	getSegmentLines: () => Array<IBlueprintSegmentLine>
