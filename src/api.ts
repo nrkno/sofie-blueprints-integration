@@ -7,6 +7,7 @@ import {
 	BlueprintRuntimeArguments
 } from './runningOrder'
 import { IBlueprintExternalMessageQueueObj } from './message'
+import { ConfigManifestEntry } from './config'
 
 import { TimelineObject } from './timeline'
 
@@ -15,6 +16,10 @@ export interface BlueprintCollection {
 	RunStory: (context: RunStoryContext, story: MOS.IMOSROFullStory) => StoryResult | null
 	PostProcess: (context: PostProcessContext) => PostProcessResult
 	Message: (context: MessageContext, runningOrder: IBlueprintRunningOrder, takeSegmentLine: IBlueprintSegmentLine, previousSegmentLine: IBlueprintSegmentLine | null) => IBlueprintExternalMessageQueueObj[] | null
+
+	StudioConfigManifest: ConfigManifestEntry[]
+	ShowStyleConfigManifest: ConfigManifestEntry[]
+
 	Version: string
 }
 
