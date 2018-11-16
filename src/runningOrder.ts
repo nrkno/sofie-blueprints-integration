@@ -26,9 +26,12 @@ export interface IBlueprintSegmentLine {
 	autoNext?: boolean
 	/** How much to overlap on when doing autonext */
 	autoNextOverlap?: number
-	overlapDuration?: number
-	transitionDelay?: string
-	transitionDuration?: number
+	/** How long to before this sl is ready to take over from the previous */
+	prerollDuration?: number
+	/** How long to before this sl is ready to take over from the previous (during transition) */
+	transitionPrerollDuration?: number
+	/** How long to keep the old sl alive during the transition */
+	transitionKeepaliveDuration?: number
 	/** Should we block a transition at the out of this SegmentLine */
 	disableOutTransition?: boolean
 
