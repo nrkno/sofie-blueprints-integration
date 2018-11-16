@@ -21,6 +21,7 @@ export interface BlueprintCollection {
 	ShowStyleConfigManifest: ConfigManifestEntry[]
 
 	Version: string
+	MinimumCoreVersion: string
 }
 
 export interface ICommonContext {
