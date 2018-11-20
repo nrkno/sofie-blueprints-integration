@@ -30,7 +30,8 @@ export interface ICommonContext {
 	getHashId: (stringToBeHashed?: string | number) => string
 	unhashId: (hash: string) => string
 	getLayer: (type: LayerType, key: string) => string // TODO - remove
-	getConfig: () => {[key: string]: string}
+	getStudioConfig: () => {[key: string]: string}
+	getShowStyleConfig: () => {[key: string]: string}
 	error: (message: string) => void
 	warning: (message: string) => void
 	getNotes: () => Array<any>

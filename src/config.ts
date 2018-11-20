@@ -1,8 +1,12 @@
 
 export enum ConfigManifestEntryType {
-	STRING,
-	NUMBER,
-	BOOLEAN
+	STRING = 'string',
+	NUMBER = 'number',
+	BOOLEAN = 'boolean'
+}
+export enum ConfigManifestEntrySource {
+	STUDIO = 'studio',
+	SHOWSTYLE = 'showstyle'
 }
 
 export interface ConfigManifestEntry {
@@ -10,6 +14,7 @@ export interface ConfigManifestEntry {
 	name: string
 	description: string
 	type: ConfigManifestEntryType
+	source: ConfigManifestEntrySource
 	required: boolean,
-	defaultVal: any // TODO - type this?
+	defaultVal: number | string | boolean // TODO - type this?
 }
