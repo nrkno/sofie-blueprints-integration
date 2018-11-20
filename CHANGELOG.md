@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.3.1...0.4.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* Change types of transition timings on segmentline ([0a7ba6b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0a7ba6b))
+* reverting splitting configManifest ([cf9a68b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/cf9a68b))
+
+
+### Features
+
+* split configs into studio-configs & show-configs ([2d95741](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2d95741))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.3.0...0.3.1) (2018-11-19)
 
