@@ -10,6 +10,9 @@ import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
 
 import { TimelineObject } from './timeline'
+import { MigrationStep } from './migrations'
+import { BlueprintStudioInstallation } from './studio'
+import { BlueprintShowStyleBase, BlueprintShowStyleVariant } from './showStyle'
 
 export interface BlueprintCollection {
 	Baseline: (context: BaselineContext) => BaselineResult
@@ -19,6 +22,9 @@ export interface BlueprintCollection {
 
 	StudioConfigManifest: ConfigManifestEntry[]
 	ShowStyleConfigManifest: ConfigManifestEntry[]
+
+	StudioMigrations: (studio: BlueprintStudioInstallation) => MigrationStep[]
+	ShowStyleMigrations: (showStyleBase: BlueprintShowStyleBase, showStyleVariants: BlueprintShowStyleVariant[]) => MigrationStep[]
 
 	Version: string
 	MinimumCoreVersion: string
