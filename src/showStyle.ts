@@ -1,7 +1,7 @@
 import { IConfigItem } from './common'
 import { SourceLayerType } from './content'
 
-export interface BlueprintShowStyleBase {
+export interface IBlueprintShowStyleBase {
 	/** "Outputs" in the UI */
 	outputLayers: Array<IOutputLayer>
 	/** "Layers" in the GUI */
@@ -10,7 +10,7 @@ export interface BlueprintShowStyleBase {
 	/** Config values are used by the Blueprints */
 	config: Array<IConfigItem>
 }
-export interface BlueprintShowStyleVariant {
+export interface IBlueprintShowStyleVariant {
 	_id: string
 	name: string
 

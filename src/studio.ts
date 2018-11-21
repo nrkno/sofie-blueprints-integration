@@ -19,7 +19,7 @@ export interface BlueprintMapping extends Mapping {
 }
 
 /** A set of available layer groups in a given installation */
-export interface BlueprintStudioInstallation {
+export interface IBlueprintStudioInstallation {
 	_id: string
 	/** User-presentable name for the studio installation */
 	name: string
