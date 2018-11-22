@@ -12,20 +12,31 @@ import { ConfigManifestEntry } from './config'
 import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
 
-export interface BlueprintCollection {
-	Baseline: (context: BaselineContext) => BaselineResult
-	RunStory: (context: RunStoryContext, story: MOS.IMOSROFullStory) => StoryResult | null
-	PostProcess: (context: PostProcessContext) => PostProcessResult
-	Message: (context: MessageContext, runningOrder: IBlueprintRunningOrder, takeSegmentLine: IBlueprintSegmentLine, previousSegmentLine: IBlueprintSegmentLine | null) => IBlueprintExternalMessageQueueObj[] | null
+export interface BlueprintManifest {
+	baseline: (context: BaselineContext) => BaselineResult
+	runStory: (context: RunStoryContext, story: MOS.IMOSROFullStory) => StoryResult | null
+	postProcess: (context: PostProcessContext) => PostProcessResult
+	message: (
+		context: MessageContext,
+		runningOrder: IBlueprintRunningOrder,
+		takeSegmentLine: IBlueprintSegmentLine,
+		previousSegmentLine: IBlueprintSegmentLine | null
+	) => IBlueprintExternalMessageQueueObj[] | null
 
-	StudioConfigManifest: ConfigManifestEntry[]
-	ShowStyleConfigManifest: ConfigManifestEntry[]
+	studioConfigManifest: ConfigManifestEntry[]
+	showStyleConfigManifest: ConfigManifestEntry[]
 
-	StudioMigrations: MigrationStep[]
-	ShowStyleMigrations: MigrationStep[]
+	studioMigrations: MigrationStep[]
+	showStyleMigrations: MigrationStep[]
 
-	Version: string
-	MinimumCoreVersion: string
+	/** Version of the blueprint */
+	blueprintVersion: string
+	/** Version of the blueprint-integration that the blueprint depend on */
+	integrationVersion: string
+	/** Version of the TSR-types that the blueprint depend on */
+	TSRVersion: string
+	/** Minimum expected version of the Sofie Core */
+	minimumCoreVersion: string
 }
 
 export interface ICommonContext {
