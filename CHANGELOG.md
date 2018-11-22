@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.4.1...0.5.0) (2018-11-22)
+
+
+### Bug Fixes
+
+* migration interfaces touchups ([aa8257b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/aa8257b))
+* removed dependency mos-connection and replaced with internal copy ([c2963ba](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c2963ba))
+* removed dependency of superfly-timeline and replaced with types from TSR-types ([480408e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/480408e))
+* tighten type of configItem ([57ff2c1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/57ff2c1))
+* type ref ([ed000c6](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/ed000c6))
+* update dependencies ([e26fd9b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/e26fd9b))
+* update TSR-types dependency ([b6bfcab](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b6bfcab))
+* update typedoc dep ([0c0c508](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0c0c508))
+
+
+### Features
+
+* **migrations:** Add context to migration validate and migrate functions. ([93b555e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/93b555e))
+* **migrations:** Add types for blueprint based migrations ([0d0d99b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0d0d99b))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.4.0...0.4.1) (2018-11-21)
 
