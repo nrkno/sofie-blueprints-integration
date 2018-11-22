@@ -9,3 +9,6 @@ export * from './showStyle'
 export * from './studio'
 export * from './timeline'
 export * from './util'
+
+import * as MOS from './copy/mos-connection'
+export { MOS }
