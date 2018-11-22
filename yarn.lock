@@ -189,11 +189,6 @@
     "@types/glob" "*"
     "@types/node" "*"
 
-"@types/underscore@^1.8.8":
-  version "1.8.9"
-  resolved "https://registry.yarnpkg.com/@types/underscore/-/underscore-1.8.9.tgz#fef41f800cd23db1b4f262ddefe49cd952d82323"
-  integrity sha512-vfzZGgZKRFy7KEWcBGfIFk+h6B+thDCLfkD1exMBMRlUsx2icA+J6y4kAbZs/TjSTeY1duw89QUU133TSzr60Q==
-
 "@types/xmlbuilder@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/xmlbuilder/-/xmlbuilder-0.0.32.tgz#f3107c16a05311ed117af1051c061cfbd8178309"
@@ -5433,14 +5428,6 @@ subarg@^1.0.0:
   integrity sha1-9izxdYHplrSPyWVpn1TAauJouNI=
   dependencies:
     minimist "^1.1.0"
-
-superfly-timeline@^6.0.1, superfly-timeline@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/superfly-timeline/-/superfly-timeline-6.0.3.tgz#ae3d9004f19f5262b90ee81229c5ada19eb3e98f"
-  integrity sha512-1SGAXR2HMh2GM0D2CuN9lFgC1+7Z3zzh4PtEJSlsq8OLIL8SYu1tWpn1bT2Nq4P4FffnQnBGImQGKL3dfSDnhw==
-  dependencies:
-    "@types/underscore" "^1.8.8"
-    underscore "^1.9.1"
 
 supports-color@^2.0.0:
   version "2.0.0"

@@ -1,4 +1,4 @@
-import * as MOS from 'mos-connection'
+import * as MOS from './copy/mos-connection'
 
 import {
 	IBlueprintRunningOrder,
@@ -9,7 +9,7 @@ import {
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
 
-import { TimelineObject } from './timeline'
+import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
 
 export interface BlueprintCollection {
@@ -64,7 +64,7 @@ export interface MessageContext extends ICommonContext {
 
 export interface BaselineResult {
 	AdLibItems: IBlueprintSegmentLineAdLibItem[]
-	BaselineItems: TimelineObject[]
+	BaselineItems: Timeline.TimelineObject[]
 }
 
 export interface StoryResult {
