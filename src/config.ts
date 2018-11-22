@@ -1,3 +1,4 @@
+import { ConfigItemValue } from './common'
 
 export enum ConfigManifestEntryType {
 	STRING = 'string',
@@ -10,5 +11,5 @@ export interface ConfigManifestEntry {
 	description: string
 	type: ConfigManifestEntryType
 	required: boolean,
-	defaultVal: number | string | boolean // TODO - type this?
+	defaultVal: ConfigItemValue
 }

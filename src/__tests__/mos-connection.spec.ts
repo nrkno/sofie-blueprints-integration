@@ -3,8 +3,22 @@ import * as Original from 'mos-connection'
 import * as Local from '../copy/mos-connection'
 
 describe('mos-connection', () => {
-	_.each(Local, (type: any, typeName: string) => {
+	let keys = _.filter(
+		_.uniq(
+			_.keys(Local).concat(_.keys(Original))
+		),
+	(key) => {
+		// Filter out these, they are omitted in this copy
+		return [
+			'MosConnection',
+			'ConnectionConfig',
+			'MosDevice'
+		].indexOf(key) === -1
+	})
+
+	_.each(keys, (typeName: string) => {
 		test('Enumarable type "' + typeName + '"', () => {
+			let type = Local[typeName]
 			let originalType = Original[typeName]
 			if (_.isUndefined(type) && _.isUndefined(originalType)) {
 				expect(1).toEqual(1)
