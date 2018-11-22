@@ -179,13 +179,13 @@ export interface IMOSObject {
 	MosExternalMetaData?: Array<IMOSExternalMetaData>
 	MosItemEditorProgID?: MosString128
 }
-export declare enum IMOSObjectType {
+export enum IMOSObjectType {
 	STILL = 'STILL',
 	AUDIO = 'AUDIO',
 	VIDEO = 'VIDEO',
 	OTHER = 'OTHER'
 }
-export declare enum IMOSObjectStatus {
+export enum IMOSObjectStatus {
 	NEW = 'NEW',
 	UPDATED = 'UPDATED',
 	MOVED = 'MOVED',
@@ -198,11 +198,11 @@ export declare enum IMOSObjectStatus {
 	PLAY = 'PLAY',
 	STOP = 'STOP'
 }
-export declare enum IMOSAckStatus {
+export enum IMOSAckStatus {
 	ACK = 'ACK',
 	NACK = 'NACK'
 }
-export declare enum IMOSObjectAirStatus {
+export enum IMOSObjectAirStatus {
 	READY = 'READY',
 	NOT_READY = 'NOT READY'
 }
@@ -211,7 +211,7 @@ export interface IMOSObjectPath {
 	Description: string
 	Target: string
 }
-export declare enum IMOSObjectPathType {
+export enum IMOSObjectPathType {
 	PATH = 'PATH',
 	PROXY_PATH = 'PROXY PATH',
 	METADATA_PATH = 'METADATA PATH'
