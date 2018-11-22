@@ -1,5 +1,11 @@
+import { OmitId } from './lib'
 import { BlueprintMapping } from './studio'
-import { IBlueprintShowStyleVariant, ISourceLayer, IOutputLayer } from './showStyle'
+import {
+	IBlueprintShowStyleVariant,
+	ISourceLayer,
+	IOutputLayer
+} from './showStyle'
+import { ConfigItemValue } from './common'
 
 export interface MigrationStepInput {
 	stepId?: string // automatically filled in later
@@ -18,25 +24,31 @@ export interface MigrationStepInputFilteredResult {
 	[attribute: string]: any
 }
 
-export type ValidateStudio = (context: MigrationContextStudio, afterMigration: boolean) => boolean | string
-export type ValidateShowStyle = (context: MigrationContextShowStyle, afterMigration: boolean) => boolean | string
-export type ValidateCore = (afterMigration: boolean) => boolean | string
-export type ValidateFunction = ValidateStudio | ValidateShowStyle | ValidateCore
+export type ValidateFunctionCore 			= (afterMigration: boolean) => boolean | string
+export type ValidateFunctionStudio 			= (context: MigrationContextStudio, afterMigration: boolean) => boolean | string
+export type ValidateFunctionShowStyle 		= (context: MigrationContextShowStyle, afterMigration: boolean) => boolean | string
+export type ValidateFunction = ValidateFunctionStudio | ValidateFunctionShowStyle | ValidateFunctionCore
 
-export type MigrateStudio = (context: MigrationContextStudio, input: MigrationStepInputFilteredResult) => void
-export type MigrateShowStyleBase = (context: MigrationContextShowStyle, input: MigrationStepInputFilteredResult) => void
-export type MigrateCore = (input: MigrationStepInputFilteredResult) => void
-export type MigrateFunction = MigrateStudio | MigrateShowStyleBase | MigrateCore
+export type MigrateFunctionCore 			= (input: MigrationStepInputFilteredResult) => void
+export type MigrateFunctionStudio 			= (context: MigrationContextStudio, input: MigrationStepInputFilteredResult) => void
+export type MigrateFunctionShowStyleBase 	= (context: MigrationContextShowStyle, input: MigrationStepInputFilteredResult) => void
+export type MigrateFunction = MigrateFunctionStudio | MigrateFunctionShowStyleBase | MigrateFunctionCore
+
+
+export type InputFunctionCore 				= () => Array<MigrationStepInput>
+export type InputFunctionStudio 			= (context: MigrationContextStudio) => Array<MigrationStepInput>
+export type InputFunctionShowStyleBase 		= (context: MigrationContextShowStyle) => Array<MigrationStepInput>
+export type InputFunction = InputFunctionStudio | InputFunctionShowStyleBase | InputFunctionCore
 
 export interface MigrationContextStudio {
-	getMapping: (id: string) => BlueprintMapping | undefined
-	addMapping: (id: string, mapping: BlueprintMapping) => void
-	updateMapping: (id: string, mapping: Partial<BlueprintMapping>) => void
-	removeMapping: (id: string) => void
+	getMapping: (mappingId: string) => BlueprintMapping | undefined
+	insertMapping: (mappingId: string, mapping: OmitId<BlueprintMapping>) => string
+	updateMapping: (mappingId: string, mapping: Partial<BlueprintMapping>) => void
+	removeMapping: (mappingId: string) => void
 
-	getConfig: (id: string) => any | undefined
-	setConfig: (id: string, value: any) => void
-	removeConfig: (id: string) => void
+	getConfig: (configId: string) => ConfigItemValue | undefined
+	setConfig: (configId: string, value: ConfigItemValue) => void
+	removeConfig: (configId: string) => void
 }
 
 export interface ShowStyleVariantPart { // TODO - is this needed or can it share base props with the main exposed interface?
@@ -46,27 +58,27 @@ export interface ShowStyleVariantPart { // TODO - is this needed or can it share
 export interface MigrationContextShowStyle {
 	getAllVariants: () => IBlueprintShowStyleVariant[]
 	getVariant: (variantId: string) => IBlueprintShowStyleVariant | undefined
-	addVariant: (variantId: string, variant: ShowStyleVariantPart) => void
+	insertVariant: (variant: OmitId<ShowStyleVariantPart>) => string
 	updateVariant: (variantId: string, variant: Partial<ShowStyleVariantPart>) => void
 	removeVariant: (variantId: string) => void
+	
+	getSourceLayer: (sourceLayerId: string) => ISourceLayer | undefined
+	insertSourceLayer: (layer: OmitId<ISourceLayer>) => string
+	updateSourceLayer: (sourceLayerId: string, layer: Partial<ISourceLayer>) => void
+	removeSourceLayer: (sourceLayerId: string) => void
+	
+	getOutputLayer: (outputLayerId: string) => IOutputLayer | undefined
+	insertOutputLayer: (layer: OmitId<IOutputLayer>) => string
+	updateOutputLayer: (outputLayerId: string, layer: Partial<IOutputLayer>) => void
+	removeOutputLayer: (outputLayerId: string) => void
 
-	getBaseConfig: (id: string) => any | undefined
-	setBaseConfig: (id: string, value: any) => void
-	removeBaseConfig: (id: string) => void
+	getBaseConfig: (configId: string) => ConfigItemValue | undefined
+	setBaseConfig: (configId: string, value: ConfigItemValue) => void
+	removeBaseConfig: (configId: string) => void
 
-	getSourceLayer: (id: string) => ISourceLayer | undefined
-	addSourceLayer: (layer: ISourceLayer) => void
-	updateSourceLayer: (id: string, layer: Partial<ISourceLayer>) => void
-	removeSourceLayer: (id: string) => void
-
-	getOutputLayer: (id: string) => IOutputLayer | undefined
-	addOutputLayer: (layer: IOutputLayer) => void
-	updateOutputLayer: (id: string, layer: Partial<IOutputLayer>) => void
-	removeOutputLayer: (id: string) => void
-
-	getVariantConfig: (variantId: string, id: string) => any | undefined
-	setVariantConfig: (variantId: string, id: string, value: any) => void
-	removeVariantConfig: (variantId: string, id: string) => void
+	getVariantConfig: (variantId: string, configId: string) => ConfigItemValue | undefined
+	setVariantConfig: (variantId: string, configId: string, value: ConfigItemValue) => void
+	removeVariantConfig: (variantId: string, configId: string) => void
 }
 
 export interface MigrationStepBase {
