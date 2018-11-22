@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.5.0...0.5.1) (2018-11-22)
+
+
+### Bug Fixes
+
+* export mos typings ([0edff3f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0edff3f))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.4.1...0.5.0) (2018-11-22)
 
