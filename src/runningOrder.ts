@@ -1,6 +1,6 @@
 import { Time } from './common'
 import { SomeContent } from './content'
-import { TimelineTrigger } from './timeline'
+import { Timeline } from './timeline'
 
 export interface IBlueprintRunningOrder {
 	_id: string
@@ -91,7 +91,7 @@ export interface IBlueprintSegmentLineItem {
 	/** User-presentable name for the timeline item */
 	name: string
 	/** Timeline item trigger. Possibly, most of these will be manually triggered as next, but maybe some will be automatic. */
-	trigger: TimelineTrigger
+	trigger: Timeline.TimelineTrigger
 	/** Source layer the timeline item belongs to */
 	sourceLayerId: string
   	/** Layer output this segment line item belongs to */
