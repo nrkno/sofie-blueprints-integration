@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.2"></a>
+## [0.5.2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.5.1...0.5.2) (2018-11-22)
+
+
+### Bug Fixes
+
+* mos-connection typings: add full classes for data types. (They are needed downstream in Core..) ([eb57f04](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/eb57f04))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.5.0...0.5.1) (2018-11-22)
 
