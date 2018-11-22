@@ -1,76 +1,18 @@
 // Notes: This file contains types copied from mos-connection@0.6.2
 
-export declare class MosString128 {
-	private _str: string
-	/** */
-	constructor (str: any)
-	/** */
-	toString (): string
-	/** */
-	string: string | {
-		text: string;
-		type: string;
-	} | MosString128 | any
-	/** */
-	private _validate ()
-}
-// export interface MosString128 {
-// 	_str: string
-// 	toString: () => string
-// 	string: string | {
-// 		text: string;
-// 		type: string;
-// 	} | MosString128 | any
-// }
-export declare class MosTime {
-	static _defaultTimezone: string
-	private _time
-	private _timezone
-	private _timezoneZuluIndicator
-	private _timezoneDeclaration
-	/** */
-	constructor (timestamp?: Date | number | string)
-	/** */
-	toString (): string
-	/** */
-	getTime (): number
-	/** */
-	private _parseTimeOffset (timestamp)
-	/** */
-	private _parseMosCustomFormat (timestamp)
-}
-export declare class MosDuration {
-	private _duration
-	/** */
-	constructor (str: string)
-	/** */
-	toString (): string
-	/** */
-	valueOf (): number
+import { MosString128 } from './mosString128'
+import { MosDuration } from './mosDuration'
+import { IMOSExternalMetaData } from './mosExternalMetaData'
+import { MosTime } from './mosTime'
+
+export {
+	MosString128,
+	MosDuration,
+	IMOSExternalMetaData,
+	MosTime
 }
 
-export interface IMOSExternalMetaData {
-	MosScope?: IMOSScope
-	MosSchema: string
-	MosPayload: any
-}
-export declare enum IMOSScope {
-	OBJECT = 'OBJECT',
-	STORY = 'STORY',
-	PLAYLIST = 'PLAYLIST'
-}
-export declare class MosExternalMetaData {
-	private _scope?
-	private _schema
-	private _payload
-	constructor (obj: IMOSExternalMetaData)
-	readonly scope: IMOSScope | undefined
-	readonly schema: string
-	readonly payload: any
-	// readonly messageXMLBlocks: XMLBuilder.XMLElementOrXMLNode
-}
-
-// ------------------------------------------------------------------
+// api.ts:  -------------------------------------------------------------------
 export interface IMOSROAction {
 	RunningOrderID: MosString128
 }
