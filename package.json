@@ -68,7 +68,7 @@
     "mos-connection": "^0.6.2"
   },
   "dependencies": {
-    "timeline-state-resolver-types": "^1.3.4",
+    "timeline-state-resolver-types": "^1.3.5",
     "underscore": "^1.9.1"
   },
   "standard-version": {
