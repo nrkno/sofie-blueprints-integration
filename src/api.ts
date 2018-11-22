@@ -1,4 +1,4 @@
-import * as MOS from 'mos-connection'
+import * as MOS from './copy/mos-connection'
 
 import {
 	IBlueprintRunningOrder,
@@ -9,19 +9,34 @@ import {
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
 
-import { TimelineObject } from './timeline'
+import { Timeline } from './timeline'
+import { MigrationStep } from './migrations'
 
-export interface BlueprintCollection {
-	Baseline: (context: BaselineContext) => BaselineResult
-	RunStory: (context: RunStoryContext, story: MOS.IMOSROFullStory) => StoryResult | null
-	PostProcess: (context: PostProcessContext) => PostProcessResult
-	Message: (context: MessageContext, runningOrder: IBlueprintRunningOrder, takeSegmentLine: IBlueprintSegmentLine, previousSegmentLine: IBlueprintSegmentLine | null) => IBlueprintExternalMessageQueueObj[] | null
+export interface BlueprintManifest {
+	baseline: (context: BaselineContext) => BaselineResult
+	runStory: (context: RunStoryContext, story: MOS.IMOSROFullStory) => StoryResult | null
+	postProcess: (context: PostProcessContext) => PostProcessResult
+	message: (
+		context: MessageContext,
+		runningOrder: IBlueprintRunningOrder,
+		takeSegmentLine: IBlueprintSegmentLine,
+		previousSegmentLine: IBlueprintSegmentLine | null
+	) => IBlueprintExternalMessageQueueObj[] | null
 
-	StudioConfigManifest: ConfigManifestEntry[]
-	ShowStyleConfigManifest: ConfigManifestEntry[]
+	studioConfigManifest: ConfigManifestEntry[]
+	showStyleConfigManifest: ConfigManifestEntry[]
 
-	Version: string
-	MinimumCoreVersion: string
+	studioMigrations: MigrationStep[]
+	showStyleMigrations: MigrationStep[]
+
+	/** Version of the blueprint */
+	blueprintVersion: string
+	/** Version of the blueprint-integration that the blueprint depend on */
+	integrationVersion: string
+	/** Version of the TSR-types that the blueprint depend on */
+	TSRVersion: string
+	/** Minimum expected version of the Sofie Core */
+	minimumCoreVersion: string
 }
 
 export interface ICommonContext {
@@ -60,7 +75,7 @@ export interface MessageContext extends ICommonContext {
 
 export interface BaselineResult {
 	AdLibItems: IBlueprintSegmentLineAdLibItem[]
-	BaselineItems: TimelineObject[]
+	BaselineItems: Timeline.TimelineObject[]
 }
 
 export interface StoryResult {
