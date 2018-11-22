@@ -34,7 +34,6 @@ export type MigrateFunctionStudio 			= (context: MigrationContextStudio, input: 
 export type MigrateFunctionShowStyleBase 	= (context: MigrationContextShowStyle, input: MigrationStepInputFilteredResult) => void
 export type MigrateFunction = MigrateFunctionStudio | MigrateFunctionShowStyleBase | MigrateFunctionCore
 
-
 export type InputFunctionCore 				= () => Array<MigrationStepInput>
 export type InputFunctionStudio 			= (context: MigrationContextStudio) => Array<MigrationStepInput>
 export type InputFunctionShowStyleBase 		= (context: MigrationContextShowStyle) => Array<MigrationStepInput>
@@ -54,19 +53,18 @@ export interface MigrationContextStudio {
 export interface ShowStyleVariantPart { // TODO - is this needed or can it share base props with the main exposed interface?
 	name: string
 }
-
 export interface MigrationContextShowStyle {
 	getAllVariants: () => IBlueprintShowStyleVariant[]
 	getVariant: (variantId: string) => IBlueprintShowStyleVariant | undefined
 	insertVariant: (variant: OmitId<ShowStyleVariantPart>) => string
 	updateVariant: (variantId: string, variant: Partial<ShowStyleVariantPart>) => void
 	removeVariant: (variantId: string) => void
-	
+
 	getSourceLayer: (sourceLayerId: string) => ISourceLayer | undefined
 	insertSourceLayer: (layer: OmitId<ISourceLayer>) => string
 	updateSourceLayer: (sourceLayerId: string, layer: Partial<ISourceLayer>) => void
 	removeSourceLayer: (sourceLayerId: string) => void
-	
+
 	getOutputLayer: (outputLayerId: string) => IOutputLayer | undefined
 	insertOutputLayer: (layer: OmitId<IOutputLayer>) => string
 	updateOutputLayer: (outputLayerId: string, layer: Partial<IOutputLayer>) => void
