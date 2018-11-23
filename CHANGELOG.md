@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.4"></a>
+## [0.5.4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.5.3...0.5.4) (2018-11-23)
+
+
+### Bug Fixes
+
+* add missing ConfigItemValue types ([2ab6e33](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2ab6e33))
+
+
+
 <a name="0.5.3"></a>
 ## [0.5.3](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.5.2...0.5.3) (2018-11-22)
 
