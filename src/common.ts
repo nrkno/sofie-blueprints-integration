@@ -6,4 +6,4 @@ export interface IConfigItem {
 	value: ConfigItemValue
 }
 
-export type ConfigItemValue = string
+export type ConfigItemValue = string | number | boolean
