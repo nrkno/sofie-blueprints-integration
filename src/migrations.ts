@@ -31,13 +31,13 @@ export type ValidateFunction = ValidateFunctionStudio | ValidateFunctionShowStyl
 
 export type MigrateFunctionCore 			= (input: MigrationStepInputFilteredResult) => void
 export type MigrateFunctionStudio 			= (context: MigrationContextStudio, input: MigrationStepInputFilteredResult) => void
-export type MigrateFunctionShowStyleBase 	= (context: MigrationContextShowStyle, input: MigrationStepInputFilteredResult) => void
-export type MigrateFunction = MigrateFunctionStudio | MigrateFunctionShowStyleBase | MigrateFunctionCore
+export type MigrateFunctionShowStyle 		= (context: MigrationContextShowStyle, input: MigrationStepInputFilteredResult) => void
+export type MigrateFunction = MigrateFunctionStudio | MigrateFunctionShowStyle | MigrateFunctionCore
 
 export type InputFunctionCore 				= () => Array<MigrationStepInput>
 export type InputFunctionStudio 			= (context: MigrationContextStudio) => Array<MigrationStepInput>
-export type InputFunctionShowStyleBase 		= (context: MigrationContextShowStyle) => Array<MigrationStepInput>
-export type InputFunction = InputFunctionStudio | InputFunctionShowStyleBase | InputFunctionCore
+export type InputFunctionShowStyle 			= (context: MigrationContextShowStyle) => Array<MigrationStepInput>
+export type InputFunction = InputFunctionStudio | InputFunctionShowStyle | InputFunctionCore
 
 export interface MigrationContextStudio {
 	getMapping: (mappingId: string) => BlueprintMapping | undefined
@@ -101,7 +101,7 @@ export interface MigrationStepBase {
 	 */
 	migrate?: MigrateFunction
 	/** Query user for input, used in manual steps */
-	input?: Array<MigrationStepInput> | (() => Array<MigrationStepInput>)
+	input?: Array<MigrationStepInput> | InputFunction
 
 	/** If this step depend on the result of another step. Will pause the migration before this step in that case. */
 	dependOnResultFrom?: string
@@ -109,4 +109,20 @@ export interface MigrationStepBase {
 export interface MigrationStep extends MigrationStepBase {
 	/** The version this Step applies to */
 	version: string
+}
+
+export interface MigrationStepCore extends MigrationStep {
+	validate: ValidateFunctionCore
+	migrate?: MigrateFunctionCore
+	input?: Array<MigrationStepInput> | InputFunctionCore
+}
+export interface MigrationStepStudio extends MigrationStep {
+	validate: ValidateFunctionStudio
+	migrate?: MigrateFunctionStudio
+	input?: Array<MigrationStepInput> | InputFunctionStudio
+}
+export interface MigrationStepShowStyle extends MigrationStep {
+	validate: ValidateFunctionShowStyle
+	migrate?: MigrateFunctionShowStyle
+	input?: Array<MigrationStepInput> | InputFunctionShowStyle
 }
