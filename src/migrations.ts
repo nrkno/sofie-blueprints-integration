@@ -61,12 +61,12 @@ export interface MigrationContextShowStyle {
 	removeVariant: (variantId: string) => void
 
 	getSourceLayer: (sourceLayerId: string) => ISourceLayer | undefined
-	insertSourceLayer: (layer: OmitId<ISourceLayer>) => string
+	insertSourceLayer: (layer: ISourceLayer) => string
 	updateSourceLayer: (sourceLayerId: string, layer: Partial<ISourceLayer>) => void
 	removeSourceLayer: (sourceLayerId: string) => void
 
 	getOutputLayer: (outputLayerId: string) => IOutputLayer | undefined
-	insertOutputLayer: (layer: OmitId<IOutputLayer>) => string
+	insertOutputLayer: (layer: IOutputLayer) => string
 	updateOutputLayer: (outputLayerId: string, layer: Partial<IOutputLayer>) => void
 	removeOutputLayer: (outputLayerId: string) => void
 

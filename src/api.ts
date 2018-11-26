@@ -11,6 +11,7 @@ import { ConfigManifestEntry } from './config'
 
 import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
+import { ConfigItemValue } from './common'
 
 export interface BlueprintManifest {
 	baseline: (context: BaselineContext) => BaselineResult
@@ -45,8 +46,8 @@ export interface ICommonContext {
 	getHashId: (stringToBeHashed?: string | number) => string
 	unhashId: (hash: string) => string
 	getLayer: (type: LayerType, key: string) => string // TODO - remove
-	getStudioConfig: () => {[key: string]: string}
-	getShowStyleConfig: () => {[key: string]: string}
+	getStudioConfig: () => {[key: string]: ConfigItemValue}
+	getShowStyleConfig: () => {[key: string]: ConfigItemValue}
 	error: (message: string) => void
 	warning: (message: string) => void
 	getNotes: () => Array<any>
