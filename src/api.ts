@@ -11,7 +11,7 @@ import { ConfigManifestEntry } from './config'
 
 import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
-import { ConfigItemValue } from './common';
+import { ConfigItemValue } from './common'
 
 export interface BlueprintManifest {
 	baseline: (context: BaselineContext) => BaselineResult
