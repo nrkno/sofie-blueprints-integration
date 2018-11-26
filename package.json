@@ -1,6 +1,6 @@
 {
   "name": "tv-automation-sofie-blueprints-integration",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "Library to define the interaction between core and the blueprints.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
