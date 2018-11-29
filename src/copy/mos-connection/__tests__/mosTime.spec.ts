@@ -1,6 +1,6 @@
 import { testClass } from './lib.spec'
 
-import { MosTime } from '../MosTime'
+import { MosTime } from '../mosTime'
 import { MosTime as OriginalMosTime } from 'mos-connection'
 
 describe('mos-connection MosTime', () => {

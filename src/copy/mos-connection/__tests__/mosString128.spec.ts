@@ -1,6 +1,6 @@
 import { testClass } from './lib.spec'
 
-import { MosString128 } from '../MosString128'
+import { MosString128 } from '../mosString128'
 import { MosString128 as OriginalMosString128 } from 'mos-connection'
 
 describe('mos-connection MosString128', () => {

@@ -1,6 +1,6 @@
 import { testClass } from './lib.spec'
 
-import { MosExternalMetaData, IMOSExternalMetaData, IMOSScope } from '../MosExternalMetaData'
+import { MosExternalMetaData, IMOSExternalMetaData, IMOSScope } from '../mosExternalMetaData'
 import { MosExternalMetaData as OriginalMosExternalMetaData, IMOSScope as OriginalIMOSScope } from 'mos-connection/dist/dataTypes/mosExternalMetaData'
 
 describe('mos-connection MosExternalMetaData', () => {

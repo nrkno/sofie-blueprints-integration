@@ -1,6 +1,6 @@
 import { testClass } from './lib.spec'
 
-import { MosDuration } from '../MosDuration'
+import { MosDuration } from '../mosDuration'
 import { MosDuration as OriginalMosDuration } from 'mos-connection'
 
 describe('mos-connection MosDuration', () => {
