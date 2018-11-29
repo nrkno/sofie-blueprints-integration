@@ -56,7 +56,7 @@ export interface ShowStyleVariantPart { // TODO - is this needed or can it share
 export interface MigrationContextShowStyle {
 	getAllVariants: () => IBlueprintShowStyleVariant[]
 	getVariant: (variantId: string) => IBlueprintShowStyleVariant | undefined
-	insertVariant: (variant: OmitId<ShowStyleVariantPart>) => string
+	insertVariant: (variantId: string, variant: OmitId<ShowStyleVariantPart>) => string
 	updateVariant: (variantId: string, variant: Partial<ShowStyleVariantPart>) => void
 	removeVariant: (variantId: string) => void
 
