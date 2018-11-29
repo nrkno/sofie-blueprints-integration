@@ -21,5 +21,5 @@ describe('mos-connection MosTime', () => {
 		let v0 = new MosTime(new Date())
 		let v1 = new OriginalMosTime(new Date())
 		expect(v0.toString()).toEqual(v1.toString())
-	}
+	})
 })
