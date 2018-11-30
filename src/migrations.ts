@@ -6,7 +6,7 @@ import {
 	IOutputLayer
 } from './showStyle'
 import { ConfigItemValue } from './common'
-import { DeviceOptions } from 'timeline-state-resolver-types';
+import { DeviceOptions } from 'timeline-state-resolver-types'
 
 export interface MigrationStepInput {
 	stepId?: string // automatically filled in later
