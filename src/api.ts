@@ -69,7 +69,7 @@ export interface BlueprintManifest {
 	onPreTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
 	onPostTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
 	/** Called after an as-run event is created */
-	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
+	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]> | IBlueprintExternalMessageQueueObj[]
 
 }
 
@@ -90,13 +90,13 @@ export interface ICommonContext {
 	/** Un-hash, is return the string that created the hash */
 	unhashId: (hash: string) => string
 }
-export interface NotesContext {
+export interface NotesContext extends ICommonContext {
 	error: (message: string) => void
 	warning: (message: string) => void
 	getNotes: () => Array<any>
 }
 
-export interface RunningOrderContext extends ICommonContext {
+export interface RunningOrderContext extends NotesContext {
 	readonly runningOrderId: string
 	readonly runningOrder: IBlueprintRunningOrder
 
