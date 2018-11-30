@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.5.7...0.6.0) (2018-11-30)
+
+
+### Bug Fixes
+
+* bug in iterateDeeplyAsync ([7b2e5b5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/7b2e5b5))
+* case sensitive import paths ([ca94cdb](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/ca94cdb))
+* **migrations:** Blueprints specify variant id, to make it possible to update one later on ([d4ad8a4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/d4ad8a4))
+* linter error ([16cec3a](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/16cec3a))
+* onTakes should have SegmentLineContextPure ([14eb7b2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/14eb7b2))
+* update tsr-types ([41a4583](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/41a4583))
+
+
+### Features
+
+* **migrations:** Add playout-device migration methods to studio migration context ([6e1ecb0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/6e1ecb0))
+* fixed API for eventCallbacks, and split interfaces into "Pure" (which doesn't contain the UI-centric NotesContext) and normal ([ddfa0ab](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/ddfa0ab))
+* renamed & reworked API ([fc51f11](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/fc51f11))
+
+
+
 <a name="0.5.7"></a>
 ## [0.5.7](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.5.6...0.5.7) (2018-11-28)
 
