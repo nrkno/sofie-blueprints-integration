@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "moment": "^2.22.2",
-    "timeline-state-resolver-types": "^1.3.5",
+    "timeline-state-resolver-types": "^1.4.2",
     "tslib": "^1.9.3",
     "underscore": "^1.9.1"
   },

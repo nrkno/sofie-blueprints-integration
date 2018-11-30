@@ -36,7 +36,7 @@ export async function iterateDeeplyAsync (obj: any, iteratee: (val: any, key?: s
 		// Continue iterate deeper if possible
 		if (_.isObject(obj)) { // object or array
 			await Promise.all(_.map(obj, async (val, key) => {
-				obj[key] = await iterateDeeply(val, iteratee, key)
+				obj[key] = await iterateDeeplyAsync(val, iteratee, key)
 			}))
 		} else {
 			// don't change anything

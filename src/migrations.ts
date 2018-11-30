@@ -6,6 +6,7 @@ import {
 	IOutputLayer
 } from './showStyle'
 import { ConfigItemValue } from './common'
+import { DeviceOptions } from 'timeline-state-resolver-types'
 
 export interface MigrationStepInput {
 	stepId?: string // automatically filled in later
@@ -48,6 +49,11 @@ export interface MigrationContextStudio {
 	getConfig: (configId: string) => ConfigItemValue | undefined
 	setConfig: (configId: string, value: ConfigItemValue) => void
 	removeConfig: (configId: string) => void
+
+	getDevice: (deviceId: string) => DeviceOptions | undefined
+	insertDevice: (deviceId: string, device: DeviceOptions) => string | null
+	updateDevice: (deviceId: string, device: Partial<DeviceOptions>) => void
+	removeDevice: (deviceId: string) => void
 }
 
 export interface ShowStyleVariantPart { // TODO - is this needed or can it share base props with the main exposed interface?
@@ -56,7 +62,7 @@ export interface ShowStyleVariantPart { // TODO - is this needed or can it share
 export interface MigrationContextShowStyle {
 	getAllVariants: () => IBlueprintShowStyleVariant[]
 	getVariant: (variantId: string) => IBlueprintShowStyleVariant | undefined
-	insertVariant: (variant: OmitId<ShowStyleVariantPart>) => string
+	insertVariant: (variantId: string, variant: OmitId<ShowStyleVariantPart>) => string
 	updateVariant: (variantId: string, variant: Partial<ShowStyleVariantPart>) => void
 	removeVariant: (variantId: string) => void
 
