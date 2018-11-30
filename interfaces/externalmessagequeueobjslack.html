@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IMOSStoryStatus | tv-automation-sofie-blueprints-integration</title>
+	<title>ExternalMessageQueueObjSlack | tv-automation-sofie-blueprints-integration</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -910,19 +910,16 @@ img { max-width: 100%; }
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class="current tsd-kind-interface tsd-is-external">
-			<a href="imosstorystatus.html" class="tsd-kind-icon">IMOSStory<wbr>Status</a>
+			<a href="externalmessagequeueobjslack.html" class="tsd-kind-icon">External<wbr>Message<wbr>Queue<wbr>Obj<wbr>Slack</a>
 			<ul>
-				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="imosstorystatus.html#id" class="tsd-kind-icon">ID</a>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
+					<a href="externalmessagequeueobjslack.html#message" class="tsd-kind-icon">message</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="imosstorystatus.html#runningorderid" class="tsd-kind-icon">Running<wbr>Order<wbr>Id</a>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
+					<a href="externalmessagequeueobjslack.html#receiver" class="tsd-kind-icon">receiver</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="imosstorystatus.html#status" class="tsd-kind-icon">Status</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="imosstorystatus.html#time" class="tsd-kind-icon">Time</a>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
+					<a href="externalmessagequeueobjslack.html#type" class="tsd-kind-icon">type</a>
 				</li>
 			</ul>
 		</li>
@@ -934,7 +931,12 @@ img { max-width: 100%; }
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">IMOSStoryStatus</span>
+					<a href="iblueprintexternalmessagequeueobj.html" class="tsd-signature-type">IBlueprintExternalMessageQueueObj</a>
+					<ul class="tsd-hierarchy">
+						<li>
+							<span class="target">ExternalMessageQueueObjSlack</span>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</section>
@@ -945,10 +947,9 @@ img { max-width: 100%; }
 					<section class="tsd-index-section tsd-is-external">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="imosstorystatus.html#id" class="tsd-kind-icon">ID</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="imosstorystatus.html#runningorderid" class="tsd-kind-icon">Running<wbr>Order<wbr>Id</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="imosstorystatus.html#status" class="tsd-kind-icon">Status</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="imosstorystatus.html#time" class="tsd-kind-icon">Time</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="externalmessagequeueobjslack.html#message" class="tsd-kind-icon">message</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="externalmessagequeueobjslack.html#receiver" class="tsd-kind-icon">receiver</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="externalmessagequeueobjslack.html#type" class="tsd-kind-icon">type</a></li>
 						</ul>
 					</section>
 				</div>
@@ -956,43 +957,36 @@ img { max-width: 100%; }
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Properties</h2>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="id" class="tsd-anchor"></a>
-				<h3>ID</h3>
-				<div class="tsd-signature tsd-kind-icon">ID<span class="tsd-signature-symbol">:</span> <a href="../classes/mosstring128.html" class="tsd-signature-type">MosString128</a></div>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
+				<a name="message" class="tsd-anchor"></a>
+				<h3>message</h3>
+				<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
+					<p>Overrides <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#message">message</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ef3a12d/src/copy/mos-connection/index.ts#L36">copy/mos-connection/index.ts:36</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ef3a12d/src/message.ts#L46">message.ts:46</a></li>
 					</ul>
 				</aside>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="runningorderid" class="tsd-anchor"></a>
-				<h3>Running<wbr>Order<wbr>Id</h3>
-				<div class="tsd-signature tsd-kind-icon">Running<wbr>Order<wbr>Id<span class="tsd-signature-symbol">:</span> <a href="../classes/mosstring128.html" class="tsd-signature-type">MosString128</a></div>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
+				<a name="receiver" class="tsd-anchor"></a>
+				<h3>receiver</h3>
+				<div class="tsd-signature tsd-kind-icon">receiver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
+					<p>Overrides <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#receiver">receiver</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ef3a12d/src/copy/mos-connection/index.ts#L35">copy/mos-connection/index.ts:35</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ef3a12d/src/message.ts#L44">message.ts:44</a></li>
 					</ul>
 				</aside>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="status" class="tsd-anchor"></a>
-				<h3>Status</h3>
-				<div class="tsd-signature tsd-kind-icon">Status<span class="tsd-signature-symbol">:</span> <a href="../enums/imosobjectstatus.html" class="tsd-signature-type">IMOSObjectStatus</a></div>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
+				<a name="type" class="tsd-anchor"></a>
+				<h3>type</h3>
+				<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/iblueprintexternalmessagequeuetype.html#slack" class="tsd-signature-type">SLACK</a></div>
 				<aside class="tsd-sources">
+					<p>Overrides <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#type">type</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ef3a12d/src/copy/mos-connection/index.ts#L37">copy/mos-connection/index.ts:37</a></li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="time" class="tsd-anchor"></a>
-				<h3>Time</h3>
-				<div class="tsd-signature tsd-kind-icon">Time<span class="tsd-signature-symbol">:</span> <a href="../classes/mostime.html" class="tsd-signature-type">MosTime</a></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ef3a12d/src/copy/mos-connection/index.ts#L38">copy/mos-connection/index.ts:38</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ef3a12d/src/message.ts#L43">message.ts:43</a></li>
 					</ul>
 				</aside>
 			</section>
