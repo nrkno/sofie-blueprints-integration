@@ -1,6 +1,7 @@
 import { Time } from './common'
 import { SomeContent } from './content'
 import { Timeline } from './timeline'
+import { MOS } from './'
 
 export interface IBlueprintRunningOrder {
 	_id: string
@@ -11,12 +12,29 @@ export interface IBlueprintRunningOrder {
 	expectedStart?: Time
 	/** Expected duration of the running order - should be set to EditorialDuration from IMOSRunningOrder */
 	expectedDuration?: number
+
+	/** Id of the showStyle used */
+	showStyleVariantId: string
 }
 
 export interface BlueprintRuntimeArguments {
 	[key: string]: string
 }
 
+export interface IBlueprintSegment {
+	_id: string
+	/** Position inside running order */
+	_rank: number
+	/** ID of the source object in MOS */
+	mosId: string
+	/** The running order this segment belongs to */
+	runningOrderId: string
+	/** User-presentable name (Slug) for the Title */
+	name: string
+
+	metaData?: Array<MOS.IMOSExternalMetaData>
+	status?: MOS.IMOSObjectStatus
+}
 export interface IBlueprintSegmentLine {
 	/** ID of the SegmentLine */
 	_id: string
