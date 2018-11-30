@@ -2,8 +2,9 @@ import * as MOS from './copy/mos-connection'
 
 import {
 	IBlueprintRunningOrder,
-	IBlueprintSegmentLine, IMessageBlueprintSegmentLine,
-	IBlueprintSegmentLineItem, IBlueprintSegmentLineAdLibItem,
+	IBlueprintSegmentLine,
+	IBlueprintSegmentLineItem,
+	IBlueprintSegmentLineAdLibItem,
 	BlueprintRuntimeArguments
 } from './runningOrder'
 import { IBlueprintExternalMessageQueueObj } from './message'
@@ -17,6 +18,7 @@ import {
 	IBlueprintShowStyleVariant,
 	IBlueprintSegment
 } from './'
+import { IBlueprintAsRunLogEvent } from './asRunLog'
 
 export interface BlueprintManifest {
 
@@ -59,29 +61,20 @@ export interface BlueprintManifest {
 
 	// Events
 
-	onRunningOrderActivate?: (context: EventContext & RunningOrderContext) => void
-	onRunningOrderFirstTake?: (context: EventContext & SegmentLineContext) => void
-	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContext) => void
+	onRunningOrderActivate?: (context: EventContext & RunningOrderContextPure) => void | Promise<void>
+	onRunningOrderFirstTake?: (context: EventContext & SegmentLineContextPure) => void | Promise<void>
+	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContextPure) => void | Promise<void>
 
 	/** Called after a Take action */
-	onPreTake?: (context: EventContext & SegmentContext) => void
-	onPostTake?: (context: EventContext & SegmentContext) => void
+	onPreTake?: (context: EventContext & SegmentContextPure) => void | Promise<void>
+	onPostTake?: (context: EventContext & SegmentContextPure) => void | Promise<void>
 	/** Called after an as-run event is created */
-	onAsRunEvent?: (context: EventContext & MessageContext) => IBlueprintExternalMessageQueueObj[] | null
-	/**
-	 *
-	 */
-	// message: (
-	// 	context: MessageContext,
-	// 	runningOrder: IBlueprintRunningOrder,
-	// 	takeSegmentLine: IBlueprintSegmentLine,
-	// 	previousSegmentLine: IBlueprintSegmentLine | null
-	// ) => IBlueprintExternalMessageQueueObj[] | null
+	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
 
 }
 
 export interface EventContext {
-	// TDB: certain actions that can be triggered in Core by he blueprint
+	// TDB: Certain actions that can be triggered in Core by the Blueprint
 }
 
 export interface IStudioContext {
@@ -103,7 +96,7 @@ export interface NotesContext {
 	getNotes: () => Array<any>
 }
 
-export interface RunningOrderContext extends ICommonContext, NotesContext {
+export interface RunningOrderContextPure extends ICommonContext {
 	readonly runningOrderId: string
 	readonly runningOrder: IBlueprintRunningOrder
 
@@ -111,11 +104,15 @@ export interface RunningOrderContext extends ICommonContext, NotesContext {
 	getShowStyleConfig: () => {[key: string]: ConfigItemValue}
 
 }
-export interface SegmentContext extends RunningOrderContext, NotesContext {
+export interface RunningOrderContext extends RunningOrderContextPure, NotesContext {
+}
+export interface SegmentContextPure extends RunningOrderContextPure {
 	readonly segment: IBlueprintSegment
 	getSegmentLines: () => Array<IBlueprintSegmentLine>
 }
-export interface SegmentLineContext extends RunningOrderContext, NotesContext {
+export interface SegmentContext extends SegmentContextPure, NotesContext {
+}
+export interface SegmentLineContextPure extends RunningOrderContextPure {
 	readonly segmentLine: IBlueprintSegmentLine
 
 	getRuntimeArguments: () => BlueprintRuntimeArguments
@@ -125,10 +122,20 @@ export interface SegmentLineContext extends RunningOrderContext, NotesContext {
 	/** Get the index number of this SegmentLine */
 	getSegmentLineIndex: () => number
 }
+export interface SegmentLineContext extends SegmentLineContextPure, NotesContext {
+}
+export interface AsRunEventContext extends RunningOrderContextPure {
+	readonly asRunEvent: IBlueprintAsRunLogEvent
 
-export interface MessageContext extends ICommonContext {
-	getAllSegmentLines (): Array<IMessageBlueprintSegmentLine>
+	/** Get all asRunEvents in the runningOrder */
+	getAllAsRunEvents (): Array<IBlueprintAsRunLogEvent>
+	/** Get all segmentLines in this runningOrder */
+	getSegmentLines (): Array<IBlueprintSegmentLine>
+	/** Get the segmentLine related to thie AsRunEvent */
+	getSegmentLine (): IBlueprintSegmentLine | undefined
+	/** Get the mos story related to a segmentLine */
 	getStoryForSegmentLine (segmentLine: IBlueprintSegmentLine): MOS.IMOSROFullStory
+	/** Get the mos story related to the runningOrder */
 	getStoryForRunningOrder: () => MOS.IMOSRunningOrder
 	formatDateAsTimecode: (time: number) => string
 	formatDurationAsTimecode: (time: number) => string
