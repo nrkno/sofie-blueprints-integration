@@ -6,7 +6,8 @@ import {
 	IBlueprintSegmentLineAdLibItem,
 	BlueprintRuntimeArguments,
 	IMessageBlueprintSegmentLine,
-	IBlueprintSegment
+	IBlueprintSegment,
+	IBlueprintSegmentLine
 } from './runningOrder'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
@@ -113,10 +114,8 @@ export interface SegmentLineContext extends RunningOrderContext {
 
 	getRuntimeArguments: () => BlueprintRuntimeArguments
 
-	// TODO - remove these getSegmentLine* as it could cause problems when moving a sl
-	// getSegmentLines: () => Array<IMessageBlueprintSegmentLine>
-	/** Get the index number of this SegmentLine */
-	getSegmentLineIndex: () => number
+	getIsFirstSegmentLine: () => boolean
+	getIsLastSegmentLine: () => boolean
 }
 export interface AsRunEventContext extends RunningOrderContext {
 	readonly asRunEvent: IBlueprintAsRunLogEvent
@@ -141,7 +140,7 @@ export interface BaselineResult {
 }
 
 export interface StoryResult {
-	segmentLine: IMessageBlueprintSegmentLine
+	segmentLine: IBlueprintSegmentLine
 	segmentLineItems: IBlueprintSegmentLineItem[]
 	adLibItems: IBlueprintSegmentLineAdLibItem[]
 }
