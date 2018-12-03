@@ -114,7 +114,9 @@ export interface SegmentLineContext extends RunningOrderContext {
 
 	getRuntimeArguments: () => BlueprintRuntimeArguments
 
+	/** Return true if segmentLine is the first in the Segment */
 	getIsFirstSegmentLine: () => boolean
+	/** Return true if segmentLine is the last in the Segment */
 	getIsLastSegmentLine: () => boolean
 }
 export interface AsRunEventContext extends RunningOrderContext {
