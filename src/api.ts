@@ -61,15 +61,15 @@ export interface BlueprintManifest {
 
 	// Events
 
-	onRunningOrderActivate?: (context: EventContext & RunningOrderContext) => void | Promise<void>
-	onRunningOrderFirstTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
-	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContext) => void | Promise<void>
+	onRunningOrderActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
+	onRunningOrderFirstTake?: (context: EventContext & SegmentLineContext) => Promise<void>
+	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
 
 	/** Called after a Take action */
-	onPreTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
-	onPostTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
+	onPreTake?: (context: EventContext & SegmentLineContext) => Promise<void>
+	onPostTake?: (context: EventContext & SegmentLineContext) => Promise<void>
 	/** Called after an as-run event is created */
-	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]> | IBlueprintExternalMessageQueueObj[]
+	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
 
 }
 
