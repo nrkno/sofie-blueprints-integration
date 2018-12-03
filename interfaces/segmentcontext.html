@@ -913,7 +913,13 @@ img { max-width: 100%; }
 			<a href="segmentcontext.html" class="tsd-kind-icon">Segment<wbr>Context</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="segmentcontext.html#error" class="tsd-kind-icon">error</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="segmentcontext.html#gethashid" class="tsd-kind-icon">get<wbr>Hash<wbr>Id</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="segmentcontext.html#getnotes" class="tsd-kind-icon">get<wbr>Notes</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a href="segmentcontext.html#getsegmentlines" class="tsd-kind-icon">get<wbr>Segment<wbr>Lines</a>
@@ -935,6 +941,9 @@ img { max-width: 100%; }
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="segmentcontext.html#unhashid" class="tsd-kind-icon">unhash<wbr>Id</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="segmentcontext.html#warning" class="tsd-kind-icon">warning</a>
 				</li>
 			</ul>
 		</li>
@@ -962,7 +971,9 @@ img { max-width: 100%; }
 					<section class="tsd-index-section tsd-is-external">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#error" class="tsd-kind-icon">error</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#gethashid" class="tsd-kind-icon">get<wbr>Hash<wbr>Id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#getnotes" class="tsd-kind-icon">get<wbr>Notes</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="segmentcontext.html#getsegmentlines" class="tsd-kind-icon">get<wbr>Segment<wbr>Lines</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#getshowstyleconfig" class="tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Config</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#getstudioconfig" class="tsd-kind-icon">get<wbr>Studio<wbr>Config</a></li>
@@ -970,6 +981,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#runningorderid" class="tsd-kind-icon">running<wbr>Order<wbr>Id</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="segmentcontext.html#segment" class="tsd-kind-icon">segment</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#unhashid" class="tsd-kind-icon">unhash<wbr>Id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="segmentcontext.html#warning" class="tsd-kind-icon">warning</a></li>
 						</ul>
 					</section>
 				</div>
@@ -978,13 +990,45 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="error" class="tsd-anchor"></a>
+				<h3>error</h3>
+				<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#error">error</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L95">api.ts:95</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 				<a name="gethashid" class="tsd-anchor"></a>
 				<h3>get<wbr>Hash<wbr>Id</h3>
 				<div class="tsd-signature tsd-kind-icon">get<wbr>Hash<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="icommoncontext.html">ICommonContext</a>.<a href="icommoncontext.html#gethashid">getHashId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L89">api.ts:89</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L90">api.ts:90</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1014,13 +1058,39 @@ img { max-width: 100%; }
 					</ul>
 				</div>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="getnotes" class="tsd-anchor"></a>
+				<h3>get<wbr>Notes</h3>
+				<div class="tsd-signature tsd-kind-icon">get<wbr>Notes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#getnotes">getNotes</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L97">api.ts:97</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 				<a name="getsegmentlines" class="tsd-anchor"></a>
 				<h3>get<wbr>Segment<wbr>Lines</h3>
 				<div class="tsd-signature tsd-kind-icon">get<wbr>Segment<wbr>Lines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L109">api.ts:109</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L110">api.ts:110</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1046,7 +1116,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#getshowstyleconfig">getShowStyleConfig</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L104">api.ts:104</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L105">api.ts:105</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1077,7 +1147,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#getstudioconfig">getStudioConfig</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L103">api.ts:103</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L104">api.ts:104</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1108,7 +1178,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#runningorder">runningOrder</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L101">api.ts:101</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L102">api.ts:102</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1119,7 +1189,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#runningorderid">runningOrderId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L100">api.ts:100</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L101">api.ts:101</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1129,7 +1199,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">segment<span class="tsd-signature-symbol">:</span> <a href="iblueprintsegment.html" class="tsd-signature-type">IBlueprintSegment</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L108">api.ts:108</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L109">api.ts:109</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1140,7 +1210,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="icommoncontext.html">ICommonContext</a>.<a href="icommoncontext.html#unhashid">unhashId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/beb6878/src/api.ts#L91">api.ts:91</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L92">api.ts:92</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1164,6 +1234,38 @@ img { max-width: 100%; }
 										</li>
 									</ul>
 									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="warning" class="tsd-anchor"></a>
+				<h3>warning</h3>
+				<div class="tsd-signature tsd-kind-icon">warning<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#warning">warning</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6de6263/src/api.ts#L96">api.ts:96</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 								</li>
 							</ul>
 						</li>
