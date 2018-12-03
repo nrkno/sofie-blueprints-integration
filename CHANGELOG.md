@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.2"></a>
+## [0.6.2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.6.1...0.6.2) (2018-12-03)
+
+
+### Bug Fixes
+
+* SegmentLineContext typings ([f98765c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f98765c))
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.6.0...0.6.1) (2018-11-30)
 
