@@ -6,7 +6,8 @@ import {
 	IBlueprintSegmentLineAdLibItem,
 	BlueprintRuntimeArguments,
 	IMessageBlueprintSegmentLine,
-	IBlueprintSegment
+	IBlueprintSegment,
+	IBlueprintSegmentLine
 } from './runningOrder'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
@@ -61,13 +62,13 @@ export interface BlueprintManifest {
 
 	// Events
 
-	onRunningOrderActivate?: (context: EventContext & RunningOrderContext) => void | Promise<void>
-	onRunningOrderFirstTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
-	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContext) => void | Promise<void>
+	onRunningOrderActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
+	onRunningOrderFirstTake?: (context: EventContext & SegmentLineContext) => Promise<void>
+	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
 
 	/** Called after a Take action */
-	onPreTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
-	onPostTake?: (context: EventContext & SegmentLineContext) => void | Promise<void>
+	onPreTake?: (context: EventContext & SegmentLineContext) => Promise<void>
+	onPostTake?: (context: EventContext & SegmentLineContext) => Promise<void>
 	/** Called after an as-run event is created */
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
 
@@ -90,13 +91,13 @@ export interface ICommonContext {
 	/** Un-hash, is return the string that created the hash */
 	unhashId: (hash: string) => string
 }
-export interface NotesContext {
+export interface NotesContext extends ICommonContext {
 	error: (message: string) => void
 	warning: (message: string) => void
 	getNotes: () => Array<any>
 }
 
-export interface RunningOrderContext extends ICommonContext {
+export interface RunningOrderContext extends NotesContext {
 	readonly runningOrderId: string
 	readonly runningOrder: IBlueprintRunningOrder
 
@@ -113,10 +114,8 @@ export interface SegmentLineContext extends RunningOrderContext {
 
 	getRuntimeArguments: () => BlueprintRuntimeArguments
 
-	// TODO - remove these getSegmentLine* as it could cause problems when moving a sl
-	// getSegmentLines: () => Array<IMessageBlueprintSegmentLine>
-	/** Get the index number of this SegmentLine */
-	getSegmentLineIndex: () => number
+	getIsFirstSegmentLine: () => boolean
+	getIsLastSegmentLine: () => boolean
 }
 export interface AsRunEventContext extends RunningOrderContext {
 	readonly asRunEvent: IBlueprintAsRunLogEvent
@@ -141,7 +140,7 @@ export interface BaselineResult {
 }
 
 export interface StoryResult {
-	segmentLine: IMessageBlueprintSegmentLine
+	segmentLine: IBlueprintSegmentLine
 	segmentLineItems: IBlueprintSegmentLineItem[]
 	adLibItems: IBlueprintSegmentLineAdLibItem[]
 }
