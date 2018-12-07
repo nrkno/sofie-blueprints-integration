@@ -1,4 +1,8 @@
+import { Time } from './common'
+
 export interface IBlueprintAsRunLogEvent {
+	_id: string
+
 	studioId: string,
 	runningOrderId: string,
 	segmentId?: string,
@@ -14,7 +18,7 @@ export interface IBlueprintAsRunLogEvent {
 	metadata?: any
 
 	/** Timestamp of the event */
-	timestamp: number
+	timestamp: Time
 	/** If the event was done in rehersal */
 	rehersal: boolean,
 }
