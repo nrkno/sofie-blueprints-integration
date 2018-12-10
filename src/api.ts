@@ -124,14 +124,27 @@ export interface AsRunEventContext extends RunningOrderContext {
 
 	/** Get all asRunEvents in the runningOrder */
 	getAllAsRunEvents (): Array<IBlueprintAsRunLogEvent>
+	/** Get all segments in this runningOrder */
+	getSegments (): Array<IBlueprintSegment>
+	/**
+	 * Returns a segment
+	 * @param id Id of segment to fetch. If is omitted, return the segment related to this AsRunEvent
+	 */
+	getSegment (id?: string): IBlueprintSegment | undefined
+
 	/** Get all segmentLines in this runningOrder */
 	getSegmentLines (): Array<IMessageBlueprintSegmentLine>
-	/** Get the segmentLine related to thie AsRunEvent */
-	getSegmentLine (): IMessageBlueprintSegmentLine | undefined
-	/** Get the mos story related to a segmentLine */
-	getStoryForSegmentLine (segmentLine: IMessageBlueprintSegmentLine): MOS.IMOSROFullStory
+	/**
+	 * Returns a segmentLine.
+	 * @param id Id of segmentLine to fetch. If is omitted, return the segmentLine related to this AsRunEvent
+	 */
+	getSegmentLine (id?: string): IMessageBlueprintSegmentLine | undefined
+
 	/** Get the mos story related to the runningOrder */
 	getStoryForRunningOrder: () => MOS.IMOSRunningOrder
+	/** Get the mos story related to a segmentLine */
+	getStoryForSegmentLine (segmentLine: IMessageBlueprintSegmentLine): MOS.IMOSROFullStory
+
 	formatDateAsTimecode: (time: number) => string
 	formatDurationAsTimecode: (time: number) => string
 }
