@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.7.0...0.8.0) (2018-12-11)
+
+
+### Bug Fixes
+
+* add missing enum export ([2e74bc0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2e74bc0))
+
+
+### Features
+
+* add asRunEvent methods ([92772c4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/92772c4))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.6.2...0.7.0) (2018-12-10)
 
