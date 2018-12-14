@@ -128,7 +128,7 @@ export interface AsRunEventContext extends RunningOrderContext {
 	getSegments (): Array<IBlueprintSegment>
 	/**
 	 * Returns a segment
-	 * @param id Id of segment to fetch. If is omitted, return the segment related to this AsRunEvent
+	 * @param id Id of segment to fetch. If omitted, return the segment related to this AsRunEvent
 	 */
 	getSegment (id?: string): IBlueprintSegment | undefined
 
@@ -136,9 +136,19 @@ export interface AsRunEventContext extends RunningOrderContext {
 	getSegmentLines (): Array<IMessageBlueprintSegmentLine>
 	/**
 	 * Returns a segmentLine.
-	 * @param id Id of segmentLine to fetch. If is omitted, return the segmentLine related to this AsRunEvent
+	 * @param id Id of segmentLine to fetch. If omitted, return the segmentLine related to this AsRunEvent
 	 */
 	getSegmentLine (id?: string): IMessageBlueprintSegmentLine | undefined
+	/**
+	 * Returns a segmentLineItem.
+	 * @param id Id of segmentLineItem to fetch. If omitted, return the segmentLineItem related to this AsRunEvent
+	 */
+	getSegmentLineItem (segmentLineItemId?: string): IBlueprintSegmentLineItem | undefined
+	/**
+	 * Returns segmentLineItems in a segmentLine
+	 * @param id Id of segmentLine to fetch items in
+	 */
+	getSegmentLineItems (segmentLineId: string): Array<IBlueprintSegmentLineItem>
 
 	/** Get the mos story related to the runningOrder */
 	getStoryForRunningOrder: () => MOS.IMOSRunningOrder
