@@ -2,14 +2,15 @@
 
 import { MosString128 } from './mosString128'
 import { MosDuration } from './mosDuration'
-import { IMOSExternalMetaData } from './mosExternalMetaData'
+import { IMOSExternalMetaData, IMOSScope } from './mosExternalMetaData'
 import { MosTime } from './mosTime'
 
 export {
 	MosString128,
 	MosDuration,
 	IMOSExternalMetaData,
-	MosTime
+	MosTime,
+	IMOSScope
 }
 
 // api.ts:  -------------------------------------------------------------------

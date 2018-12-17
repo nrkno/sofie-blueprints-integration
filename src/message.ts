@@ -15,10 +15,12 @@ export enum IBlueprintExternalMessageQueueType {
 export interface ExternalMessageQueueObjSOAP extends IBlueprintExternalMessageQueueObj {
 	type: IBlueprintExternalMessageQueueType.SOAP
 	receiver: {
+		/** SOAP URL endpoint to send message to */
 		url: string
 	}
 	message: {
-		fcn: string, // which soap function to execute
+		/** Which SOAP function to execute */
+		fcn: string
 		clip_key: ExternalMessageQueueObjSOAPMessageAttrOrFcn
 		clip: ExternalMessageQueueObjSOAPMessageAttrOrFcn
 	}
@@ -41,20 +43,24 @@ export interface ExternalMessageQueueObjSOAPMessageAttrFcn {
 
 export interface ExternalMessageQueueObjSlack extends IBlueprintExternalMessageQueueObj {
 	type: IBlueprintExternalMessageQueueType.SLACK
-	receiver: string // slack webhook URL
-
+	/** Slack Webhook URL */
+	receiver: string
+	/** Message to send to Slack */
 	message: string
 }
 
 export interface ExternalMessageQueueObjRabbitMQ extends IBlueprintExternalMessageQueueObj {
 	type: IBlueprintExternalMessageQueueType.RABBIT_MQ
 	receiver: {
+		/** RabbitMQ host endpoint */
 		host: string,
+		/** RabbitMQ topic */
 		topic: string
 	}
-
 	message: {
+		/** RabbitMQ routing key */
 		routingKey: string
+		/** Message to send */
 		message: string
 	}
 }

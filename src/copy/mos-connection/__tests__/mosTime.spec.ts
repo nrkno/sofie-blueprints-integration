@@ -18,8 +18,9 @@ describe('mos-connection MosTime', () => {
 	], MosTime, OriginalMosTime, 'MosTime', ['toString', 'getTime'])
 
 	test('MosDuration', () => {
-		let v0 = new MosTime(new Date())
-		let v1 = new OriginalMosTime(new Date())
+		let d = new Date()
+		let v0 = new MosTime(d)
+		let v1 = new OriginalMosTime(d)
 		expect(v0.toString()).toEqual(v1.toString())
 	})
 })
