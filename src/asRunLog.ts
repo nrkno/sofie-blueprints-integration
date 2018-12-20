@@ -11,7 +11,7 @@ export interface IBlueprintAsRunLogEvent {
 	timelineObjectId?: string
 
 	/** Name/id of the content */
-	content: string
+	content: IBlueprintAsRunLogEventContent
 	/** Name/id of the sub-content */
 	content2?: string
 	/** Metadata about the content */
@@ -21,4 +21,8 @@ export interface IBlueprintAsRunLogEvent {
 	timestamp: Time
 	/** If the event was done in rehersal */
 	rehersal: boolean,
+}
+export enum IBlueprintAsRunLogEventContent {
+	STARTEDPLAYBACK = 'startedPlayback',
+	STOPPEDPLAYBACK = 'stoppedPlayback'
 }
