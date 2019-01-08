@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.8.0...0.9.0) (2019-01-08)
+
+
+### Bug Fixes
+
+* add AsRunLogEventContent ([11a2cf0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/11a2cf0))
+
+
+### Features
+
+* add mediaFlowId to VTContent ([8e505b4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/8e505b4))
+* asRunEventContext: add getSegmentLineItem & getSegmentLineItem ([bc1e58c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/bc1e58c))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.7.0...0.8.0) (2018-12-11)
 
