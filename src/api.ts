@@ -100,9 +100,15 @@ export interface NotesContext extends ICommonContext {
 export interface RunningOrderContext extends NotesContext {
 	readonly runningOrderId: string
 	readonly runningOrder: IBlueprintRunningOrder
-
+	/** Returns a map of the studio configs */
 	getStudioConfig: () => {[key: string]: ConfigItemValue}
+	/** Returns a reference to a studio config value, that can later be resolved in Core */
+	getStudioConfigRef (configKey: string): string
+
+	/** Returns a map of the ShowStyle configs */
 	getShowStyleConfig: () => {[key: string]: ConfigItemValue}
+	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
+	getShowStyleRef (configKey: string): string
 
 }
 export interface SegmentContext extends RunningOrderContext {
