@@ -14,7 +14,7 @@ export interface BlueprintMappings extends Mappings {
 	[layerName: string]: BlueprintMapping
 }
 export interface BlueprintMapping extends Mapping {
-	/** @todo: write documentation about lookahead */
+	/** What method core should use to create lookahead objects for this layer */
 	lookahead: LookaheadMode
 }
 

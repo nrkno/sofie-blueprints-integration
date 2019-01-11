@@ -65,6 +65,11 @@ export interface IBlueprintSegmentLine {
 	holdMode?: SegmentLineHoldMode
 
 	updateStoryStatus?: boolean
+
+	/** Classes to set on the TimelineGroupObj for this SL */
+	classes?: string[]
+	/** Classes to set on the TimelineGroupObj for the following SL */
+	classesForNext?: string[]
 }
 
 export interface IMessageBlueprintSegmentLine extends IBlueprintSegmentLine {

@@ -35,9 +35,8 @@ export enum TimelineObjHoldMode {
 }
 
 export interface TimelineObjectCoreExt extends Timeline.TimelineObject {
-	originalLLayer?: string | number // TODO- should this be exposed?
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode
-	isAbstract?: boolean // TODO- should this be exposed?
-	isBackground?: boolean // TODO- should this be exposed?
+	/** Whether the object is abstract, and should not be routed to a playout device */
+	isAbstract?: boolean
 }
