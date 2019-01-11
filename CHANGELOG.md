@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.9.0...0.10.0) (2019-01-11)
+
+
+### Bug Fixes
+
+* Tidy todos ([1744867](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/1744867))
+
+
+### Features
+
+* Add classes arrays to SegmentLine ([0911caf](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0911caf))
+* add ConfigRef function, to be able to reference config values, instead of using the values directly (can be used for usernames & passwords in metadata message flow) ([efa467e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/efa467e))
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.8.0...0.9.0) (2019-01-08)
 
