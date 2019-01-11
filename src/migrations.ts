@@ -56,7 +56,7 @@ export interface MigrationContextStudio {
 	removeDevice: (deviceId: string) => void
 }
 
-export interface ShowStyleVariantPart { // TODO - is this needed or can it share base props with the main exposed interface?
+export interface ShowStyleVariantPart { // Note: if more props are added it may make sense to use Omit<> to build this type
 	name: string
 }
 export interface MigrationContextShowStyle {
