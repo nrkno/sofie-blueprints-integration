@@ -59,6 +59,7 @@ export interface VTContent extends BaseContent {
 	sourceDuration: number
 	metadata?: Array<MetadataElement>
 	timelineObjects: Array<TimelineObjectCoreExt>
+	seek?: number
 }
 
 export interface CameraContent extends BaseContent {
