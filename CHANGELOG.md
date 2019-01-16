@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.11.0"></a>
+# [0.11.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.10.0...0.11.0) (2019-01-16)
+
+
+### Features
+
+* **migrations:** Add show style runtime arguments to migrations ([b9d055b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b9d055b))
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.9.0...0.10.0) (2019-01-11)
 
