@@ -21,6 +21,14 @@ export interface BlueprintRuntimeArguments {
 	[key: string]: string
 }
 
+export interface IBlueprintRuntimeArgumentsItem {
+	_id: string
+	label?: string
+	hotkeys: string
+	property: string
+	value: string
+}
+
 export interface IBlueprintSegment {
 	_id: string
 	/** Position inside running order */

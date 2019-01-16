@@ -60,6 +60,7 @@ export interface VTContent extends BaseContent {
 	metadata?: Array<MetadataElement>
 	timelineObjects: Array<TimelineObjectCoreExt>
 	mediaFlowId?: string
+	seek?: number
 }
 
 export interface CameraContent extends BaseContent {
