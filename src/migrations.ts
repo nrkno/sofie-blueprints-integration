@@ -7,6 +7,7 @@ import {
 } from './showStyle'
 import { ConfigItemValue } from './common'
 import { DeviceOptions } from 'timeline-state-resolver-types'
+import { IBlueprintRuntimeArgumentsItem } from './runningOrder'
 
 export interface MigrationStepInput {
 	stepId?: string // automatically filled in later
@@ -68,12 +69,12 @@ export interface MigrationContextShowStyle {
 	removeVariant: (variantId: string) => void
 
 	getSourceLayer: (sourceLayerId: string) => ISourceLayer | undefined
-	insertSourceLayer: (layer: ISourceLayer) => string
+	insertSourceLayer: (sourceLayerId: string, layer: OmitId<ISourceLayer>) => string
 	updateSourceLayer: (sourceLayerId: string, layer: Partial<ISourceLayer>) => void
 	removeSourceLayer: (sourceLayerId: string) => void
 
 	getOutputLayer: (outputLayerId: string) => IOutputLayer | undefined
-	insertOutputLayer: (layer: IOutputLayer) => string
+	insertOutputLayer: (outputLayerId: string, layer: OmitId<IOutputLayer>) => string
 	updateOutputLayer: (outputLayerId: string, layer: Partial<IOutputLayer>) => void
 	removeOutputLayer: (outputLayerId: string) => void
 
@@ -84,6 +85,11 @@ export interface MigrationContextShowStyle {
 	getVariantConfig: (variantId: string, configId: string) => ConfigItemValue | undefined
 	setVariantConfig: (variantId: string, configId: string, value: ConfigItemValue) => void
 	removeVariantConfig: (variantId: string, configId: string) => void
+
+	getRuntimeArgument: (argumentId: string) => IBlueprintRuntimeArgumentsItem | undefined
+	insertRuntimeArgument: (argumentId: string, argument: IBlueprintRuntimeArgumentsItem) => void
+	updateRuntimeArgument: (argumentId: string, argument: Partial<OmitId<IBlueprintRuntimeArgumentsItem>>) => void
+	removeRuntimeArgument: (argumentId: string) => void
 }
 
 export interface MigrationStepBase {
