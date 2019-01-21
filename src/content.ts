@@ -59,7 +59,7 @@ export interface VTContent extends BaseContent {
 	sourceDuration: number
 	metadata?: Array<MetadataElement>
 	timelineObjects: Array<TimelineObjectCoreExt>
-	mediaFlowId?: string
+	mediaFlowIds?: string[]
 	seek?: number
 }
 

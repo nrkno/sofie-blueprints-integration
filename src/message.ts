@@ -62,5 +62,7 @@ export interface ExternalMessageQueueObjRabbitMQ extends IBlueprintExternalMessa
 		routingKey: string
 		/** Message to send */
 		message: string
+		/** Message headers to send */
+		headers: {[key: string]: string}
 	}
 }
