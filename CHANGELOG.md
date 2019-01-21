@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.11.0...0.12.0) (2019-01-21)
+
+
+### Bug Fixes
+
+* Add tsr-types as a dev dependency to fix build issues ([159cb59](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/159cb59))
+* Change tsr-types to a peer dependency, to allow other versions of tsr-types to be used in projects ([e76029b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/e76029b))
+
+
+### Features
+
+* add header ([f51ee9b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f51ee9b))
+* change mediaFlowId into mediaFlowIds ([fcaad98](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/fcaad98))
+
+
+
 <a name="0.11.0"></a>
 # [0.11.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.10.0...0.11.0) (2019-01-16)
 
