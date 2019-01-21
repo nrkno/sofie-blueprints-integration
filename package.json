@@ -68,9 +68,11 @@
   },
   "dependencies": {
     "moment": "^2.22.2",
-    "timeline-state-resolver-types": "^1.5.0",
     "tslib": "^1.9.3",
     "underscore": "^1.9.1"
+  },
+  "peerDependencies": {
+	"timeline-state-resolver-types": "^1.5.0"
   },
   "standard-version": {
     "message": "chore(release): %s [skip ci]",
