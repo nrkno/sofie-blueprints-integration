@@ -108,7 +108,7 @@ export interface RunningOrderContext extends NotesContext {
 	/** Returns a map of the ShowStyle configs */
 	getShowStyleConfig: () => {[key: string]: ConfigItemValue}
 	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
-	getShowStyleRef (configKey: string): string
+	getShowStyleConfigRef (configKey: string): string
 
 }
 export interface SegmentContext extends RunningOrderContext {
