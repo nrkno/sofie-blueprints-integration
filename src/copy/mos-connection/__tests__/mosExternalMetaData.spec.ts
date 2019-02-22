@@ -34,6 +34,7 @@ describe('mos-connection MosExternalMetaData', () => {
 			}
 		}
 	}
+	o2 = o2
 
 	testClass([
 		o

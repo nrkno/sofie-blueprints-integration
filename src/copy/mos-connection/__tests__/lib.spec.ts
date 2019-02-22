@@ -10,6 +10,7 @@ export function testClass (values: Array<any>, Class0, Class1, name, extraKeys?:
 			let err1
 			try {
 				let _tmp = new Class1(value)
+				_tmp = _tmp
 			} catch (err) {
 				err1 = err
 			}
