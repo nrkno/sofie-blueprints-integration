@@ -138,6 +138,9 @@ export interface IBlueprintSegmentLineItem {
 	isTransition?: boolean
 	infiniteMode?: SegmentLineItemLifespan
 	extendOnHold?: boolean
+
+	/** Duration to preroll/overlap when running this sli as an adlib */
+	adlibPreroll?: number
 }
 export interface IBlueprintSegmentLineAdLibItem {
 	_rank: number
@@ -157,6 +160,9 @@ export interface IBlueprintSegmentLineAdLibItem {
 	content?: SomeContent
 
 	infiniteMode?: SegmentLineItemLifespan
+
+	/** Duration to preroll/overlap when running this adlib */
+	adlibPreroll?: number
 }
 
 export enum SegmentLineItemLifespan {
