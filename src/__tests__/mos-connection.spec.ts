@@ -18,8 +18,8 @@ describe('mos-connection', () => {
 
 	_.each(keys, (typeName: string) => {
 		test('Enumarable type "' + typeName + '"', () => {
-			let type = Local[typeName]
-			let originalType = Original[typeName]
+			let type = (Local as any)[typeName]
+			let originalType = (Original as any)[typeName]
 			if (_.isUndefined(type) && _.isUndefined(originalType)) {
 				expect(1).toEqual(1)
 			} else if (_.isFunction(type)) {
