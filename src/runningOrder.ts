@@ -78,6 +78,9 @@ export interface IBlueprintSegmentLine {
 	classes?: string[]
 	/** Classes to set on the TimelineGroupObj for the following SL */
 	classesForNext?: string[]
+
+	displayDurationGroup?: string
+	displayDuration?: number
 }
 
 export interface IMessageBlueprintSegmentLine extends IBlueprintSegmentLine {
