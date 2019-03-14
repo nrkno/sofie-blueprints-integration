@@ -2,18 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [0.13.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.12.0...0.13.0) (2019-02-22)
-
-
-### Bug Fixes
-
-* rename badly named method ([b080e02](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b080e02))
-* tests ([57c80c4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/57c80c4))
-
-
-### Features
-
-* Add adlibPreroll field to SLI, to allow them to overlap in a similar way to how SL do currently (to give the SLI preparation time before being visible) ([20c8542](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/20c8542))
+## [0.13.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.13.0...0.13.1) (2019-03-14)
 
 
 
