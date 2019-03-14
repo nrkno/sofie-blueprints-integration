@@ -176,6 +176,9 @@ export interface StoryResult {
 	adLibItems: IBlueprintSegmentLineAdLibItem[]
 }
 
+export type IBlueprintPostProcessSegmentLine = Pick<IBlueprintSegmentLine, '_id' | 'displayDurationGroup'>
+
 export interface PostProcessResult {
 	segmentLineItems: IBlueprintSegmentLineItem[]
+	segmentLineUpdates: IBlueprintPostProcessSegmentLine[]
 }
