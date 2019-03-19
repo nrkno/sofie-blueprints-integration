@@ -1,9 +1,9 @@
-export function testClass (values: Array<any>, Class0, Class1, name, extraKeys?: Array<string>) {
+export function testClass (values: Array<any>, Class0: any, Class1: any, name: string, extraKeys?: Array<string>) {
 
 	for (let i in values) {
 		let value = values[i]
 
-		let v0
+		let v0: any
 		try {
 			v0 = new Class0(value)
 		} catch (err0) {
