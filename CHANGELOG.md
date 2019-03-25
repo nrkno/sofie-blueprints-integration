@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.15.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.14.1...0.15.0) (2019-03-25)
+
+
+### Features
+
+* Add support for enum config types ([429ae1c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/429ae1c))
+
+
+
 ## [0.14.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.14.0...0.14.1) (2019-03-19)
 
 
