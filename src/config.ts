@@ -3,13 +3,15 @@ import { ConfigItemValue } from './common'
 export enum ConfigManifestEntryType {
 	STRING = 'string',
 	NUMBER = 'number',
-	BOOLEAN = 'boolean'
+	BOOLEAN = 'boolean',
+	ENUM = 'enum'
 }
 export interface ConfigManifestEntry {
 	id: string
 	name: string
 	description: string
 	type: ConfigManifestEntryType
-	required: boolean,
+	options?: string[]
+	required: boolean
 	defaultVal: ConfigItemValue
 }

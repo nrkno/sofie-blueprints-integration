@@ -16,6 +16,7 @@ export interface MigrationStepInput {
 	inputType: 'text' | 'multiline' | 'int' | 'checkbox' | 'dropdown' | 'switch' | null // EditAttribute types, null = dont display edit field
 	attribute: string | null
 	defaultValue?: any
+	dropdownOptions?: string[]
 }
 export interface MigrationStepInputResult {
 	stepId: string
