@@ -58,6 +58,8 @@ export interface IBlueprintSegmentLine {
 	transitionPrerollDuration?: number | null
 	/** How long to keep the old sl alive during the transition */
 	transitionKeepaliveDuration?: number | null
+	/** How long the transition is active for */
+	transitionDuration?: number | null
 	/** Should we block a transition at the out of this SegmentLine */
 	disableOutTransition?: boolean
 
