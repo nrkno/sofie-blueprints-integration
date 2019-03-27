@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.16.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.15.0...0.16.0) (2019-03-27)
+
+
+### Features
+
+* Add transitionDuration to SegmentLine ([f7337bf](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f7337bf))
+
+
+
 # [0.15.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.14.1...0.15.0) (2019-03-25)
 
 
