@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.17.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.16.0...0.17.0) (2019-04-01)
+
+
+### Features
+
+* invalid segmentLine & AdLib ([97cdd2d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/97cdd2d))
+
+
+
 # [0.16.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.15.0...0.16.0) (2019-03-27)
 
 
