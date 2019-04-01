@@ -83,6 +83,9 @@ export interface IBlueprintSegmentLine {
 
 	displayDurationGroup?: string
 	displayDuration?: number
+
+	/** When something bad has happened, we can mark the SL as invalid, which will prevent the user from TAKE:ing it */
+	invalid?: boolean
 }
 
 export interface IMessageBlueprintSegmentLine extends IBlueprintSegmentLine {
@@ -168,6 +171,9 @@ export interface IBlueprintSegmentLineAdLibItem {
 
 	/** Duration to preroll/overlap when running this adlib */
 	adlibPreroll?: number
+
+	/** When something bad has happened, we can mark the AdLib as invalid, which will prevent the user from TAKE:ing it */
+	invalid?: boolean
 }
 
 export enum SegmentLineItemLifespan {
