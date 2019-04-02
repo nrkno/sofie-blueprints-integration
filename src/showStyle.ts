@@ -2,6 +2,8 @@ import { IConfigItem } from './common'
 import { SourceLayerType } from './content'
 
 export interface IBlueprintShowStyleBase {
+	_id: string
+
 	/** "Outputs" in the UI */
 	outputLayers: Array<IOutputLayer>
 	/** "Layers" in the GUI */
