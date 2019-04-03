@@ -48,9 +48,6 @@ export interface BlueprintManifestBase {
 export interface SystemBlueprintManifest extends BlueprintManifestBase {
 	blueprintType: BlueprintManifestType.SYSTEM
 
-	// TODO - should this have studio migrations?
-
-	// TODO
 }
 
 export interface StudioBlueprintManifest extends BlueprintManifestBase {
