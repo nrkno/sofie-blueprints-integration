@@ -20,7 +20,7 @@ import {
 	IBlueprintShowStyleVariant
 } from './showStyle'
 import { IBlueprintAsRunLogEvent } from './asRunLog'
-import { BlueprintMappings } from './studio';
+import { BlueprintMappings } from './studio'
 
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
