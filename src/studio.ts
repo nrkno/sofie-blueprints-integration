@@ -1,4 +1,4 @@
-import { IConfigItem } from './common'
+// import { IConfigItem } from './common'
 import {
 	Mappings, Mapping
 } from 'timeline-state-resolver-types'
@@ -27,7 +27,7 @@ export interface IBlueprintStudioInstallation {
 	mappings: BlueprintMappings
 
 	/** Config values are used by the Blueprints */
-	config: Array<IConfigItem>
+	// config: Array<IConfigItem>
 
 	// runtimeArguments?: Array<IStudioRuntimeArgumentsItem>
 }

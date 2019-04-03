@@ -20,6 +20,7 @@ import {
 	IBlueprintShowStyleVariant
 } from './showStyle'
 import { IBlueprintAsRunLogEvent } from './asRunLog'
+import { BlueprintMappings } from './studio';
 
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
@@ -115,6 +116,8 @@ export interface EventContext {
 }
 
 export interface IStudioContext extends IStudioConfigContext {
+	/** Get the mappings for the studio */
+	getStudioMappings: () => BlueprintMappings
 	/** Get show styles available for this studio */
 	getShowStyleBases: () => Array<IBlueprintShowStyleBase>
 	/** Get variants for this showStyleBase */
