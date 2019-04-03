@@ -22,9 +22,9 @@ import {
 import { IBlueprintAsRunLogEvent } from './asRunLog'
 
 export enum BlueprintManifestType {
-	SYSTEM,
-	STUDIO,
-	SHOWSTYLE
+	SYSTEM = 'system',
+	STUDIO = 'studio',
+	SHOWSTYLE = 'showstyle'
 }
 
 export type BlueprintManifestSet = { [id: string]: string }
@@ -64,12 +64,7 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getBaseline: (context: IStudioContext) => Timeline.TimelineObject[]
 
 	/** Returns the id of the show style to use for a running order */
-	getShowStyleId: (context: IStudioContext, story: MOS.IMOSRunningOrder) => ShowStyleResult | null
-}
-
-export interface ShowStyleResult {
-	showStyleId: string
-	variantId: string
+	getShowStyleVariantId: (context: IStudioContext, story: MOS.IMOSRunningOrder) => string | null
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -123,7 +118,9 @@ export interface IStudioContext extends IStudioConfigContext {
 	/** Get show styles available for this studio */
 	getShowStyleBases: () => Array<IBlueprintShowStyleBase>
 	/** Get variants for this showStyleBase */
-	getVariants: (showStyleBaseId: string) => Array<IBlueprintShowStyleVariant>
+	getShowStyleVariants: (showStyleBaseId: string) => Array<IBlueprintShowStyleVariant>
+	/** Translate the variant id to be the full id */
+	getShowStyleVariantId: (showStyleBase: IBlueprintShowStyleBase, variantId: string) => string
 }
 
 export interface ICommonContext {
