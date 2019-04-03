@@ -27,6 +27,9 @@ export enum BlueprintManifestType {
 	SHOWSTYLE
 }
 
+export type BlueprintManifestSet = { [id: string]: string }
+export type SomeBlueprintManifest = SystemBlueprintManifest | StudioBlueprintManifest | ShowStyleBlueprintManifest
+
 export interface BlueprintManifestBase {
 	blueprintType: BlueprintManifestType
 	// Manifest properties, to be used by Core
