@@ -26,9 +26,6 @@ export interface IBlueprintStudioInstallation {
 	/** Mappings between the physical devices / outputs and logical ones */
 	mappings: BlueprintMappings
 
-	/** RunningOrders will have this, if nothing else is specified */
-	defaultShowStyleVariant: string
-
 	/** Config values are used by the Blueprints */
 	config: Array<IConfigItem>
 
