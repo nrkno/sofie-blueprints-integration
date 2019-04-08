@@ -20,9 +20,19 @@ import {
 	IBlueprintShowStyleVariant
 } from './showStyle'
 import { IBlueprintAsRunLogEvent } from './asRunLog'
+import { BlueprintMappings } from './studio'
 
-export interface BlueprintManifest {
+export enum BlueprintManifestType {
+	SYSTEM = 'system',
+	STUDIO = 'studio',
+	SHOWSTYLE = 'showstyle'
+}
 
+export type BlueprintManifestSet = { [id: string]: string }
+export type SomeBlueprintManifest = SystemBlueprintManifest | StudioBlueprintManifest | ShowStyleBlueprintManifest
+
+export interface BlueprintManifestBase {
+	blueprintType: BlueprintManifestType
 	// Manifest properties, to be used by Core
 
 	/** Version of the blueprint */
@@ -33,6 +43,30 @@ export interface BlueprintManifest {
 	TSRVersion: string
 	/** Minimum expected version of the Sofie Core */
 	minimumCoreVersion: string
+}
+
+export interface SystemBlueprintManifest extends BlueprintManifestBase {
+	blueprintType: BlueprintManifestType.SYSTEM
+
+}
+
+export interface StudioBlueprintManifest extends BlueprintManifestBase {
+	blueprintType: BlueprintManifestType.STUDIO
+
+	/** A list of config items this blueprint expects to be available on the Studio */
+	studioConfigManifest: ConfigManifestEntry[]
+	/** A list of Migration steps related to a Studio */
+	studioMigrations: MigrationStep[]
+
+	/** Returns the items used to build the baseline (default state) of a running order */
+	getBaseline: (context: IStudioContext) => Timeline.TimelineObject[]
+
+	/** Returns the id of the show style to use for a running order */
+	getShowStyleVariantId: (context: IStudioContext, story: MOS.IMOSRunningOrder) => string | null
+}
+
+export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
+	blueprintType: BlueprintManifestType.SHOWSTYLE
 
 	/** A list of config items this blueprint expects to be available on the Studio */
 	studioConfigManifest: ConfigManifestEntry[]
@@ -50,7 +84,7 @@ export interface BlueprintManifest {
 	/** Return which runningOrders */
 	getRunningOrder?: (context: IStudioContext) => IBlueprintRunningOrder
 	/** Returns the items used to build the baseline (default state) of a running order */
-	getBaseline: (context: RunningOrderContext) => BaselineResult
+	getBaseline: (context: RunningOrderContext) => ShowStyleBaselineResult
 	/** Convert a MOS-story into the SegmentLines of Sofie internal data structure
 	 * Return the SegmentLine & the items in it
 	 */
@@ -78,11 +112,15 @@ export interface EventContext {
 	// TDB: Certain actions that can be triggered in Core by the Blueprint
 }
 
-export interface IStudioContext {
+export interface IStudioContext extends IStudioConfigContext {
+	/** Get the mappings for the studio */
+	getStudioMappings: () => BlueprintMappings
 	/** Get show styles available for this studio */
 	getShowStyleBases: () => Array<IBlueprintShowStyleBase>
 	/** Get variants for this showStyleBase */
-	getVariants: (showStyleBaseId: string) => Array<IBlueprintShowStyleVariant>
+	getShowStyleVariants: (showStyleBaseId: string) => Array<IBlueprintShowStyleVariant>
+	/** Translate the variant id to be the full id */
+	getShowStyleVariantId: (showStyleBase: IBlueprintShowStyleBase, variantId: string) => string
 }
 
 export interface ICommonContext {
@@ -97,13 +135,16 @@ export interface NotesContext extends ICommonContext {
 	getNotes: () => Array<any>
 }
 
-export interface RunningOrderContext extends NotesContext {
-	readonly runningOrderId: string
-	readonly runningOrder: IBlueprintRunningOrder
+export interface IStudioConfigContext {
 	/** Returns a map of the studio configs */
 	getStudioConfig: () => {[key: string]: ConfigItemValue}
 	/** Returns a reference to a studio config value, that can later be resolved in Core */
 	getStudioConfigRef (configKey: string): string
+}
+
+export interface RunningOrderContext extends NotesContext, IStudioConfigContext {
+	readonly runningOrderId: string
+	readonly runningOrder: IBlueprintRunningOrder
 
 	/** Returns a map of the ShowStyle configs */
 	getShowStyleConfig: () => {[key: string]: ConfigItemValue}
@@ -165,7 +206,7 @@ export interface AsRunEventContext extends RunningOrderContext {
 	formatDurationAsTimecode: (time: number) => string
 }
 
-export interface BaselineResult {
+export interface ShowStyleBaselineResult {
 	adLibItems: IBlueprintSegmentLineAdLibItem[]
 	baselineItems: Timeline.TimelineObject[]
 }

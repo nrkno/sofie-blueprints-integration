@@ -1,4 +1,3 @@
-import { IConfigItem } from './common'
 import {
 	Mappings, Mapping
 } from 'timeline-state-resolver-types'
@@ -16,21 +15,4 @@ export interface BlueprintMappings extends Mappings {
 export interface BlueprintMapping extends Mapping {
 	/** What method core should use to create lookahead objects for this layer */
 	lookahead: LookaheadMode
-}
-
-/** A set of available layer groups in a given installation */
-export interface IBlueprintStudioInstallation {
-	_id: string
-	/** User-presentable name for the studio installation */
-	name: string
-	/** Mappings between the physical devices / outputs and logical ones */
-	mappings: BlueprintMappings
-
-	/** RunningOrders will have this, if nothing else is specified */
-	defaultShowStyleVariant: string
-
-	/** Config values are used by the Blueprints */
-	config: Array<IConfigItem>
-
-	// runtimeArguments?: Array<IStudioRuntimeArgumentsItem>
 }
