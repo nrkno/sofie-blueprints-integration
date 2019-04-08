@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.18.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.17.0...0.18.0) (2019-04-08)
+
+
+### Bug Fixes
+
+* Add id to IBlueprintShowStyleBase type ([a6d8c32](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a6d8c32))
+* Add type for a set of blueprints ([0fd5cea](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0fd5cea))
+* various changes to studio blueprints ([78f3672](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/78f3672))
+
+
+### Features
+
+* Give studio blueprint access to list of mappings ([97eeb17](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/97eeb17))
+* prototype system and studio blueprints ([6e8ed67](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/6e8ed67))
+
+
+
 # [0.17.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.16.0...0.17.0) (2019-04-01)
 
 
