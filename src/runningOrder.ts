@@ -1,20 +1,27 @@
 import { Time } from './common'
 import { SomeContent } from './content'
 import { Timeline } from './timeline'
-import { MOS } from './'
 
+/** The RunningOrder generated from Blueprint */
 export interface IBlueprintRunningOrder {
-	_id: string
+	externalId: string
 	/** Rundown slug - user-presentable name */
 	name: string
 
-	/** Expected start should be set to the expected time this running order should run on air. Should be set to EditorialStart from IMOSRunningOrder */
+	/** Expected start should be set to the expected time this running order should run on air */
 	expectedStart?: Time
-	/** Expected duration of the running order - should be set to EditorialDuration from IMOSRunningOrder */
+	/** Expected duration of the running order */
 	expectedDuration?: number
 
 	/** Id of the showStyle used */
 	showStyleVariantId: string
+
+	/** Arbitrary data storage for plugins */
+	metaData?: {[key: string]: any}
+}
+/** The RunningOrder sent from Core */
+export interface IBlueprintRunningOrderDB extends IBlueprintRunningOrder {
+	_id: string
 }
 
 export interface BlueprintRuntimeArguments {
@@ -33,21 +40,24 @@ export interface IBlueprintSegment {
 	_id: string
 	/** Position inside running order */
 	_rank: number
-	/** ID of the source object in MOS */
-	mosId: string
+	/** ID of the source object in the gateway */
+	externalId: string
 	/** The running order this segment belongs to */
 	runningOrderId: string
 	/** User-presentable name (Slug) for the Title */
 	name: string
-
-	metaData?: Array<MOS.IMOSExternalMetaData>
-	status?: MOS.IMOSObjectStatus
+	/** Arbitrary data storage for plugins */
+	metaData?: {[key: string]: any}
 }
 export interface IBlueprintSegmentLine {
 	/** ID of the SegmentLine */
 	_id: string
-	/** The story Slug (like a title, but slimier) */
-	slug: string
+	externalId: string
+	/** The story title */
+	title: string
+	/** Arbitrary data storage for plugins */
+	metaData?: {[key: string]: any}
+
 	/** Should this item should progress to the next automatically */
 	autoNext?: boolean
 	/** How much to overlap on when doing autonext */
@@ -89,8 +99,6 @@ export interface IBlueprintSegmentLine {
 }
 
 export interface IMessageBlueprintSegmentLine extends IBlueprintSegmentLine {
-	/** ID of the source object in MOS */
-	mosId: string
 	/** The segment ("Title") this line belongs to */
 	segmentId: string
 
@@ -123,12 +131,15 @@ export enum SegmentLineHoldMode {
 /** A Single item in a "line": script, VT, cameras */
 export interface IBlueprintSegmentLineItem {
 	_id: string
-	/** ID of the source object in MOS */
-	mosId: string
+	/** ID of the source object in the gateway */
+	externalId: string
 	/** The segment line this item belongs to - can be undefined for global ad lib segment line items */
 	segmentLineId?: string
 	/** User-presentable name for the timeline item */
 	name: string
+	/** Arbitrary data storage for plugins */
+	metaData?: {[key: string]: any}
+
 	/** Timeline item trigger. Possibly, most of these will be manually triggered as next, but maybe some will be automatic. */
 	trigger: Timeline.TimelineTrigger
 	/** Source layer the timeline item belongs to */
@@ -152,12 +163,15 @@ export interface IBlueprintSegmentLineItem {
 }
 export interface IBlueprintSegmentLineAdLibItem {
 	_rank: number
-	/** ID of the source object in MOS */
-	mosId: string
+	/** ID of the source object in the gateway */
+	externalId: string
 	/** The segment line this item belongs to - can be undefined for global ad lib segment line items */
 	segmentLineId?: string
 	/** User-presentable name for the timeline item */
 	name: string
+	/** Arbitrary data storage for plugins */
+	metaData?: {[key: string]: any}
+
 	/** Source layer the timeline item belongs to */
 	sourceLayerId: string
   	/** Layer output this segment line item belongs to */
