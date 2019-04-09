@@ -1,5 +1,4 @@
 import { BlueprintMappings } from './studio'
-import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { ConfigItemValue } from './common'
 import {
 	IBlueprintSegmentLineDB,
@@ -39,15 +38,6 @@ export interface IStudioContext extends IStudioConfigContext {
 	getStudioMappings: () => BlueprintMappings
 }
 
-/** Show Style Base */
-
-export interface IShowStyleBaseConfigContext {
-	/** Get variants for this showStyleBase */
-	getShowStyleVariants: (showStyleBaseId: string) => Array<IBlueprintShowStyleVariant>
-	/** Translate the variant id to be the full id */
-	getShowStyleVariantId: (showStyleBase: IBlueprintShowStyleBase, variantId: string) => string
-}
-
 /** Show Style Variant */
 
 export interface IShowStyleConfigContext {
@@ -77,12 +67,12 @@ export interface PartContext extends RunningOrderContext {
 
 /** Events */
 
-export interface PartEventContext extends EventContext, RunningOrderContext {
-	readonly part: IBlueprintSegmentLineDB
-}
-
 export interface EventContext {
 	// TDB: Certain actions that can be triggered in Core by the Blueprint
+}
+
+export interface PartEventContext extends EventContext, RunningOrderContext {
+	readonly part: IBlueprintSegmentLineDB
 }
 
 export interface AsRunEventContext extends RunningOrderContext {
