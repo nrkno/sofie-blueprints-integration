@@ -11,7 +11,8 @@ import { ConfigManifestEntry } from './config'
 import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
 import { IngestRunningOrder, IngestSegment, IngestPart } from './ingest'
-import { IStudioContext, SegmentLineContext, RunningOrderContext, EventContext, AsRunEventContext } from './context'
+import { IStudioContext, PartContext, RunningOrderContext, EventContext, PartEventContext, AsRunEventContext, SegmentContext, ShowStyleContext, IStudioConfigContext } from './context'
+import { IBlueprintShowStyleVariant, IBlueprintShowStyleBase } from './showStyle'
 
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
@@ -53,7 +54,7 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getBaseline: (context: IStudioContext) => Timeline.TimelineObject[]
 
 	/** Returns the id of the show style to use for a running order, return null to ignore that RO */
-	getShowStyleId: (context: IStudioContext, ro: IngestRunningOrder) => string | null
+	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRunningOrder: IngestRunningOrder) => string | null
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -72,27 +73,30 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	// --------------------------------------------------------------
 	// Callbacks called by Core:
 
+	/** Returns the id of the show style variant to use for a running order, return null to ignore that RO */
+	getShowStyleVariantId: (context: IStudioConfigContext, showStyleVariants: Array<IBlueprintShowStyleVariant>, ingestRunningOrder: IngestRunningOrder) => string | null
+
 	/** Generate runningOrder from ingest data. return null to ignore that RO */
-	getRunningOrder: (context: IStudioContext, ingestRunningOrder: IngestRunningOrder) => BlueprintResultRunningOrder | null
+	getRunningOrder: (context: ShowStyleContext, ingestRunningOrder: IngestRunningOrder) => BlueprintResultRunningOrder
 
 	/** Generate segment from ingest data. return null to ignore that RO */
-	getSegment: (context: SegmentLineContext, ingestSegment: IngestSegment) => BlueprintResultSegment | null
+	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment | null
 
 	/** Generate Part (segmentLine) from ingest data */
-	getPart?: (context: SegmentLineContext, ingestPart: IngestPart) => BlueprintResultPart | null
+	getPart?: (context: PartContext, ingestPart: IngestPart) => BlueprintResultPart | null
 
 	// Events
 
 	onRunningOrderActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
-	onRunningOrderFirstTake?: (context: EventContext & SegmentLineContext) => Promise<void>
+	onRunningOrderFirstTake?: (context: EventContext & PartEventContext) => Promise<void>
 	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
 
 	/** Called after a Take action */
-	onPreTake?: (context: EventContext & SegmentLineContext) => Promise<void>
-	onPostTake?: (context: EventContext & SegmentLineContext) => Promise<void>
+	onPreTake?: (context: EventContext & PartEventContext) => Promise<void>
+	onPostTake?: (context: EventContext & PartEventContext) => Promise<void>
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
-	onTimelineGenerate?: (context: EventContext & SegmentLineContext, timeline: Timeline.TimelineObject[]) => Promise<Timeline.TimelineObject[]>
+	onTimelineGenerate?: (context: EventContext & RunningOrderContext, timeline: Timeline.TimelineObject[]) => Promise<Timeline.TimelineObject[]>
 
 	/** Called after an as-run event is created */
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>

@@ -5,20 +5,7 @@ import { IBlueprintRunningOrder, IBlueprintSegment, IMessageBlueprintSegmentLine
 import { IBlueprintAsRunLogEvent } from './asRunLog'
 import { IngestRunningOrder, IngestPart } from './ingest'
 
-export interface EventContext {
-	// TDB: Certain actions that can be triggered in Core by the Blueprint
-}
-
-export interface IStudioContext extends IStudioConfigContext {
-	/** Get the mappings for the studio */
-	getStudioMappings: () => BlueprintMappings
-	/** Get show styles available for this studio */
-	getShowStyleBases: () => Array<IBlueprintShowStyleBase>
-	/** Get variants for this showStyleBase */
-	getShowStyleVariants: (showStyleBaseId: string) => Array<IBlueprintShowStyleVariant>
-	/** Translate the variant id to be the full id */
-	getShowStyleVariantId: (showStyleBase: IBlueprintShowStyleBase, variantId: string) => string
-}
+/** Common */
 
 export interface ICommonContext {
 	/** Hash a string */
@@ -26,11 +13,14 @@ export interface ICommonContext {
 	/** Un-hash, is return the string that created the hash */
 	unhashId: (hash: string) => string
 }
+
 export interface NotesContext extends ICommonContext {
 	error: (message: string) => void
 	warning: (message: string) => void
 	getNotes: () => Array<any>
 }
+
+/** Studio */
 
 export interface IStudioConfigContext {
 	/** Returns a map of the studio configs */
@@ -38,31 +28,57 @@ export interface IStudioConfigContext {
 	/** Returns a reference to a studio config value, that can later be resolved in Core */
 	getStudioConfigRef (configKey: string): string
 }
+export interface IStudioContext extends IStudioConfigContext {
+	/** Get the mappings for the studio */
+	getStudioMappings: () => BlueprintMappings
+}
 
-export interface RunningOrderContext extends NotesContext, IStudioConfigContext {
-	readonly runningOrderId: string
-	readonly runningOrder: IBlueprintRunningOrder
+/** Show Style Base */
 
+export interface IShowStyleBaseConfigContext {
+	/** Get variants for this showStyleBase */
+	getShowStyleVariants: (showStyleBaseId: string) => Array<IBlueprintShowStyleVariant>
+	/** Translate the variant id to be the full id */
+	getShowStyleVariantId: (showStyleBase: IBlueprintShowStyleBase, variantId: string) => string
+}
+
+/** Show Style Variant */
+
+export interface IShowStyleConfigContext {
 	/** Returns a map of the ShowStyle configs */
 	getShowStyleConfig: () => {[key: string]: ConfigItemValue}
 	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
 	getShowStyleConfigRef (configKey: string): string
-
 }
+
+export interface ShowStyleContext extends NotesContext, IStudioContext, IShowStyleConfigContext {
+}
+
+/** Running Order */
+
+export interface RunningOrderContext extends ShowStyleContext {
+	readonly runningOrderId: string
+	readonly runningOrder: IBlueprintRunningOrder
+}
+
 export interface SegmentContext extends RunningOrderContext {
-	readonly segment: IBlueprintSegment
-	getSegmentLines: () => Array<IMessageBlueprintSegmentLine>
+	getRuntimeArguments: (externalId: string) => BlueprintRuntimeArguments | undefined
 }
-export interface SegmentLineContext extends RunningOrderContext {
-	readonly segmentLine: IMessageBlueprintSegmentLine
 
+export interface PartContext extends RunningOrderContext {
 	getRuntimeArguments: () => BlueprintRuntimeArguments
-
-	/** Return true if segmentLine is the first in the Segment */
-	getIsFirstSegmentLine: () => boolean
-	/** Return true if segmentLine is the last in the Segment */
-	getIsLastSegmentLine: () => boolean
 }
+
+/** Events */
+
+export interface PartEventContext extends EventContext, RunningOrderContext {
+	readonly part: IMessageBlueprintSegmentLine
+}
+
+export interface EventContext {
+	// TDB: Certain actions that can be triggered in Core by the Blueprint
+}
+
 export interface AsRunEventContext extends RunningOrderContext {
 	readonly asRunEvent: IBlueprintAsRunLogEvent
 

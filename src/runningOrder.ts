@@ -13,21 +13,23 @@ export interface IBlueprintRunningOrder {
 	/** Expected duration of the running order */
 	expectedDuration?: number
 
-	/** Id of the showStyle used */
-	showStyleVariantId: string
-
 	/** Arbitrary data storage for plugins */
 	metaData?: {[key: string]: any}
 }
 /** The RunningOrder sent from Core */
 export interface IBlueprintRunningOrderDB extends IBlueprintRunningOrder {
 	_id: string
+
+	/** Id of the showStyle variant used */
+	showStyleVariantId: string
 }
 
+/** Collection of runtime arguments to apply */
 export interface BlueprintRuntimeArguments {
 	[key: string]: string
 }
 
+/** Base type of the runtime arguments */
 export interface IBlueprintRuntimeArgumentsItem {
 	_id: string
 	label?: string
@@ -101,14 +103,6 @@ export interface IBlueprintSegmentLine {
 export interface IMessageBlueprintSegmentLine extends IBlueprintSegmentLine {
 	/** The segment ("Title") this line belongs to */
 	segmentId: string
-
-	/** Expected duration of the line, in milliseconds */
-	expectedDuration?: number
-
-	/** The type of the segmentLiene, could be the name of the template that created it */
-	typeVariant: string
-	/** The subtype fo the segmentLine */
-	subTypeVariant?: string
 
 	/** Playout timings, in here we log times when playout happens */
 	timings?: IMessageBlueprintSegmentLineTimings
