@@ -3,7 +3,7 @@ import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle
 import { ConfigItemValue } from './common'
 import { IBlueprintRunningOrder, IBlueprintSegment, IMessageBlueprintSegmentLine, BlueprintRuntimeArguments, IBlueprintSegmentLineItem } from './runningOrder'
 import { IBlueprintAsRunLogEvent } from './asRunLog'
-import { IngestRunningOrder, IngestPart } from './ingest';
+import { IngestRunningOrder, IngestPart } from './ingest'
 
 export interface EventContext {
 	// TDB: Certain actions that can be triggered in Core by the Blueprint
