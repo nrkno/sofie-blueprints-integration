@@ -1,7 +1,13 @@
 import { BlueprintMappings } from './studio'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { ConfigItemValue } from './common'
-import { IBlueprintRunningOrder, IBlueprintSegment, IMessageBlueprintSegmentLine, BlueprintRuntimeArguments, IBlueprintSegmentLineItem } from './runningOrder'
+import {
+	IBlueprintSegmentLineDB,
+	IBlueprintSegmentDB,
+	IBlueprintRunningOrderDB,
+	BlueprintRuntimeArguments,
+	IBlueprintSegmentLineItem
+} from './runningOrder'
 import { IBlueprintAsRunLogEvent } from './asRunLog'
 import { IngestRunningOrder, IngestPart } from './ingest'
 
@@ -58,7 +64,7 @@ export interface ShowStyleContext extends NotesContext, IStudioContext, IShowSty
 
 export interface RunningOrderContext extends ShowStyleContext {
 	readonly runningOrderId: string
-	readonly runningOrder: IBlueprintRunningOrder
+	readonly runningOrder: IBlueprintRunningOrderDB
 }
 
 export interface SegmentContext extends RunningOrderContext {
@@ -72,7 +78,7 @@ export interface PartContext extends RunningOrderContext {
 /** Events */
 
 export interface PartEventContext extends EventContext, RunningOrderContext {
-	readonly part: IMessageBlueprintSegmentLine
+	readonly part: IBlueprintSegmentLineDB
 }
 
 export interface EventContext {
@@ -85,20 +91,20 @@ export interface AsRunEventContext extends RunningOrderContext {
 	/** Get all asRunEvents in the runningOrder */
 	getAllAsRunEvents (): Array<IBlueprintAsRunLogEvent>
 	/** Get all segments in this runningOrder */
-	getSegments (): Array<IBlueprintSegment>
+	getSegments (): Array<IBlueprintSegmentDB>
 	/**
 	 * Returns a segment
 	 * @param id Id of segment to fetch. If omitted, return the segment related to this AsRunEvent
 	 */
-	getSegment (id?: string): IBlueprintSegment | undefined
+	getSegment (id?: string): IBlueprintSegmentDB | undefined
 
 	/** Get all segmentLines in this runningOrder */
-	getSegmentLines (): Array<IMessageBlueprintSegmentLine>
+	getSegmentLines (): Array<IBlueprintSegmentLineDB>
 	/**
 	 * Returns a segmentLine.
 	 * @param id Id of segmentLine to fetch. If omitted, return the segmentLine related to this AsRunEvent
 	 */
-	getSegmentLine (id?: string): IMessageBlueprintSegmentLine | undefined
+	getSegmentLine (id?: string): IBlueprintSegmentLineDB | undefined
 	/**
 	 * Returns a segmentLineItem.
 	 * @param id Id of segmentLineItem to fetch. If omitted, return the segmentLineItem related to this AsRunEvent
@@ -113,7 +119,7 @@ export interface AsRunEventContext extends RunningOrderContext {
 	/** Get the ingest data related to the runningOrder */
 	getStoryForRunningOrder: () => IngestRunningOrder
 	/** Get the ingest data related to a segmentLine */
-	getStoryForSegmentLine (segmentLine: IMessageBlueprintSegmentLine): IngestPart
+	getStoryForSegmentLine (segmentLine: IBlueprintSegmentLineDB): IngestPart
 
 	formatDateAsTimecode: (time: number) => string
 	formatDurationAsTimecode: (time: number) => string
