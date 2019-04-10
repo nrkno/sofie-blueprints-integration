@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.18.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.18.0...0.18.1) (2019-04-10)
+
+
+### Bug Fixes
+
+* improve the getHashId interface, to account for non-unique input ([29029d2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/29029d2))
+
+
+
 # [0.18.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.17.0...0.18.0) (2019-04-08)
 
 
