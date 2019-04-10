@@ -80,7 +80,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	getRunningOrder: (context: ShowStyleContext, ingestRunningOrder: IngestRunningOrder) => BlueprintResultRunningOrder
 
 	/** Generate segment from ingest data. return null to ignore that RO */
-	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment | null
+	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
 	/** Generate Part (segmentLine) from ingest data */
 	getPart?: (context: PartContext, ingestPart: IngestPart) => BlueprintResultPart | null

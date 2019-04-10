@@ -40,12 +40,6 @@ export interface IBlueprintRuntimeArgumentsItem {
 
 /** The Segment generated from Blueprint */
 export interface IBlueprintSegment {
-	/** Position inside running order */
-	_rank: number
-	/** ID of the source object in the gateway */
-	externalId: string
-	/** The running order this segment belongs to */
-	runningOrderId: string
 	/** User-presentable name (Slug) for the Title */
 	name: string
 	/** Arbitrary data storage for plugins */
