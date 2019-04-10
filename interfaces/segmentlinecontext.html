@@ -1017,7 +1017,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#error">error</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L133">api.ts:133</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L137">api.ts:137</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1049,27 +1049,38 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="icommoncontext.html">ICommonContext</a>.<a href="icommoncontext.html#gethashid">getHashId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L128">api.ts:128</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L132">api.ts:132</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Hash a string</p>
+						<p>Hash a string. Will return a unique string, to be used for all _id:s that are to be inserted in database</p>
 					</div>
+					<dl class="tsd-comment-tags">
+						<dt>param</dt>
+						<dd><p>A representation of the origin of the hash (for logging)</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>If the originString is not guaranteed to be unique, set this to true</p>
+						</dd>
+					</dl>
 				</div>
 				<div class="tsd-type-declaration">
 					<h4>Type declaration</h4>
 					<ul class="tsd-parameters">
 						<li class="tsd-parameter-siganture">
 							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>stringToBeHashed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>originString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, originIsNotUnique<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 							</ul>
 							<ul class="tsd-descriptions">
 								<li class="tsd-description">
 									<h4 class="tsd-parameters-title">Parameters</h4>
 									<ul class="tsd-parameters">
 										<li>
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> stringToBeHashed: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+											<h5>originString: <span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> originIsNotUnique: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
 										</li>
 									</ul>
 									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1085,7 +1096,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">get<wbr>IsFirst<wbr>Segment<wbr>Line<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L165">api.ts:165</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L169">api.ts:169</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1115,7 +1126,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">get<wbr>IsLast<wbr>Segment<wbr>Line<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L167">api.ts:167</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L171">api.ts:171</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1146,7 +1157,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#getnotes">getNotes</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L135">api.ts:135</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L139">api.ts:139</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1171,7 +1182,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">get<wbr>Runtime<wbr>Arguments<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L162">api.ts:162</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L166">api.ts:166</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1197,7 +1208,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#getshowstyleconfig">getShowStyleConfig</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L150">api.ts:150</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L154">api.ts:154</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1233,7 +1244,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="istudioconfigcontext.html">IStudioConfigContext</a>.<a href="istudioconfigcontext.html#getstudioconfig">getStudioConfig</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L140">api.ts:140</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L144">api.ts:144</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1269,7 +1280,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#runningorder">runningOrder</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L147">api.ts:147</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L151">api.ts:151</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1280,7 +1291,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#runningorderid">runningOrderId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L146">api.ts:146</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L150">api.ts:150</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1290,7 +1301,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">segment<wbr>Line<span class="tsd-signature-symbol">:</span> <a href="imessageblueprintsegmentline.html" class="tsd-signature-type">IMessageBlueprintSegmentLine</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L160">api.ts:160</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L164">api.ts:164</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1301,7 +1312,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="icommoncontext.html">ICommonContext</a>.<a href="icommoncontext.html#unhashid">unhashId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L130">api.ts:130</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L134">api.ts:134</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1338,7 +1349,7 @@ img { max-width: 100%; }
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#warning">warning</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L134">api.ts:134</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L138">api.ts:138</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1377,7 +1388,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="runningordercontext.html">RunningOrderContext</a>.<a href="runningordercontext.html#getshowstyleconfigref">getShowStyleConfigRef</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L152">api.ts:152</a></li>
+								<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L156">api.ts:156</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1406,7 +1417,7 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="istudioconfigcontext.html">IStudioConfigContext</a>.<a href="istudioconfigcontext.html#getstudioconfigref">getStudioConfigRef</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/731f680/src/api.ts#L142">api.ts:142</a></li>
+								<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/eaa04d2/src/api.ts#L146">api.ts:146</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
