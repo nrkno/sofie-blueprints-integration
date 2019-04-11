@@ -32,6 +32,16 @@ export interface BaseContent {
 	timelineObjects?: Array<TimelineObjectCoreExt>
 	// We leave it up to the blueprints to ensure that each all of their types implement this interface but more strongly typed
 	// If we were to enforce it here then this lib and core would need to be aware of every type
+	editable?: BaseEditableParameters
+}
+
+export interface BaseEditableParameters {
+	[key: string]: number | string | boolean | object | undefined | null
+}
+
+export interface VTEditableParameters extends BaseEditableParameters {
+	editorialStart: number
+	editorialDuration: number
 }
 
 export type SomeContent = VTContent
@@ -57,10 +67,12 @@ export interface VTContent extends BaseContent {
 	thumbnail?: string
 	loop?: boolean
 	sourceDuration: number
+	objectDuration?: number
 	metadata?: Array<MetadataElement>
 	timelineObjects: Array<TimelineObjectCoreExt>
 	mediaFlowIds?: string[]
 	seek?: number
+	editable?: VTEditableParameters
 }
 
 export interface CameraContent extends BaseContent {
