@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.19.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.18.1...0.19.0) (2019-04-11)
+
+
+### Features
+
+* add editable property to BaseContent/VTContent ([5694206](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/5694206))
+
+
+
 ## [0.18.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.18.0...0.18.1) (2019-04-10)
 
 
