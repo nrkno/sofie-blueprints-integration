@@ -13,8 +13,12 @@ import { IngestRundown, IngestPart } from './ingest'
 /** Common */
 
 export interface ICommonContext {
-	/** Hash a string */
-	getHashId: (stringToBeHashed?: string | number) => string
+	/**
+	 * Hash a string. Will return a unique string, to be used for all _id:s that are to be inserted in database
+	 * @param originString A representation of the origin of the hash (for logging)
+	 * @param originIsNotUnique If the originString is not guaranteed to be unique, set this to true
+	 */
+	getHashId: (originString: string, originIsNotUnique?: boolean) => string
 	/** Un-hash, is return the string that created the hash */
 	unhashId: (hash: string) => string
 }
