@@ -111,9 +111,9 @@ export interface AsRunEventContext extends RundownContext {
 	getPieces (partId: string): Array<IBlueprintPiece>
 
 	/** Get the ingest data related to the rundown */
-	getStoryForRundown: () => IngestRundown
+	getIngestDataForRundown: () => IngestRundown | undefined
 	/** Get the ingest data related to a part */
-	getStoryForPart (part: IBlueprintPartDB): IngestPart
+	getIngestDataForPart (part: IBlueprintPartDB): IngestPart | undefined
 
 	formatDateAsTimecode: (time: number) => string
 	formatDurationAsTimecode: (time: number) => string
