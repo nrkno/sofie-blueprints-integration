@@ -1,17 +1,27 @@
 import {
-	IBlueprintRunningOrder,
-	IBlueprintSegmentLineItem,
-	IBlueprintSegmentLineAdLibItem,
+	IBlueprintRundown,
+	IBlueprintPiece,
+	IBlueprintPartAdLibItem,
 	IBlueprintSegment,
-	IBlueprintSegmentLine
-} from './runningOrder'
+	IBlueprintPart
+} from './rundown'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
 
 import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
-import { IngestRunningOrder, IngestSegment, IngestPart } from './ingest'
-import { IStudioContext, PartContext, RunningOrderContext, EventContext, PartEventContext, AsRunEventContext, SegmentContext, ShowStyleContext, IStudioConfigContext } from './context'
+import { IngestRundown, IngestSegment, IngestPart } from './ingest'
+import {
+	IStudioContext,
+	PartContext,
+	RundownContext,
+	EventContext,
+	PartEventContext,
+	AsRunEventContext,
+	SegmentContext,
+	ShowStyleContext,
+	IStudioConfigContext
+} from './context'
 import { IBlueprintShowStyleVariant, IBlueprintShowStyleBase } from './showStyle'
 
 export enum BlueprintManifestType {
@@ -50,11 +60,11 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	/** A list of Migration steps related to a Studio */
 	studioMigrations: MigrationStep[]
 
-	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active RO */
+	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active rundown */
 	getBaseline: (context: IStudioContext) => Timeline.TimelineObject[]
 
-	/** Returns the id of the show style to use for a running order, return null to ignore that RO */
-	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRunningOrder: IngestRunningOrder) => string | null
+	/** Returns the id of the show style to use for a rundown, return null to ignore that rundown */
+	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRundown: IngestRundown) => string | null
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -73,39 +83,39 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	// --------------------------------------------------------------
 	// Callbacks called by Core:
 
-	/** Returns the id of the show style variant to use for a running order, return null to ignore that RO */
-	getShowStyleVariantId: (context: IStudioConfigContext, showStyleVariants: Array<IBlueprintShowStyleVariant>, ingestRunningOrder: IngestRunningOrder) => string | null
+	/** Returns the id of the show style variant to use for a rundown, return null to ignore that rundown */
+	getShowStyleVariantId: (context: IStudioConfigContext, showStyleVariants: Array<IBlueprintShowStyleVariant>, ingestRundown: IngestRundown) => string | null
 
-	/** Generate runningOrder from ingest data. return null to ignore that RO */
-	getRunningOrder: (context: ShowStyleContext, ingestRunningOrder: IngestRunningOrder) => BlueprintResultRunningOrder
+	/** Generate rundown from ingest data. return null to ignore that rundown */
+	getRundown: (context: ShowStyleContext, ingestRundown: IngestRundown) => BlueprintResultRundown
 
-	/** Generate segment from ingest data. return null to ignore that RO */
+	/** Generate segment from ingest data. return null to ignore that rundown */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
-	/** Generate Part (segmentLine) from ingest data */
+	/** Generate Part (part) from ingest data */
 	getPart?: (context: PartContext, ingestPart: IngestPart) => BlueprintResultPart | null
 
 	// Events
 
-	onRunningOrderActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
-	onRunningOrderFirstTake?: (context: EventContext & PartEventContext) => Promise<void>
-	onRunningOrderDeActivate?: (context: EventContext & RunningOrderContext) => Promise<void>
+	onRundownActivate?: (context: EventContext & RundownContext) => Promise<void>
+	onRundownFirstTake?: (context: EventContext & PartEventContext) => Promise<void>
+	onRundownDeActivate?: (context: EventContext & RundownContext) => Promise<void>
 
 	/** Called after a Take action */
 	onPreTake?: (context: EventContext & PartEventContext) => Promise<void>
 	onPostTake?: (context: EventContext & PartEventContext) => Promise<void>
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
-	onTimelineGenerate?: (context: EventContext & RunningOrderContext, timeline: Timeline.TimelineObject[]) => Promise<Timeline.TimelineObject[]>
+	onTimelineGenerate?: (context: EventContext & RundownContext, timeline: Timeline.TimelineObject[]) => Promise<Timeline.TimelineObject[]>
 
 	/** Called after an as-run event is created */
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
 
 }
 
-export interface BlueprintResultRunningOrder {
-	runningOrder: IBlueprintRunningOrder
-	globalAdLibPieces: IBlueprintSegmentLineAdLibItem[]
+export interface BlueprintResultRundown {
+	rundown: IBlueprintRundown
+	globalAdLibPieces: IBlueprintPartAdLibItem[]
 	baseline: Timeline.TimelineObject[]
 }
 export interface BlueprintResultSegment {
@@ -114,7 +124,7 @@ export interface BlueprintResultSegment {
 }
 
 export interface BlueprintResultPart {
-	part: IBlueprintSegmentLine
-	pieces: IBlueprintSegmentLineItem[]
-	adLibPieces: IBlueprintSegmentLineAdLibItem[]
+	part: IBlueprintPart
+	pieces: IBlueprintPiece[]
+	adLibPieces: IBlueprintPartAdLibItem[]
 }

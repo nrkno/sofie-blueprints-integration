@@ -1,14 +1,14 @@
 import { BlueprintMappings } from './studio'
 import { ConfigItemValue } from './common'
 import {
-	IBlueprintSegmentLineDB,
+	IBlueprintPartDB,
 	IBlueprintSegmentDB,
-	IBlueprintRunningOrderDB,
+	IBlueprintRundownDB,
 	BlueprintRuntimeArguments,
-	IBlueprintSegmentLineItem
-} from './runningOrder'
+	IBlueprintPiece
+} from './rundown'
 import { IBlueprintAsRunLogEvent } from './asRunLog'
-import { IngestRunningOrder, IngestPart } from './ingest'
+import { IngestRundown, IngestPart } from './ingest'
 
 /** Common */
 
@@ -50,18 +50,18 @@ export interface IShowStyleConfigContext {
 export interface ShowStyleContext extends NotesContext, IStudioContext, IShowStyleConfigContext {
 }
 
-/** Running Order */
+/** Rundown */
 
-export interface RunningOrderContext extends ShowStyleContext {
-	readonly runningOrderId: string
-	readonly runningOrder: IBlueprintRunningOrderDB
+export interface RundownContext extends ShowStyleContext {
+	readonly rundownId: string
+	readonly rundown: IBlueprintRundownDB
 }
 
-export interface SegmentContext extends RunningOrderContext {
+export interface SegmentContext extends RundownContext {
 	getRuntimeArguments: (externalId: string) => BlueprintRuntimeArguments | undefined
 }
 
-export interface PartContext extends RunningOrderContext {
+export interface PartContext extends RundownContext {
 	getRuntimeArguments: () => BlueprintRuntimeArguments
 }
 
@@ -71,16 +71,16 @@ export interface EventContext {
 	// TDB: Certain actions that can be triggered in Core by the Blueprint
 }
 
-export interface PartEventContext extends EventContext, RunningOrderContext {
-	readonly part: IBlueprintSegmentLineDB
+export interface PartEventContext extends EventContext, RundownContext {
+	readonly part: IBlueprintPartDB
 }
 
-export interface AsRunEventContext extends RunningOrderContext {
+export interface AsRunEventContext extends RundownContext {
 	readonly asRunEvent: IBlueprintAsRunLogEvent
 
-	/** Get all asRunEvents in the runningOrder */
+	/** Get all asRunEvents in the rundown */
 	getAllAsRunEvents (): Array<IBlueprintAsRunLogEvent>
-	/** Get all segments in this runningOrder */
+	/** Get all segments in this rundown */
 	getSegments (): Array<IBlueprintSegmentDB>
 	/**
 	 * Returns a segment
@@ -88,28 +88,28 @@ export interface AsRunEventContext extends RunningOrderContext {
 	 */
 	getSegment (id?: string): IBlueprintSegmentDB | undefined
 
-	/** Get all segmentLines in this runningOrder */
-	getSegmentLines (): Array<IBlueprintSegmentLineDB>
+	/** Get all parts in this rundown */
+	getParts (): Array<IBlueprintPartDB>
 	/**
-	 * Returns a segmentLine.
-	 * @param id Id of segmentLine to fetch. If omitted, return the segmentLine related to this AsRunEvent
+	 * Returns a part.
+	 * @param id Id of part to fetch. If omitted, return the part related to this AsRunEvent
 	 */
-	getSegmentLine (id?: string): IBlueprintSegmentLineDB | undefined
+	getPart (id?: string): IBlueprintPartDB | undefined
 	/**
-	 * Returns a segmentLineItem.
-	 * @param id Id of segmentLineItem to fetch. If omitted, return the segmentLineItem related to this AsRunEvent
+	 * Returns a piece.
+	 * @param id Id of piece to fetch. If omitted, return the piece related to this AsRunEvent
 	 */
-	getSegmentLineItem (segmentLineItemId?: string): IBlueprintSegmentLineItem | undefined
+	getPiece (pieceId?: string): IBlueprintPiece | undefined
 	/**
-	 * Returns segmentLineItems in a segmentLine
-	 * @param id Id of segmentLine to fetch items in
+	 * Returns pieces in a part
+	 * @param id Id of part to fetch items in
 	 */
-	getSegmentLineItems (segmentLineId: string): Array<IBlueprintSegmentLineItem>
+	getPieces (partId: string): Array<IBlueprintPiece>
 
-	/** Get the ingest data related to the runningOrder */
-	getStoryForRunningOrder: () => IngestRunningOrder
-	/** Get the ingest data related to a segmentLine */
-	getStoryForSegmentLine (segmentLine: IBlueprintSegmentLineDB): IngestPart
+	/** Get the ingest data related to the rundown */
+	getStoryForRundown: () => IngestRundown
+	/** Get the ingest data related to a part */
+	getStoryForPart (part: IBlueprintPartDB): IngestPart
 
 	formatDateAsTimecode: (time: number) => string
 	formatDurationAsTimecode: (time: number) => string

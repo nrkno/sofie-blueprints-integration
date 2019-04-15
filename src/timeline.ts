@@ -1,34 +1,36 @@
 import {
-	IBlueprintSegmentLineDB,
-	IBlueprintSegmentLineItem
-} from './runningOrder'
+	IBlueprintPartDB,
+	IBlueprintPiece
+} from './rundown'
 
 import { Timeline } from 'timeline-state-resolver-types'
 
 export { Timeline }
 
 export enum PlayoutTimelinePrefixes {
-	SEGMENT_LINE_GROUP_PREFIX = 'sl_group_',
-	SEGMENT_LINE_GROUP_FIRST_ITEM_PREFIX = 'sl_group_firstobject_',
-	SEGMENT_LINE_ITEM_GROUP_PREFIX = 'sli_group_',
-	SEGMENT_LINE_ITEM_GROUP_FIRST_ITEM_PREFIX = 'sli_group_firstobject_'
+	PART_GROUP_PREFIX = 'part_group_',
+	PART_GROUP_FIRST_ITEM_PREFIX = 'part_group_firstobject_',
+	PIECE_GROUP_PREFIX = 'piece_group_',
+	PIECE_GROUP_FIRST_ITEM_PREFIX = 'piece_group_firstobject_'
 }
 
-export function getSlGroupId (sl: IBlueprintSegmentLineDB | string) {
-	if (typeof sl === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_PREFIX + sl
-	return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_PREFIX + sl._id
+export function getPartGroupId (part: IBlueprintPartDB | string) {
+	if (typeof part === 'string') return PlayoutTimelinePrefixes.PART_GROUP_PREFIX + part
+	return PlayoutTimelinePrefixes.PART_GROUP_PREFIX + part._id
 }
-export function getSliGroupId (sli: IBlueprintSegmentLineItem | string) {
-	if (typeof sli === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_PREFIX + sli
-	return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_PREFIX + sli._id
+export function getPieceGroupId (piece: IBlueprintPiece | string) {
+	if (typeof piece === 'string') return PlayoutTimelinePrefixes.PIECE_GROUP_PREFIX + piece
+
+	return PlayoutTimelinePrefixes.PIECE_GROUP_PREFIX + piece._id
 }
-export function getSlFirstObjectId (sl: IBlueprintSegmentLineDB | string) {
-	if (typeof sl === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_FIRST_ITEM_PREFIX + sl
-	return PlayoutTimelinePrefixes.SEGMENT_LINE_GROUP_FIRST_ITEM_PREFIX + sl._id
+export function getPartFirstObjectId (part: IBlueprintPartDB | string) {
+	if (typeof part === 'string') return PlayoutTimelinePrefixes.PART_GROUP_FIRST_ITEM_PREFIX + part
+	return PlayoutTimelinePrefixes.PART_GROUP_FIRST_ITEM_PREFIX + part._id
 }
-export function getSliFirstObjectId (sli: IBlueprintSegmentLineItem | string) {
-	if (typeof sli === 'string') return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_FIRST_ITEM_PREFIX + sli
-	return PlayoutTimelinePrefixes.SEGMENT_LINE_ITEM_GROUP_FIRST_ITEM_PREFIX + sli._id
+export function getPieceFirstObjectId (piece: IBlueprintPiece | string) {
+	if (typeof piece === 'string') return PlayoutTimelinePrefixes.PIECE_GROUP_FIRST_ITEM_PREFIX + piece
+
+	return PlayoutTimelinePrefixes.PIECE_GROUP_FIRST_ITEM_PREFIX + piece._id
 }
 
 export enum TimelineObjHoldMode {

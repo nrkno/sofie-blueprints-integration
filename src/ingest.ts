@@ -1,4 +1,4 @@
-export interface IngestRunningOrder {
+export interface IngestRundown {
 	externalId: string
 	name: string
 
@@ -16,7 +16,7 @@ export interface IngestSegment {
 	payload?: any
 	parts: IngestPart[]
 }
-export interface IngestPart { // old: "segmentLine"
+export interface IngestPart {
 	externalId: string
 	name: string // ??
 	rank: number
