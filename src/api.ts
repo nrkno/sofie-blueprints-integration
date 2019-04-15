@@ -1,7 +1,7 @@
 import {
 	IBlueprintRundown,
 	IBlueprintPiece,
-	IBlueprintPartAdLibItem,
+	IBlueprintAdLibPiece,
 	IBlueprintSegment,
 	IBlueprintPart
 } from './rundown'
@@ -115,7 +115,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 export interface BlueprintResultRundown {
 	rundown: IBlueprintRundown
-	globalAdLibPieces: IBlueprintPartAdLibItem[]
+	globalAdLibPieces: IBlueprintAdLibPiece[]
 	baseline: Timeline.TimelineObject[]
 }
 export interface BlueprintResultSegment {
@@ -126,5 +126,5 @@ export interface BlueprintResultSegment {
 export interface BlueprintResultPart {
 	part: IBlueprintPart
 	pieces: IBlueprintPiece[]
-	adLibPieces: IBlueprintPartAdLibItem[]
+	adLibPieces: IBlueprintAdLibPiece[]
 }

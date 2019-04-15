@@ -164,14 +164,14 @@ export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 	extendOnHold?: boolean
 }
 
-export interface IBlueprintPartAdLibItem extends IBlueprintPieceGeneric {
+export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	/** Used for sorting in the UI */
 	_rank: number
 	/** When something bad has happened, we can mark the AdLib as invalid, which will prevent the user from TAKE:ing it */
 	invalid?: boolean
 }
 /** The AdLib piece sent from Core */
-export interface IBlueprintPartAdLibItemDB extends IBlueprintPartAdLibItem {
+export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
 	_id: string
 }
 
