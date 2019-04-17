@@ -84,7 +84,8 @@ export interface IBlueprintPart {
 	/** Whether this segment line supports being used in HOLD */
 	holdMode?: PartHoldMode
 
-	updateStoryStatus?: boolean
+	/** Set to true if ingest-device should be notified when this part starts playing */
+	shouldNotifyCurrentPlayingPart?: boolean
 
 	/** Classes to set on the TimelineGroupObj for this part */
 	classes?: string[]
