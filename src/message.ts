@@ -1,3 +1,4 @@
+import { Time } from './common'
 
 export interface IBlueprintExternalMessageQueueObj {
 	/** Type of message */
@@ -6,6 +7,8 @@ export interface IBlueprintExternalMessageQueueObj {
 	receiver: any
 	/** Messate details */
 	message: any
+	/** Retry sending message until this time */
+	retryUntil?: Time
 }
 export enum IBlueprintExternalMessageQueueType {
 	SOAP = 'soap',
