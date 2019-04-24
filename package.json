@@ -68,7 +68,8 @@
     "typescript": "^3.3.3"
   },
   "resolutions": {
-    "typedoc/**/marked": "^0.6.2"
+    "typedoc/**/marked": "^0.6.2",
+    "conventional-changelog": "^1.0.0"
   },
   "dependencies": {
     "moment": "^2.22.2",
