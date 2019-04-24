@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.20.0"></a>
+# [0.20.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.19.0...0.20.0) (2019-04-24)
+
+
+### Bug Fixes
+
+* build ([41d53b0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/41d53b0))
+* correct name of adlib pieces ([1895941](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/1895941))
+* Fix some extra/missing fields ([2358b2e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2358b2e))
+* Getting cached ingest data during AsRunLog may return undefined ([08da3b5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/08da3b5))
+* missing exports ([a594bbc](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a594bbc))
+* renaming of files ([693cb22](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/693cb22))
+* tests ([edbd934](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/edbd934))
+
+
+### Features
+
+* Refacor sli and adlib types ([e6fc888](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/e6fc888))
+* Refactor typings for simpler ingest gateway interface ([5edd6e5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/5edd6e5))
+* rename everything according to new naming schedule ([54268c5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/54268c5))
+* split some types into simpler ones ([0a7fb06](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0a7fb06))
+* update context types ([9e0ec01](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/9e0ec01))
+
+
+
 # [0.19.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.18.1...0.19.0) (2019-04-11)
 
 
