@@ -34,7 +34,7 @@ export interface ISourceLayer {
 	unlimited: boolean
 	/** If set to true, the layer will be shown in PGM Clean */
 	onPGMClean: boolean
-	/** Source layer exclusivity group. When adLibbing, only a single SLI can exist whitin an exclusivity group */
+	/** Source layer exclusivity group. When adLibbing, only a single piece can exist whitin an exclusivity group */
 	exclusiveGroup?: string
 	/** Use special treatment for remote inputs */
 	isRemoteInput?: boolean
@@ -52,7 +52,7 @@ export interface ISourceLayer {
 	activateStickyKeyboardHotkey?: string
 	/** Should adlibs on this source layer be queueable */
 	isQueueable?: boolean
-	/** If set to true, the layer will be hidden from the user in Running Order View */
+	/** If set to true, the layer will be hidden from the user in Rundown View */
 	isHidden?: boolean
 	/** If set to true, items in the layer can be disabled by the user (the "G"-shortcut) */
 	allowDisable?: boolean

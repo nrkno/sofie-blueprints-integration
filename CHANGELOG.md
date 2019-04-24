@@ -42,7 +42,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* invalid segmentLine & AdLib ([97cdd2d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/97cdd2d))
+* invalid part & AdLib ([97cdd2d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/97cdd2d))
 
 
 
@@ -51,7 +51,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* Add transitionDuration to SegmentLine ([f7337bf](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f7337bf))
+* Add transitionDuration to Part ([f7337bf](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f7337bf))
 
 
 
@@ -73,7 +73,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* Add displayDuration properties to SegmentLines, and allow for setting the displayDurationGroup ones in post-process blueprint ([439c84d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/439c84d))
+* Add displayDuration properties to Parts, and allow for setting the displayDurationGroup ones in post-process blueprint ([439c84d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/439c84d))
 
 
 
@@ -115,7 +115,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* Add classes arrays to SegmentLine ([0911caf](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0911caf))
+* Add classes arrays to Part ([0911caf](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0911caf))
 * add ConfigRef function, to be able to reference config values, instead of using the values directly (can be used for usernames & passwords in metadata message flow) ([efa467e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/efa467e))
 
 
@@ -132,7 +132,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * add mediaFlowId to VTContent ([8e505b4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/8e505b4))
-* asRunEventContext: add getSegmentLineItem & getSegmentLineItem ([bc1e58c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/bc1e58c))
+* asRunEventContext: add getPiece & getPiece ([bc1e58c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/bc1e58c))
 
 
 
@@ -172,7 +172,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* SegmentLineContext typings ([f98765c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f98765c))
+* PartContext typings ([f98765c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f98765c))
 
 
 
@@ -182,7 +182,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* fixed IMessageBlueprintSegmentLine and removed Pure interfaces because they are stupid. ([0fb1f3e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0fb1f3e))
+* fixed IMessageBlueprintPart and removed Pure interfaces because they are stupid. ([0fb1f3e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0fb1f3e))
 
 
 
@@ -196,7 +196,7 @@ All notable changes to this project will be documented in this file. See [standa
 * case sensitive import paths ([ca94cdb](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/ca94cdb))
 * **migrations:** Blueprints specify variant id, to make it possible to update one later on ([d4ad8a4](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/d4ad8a4))
 * linter error ([16cec3a](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/16cec3a))
-* onTakes should have SegmentLineContextPure ([14eb7b2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/14eb7b2))
+* onTakes should have PartContextPure ([14eb7b2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/14eb7b2))
 * update tsr-types ([41a4583](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/41a4583))
 
 
@@ -303,7 +303,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **runningOrder:** Correct types of transisition duration properties on SegmentLine ([b0aec50](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b0aec50))
+* **rundown:** Correct types of transisition duration properties on Part ([b0aec50](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b0aec50))
 
 
 

@@ -7,7 +7,7 @@ import {
 } from './showStyle'
 import { ConfigItemValue } from './common'
 import { DeviceOptions } from 'timeline-state-resolver-types'
-import { IBlueprintRuntimeArgumentsItem } from './runningOrder'
+import { IBlueprintRuntimeArgumentsItem } from './rundown'
 
 export interface MigrationStepInput {
 	stepId?: string // automatically filled in later

@@ -4,10 +4,10 @@ export interface IBlueprintAsRunLogEvent {
 	_id: string
 
 	studioId: string,
-	runningOrderId: string,
+	rundownId: string,
 	segmentId?: string,
-	segmentLineId?: string,
-	segmentLineItemId?: string,
+	partId?: string,
+	pieceId?: string,
 	timelineObjectId?: string
 
 	/** Name/id of the content */
