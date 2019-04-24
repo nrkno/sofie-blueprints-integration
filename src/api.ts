@@ -10,10 +10,9 @@ import { ConfigManifestEntry } from './config'
 
 import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
-import { IngestRundown, IngestSegment, IngestPart } from './ingest'
+import { IngestRundown, IngestSegment } from './ingest'
 import {
 	IStudioContext,
-	PartContext,
 	RundownContext,
 	EventContext,
 	PartEventContext,
@@ -89,11 +88,12 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** Generate rundown from ingest data. return null to ignore that rundown */
 	getRundown: (context: ShowStyleContext, ingestRundown: IngestRundown) => BlueprintResultRundown
 
-	/** Generate segment from ingest data. return null to ignore that rundown */
+	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
-	/** Generate Part (part) from ingest data */
-	getPart?: (context: PartContext, ingestPart: IngestPart) => BlueprintResultPart | null
+	/** Generate Part from ingest data. If null, then getSegment is used instead */
+	// TODO: Not used in core yet
+	// getPart?: (context: PartContext, ingestPart: IngestPart) => BlueprintResultPart | null
 
 	// Events
 
