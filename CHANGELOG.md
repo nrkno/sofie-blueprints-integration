@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.21.0"></a>
+# [0.21.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.20.0...0.21.0) (2019-04-24)
+
+
+### Features
+
+* Add external message retry until. ([5247951](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/5247951))
+
+
+
 <a name="0.20.0"></a>
 # [0.20.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.19.0...0.20.0) (2019-04-24)
 
