@@ -3,7 +3,7 @@ import {
 	IBlueprintPiece
 } from './rundown'
 
-import { Timeline } from 'timeline-state-resolver-types'
+import { Timeline, TSRTimelineObjBase } from 'timeline-state-resolver-types'
 
 export { Timeline }
 
@@ -39,9 +39,9 @@ export enum TimelineObjHoldMode {
 	EXCEPT = 2 // Only use when not in HOLD
 }
 
-export interface TimelineObjectCoreExt extends Timeline.TimelineObject {
+export interface TimelineObjectCoreExt extends TSRTimelineObjBase {
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode
 	/** Whether the object is abstract, and should not be routed to a playout device */
-	isAbstract?: boolean
+	// isAbstract?: boolean // TODO - is this needed with the defined type=empty etc??
 }

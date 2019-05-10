@@ -1,3 +1,5 @@
+import { TSRTimelineObjBase } from 'timeline-state-resolver-types'
+
 import {
 	IBlueprintRundown,
 	IBlueprintPiece,
@@ -8,7 +10,6 @@ import {
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
 
-import { Timeline } from './timeline'
 import { MigrationStep } from './migrations'
 import { IngestRundown, IngestSegment } from './ingest'
 import {
@@ -60,7 +61,7 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	studioMigrations: MigrationStep[]
 
 	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active rundown */
-	getBaseline: (context: IStudioContext) => Timeline.TimelineObject[]
+	getBaseline: (context: IStudioContext) => TSRTimelineObjBase[]
 
 	/** Returns the id of the show style to use for a rundown, return null to ignore that rundown */
 	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRundown: IngestRundown) => string | null
@@ -106,7 +107,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	onPostTake?: (context: EventContext & PartEventContext) => Promise<void>
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
-	onTimelineGenerate?: (context: EventContext & RundownContext, timeline: Timeline.TimelineObject[]) => Promise<Timeline.TimelineObject[]>
+	onTimelineGenerate?: (context: EventContext & RundownContext, timeline: TSRTimelineObjBase[]) => Promise<TSRTimelineObjBase[]>
 
 	/** Called after an as-run event is created */
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
@@ -116,7 +117,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 export interface BlueprintResultRundown {
 	rundown: IBlueprintRundown
 	globalAdLibPieces: IBlueprintAdLibPiece[]
-	baseline: Timeline.TimelineObject[]
+	baseline: TSRTimelineObjBase[]
 }
 export interface BlueprintResultSegment {
 	segment: IBlueprintSegment
