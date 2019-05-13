@@ -1,5 +1,7 @@
 import { Time } from './common'
 import { SomeContent } from './content'
+import { Timeline } from './timeline';
+import { Omit } from './lib';
 
 /** The Rundown generated from Blueprint */
 export interface IBlueprintRundown {
@@ -159,9 +161,9 @@ export interface PieceStartTiming {
 export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 	_id: string
 
-	/** Timeline item trigger. Possibly, most of these will be manually triggered as next, but maybe some will be automatic. */
-	// trigger: Timeline.TimelineTrigger
-	start: PieceStartTiming
+	/** Timeline enabler. When the piece should be active on the timeline. */
+	enable: Omit<Timeline.TimelineEnable, 'duration' | 'while' | 'repeating'>
+	/** Whether the piece is a real piece, or exists as a marker to stop an infinite piece. If virtual, it does not add any contents to the timeline */
 	virtual?: boolean
 	/** The id of the item this item is a continuation of. If it is a continuation, the inTranstion must not be set, and trigger must be 0 */
 	continuesRefId?: string
