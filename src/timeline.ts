@@ -42,6 +42,4 @@ export enum TimelineObjHoldMode {
 export interface TimelineObjectCoreExt extends TSRTimelineObjBase {
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode
-	/** Whether the object is abstract, and should not be routed to a playout device */
-	// isAbstract?: boolean // TODO - is this needed with the defined type=empty etc??
 }
