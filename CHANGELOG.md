@@ -1,6 +1,22 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.22.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.21.0...0.22.0) (2019-05-21)
+
+
+### Bug Fixes
+
+* Update dependencies ([7732177](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/7732177))
+
+
+### Features
+
+* Replace Piece.start with a limited TimelineEnable object ([8d153e2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/8d153e2))
+* Update typings for timeline-v2 ([6bdc139](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/6bdc139))
+* Use enable.duration instead of expectedDuration for Pieces ([c8bef7f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c8bef7f))
+
+
 
 <a name="0.21.0"></a>
 # [0.21.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.20.0...0.21.0) (2019-04-24)
