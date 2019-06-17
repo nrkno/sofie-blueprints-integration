@@ -128,6 +128,7 @@ export enum PartHoldMode {
 	FROM = 1,
 	TO = 2
 }
+export type PieceMetaData = { [key: string]: any }
 export interface IBlueprintPieceGeneric {
 	/** ID of the source object in the gateway */
 	externalId: string
@@ -136,7 +137,7 @@ export interface IBlueprintPieceGeneric {
 	/** User-presentable name for the timeline item */
 	name: string
 	/** Arbitrary data storage for plugins */
-	metaData?: {[key: string]: any}
+	metaData?: PieceMetaData
 
 	/** Source layer the timeline item belongs to */
 	sourceLayerId: string
@@ -165,6 +166,9 @@ export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 	continuesRefId?: string
 	isTransition?: boolean
 	extendOnHold?: boolean
+}
+export interface IBlueprintPieceDB extends IBlueprintPiece {
+	playoutDuration?: number
 }
 
 export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {

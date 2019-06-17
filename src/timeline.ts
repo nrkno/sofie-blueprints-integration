@@ -43,3 +43,8 @@ export interface TimelineObjectCoreExt extends TSRTimelineObjBase {
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode
 }
+
+/** TimelineObject extension for additional fields needed by onTimelineGenerate */
+export interface OnGenerateTimelineObj extends TimelineObjectCoreExt {
+	pieceId?: string
+}
