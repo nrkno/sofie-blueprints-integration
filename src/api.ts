@@ -5,7 +5,8 @@ import {
 	IBlueprintPiece,
 	IBlueprintAdLibPiece,
 	IBlueprintSegment,
-	IBlueprintPart
+	IBlueprintPart,
+	IBlueprintPieceDB
 } from './rundown'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
@@ -23,6 +24,7 @@ import {
 	IStudioConfigContext
 } from './context'
 import { IBlueprintShowStyleVariant, IBlueprintShowStyleBase } from './showStyle'
+import { OnGenerateTimelineObj } from './timeline'
 
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
@@ -107,12 +109,17 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	onPostTake?: (context: EventContext & PartEventContext) => Promise<void>
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
-	onTimelineGenerate?: (context: EventContext & RundownContext, timeline: TSRTimelineObjBase[]) => Promise<TSRTimelineObjBase[]>
+	onTimelineGenerate?: (context: EventContext & RundownContext, timeline: OnGenerateTimelineObj[], previousPartEndState: PartEndState | undefined, resolvedPieces: IBlueprintPieceDB[]) => Promise<OnGenerateTimelineObj[]>
+
+	/** Called just before taking the next part. This generates some persisted data used by onTimelineGenerate to modify the timeline based on the previous part (eg, persist audio levels) */
+	getEndStateForPart?: (context: RundownContext, previousEndState: PartEndState | undefined, activePieces: IBlueprintPiece[]) => PartEndState
 
 	/** Called after an as-run event is created */
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
 
 }
+
+export type PartEndState = { [key: string]: any }
 
 export interface BlueprintResultRundown {
 	rundown: IBlueprintRundown
