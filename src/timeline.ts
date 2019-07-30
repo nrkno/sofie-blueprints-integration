@@ -47,4 +47,5 @@ export interface TimelineObjectCoreExt extends TSRTimelineObjBase {
 /** TimelineObject extension for additional fields needed by onTimelineGenerate */
 export interface OnGenerateTimelineObj extends TimelineObjectCoreExt {
 	pieceId?: string
+	infinitePieceId?: string
 }
