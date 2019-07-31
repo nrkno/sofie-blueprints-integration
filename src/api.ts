@@ -75,10 +75,11 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRundown: IngestRundown) => string | null
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
-	getRundownPlaylistInfo?: (ingestRundown: IngestRundown) => IBlueprintRundownPlaylistInfo | null
-
-	/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
-	getRundownPlaylistOrder?: (playlist: IBlueprintRundownPlaylistInfo, rundowns: IBlueprintRundown[]) => OrderedRundowns | null
+	getRundownPlaylistInfo?: (rundowns: IBlueprintRundown[]) => {
+		playlist: IBlueprintRundownPlaylistInfo
+		/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
+		order: OrderedRundowns | null
+	}
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
