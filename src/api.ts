@@ -6,7 +6,8 @@ import {
 	IBlueprintAdLibPiece,
 	IBlueprintSegment,
 	IBlueprintPart,
-	IBlueprintPieceDB
+	IBlueprintPieceDB,
+	IBlueprintRundownPlaylistInfo
 } from './rundown'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
@@ -54,6 +55,11 @@ export interface SystemBlueprintManifest extends BlueprintManifestBase {
 
 }
 
+/** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
+export type OrderedRundowns = {
+	[key: string]: number
+}
+
 export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	blueprintType: BlueprintManifestType.STUDIO
 
@@ -67,6 +73,12 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 
 	/** Returns the id of the show style to use for a rundown, return null to ignore that rundown */
 	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRundown: IngestRundown) => string | null
+
+	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
+	getRundownPlaylistInfo?: (ingestRundown: IngestRundown) => IBlueprintRundownPlaylistInfo | null
+
+	/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
+	getRundownPlaylistOrder?: (playlist: IBlueprintRundownPlaylistInfo, rundowns: IBlueprintRundown[]) => OrderedRundowns | null
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {

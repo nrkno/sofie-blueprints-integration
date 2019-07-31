@@ -3,6 +3,16 @@ import { SomeContent } from './content'
 import { Timeline } from './timeline'
 import { Omit } from './lib'
 
+export interface IBlueprintRundownPlaylistInfo {
+	name: string
+
+	externalId: string
+
+	expectedStart?: Time
+
+	expectedDuration?: number
+}
+
 /** The Rundown generated from Blueprint */
 export interface IBlueprintRundown {
 	externalId: string
@@ -16,6 +26,9 @@ export interface IBlueprintRundown {
 
 	/** Arbitrary data storage for plugins */
 	metaData?: {[key: string]: any}
+
+	/** A hint to the Core that the Rundown should be a part of a playlist */
+	playlistExternalId?: string
 }
 /** The Rundown sent from Core */
 export interface IBlueprintRundownDB extends IBlueprintRundown {
@@ -23,6 +36,12 @@ export interface IBlueprintRundownDB extends IBlueprintRundown {
 
 	/** Id of the showStyle variant used */
 	showStyleVariantId: string
+
+	/** RundownPlaylist this rundown is member of */
+	playlistId?: string
+
+	/** Rundown's place in the RundownPlaylist */
+	_rank?: number
 }
 
 /** Collection of runtime arguments to apply */
