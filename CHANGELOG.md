@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.24.0...0.24.1) (2019-08-06)
+
+
+### Bug Fixes
+
+* downgrade gh-pages ([01343fb](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/01343fb))
+
+
+### Features
+
+* expose infinite ids of pieces to onTimelineGenerate ([401f30d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/401f30d))
+* persistant state to onTimelineGenerate ([713c048](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/713c048))
+
 ## [0.24.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.23.0...0.24.0) (2019-06-18)
 
 
