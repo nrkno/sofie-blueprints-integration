@@ -49,7 +49,7 @@
     "@types/node": "^8.0.4",
     "@types/underscore": "^1.8.13",
     "codecov": "^3.0.2",
-    "gh-pages": "^2.0.1",
+    "gh-pages": "2.0.1",
     "jest": "^24.1.0",
     "jest-haste-map": "^24.5.0",
     "jest-resolve": "^24.5.0",
