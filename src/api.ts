@@ -72,13 +72,8 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	blueprintType: BlueprintManifestType.SHOWSTYLE
 
-	/** A list of config items this blueprint expects to be available on the Studio */
-	studioConfigManifest: ConfigManifestEntry[]
 	/** A list of config items this blueprint expects to be available on the ShowStyle */
 	showStyleConfigManifest: ConfigManifestEntry[]
-
-	/** A list of Migration steps related to a Studio */
-	studioMigrations: MigrationStep[]
 	/** A list of Migration steps related to a ShowStyle */
 	showStyleMigrations: MigrationStep[]
 
