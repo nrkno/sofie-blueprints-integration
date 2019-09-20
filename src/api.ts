@@ -87,13 +87,8 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	blueprintType: BlueprintManifestType.SHOWSTYLE
 
-	/** A list of config items this blueprint expects to be available on the Studio */
-	studioConfigManifest: ConfigManifestEntry[]
 	/** A list of config items this blueprint expects to be available on the ShowStyle */
 	showStyleConfigManifest: ConfigManifestEntry[]
-
-	/** A list of Migration steps related to a Studio */
-	studioMigrations: MigrationStep[]
 	/** A list of Migration steps related to a ShowStyle */
 	showStyleMigrations: MigrationStep[]
 
@@ -124,10 +119,10 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	onPostTake?: (context: EventContext & PartEventContext) => Promise<void>
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
-	onTimelineGenerate?: (context: EventContext & RundownContext, timeline: OnGenerateTimelineObj[], previousPartEndState: PartEndState | undefined, resolvedPieces: IBlueprintPieceDB[]) => Promise<OnGenerateTimelineObj[]>
+	onTimelineGenerate?: (context: EventContext & RundownContext, timeline: OnGenerateTimelineObj[], previousPersistentState: TimelinePersistentState | undefined, previousPartEndState: PartEndState | undefined, resolvedPieces: IBlueprintPieceDB[]) => Promise<BlueprintResultTimeline>
 
 	/** Called just before taking the next part. This generates some persisted data used by onTimelineGenerate to modify the timeline based on the previous part (eg, persist audio levels) */
-	getEndStateForPart?: (context: RundownContext, previousEndState: PartEndState | undefined, activePieces: IBlueprintPiece[]) => PartEndState
+	getEndStateForPart?: (context: RundownContext, previousPersistentState: TimelinePersistentState | undefined, previousPartEndState: PartEndState | undefined, resolvedPieces: IBlueprintPiece[], time: number) => PartEndState
 
 	/** Called after an as-run event is created */
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
@@ -135,6 +130,12 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 }
 
 export type PartEndState = { [key: string]: any }
+export type TimelinePersistentState = { [key: string]: any }
+
+export interface BlueprintResultTimeline {
+	timeline: OnGenerateTimelineObj[]
+	persistentState: TimelinePersistentState
+}
 
 export interface BlueprintResultRundown {
 	rundown: IBlueprintRundown

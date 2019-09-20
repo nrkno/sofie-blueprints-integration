@@ -188,6 +188,9 @@ export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 }
 export interface IBlueprintPieceDB extends IBlueprintPiece {
 	playoutDuration?: number
+
+	/** This is the id of the original segment of an infinite piece chain. If it matches the id of itself then it is the first in the chain */
+	infiniteId?: string
 }
 
 export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {

@@ -15,4 +15,6 @@ export interface BlueprintMappings extends Mappings {
 export interface BlueprintMapping extends Mapping {
 	/** What method core should use to create lookahead objects for this layer */
 	lookahead: LookaheadMode
+	/** How many lookahead objects to create for this layer. Default = 1 */
+	lookaheadDepth?: number
 }
