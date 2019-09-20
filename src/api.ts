@@ -60,6 +60,12 @@ export type OrderedRundowns = {
 	[key: string]: number
 }
 
+export interface RundownPlaylistAndOrderedRundowns {
+	playlist: IBlueprintRundownPlaylistInfo
+	/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
+	order: OrderedRundowns | null
+}
+
 export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	blueprintType: BlueprintManifestType.STUDIO
 
@@ -75,11 +81,7 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRundown: IngestRundown) => string | null
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
-	getRundownPlaylistInfo?: (rundowns: IBlueprintRundown[]) => {
-		playlist: IBlueprintRundownPlaylistInfo
-		/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
-		order: OrderedRundowns | null
-	}
+	getRundownPlaylistInfo?: (rundowns: IBlueprintRundown[]) => RundownPlaylistAndOrderedRundowns | null
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
