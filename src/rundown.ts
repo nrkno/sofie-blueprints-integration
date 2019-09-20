@@ -181,6 +181,8 @@ export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	invalid?: boolean
 	/** Expected duration of the piece, in milliseconds */
 	expectedDuration?: number
+	/** User-defined tags that can be used for filtering in the Rundown Layouts without modifying the label */
+	tags?: string[]
 }
 /** The AdLib piece sent from Core */
 export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
