@@ -55,17 +55,6 @@ export interface SystemBlueprintManifest extends BlueprintManifestBase {
 
 }
 
-/** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
-export type OrderedRundowns = {
-	[key: string]: number
-}
-
-export interface RundownPlaylistAndOrderedRundowns {
-	playlist: IBlueprintRundownPlaylistInfo
-	/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
-	order: OrderedRundowns | null
-}
-
 export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	blueprintType: BlueprintManifestType.STUDIO
 
@@ -81,7 +70,7 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRundown: IngestRundown) => string | null
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
-	getRundownPlaylistInfo?: (rundowns: IBlueprintRundown[]) => RundownPlaylistAndOrderedRundowns | null
+	getRundownPlaylistInfo?: (rundowns: IBlueprintRundown[]) => BlueprintResultRundownPlaylist | null
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -151,4 +140,15 @@ export interface BlueprintResultPart {
 	part: IBlueprintPart
 	pieces: IBlueprintPiece[]
 	adLibPieces: IBlueprintAdLibPiece[]
+}
+
+/** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
+export type BlueprintResultOrderedRundowns = {
+	[key: string]: number
+}
+
+export interface BlueprintResultRundownPlaylist {
+	playlist: IBlueprintRundownPlaylistInfo
+	/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
+	order: BlueprintResultOrderedRundowns | null
 }
