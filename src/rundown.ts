@@ -53,6 +53,7 @@ export interface IBlueprintSegmentDB extends IBlueprintSegment {
 
 /** The Part generated from Blueprint */
 export interface IBlueprintPart {
+	/** Id of the part from the gateway if this part does not map directly to an IngestPart. This must be unique for each part */
 	externalId: string
 	/** The story title */
 	title: string
