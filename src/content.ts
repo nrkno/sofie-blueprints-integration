@@ -123,6 +123,8 @@ export interface NoraPayload {
 
 export interface NoraContent extends BaseContent {
 	payload: NoraPayload
+	externalPayload: any
+	previewRenderer: string
 	timelineObjects: Array<TimelineObjectCoreExt>
 }
 
@@ -133,6 +135,18 @@ export interface SplitsContent extends BaseContent {
 		type: SourceLayerType
 		studioLabel: string
 		switcherInput: number | string
+		/** Geometry information for a given box item in the Split. X,Y are relative to center of Box, Scale is 0...1, where 1 is Full-Screen */
+		geometry?: {
+			x: number
+			y: number
+			scale: number
+			crop?: {
+				left: number
+				top: number
+				right: number
+				bottom: number
+			}
+		}
 	}>
 	timelineObjects: Array<TimelineObjectCoreExt>
 }

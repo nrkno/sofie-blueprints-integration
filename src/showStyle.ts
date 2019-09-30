@@ -4,6 +4,9 @@ import { SourceLayerType } from './content'
 export interface IBlueprintShowStyleBase {
 	_id: string
 
+	/** Id of the blueprint in the database */
+	blueprintId: string
+
 	/** "Outputs" in the UI */
 	outputLayers: Array<IOutputLayer>
 	/** "Layers" in the GUI */

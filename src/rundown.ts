@@ -53,6 +53,7 @@ export interface IBlueprintSegmentDB extends IBlueprintSegment {
 
 /** The Part generated from Blueprint */
 export interface IBlueprintPart {
+	/** Id of the part from the gateway if this part does not map directly to an IngestPart. This must be unique for each part */
 	externalId: string
 	/** The story title */
 	title: string
@@ -181,6 +182,8 @@ export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	invalid?: boolean
 	/** Expected duration of the piece, in milliseconds */
 	expectedDuration?: number
+	/** User-defined tags that can be used for filtering in the Rundown Layouts without modifying the label */
+	tags?: string[]
 }
 /** The AdLib piece sent from Core */
 export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
