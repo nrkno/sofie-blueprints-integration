@@ -2398,6 +2398,9 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="ongeneratetimelineobj.html#lookaheadforlayer" class="tsd-kind-icon">lookahead<wbr>For<wbr>Layer</a>
 				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="ongeneratetimelineobj.html#metadata" class="tsd-kind-icon">meta<wbr>Data</a>
+				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a href="ongeneratetimelineobj.html#pieceid" class="tsd-kind-icon">piece<wbr>Id</a>
 				</li>
@@ -2440,6 +2443,7 @@ img {
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ongeneratetimelineobj.html#islookahead" class="tsd-kind-icon">is<wbr>Lookahead</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ongeneratetimelineobj.html#keyframes" class="tsd-kind-icon">keyframes</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ongeneratetimelineobj.html#lookaheadforlayer" class="tsd-kind-icon">lookahead<wbr>For<wbr>Layer</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ongeneratetimelineobj.html#metadata" class="tsd-kind-icon">meta<wbr>Data</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ongeneratetimelineobj.html#pieceid" class="tsd-kind-icon">piece<wbr>Id</a></li>
 						</ul>
 					</section>
@@ -2455,7 +2459,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from TSRTimelineObjBase.content</p>
 					<ul>
-						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/index.d.ts:47</li>
+						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/index.d.ts:48</li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -2474,7 +2478,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="timelineobjectcoreext.html">TimelineObjectCoreExt</a>.<a href="timelineobjectcoreext.html#holdmode">holdMode</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/1168e4b/src/timeline.ts#L44">timeline.ts:44</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/66a1cfb/src/timeline.ts#L44">timeline.ts:44</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2489,7 +2493,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">infinite<wbr>Piece<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/1168e4b/src/timeline.ts#L50">timeline.ts:50</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/66a1cfb/src/timeline.ts#L52">timeline.ts:52</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2500,7 +2504,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from TSRTimelineObjProps.isLookahead</p>
 					<ul>
-						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/mapping.d.ts:23</li>
+						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/mapping.d.ts:25</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2516,7 +2520,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from TSRTimelineObjBase.keyframes</p>
 					<ul>
-						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/index.d.ts:50</li>
+						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/index.d.ts:51</li>
 					</ul>
 				</aside>
 			</section>
@@ -2527,12 +2531,28 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from TSRTimelineObjProps.lookaheadForLayer</p>
 					<ul>
-						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/mapping.d.ts:25</li>
+						<li>Defined in /home/circleci/project/node_modules/timeline-state-resolver-types/dist/mapping.d.ts:27</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>Only valid when isLookahead is true. Set so that a lookahead object knows what layer it belongs to</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="metadata" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> meta<wbr>Data</h3>
+				<div class="tsd-signature tsd-kind-icon">meta<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="timelineobjectcoreext.html">TimelineObjectCoreExt</a>.<a href="timelineobjectcoreext.html#metadata">metaData</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/66a1cfb/src/timeline.ts#L46">timeline.ts:46</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Arbitrary data storage for plugins</p>
 					</div>
 				</div>
 			</section>
@@ -2542,7 +2562,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">piece<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/1168e4b/src/timeline.ts#L49">timeline.ts:49</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/66a1cfb/src/timeline.ts#L51">timeline.ts:51</a></li>
 					</ul>
 				</aside>
 			</section>
