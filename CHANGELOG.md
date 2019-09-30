@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.24.1...1.0.0) (2019-09-30)
+
+
+### Bug Fixes
+
+* expose blueprintId on IBlueprintShowStyleBase for show style selection ([ace4ecc](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/ace4ecc))
+* move metaData field to TimelineObjectCoreExt instead of being defined within the blueprint typings ([3c96a2c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/3c96a2c))
+
+
+### Features
+
+* allow for blueprint-specified tags on adLib pieces ([e5963a5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/e5963a5))
+* allow specifying box geometry in SplitsContent ([f11a49f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f11a49f))
+* expose externalPayload on NoraContent ([94560a0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/94560a0))
+* expose nora renderer url to UI ([71182cd](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/71182cd))
+* remove studio config & migrations from show style blueprints ([1017cc2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/1017cc2))
+
 ### [0.24.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.24.0...0.24.1) (2019-08-06)
 
 
