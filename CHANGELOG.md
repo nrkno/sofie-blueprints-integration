@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.0.0...1.0.1) (2019-10-02)
+
+
+### Bug Fixes
+
+* onTimelineGenerate incorrect context type ([51c1a26](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/51c1a26))
+* onTimelineGenerate incorrect context type ([#46](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/issues/46)) ([1250a78](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/1250a78))
+
 ## [1.0.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/0.24.1...1.0.0) (2019-09-30)
 
 
