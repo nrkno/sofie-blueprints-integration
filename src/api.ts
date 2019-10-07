@@ -144,7 +144,7 @@ export interface BlueprintResultPart {
 
 /** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
 export type BlueprintResultOrderedRundowns = {
-	[key: string]: number
+	[rundownExternalId: string]: number
 }
 
 export interface BlueprintResultRundownPlaylist {
