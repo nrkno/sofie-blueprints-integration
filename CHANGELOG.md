@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.0.1...1.1.0) (2019-10-11)
+
+
+### Bug Fixes
+
+* improve getRundownPlaylistInfo ([f2dd56e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f2dd56e))
+* move getRundownPlaylistInfo result into an interface ([50ff6c3](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/50ff6c3))
+
+
+### Features
+
+* config-manifest table type ([99574b7](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/99574b7))
+* support hinting/asking about RundownPlaylists ([98d5ad7](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/98d5ad7))
+
 ### [1.0.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.0.0...1.0.1) (2019-10-02)
 
 
