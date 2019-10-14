@@ -8,19 +8,19 @@ export interface IBlueprintShowStyleBase {
 	blueprintId: string
 
 	/** "Outputs" in the UI */
-	outputLayers: Array<IOutputLayer>
+	outputLayers: IOutputLayer[]
 	/** "Layers" in the GUI */
-	sourceLayers: Array<ISourceLayer>
+	sourceLayers: ISourceLayer[]
 
 	/** Config values are used by the Blueprints */
-	config: Array<IConfigItem>
+	config: IConfigItem[]
 }
 export interface IBlueprintShowStyleVariant {
 	_id: string
 	name: string
 
 	/** Config values are used by the Blueprints */
-	config: Array<IConfigItem>
+	config: IConfigItem[]
 }
 
 /** A single source layer, f.g Cameras, VT, Graphics, Remotes */
@@ -70,7 +70,8 @@ export interface IOutputLayer {
 	name: string
 	/** Rank for ordering */
 	_rank: number
-	/** PGM treatment of this output should be in effect
+	/**
+	 * PGM treatment of this output should be in effect
 	 * (generate PGM Clean out based on SourceLayer properties)
 	 */
 	isPGM: boolean
