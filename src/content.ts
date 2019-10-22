@@ -129,28 +129,30 @@ export interface NoraContent extends BaseContent {
 	timelineObjects: TimelineObjectCoreExt[]
 }
 
-export interface SplitsContent extends BaseContent {
-	dveConfiguration: any
-	/** Array of contents, 0 index is DVE art */
-	boxSourceConfiguration: Array<
-		(VTContent | CameraContent | RemoteContent | GraphicsContent) & {
-			type: SourceLayerType
-			studioLabel: string
-			switcherInput: number | string
-			/** Geometry information for a given box item in the Split. X,Y are relative to center of Box, Scale is 0...1, where 1 is Full-Screen */
-			geometry?: {
-				x: number
-				y: number
-				scale: number
-				crop?: {
-					left: number
-					top: number
-					right: number
-					bottom: number
-				}
-			}
+export interface SplitsContentBoxProperties {
+	type: SourceLayerType
+	studioLabel: string
+	switcherInput: number | string
+	/** Geometry information for a given box item in the Split. X,Y are relative to center of Box, Scale is 0...1, where 1 is Full-Screen */
+	geometry?: {
+		x: number
+		y: number
+		scale: number
+		crop?: {
+			left: number
+			top: number
+			right: number
+			bottom: number
 		}
-	>
+	}
+}
+export type SplitsContentBoxContent = Omit<
+	VTContent | CameraContent | RemoteContent | GraphicsContent,
+	'timelineObjects'
+>
+export interface SplitsContent extends BaseContent {
+	/** Array of contents, 0 is towards the rear */
+	boxSourceConfiguration: Array<SplitsContentBoxContent & SplitsContentBoxProperties>
 	timelineObjects: TimelineObjectCoreExt[]
 }
 
