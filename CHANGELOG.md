@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.1.0...1.2.0) (2019-10-29)
+
+
+### Features
+
+* add prettier ([344eef3](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/344eef3d8507ed7b0cb5cbeead8e32c930eebf0e))
+* tighten up typings on migration context interfaces ([c1927fc](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c1927fccb9623151ec6abd4de04db69b081b39d9))
+* update ci to run for node 8,10,12 ([8ddedd3](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/8ddedd3963966e8bb07eba24b3c04caab00c40a0))
+
+
+### Bug Fixes
+
+* SplitsContent typings are split into more interfaces, and timelineObjects removed from the boxConfigs ([9753a44](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/9753a4427bec5aa61d492318fa934ac2f82d6210))
+
 ## [1.1.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.0.1...1.1.0) (2019-10-11)
 
 
