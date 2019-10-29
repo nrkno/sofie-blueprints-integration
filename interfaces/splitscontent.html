@@ -2383,9 +2383,6 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a href="splitscontent.html#boxsourceconfiguration" class="tsd-kind-icon">box<wbr>Source<wbr>Configuration</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="splitscontent.html#dveconfiguration" class="tsd-kind-icon">dve<wbr>Configuration</a>
-				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="splitscontent.html#editable" class="tsd-kind-icon">editable</a>
 				</li>
@@ -2413,7 +2410,7 @@ img {
 		</section>
 		<section class="tsd-panel tsd-kind-interface tsd-is-external">
 			<h3 class="tsd-before-signature">Indexable</h3>
-			<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="timelineobjectcoreext.html" class="tsd-signature-type">TimelineObjectCoreExt</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+			<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="timelineobjectcoreext.html" class="tsd-signature-type">TimelineObjectCoreExt</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
@@ -2423,7 +2420,6 @@ img {
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="splitscontent.html#boxsourceconfiguration" class="tsd-kind-icon">box<wbr>Source<wbr>Configuration</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="splitscontent.html#dveconfiguration" class="tsd-kind-icon">dve<wbr>Configuration</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="splitscontent.html#editable" class="tsd-kind-icon">editable</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="splitscontent.html#timelineobjects" class="tsd-kind-icon">timeline<wbr>Objects</a></li>
 						</ul>
@@ -2436,27 +2432,17 @@ img {
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 				<a name="boxsourceconfiguration" class="tsd-anchor"></a>
 				<h3>box<wbr>Source<wbr>Configuration</h3>
-				<div class="tsd-signature tsd-kind-icon">box<wbr>Source<wbr>Configuration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="vtcontent.html" class="tsd-signature-type">VTContent</a><span class="tsd-signature-symbol"> | </span><a href="cameracontent.html" class="tsd-signature-type">CameraContent</a><span class="tsd-signature-symbol"> | </span><a href="remotecontent.html" class="tsd-signature-type">RemoteContent</a><span class="tsd-signature-symbol"> | </span><a href="graphicscontent.html" class="tsd-signature-type">GraphicsContent</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<div class="tsd-signature tsd-kind-icon">box<wbr>Source<wbr>Configuration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#splitscontentboxcontent" class="tsd-signature-type">SplitsContentBoxContent</a><span class="tsd-signature-symbol"> &amp; </span><a href="splitscontentboxproperties.html" class="tsd-signature-type">SplitsContentBoxProperties</a><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/00d7d64/src/content.ts#L134">content.ts:134</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/58e2743/src/content.ts#L155">content.ts:155</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Array of contents, 0 index is DVE art</p>
+						<p>Array of contents, 0 is towards the rear</p>
 					</div>
 				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="dveconfiguration" class="tsd-anchor"></a>
-				<h3>dve<wbr>Configuration</h3>
-				<div class="tsd-signature tsd-kind-icon">dve<wbr>Configuration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/00d7d64/src/content.ts#L132">content.ts:132</a></li>
-					</ul>
-				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 				<a name="editable" class="tsd-anchor"></a>
@@ -2465,18 +2451,18 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="basecontent.html">BaseContent</a>.<a href="basecontent.html#editable">editable</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/00d7d64/src/content.ts#L35">content.ts:35</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/58e2743/src/content.ts#L35">content.ts:35</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 				<a name="timelineobjects" class="tsd-anchor"></a>
 				<h3>timeline<wbr>Objects</h3>
-				<div class="tsd-signature tsd-kind-icon">timeline<wbr>Objects<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="timelineobjectcoreext.html" class="tsd-signature-type">TimelineObjectCoreExt</a><span class="tsd-signature-symbol">&gt;</span></div>
+				<div class="tsd-signature tsd-kind-icon">timeline<wbr>Objects<span class="tsd-signature-symbol">:</span> <a href="timelineobjectcoreext.html" class="tsd-signature-type">TimelineObjectCoreExt</a><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<p>Overrides <a href="basecontent.html">BaseContent</a>.<a href="basecontent.html#timelineobjects">timelineObjects</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/00d7d64/src/content.ts#L151">content.ts:151</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/58e2743/src/content.ts#L156">content.ts:156</a></li>
 					</ul>
 				</aside>
 			</section>
