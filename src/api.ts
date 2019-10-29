@@ -1,30 +1,30 @@
 import { TSRTimelineObjBase } from 'timeline-state-resolver-types'
 
-import {
-	IBlueprintRundown,
-	IBlueprintPiece,
-	IBlueprintAdLibPiece,
-	IBlueprintSegment,
-	IBlueprintPart,
-	IBlueprintPieceDB,
-	IBlueprintRundownPlaylistInfo
-} from './rundown'
-import { IBlueprintExternalMessageQueueObj } from './message'
 import { ConfigManifestEntry } from './config'
-
-import { MigrationStep } from './migrations'
-import { IngestRundown, IngestSegment } from './ingest'
+import { IBlueprintExternalMessageQueueObj } from './message'
 import {
-	IStudioContext,
-	RundownContext,
-	EventContext,
-	PartEventContext,
+	IBlueprintAdLibPiece,
+	IBlueprintPart,
+	IBlueprintPiece,
+	IBlueprintPieceDB,
+	IBlueprintRundown,
+	IBlueprintRundownPlaylistInfo,
+	IBlueprintSegment
+} from './rundown'
+
+import {
 	AsRunEventContext,
+	EventContext,
+	IStudioConfigContext,
+	IStudioContext,
+	PartEventContext,
+	RundownContext,
 	SegmentContext,
-	ShowStyleContext,
-	IStudioConfigContext
+	ShowStyleContext
 } from './context'
-import { IBlueprintShowStyleVariant, IBlueprintShowStyleBase } from './showStyle'
+import { IngestRundown, IngestSegment } from './ingest'
+import { MigrationStep } from './migrations'
+import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
 
 export enum BlueprintManifestType {
@@ -33,7 +33,9 @@ export enum BlueprintManifestType {
 	SHOWSTYLE = 'showstyle'
 }
 
-export type BlueprintManifestSet = { [id: string]: string }
+export interface BlueprintManifestSet {
+	[id: string]: string
+}
 export type SomeBlueprintManifest = SystemBlueprintManifest | StudioBlueprintManifest | ShowStyleBlueprintManifest
 
 export interface BlueprintManifestBase {
@@ -52,7 +54,6 @@ export interface BlueprintManifestBase {
 
 export interface SystemBlueprintManifest extends BlueprintManifestBase {
 	blueprintType: BlueprintManifestType.SYSTEM
-
 }
 
 export interface StudioBlueprintManifest extends BlueprintManifestBase {
@@ -67,7 +68,11 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getBaseline: (context: IStudioContext) => TSRTimelineObjBase[]
 
 	/** Returns the id of the show style to use for a rundown, return null to ignore that rundown */
-	getShowStyleId: (context: IStudioConfigContext, showStyles: Array<IBlueprintShowStyleBase>, ingestRundown: IngestRundown) => string | null
+	getShowStyleId: (
+		context: IStudioConfigContext,
+		showStyles: IBlueprintShowStyleBase[],
+		ingestRundown: IngestRundown
+	) => string | null
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
 	getRundownPlaylistInfo?: (rundowns: IBlueprintRundown[]) => BlueprintResultRundownPlaylist | null
@@ -85,7 +90,11 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	// Callbacks called by Core:
 
 	/** Returns the id of the show style variant to use for a rundown, return null to ignore that rundown */
-	getShowStyleVariantId: (context: IStudioConfigContext, showStyleVariants: Array<IBlueprintShowStyleVariant>, ingestRundown: IngestRundown) => string | null
+	getShowStyleVariantId: (
+		context: IStudioConfigContext,
+		showStyleVariants: IBlueprintShowStyleVariant[],
+		ingestRundown: IngestRundown
+	) => string | null
 
 	/** Generate rundown from ingest data. return null to ignore that rundown */
 	getRundown: (context: ShowStyleContext, ingestRundown: IngestRundown) => BlueprintResultRundown
@@ -108,18 +117,33 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	onPostTake?: (context: EventContext & PartEventContext) => Promise<void>
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
-	onTimelineGenerate?: (context: PartEventContext, timeline: OnGenerateTimelineObj[], previousPersistentState: TimelinePersistentState | undefined, previousPartEndState: PartEndState | undefined, resolvedPieces: IBlueprintPieceDB[]) => Promise<BlueprintResultTimeline>
+	onTimelineGenerate?: (
+		context: PartEventContext,
+		timeline: OnGenerateTimelineObj[],
+		previousPersistentState: TimelinePersistentState | undefined,
+		previousPartEndState: PartEndState | undefined,
+		resolvedPieces: IBlueprintPieceDB[]
+	) => Promise<BlueprintResultTimeline>
 
 	/** Called just before taking the next part. This generates some persisted data used by onTimelineGenerate to modify the timeline based on the previous part (eg, persist audio levels) */
-	getEndStateForPart?: (context: RundownContext, previousPersistentState: TimelinePersistentState | undefined, previousPartEndState: PartEndState | undefined, resolvedPieces: IBlueprintPiece[], time: number) => PartEndState
+	getEndStateForPart?: (
+		context: RundownContext,
+		previousPersistentState: TimelinePersistentState | undefined,
+		previousPartEndState: PartEndState | undefined,
+		resolvedPieces: IBlueprintPiece[],
+		time: number
+	) => PartEndState
 
 	/** Called after an as-run event is created */
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
-
 }
 
-export type PartEndState = { [key: string]: any }
-export type TimelinePersistentState = { [key: string]: any }
+export interface PartEndState {
+	[key: string]: any
+}
+export interface TimelinePersistentState {
+	[key: string]: any
+}
 
 export interface BlueprintResultTimeline {
 	timeline: OnGenerateTimelineObj[]
@@ -143,7 +167,7 @@ export interface BlueprintResultPart {
 }
 
 /** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
-export type BlueprintResultOrderedRundowns = {
+export interface BlueprintResultOrderedRundowns {
 	[rundownExternalId: string]: number
 }
 

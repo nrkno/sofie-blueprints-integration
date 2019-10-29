@@ -8,7 +8,8 @@ export enum ConfigManifestEntryType {
 	TABLE = 'table'
 }
 
-export type BasicConfigManifestEntry = ConfigManifestEntryString
+export type BasicConfigManifestEntry =
+	| ConfigManifestEntryString
 	| ConfigManifestEntryNumber
 	| ConfigManifestEntryBoolean
 	| ConfigManifestEntryEnum

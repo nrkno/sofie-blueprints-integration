@@ -1,7 +1,7 @@
 import { Time } from './common'
 import { SomeContent } from './content'
-import { Timeline } from './timeline'
 import { Omit } from './lib'
+import { Timeline } from './timeline'
 
 export interface IBlueprintRundownPlaylistInfo {
 	name: string
@@ -25,7 +25,7 @@ export interface IBlueprintRundown {
 	expectedDuration?: number
 
 	/** Arbitrary data storage for plugins */
-	metaData?: {[key: string]: any}
+	metaData?: { [key: string]: any }
 
 	/** A hint to the Core that the Rundown should be a part of a playlist */
 	playlistExternalId?: string
@@ -63,7 +63,7 @@ export interface IBlueprintSegment {
 	/** User-presentable name (Slug) for the Title */
 	name: string
 	/** Arbitrary data storage for plugins */
-	metaData?: {[key: string]: any}
+	metaData?: { [key: string]: any }
 }
 /** The Segment sent from Core */
 export interface IBlueprintSegmentDB extends IBlueprintSegment {
@@ -77,7 +77,7 @@ export interface IBlueprintPart {
 	/** The story title */
 	title: string
 	/** Arbitrary data storage for plugins */
-	metaData?: {[key: string]: any}
+	metaData?: { [key: string]: any }
 
 	/** Should this item should progress to the next automatically */
 	autoNext?: boolean
@@ -131,24 +131,26 @@ export interface IBlueprintPartDB extends IBlueprintPart {
 
 export interface IBlueprintPartDBTimings {
 	/** Point in time the Part was taken, (ie the time of the user action) */
-	take: Array<Time>,
+	take: Time[]
 	/** Point in time the "take" action has finished executing */
-	takeDone: Array<Time>,
+	takeDone: Time[]
 	/** Point in time the Part started playing (ie the time of the playout) */
-	startedPlayback: Array<Time>,
+	startedPlayback: Time[]
 	/** Point in time the Part stopped playing (ie the time of the user action) */
-	takeOut: Array<Time>,
+	takeOut: Time[]
 	/** Point in time the Part stopped playing (ie the time of the playout) */
-	stoppedPlayback: Array<Time>,
+	stoppedPlayback: Time[]
 	/** Point in time the Part was set as Next (ie the time of the user action) */
-	next: Array<Time>
+	next: Time[]
 }
 export enum PartHoldMode {
 	NONE = 0,
 	FROM = 1,
 	TO = 2
 }
-export type PieceMetaData = { [key: string]: any }
+export interface PieceMetaData {
+	[key: string]: any
+}
 export interface IBlueprintPieceGeneric {
 	/** ID of the source object in the gateway */
 	externalId: string
@@ -161,7 +163,7 @@ export interface IBlueprintPieceGeneric {
 
 	/** Source layer the timeline item belongs to */
 	sourceLayerId: string
-  	/** Layer output this piece belongs to */
+	/** Layer output this piece belongs to */
 	outputLayerId: string
 	/** The object describing the item in detail */
 	content?: SomeContent

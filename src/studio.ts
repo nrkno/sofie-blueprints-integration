@@ -1,6 +1,4 @@
-import {
-	Mappings, Mapping
-} from 'timeline-state-resolver-types'
+import { Mapping, Mappings } from 'timeline-state-resolver-types'
 
 export enum LookaheadMode {
 	NONE = 0,

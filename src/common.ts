@@ -1,4 +1,3 @@
-
 export type Time = number
 
 export interface IConfigItem {
