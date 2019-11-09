@@ -66,6 +66,8 @@ export interface IBlueprintSegment {
 	metaData?: { [key: string]: any }
 	/** Hide the Segment in the UI */
 	isHidden?: boolean
+	/** User-facing identifier that can be used by the User to identify the contents of a segment in the Rundown source system */
+	identifier?: string
 }
 /** The Segment sent from Core */
 export interface IBlueprintSegmentDB extends IBlueprintSegment {
