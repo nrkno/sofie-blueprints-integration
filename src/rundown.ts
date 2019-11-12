@@ -1,7 +1,17 @@
 import { Time } from './common'
 import { SomeContent } from './content'
-import { Timeline } from './timeline'
 import { Omit } from './lib'
+import { Timeline } from './timeline'
+
+export interface IBlueprintRundownPlaylistInfo {
+	name: string
+
+	externalId: string
+
+	expectedStart?: Time
+
+	expectedDuration?: number
+}
 
 /** The Rundown generated from Blueprint */
 export interface IBlueprintRundown {
@@ -15,7 +25,10 @@ export interface IBlueprintRundown {
 	expectedDuration?: number
 
 	/** Arbitrary data storage for plugins */
-	metaData?: {[key: string]: any}
+	metaData?: { [key: string]: any }
+
+	/** A hint to the Core that the Rundown should be a part of a playlist */
+	playlistExternalId?: string
 }
 /** The Rundown sent from Core */
 export interface IBlueprintRundownDB extends IBlueprintRundown {
@@ -23,6 +36,12 @@ export interface IBlueprintRundownDB extends IBlueprintRundown {
 
 	/** Id of the showStyle variant used */
 	showStyleVariantId: string
+
+	/** RundownPlaylist this rundown is member of */
+	playlistId?: string
+
+	/** Rundown's place in the RundownPlaylist */
+	_rank?: number
 }
 
 /** Collection of runtime arguments to apply */
@@ -57,11 +76,12 @@ export interface IBlueprintSegmentDB extends IBlueprintSegment {
 
 /** The Part generated from Blueprint */
 export interface IBlueprintPart {
+	/** Id of the part from the gateway if this part does not map directly to an IngestPart. This must be unique for each part */
 	externalId: string
 	/** The story title */
 	title: string
 	/** Arbitrary data storage for plugins */
-	metaData?: {[key: string]: any}
+	metaData?: { [key: string]: any }
 
 	/** Should this item should progress to the next automatically */
 	autoNext?: boolean
@@ -115,24 +135,26 @@ export interface IBlueprintPartDB extends IBlueprintPart {
 
 export interface IBlueprintPartDBTimings {
 	/** Point in time the Part was taken, (ie the time of the user action) */
-	take: Array<Time>,
+	take: Time[]
 	/** Point in time the "take" action has finished executing */
-	takeDone: Array<Time>,
+	takeDone: Time[]
 	/** Point in time the Part started playing (ie the time of the playout) */
-	startedPlayback: Array<Time>,
+	startedPlayback: Time[]
 	/** Point in time the Part stopped playing (ie the time of the user action) */
-	takeOut: Array<Time>,
+	takeOut: Time[]
 	/** Point in time the Part stopped playing (ie the time of the playout) */
-	stoppedPlayback: Array<Time>,
+	stoppedPlayback: Time[]
 	/** Point in time the Part was set as Next (ie the time of the user action) */
-	next: Array<Time>
+	next: Time[]
 }
 export enum PartHoldMode {
 	NONE = 0,
 	FROM = 1,
 	TO = 2
 }
-export type PieceMetaData = { [key: string]: any }
+export interface PieceMetaData {
+	[key: string]: any
+}
 export interface IBlueprintPieceGeneric {
 	/** ID of the source object in the gateway */
 	externalId: string
@@ -145,7 +167,7 @@ export interface IBlueprintPieceGeneric {
 
 	/** Source layer the timeline item belongs to */
 	sourceLayerId: string
-  	/** Layer output this piece belongs to */
+	/** Layer output this piece belongs to */
 	outputLayerId: string
 	/** The object describing the item in detail */
 	content?: SomeContent

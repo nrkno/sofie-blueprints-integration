@@ -56,7 +56,7 @@ export interface ExternalMessageQueueObjRabbitMQ extends IBlueprintExternalMessa
 	type: IBlueprintExternalMessageQueueType.RABBIT_MQ
 	receiver: {
 		/** RabbitMQ host endpoint */
-		host: string,
+		host: string
 		/** RabbitMQ topic */
 		topic: string
 	}
@@ -66,6 +66,6 @@ export interface ExternalMessageQueueObjRabbitMQ extends IBlueprintExternalMessa
 		/** Message to send */
 		message: string
 		/** Message headers to send */
-		headers: {[key: string]: string}
+		headers: { [key: string]: string }
 	}
 }

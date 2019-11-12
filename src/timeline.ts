@@ -1,7 +1,4 @@
-import {
-	IBlueprintPartDB,
-	IBlueprintPiece
-} from './rundown'
+import { IBlueprintPartDB, IBlueprintPiece } from './rundown'
 
 import { Timeline, TSRTimelineObjBase } from 'timeline-state-resolver-types'
 
@@ -14,21 +11,29 @@ export enum PlayoutTimelinePrefixes {
 	PIECE_GROUP_FIRST_ITEM_PREFIX = 'piece_group_firstobject_'
 }
 
-export function getPartGroupId (part: IBlueprintPartDB | string) {
-	if (typeof part === 'string') return PlayoutTimelinePrefixes.PART_GROUP_PREFIX + part
+export function getPartGroupId(part: IBlueprintPartDB | string) {
+	if (typeof part === 'string') {
+		return PlayoutTimelinePrefixes.PART_GROUP_PREFIX + part
+	}
 	return PlayoutTimelinePrefixes.PART_GROUP_PREFIX + part._id
 }
-export function getPieceGroupId (piece: IBlueprintPiece | string) {
-	if (typeof piece === 'string') return PlayoutTimelinePrefixes.PIECE_GROUP_PREFIX + piece
+export function getPieceGroupId(piece: IBlueprintPiece | string) {
+	if (typeof piece === 'string') {
+		return PlayoutTimelinePrefixes.PIECE_GROUP_PREFIX + piece
+	}
 
 	return PlayoutTimelinePrefixes.PIECE_GROUP_PREFIX + piece._id
 }
-export function getPartFirstObjectId (part: IBlueprintPartDB | string) {
-	if (typeof part === 'string') return PlayoutTimelinePrefixes.PART_GROUP_FIRST_ITEM_PREFIX + part
+export function getPartFirstObjectId(part: IBlueprintPartDB | string) {
+	if (typeof part === 'string') {
+		return PlayoutTimelinePrefixes.PART_GROUP_FIRST_ITEM_PREFIX + part
+	}
 	return PlayoutTimelinePrefixes.PART_GROUP_FIRST_ITEM_PREFIX + part._id
 }
-export function getPieceFirstObjectId (piece: IBlueprintPiece | string) {
-	if (typeof piece === 'string') return PlayoutTimelinePrefixes.PIECE_GROUP_FIRST_ITEM_PREFIX + piece
+export function getPieceFirstObjectId(piece: IBlueprintPiece | string) {
+	if (typeof piece === 'string') {
+		return PlayoutTimelinePrefixes.PIECE_GROUP_FIRST_ITEM_PREFIX + piece
+	}
 
 	return PlayoutTimelinePrefixes.PIECE_GROUP_FIRST_ITEM_PREFIX + piece._id
 }
