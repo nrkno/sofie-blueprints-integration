@@ -1,4 +1,4 @@
-import { DeviceOptions } from 'timeline-state-resolver-types'
+import { DeviceOptionsAny } from 'timeline-state-resolver-types'
 import { ConfigItemValue } from './common'
 import { OmitId } from './lib'
 import { IBlueprintRuntimeArgumentsItem } from './rundown'
@@ -54,9 +54,9 @@ export interface MigrationContextStudio {
 	setConfig: (configId: string, value: ConfigItemValue) => void
 	removeConfig: (configId: string) => void
 
-	getDevice: (deviceId: string) => DeviceOptions | undefined
-	insertDevice: (deviceId: string, device: DeviceOptions) => string | null
-	updateDevice: (deviceId: string, device: Partial<DeviceOptions>) => void
+	getDevice: (deviceId: string) => DeviceOptionsAny | undefined
+	insertDevice: (deviceId: string, device: DeviceOptionsAny) => string | null
+	updateDevice: (deviceId: string, device: Partial<DeviceOptionsAny>) => void
 	removeDevice: (deviceId: string) => void
 }
 
