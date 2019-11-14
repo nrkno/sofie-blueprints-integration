@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.2.0...1.2.1) (2019-11-14)
+
+
+### Bug Fixes
+
+* update typings after TSR update ([925614d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/925614d460c548d5119f2d924eefda787df48a8d))
+
 ## [1.2.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.1.0...1.2.0) (2019-10-29)
 
 
