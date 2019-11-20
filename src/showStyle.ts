@@ -30,10 +30,6 @@ export interface ISourceLayer {
 	/** Abbreviation for display in the countdown screens */
 	abbreviation?: string
 	type: SourceLayerType
-	/** If set to true, the layer can handle any number of simultaneus Line Items */
-	unlimited: boolean
-	/** If set to true, the layer will be shown in PGM Clean */
-	onPGMClean: boolean
 	/** Source layer exclusivity group. When adLibbing, only a single piece can exist whitin an exclusivity group */
 	exclusiveGroup?: string
 	/** Use special treatment for remote inputs */
