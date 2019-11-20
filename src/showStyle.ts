@@ -75,4 +75,8 @@ export interface IOutputLayer {
 	 * (generate PGM Clean out based on SourceLayer properties)
 	 */
 	isPGM: boolean
+	/** Is the output layer collapsed by default */
+	isDefaultCollapsed?: boolean
+	/** is the output flattened (all source layers presented on the same layer) */
+	isFlattened?: boolean
 }
