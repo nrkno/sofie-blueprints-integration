@@ -123,11 +123,19 @@ export interface IBlueprintPart {
 	 *  - part was handled by the blueprint, but blueprint could not produce a playable result (f.g. the part is a VT clip, but no clip information was present in NRCS)
 	 *  - part was handled by the blueprint, but business logic prevents it from being played (f.g. the part has been marked as "Not approved" by the editor)
 	 *  - there is another issue preventing the part from being playable, but the user expects it to be there
+	 *
+	 * Invalid means that in Sofie:
+	 * * The Part is not playable
+	 * * The Part is displayed in the Rundown GUI (as invalid)
+	 * * The Part is still used in timing calculations as normal
+	 * * The Part is still showed in prompter, etc, as normal
+	 * * The Part has Adlibs that are playable
+	 * * Infinites still works as normal
 	 */
 	invalid?: boolean
 	/**
 	 * Provide additional information about the reason a part is invalid. The title should be a single, short sentence describing the reason. Additional
-	 * information cab be provided in the description property. The blueprints can also provide a color hint that the UI can use when displaying the part.
+	 * information can be provided in the description property. The blueprints can also provide a color hint that the UI can use when displaying the part.
 	 * Color needs to be in #xxxxxx RGB hexadecimal format.
 	 *
 	 * @type {{
