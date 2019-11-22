@@ -148,6 +148,15 @@ export enum PartHoldMode {
 	FROM = 1,
 	TO = 2
 }
+
+export declare enum PieceTransitionType {
+	MIX = 'MIX',
+	WIPE = 'WIPE'
+}
+export interface PieceTransition {
+	type: PieceTransitionType
+	duration: number
+}
 export interface PieceMetaData {
 	[key: string]: any
 }
@@ -167,6 +176,14 @@ export interface IBlueprintPieceGeneric {
 	outputLayerId: string
 	/** The object describing the item in detail */
 	content?: SomeContent
+
+	/** The transition used by this piece to transition to and from the piece */
+	transitions?: {
+		/** In transition for the piece */
+		inTransition?: PieceTransition
+		/** The out transition for the piece */
+		outTransition?: PieceTransition
+	}
 
 	infiniteMode?: PieceLifespan
 
