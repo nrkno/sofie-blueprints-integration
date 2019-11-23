@@ -97,11 +97,6 @@ export interface IBlueprintPart {
 	/** Expected duration of the line, in milliseconds */
 	expectedDuration?: number
 
-	/** The type of the segmentLiene, could be the name of the template that created it */
-	typeVariant: string
-	/** The subtype fo the part */
-	subTypeVariant?: string
-
 	/** Whether this segment line supports being used in HOLD */
 	holdMode?: PartHoldMode
 
