@@ -209,6 +209,9 @@ export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	expectedDuration?: number
 	/** User-defined tags that can be used for filtering in the Rundown Layouts without modifying the label */
 	tags?: string[]
+
+	/** Whether the adlib should always be inserted queued */
+	toBeQueued?: boolean
 }
 /** The AdLib piece sent from Core */
 export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
