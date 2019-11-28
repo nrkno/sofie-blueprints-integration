@@ -63,7 +63,7 @@ export interface IBlueprintSegment {
 	/** User-presentable name (Slug) for the Title */
 	name: string
 	/** Arbitrary data storage for plugins */
-	metaData?: {[key: string]: any}
+	metaData?: { [key: string]: any }
 	/** Hide the Segment in the UI */
 	isHidden?: boolean
 	/** User-facing identifier that can be used by the User to identify the contents of a segment in the Rundown source system */
@@ -176,6 +176,8 @@ export interface IBlueprintPieceGeneric {
 
 	/** Duration to preroll/overlap when running this adlib */
 	adlibPreroll?: number
+	/** Whether the adlib should always be inserted queued */
+	toBeQueued?: boolean
 }
 
 export type PieceEnable = Omit<Timeline.TimelineEnable, 'while' | 'repeating'>
@@ -209,9 +211,6 @@ export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	expectedDuration?: number
 	/** User-defined tags that can be used for filtering in the Rundown Layouts without modifying the label */
 	tags?: string[]
-
-	/** Whether the adlib should always be inserted queued */
-	toBeQueued?: boolean
 }
 /** The AdLib piece sent from Core */
 export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
