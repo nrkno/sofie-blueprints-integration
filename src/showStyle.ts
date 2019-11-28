@@ -51,6 +51,8 @@ export interface ISourceLayer {
 	assignHotkeysToGlobalAdlibs?: boolean
 	/** Last used sticky item on a layer is remembered and can be returned to using the sticky hotkey */
 	isSticky?: boolean
+	/** Whether sticky items should only use original pieces on this layer (not inserted via an adlib) */
+	stickyOriginalOnly?: boolean
 	/** Keyboard shortcut to be used to reuse a sticky item on this layer */
 	activateStickyKeyboardHotkey?: string
 	/** Should adlibs on this source layer be queueable */
