@@ -118,6 +118,9 @@ export interface IBlueprintPart {
 
 	/** When something bad has happened, we can mark the part as invalid, which will prevent the user from TAKE:ing it */
 	invalid?: boolean
+
+	/** When the NRCS informs us that the producer marked the part as floated, we can prevent the user from TAKE'ing and NEXT'ing it, but still have it visible and allow manipulation */
+	floated?: boolean
 }
 /** The Part sent from Core */
 export interface IBlueprintPartDB extends IBlueprintPart {
