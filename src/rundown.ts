@@ -116,8 +116,40 @@ export interface IBlueprintPart {
 	displayDurationGroup?: string
 	displayDuration?: number
 
-	/** When something bad has happened, we can mark the part as invalid, which will prevent the user from TAKE:ing it */
+	/**
+	 * When something bad has happened, we can mark the part as invalid, which will prevent the user from TAKEing it.
+	 * Situations where a part can be marked as invalid include:
+	 *  - part could not be handled by the blueprint, but NRCS would expect it to exist in Rundown (f.g. no part type in ENPS)
+	 *  - part was handled by the blueprint, but blueprint could not produce a playable result (f.g. the part is a VT clip, but no clip information was present in NRCS)
+	 *  - part was handled by the blueprint, but business logic prevents it from being played (f.g. the part has been marked as "Not approved" by the editor)
+	 *  - there is another issue preventing the part from being playable, but the user expects it to be there
+	 *
+	 * Invalid means that in Sofie:
+	 * * The Part is not playable
+	 * * The Part is displayed in the Rundown GUI (as invalid)
+	 * * The Part is still used in timing calculations as normal
+	 * * The Part is still showed in prompter, etc, as normal
+	 * * The Part has Adlibs that are playable
+	 * * Infinites still works as normal
+	 */
 	invalid?: boolean
+	/**
+	 * Provide additional information about the reason a part is invalid. The title should be a single, short sentence describing the reason. Additional
+	 * information can be provided in the description property. The blueprints can also provide a color hint that the UI can use when displaying the part.
+	 * Color needs to be in #xxxxxx RGB hexadecimal format.
+	 *
+	 * @type {{
+	 * 		title: string,
+	 * 		description?: string
+	 * 		color?: string
+	 * 	}}
+	 * @memberof IBlueprintPart
+	 */
+	invalidReason?: {
+		title: string
+		description?: string
+		color?: string
+	}
 }
 /** The Part sent from Core */
 export interface IBlueprintPartDB extends IBlueprintPart {
