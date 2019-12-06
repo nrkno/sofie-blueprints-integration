@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.4.2...1.5.0) (2019-12-06)
+
+
+### Features
+
+* support floated parts and floated adLibs ([f073d98](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f073d9858c9346062406fbe61fd2b3d8033bbb3f))
+
 ### [1.4.2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.4.1...1.4.2) (2019-12-03)
 
 ### [1.4.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.4.0...1.4.1) (2019-12-03)
