@@ -150,8 +150,8 @@ export interface IBlueprintPart {
 		description?: string
 		color?: string
 	}
-  
-  /** When the NRCS informs us that the producer marked the part as floated, we can prevent the user from TAKE'ing and NEXT'ing it, but still have it visible and allow manipulation */
+
+	/** When the NRCS informs us that the producer marked the part as floated, we can prevent the user from TAKE'ing and NEXT'ing it, but still have it visible and allow manipulation */
 	floated?: boolean
 }
 /** The Part sent from Core */
