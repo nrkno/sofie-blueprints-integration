@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.5.0...1.6.0) (2019-12-13)
+
+
+### Features
+
+* add blueprintId field to manifests ([63d046a](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/63d046aafdbf9be9e4c8f6823ed270689aa39c14))
+* implement invalidReason ([#49](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/issues/49)) ([8db5e4e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/8db5e4e0fa4068b2716630666650fd55aa599b99))
+
 ## [1.5.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.4.2...1.5.0) (2019-12-06)
 
 
