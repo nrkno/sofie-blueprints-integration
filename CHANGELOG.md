@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.4.2...1.5.0) (2019-12-06)
+
+
+### Features
+
+* support floated parts and floated adLibs ([f073d98](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f073d9858c9346062406fbe61fd2b3d8033bbb3f))
+
+### [1.4.2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.4.1...1.4.2) (2019-12-03)
+
+### [1.4.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.4.0...1.4.1) (2019-12-03)
+
+## [1.4.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.3.0...1.4.0) (2019-12-02)
+
+
+### Features
+
+* re-export tsr-types ([9594844](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/9594844cdafaf5b84c3464845a3d3f1e46e03543))
+
+## [1.3.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.2.1...1.3.0) (2019-11-22)
+
+
+### Features
+
+* add piece transitions properties, with simple typings ([eda59aa](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/eda59aa2dc19776e0389ffed05bb57b875d184fd))
+
 ### [1.2.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.2.0...1.2.1) (2019-11-14)
 
 
