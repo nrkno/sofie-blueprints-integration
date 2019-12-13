@@ -2378,6 +2378,9 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="showstyleblueprintmanifest.html#tsrversion" class="tsd-kind-icon">TSRVersion</a>
 				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="showstyleblueprintmanifest.html#blueprintid" class="tsd-kind-icon">blueprint<wbr>Id</a>
+				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 					<a href="showstyleblueprintmanifest.html#blueprinttype" class="tsd-kind-icon">blueprint<wbr>Type</a>
 				</li>
@@ -2456,6 +2459,7 @@ img {
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="showstyleblueprintmanifest.html#tsrversion" class="tsd-kind-icon">TSRVersion</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="showstyleblueprintmanifest.html#blueprintid" class="tsd-kind-icon">blueprint<wbr>Id</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="showstyleblueprintmanifest.html#blueprinttype" class="tsd-kind-icon">blueprint<wbr>Type</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="showstyleblueprintmanifest.html#blueprintversion" class="tsd-kind-icon">blueprint<wbr>Version</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="showstyleblueprintmanifest.html#getendstateforpart" class="tsd-kind-icon">get<wbr>End<wbr>State<wbr>For<wbr>Part</a></li>
@@ -2487,12 +2491,28 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="blueprintmanifestbase.html">BlueprintManifestBase</a>.<a href="blueprintmanifestbase.html#tsrversion">TSRVersion</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L50">src/api.ts:50</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L52">src/api.ts:52</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>Version of the TSR-types that the blueprint depend on</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="blueprintid" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> blueprint<wbr>Id</h3>
+				<div class="tsd-signature tsd-kind-icon">blueprint<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="blueprintmanifestbase.html">BlueprintManifestBase</a>.<a href="blueprintmanifestbase.html#blueprintid">blueprintId</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L46">src/api.ts:46</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Unique id of the blueprint. This is used by core to check if blueprints are the same blueprint, but differing versions</p>
 					</div>
 				</div>
 			</section>
@@ -2503,7 +2523,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Overrides <a href="blueprintmanifestbase.html">BlueprintManifestBase</a>.<a href="blueprintmanifestbase.html#blueprinttype">blueprintType</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L82">src/api.ts:82</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L84">src/api.ts:84</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2514,7 +2534,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="blueprintmanifestbase.html">BlueprintManifestBase</a>.<a href="blueprintmanifestbase.html#blueprintversion">blueprintVersion</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L46">src/api.ts:46</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L48">src/api.ts:48</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2529,7 +2549,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">get<wbr>End<wbr>State<wbr>For<wbr>Part<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L129">src/api.ts:129</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L131">src/api.ts:131</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2544,7 +2564,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">get<wbr>Rundown<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L100">src/api.ts:100</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L102">src/api.ts:102</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2583,7 +2603,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">get<wbr>Segment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L103">src/api.ts:103</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L105">src/api.ts:105</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2622,7 +2642,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Variant<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L93">src/api.ts:93</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L95">src/api.ts:95</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2668,7 +2688,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="blueprintmanifestbase.html">BlueprintManifestBase</a>.<a href="blueprintmanifestbase.html#integrationversion">integrationVersion</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L48">src/api.ts:48</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L50">src/api.ts:50</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2684,7 +2704,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="blueprintmanifestbase.html">BlueprintManifestBase</a>.<a href="blueprintmanifestbase.html#minimumcoreversion">minimumCoreVersion</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L52">src/api.ts:52</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L54">src/api.ts:54</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2699,7 +2719,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>AsRun<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L138">src/api.ts:138</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L140">src/api.ts:140</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2714,7 +2734,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>Post<wbr>Take<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L117">src/api.ts:117</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L119">src/api.ts:119</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2724,7 +2744,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>Pre<wbr>Take<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L116">src/api.ts:116</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L118">src/api.ts:118</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2739,7 +2759,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>Rundown<wbr>Activate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L111">src/api.ts:111</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L113">src/api.ts:113</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2754,7 +2774,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>Rundown<wbr>DeActivate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L113">src/api.ts:113</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L115">src/api.ts:115</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2764,7 +2784,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>Rundown<wbr>First<wbr>Take<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L112">src/api.ts:112</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L114">src/api.ts:114</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2774,7 +2794,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>Timeline<wbr>Generate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L120">src/api.ts:120</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L122">src/api.ts:122</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2789,7 +2809,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">show<wbr>Style<wbr>Config<wbr>Manifest<span class="tsd-signature-symbol">:</span> <a href="../globals.html#configmanifestentry" class="tsd-signature-type">ConfigManifestEntry</a><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L85">src/api.ts:85</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L87">src/api.ts:87</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2804,7 +2824,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">show<wbr>Style<wbr>Migrations<span class="tsd-signature-symbol">:</span> <a href="migrationstep.html" class="tsd-signature-type">MigrationStep</a><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f073d98/src/api.ts#L87">src/api.ts:87</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/f8509cb/src/api.ts#L89">src/api.ts:89</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
