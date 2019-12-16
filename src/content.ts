@@ -74,6 +74,7 @@ export interface VTContent extends BaseContent {
 	mediaFlowIds?: string[]
 	seek?: number
 	editable?: VTEditableParameters
+	ignoreMediaObjectStatus?: boolean
 }
 
 export interface CameraContent extends BaseContent {
