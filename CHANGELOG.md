@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.6.0...1.7.0) (2020-01-07)
+
+
+### Features
+
+* option to treat piece as a static asset and skip some checks ([a7fc8c8](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a7fc8c8254009a14c8e1650675d18c0402395f1b))
+
 ## [1.6.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.5.0...1.6.0) (2019-12-13)
 
 
