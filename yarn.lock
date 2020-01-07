@@ -5743,10 +5743,10 @@ through@2, "through@>=2.2.7 <3":
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
-timeline-state-resolver-types@^3.14.0:
-  version "3.16.1"
-  resolved "https://registry.yarnpkg.com/timeline-state-resolver-types/-/timeline-state-resolver-types-3.16.1.tgz#154dd5aaaa340290ad0431c4def7b86bca602c6b"
-  integrity sha512-MsGqzcDGlV0Fp1iYzPGPJJd5wooMWU3dnVZmWx5J/B4/0b1hCwanH7iBGqaSVNMjIO+xaU38USFRATYwCJCFQw==
+timeline-state-resolver-types@^3.16.0:
+  version "3.16.2"
+  resolved "https://registry.yarnpkg.com/timeline-state-resolver-types/-/timeline-state-resolver-types-3.16.2.tgz#dfdab93bcaa33ec855b0b5d456d3dfd47e5165f9"
+  integrity sha512-j5kkUqIRb2g/MRvm6CXcw0vXdezmeTGnVHJ7e0fQu787nDpoYDnvcCblR+UWi94LE/N6OI20bUl3/3ipQB/Opw==
   dependencies:
     tslib "^1.10.0"
 
