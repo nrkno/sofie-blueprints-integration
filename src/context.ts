@@ -3,8 +3,8 @@ import { ConfigItemValue } from './common'
 import { IngestPart, IngestRundown } from './ingest'
 import {
 	BlueprintRuntimeArguments,
-	IBlueprintPartDB,
-	IBlueprintPiece,
+	IBlueprintPartInstance,
+	IBlueprintPieceInstance,
 	IBlueprintRundownDB,
 	IBlueprintSegmentDB
 } from './rundown'
@@ -76,7 +76,7 @@ export interface EventContext {
 }
 
 export interface PartEventContext extends EventContext, RundownContext {
-	readonly part: Readonly<IBlueprintPartDB>
+	readonly part: Readonly<IBlueprintPartInstance>
 }
 
 export interface AsRunEventContext extends RundownContext {
@@ -99,22 +99,22 @@ export interface AsRunEventContext extends RundownContext {
 	getSegment(id?: string): Readonly<IBlueprintSegmentDB> | undefined
 
 	/** Get all parts in this rundown */
-	getParts(): Readonly<IBlueprintPartDB[]>
+	getParts(): Readonly<IBlueprintPartInstance[]>
 	/**
 	 * Returns a part.
 	 * @param id Id of part to fetch. If omitted, return the part related to this AsRunEvent
 	 */
-	getPart(id?: string): Readonly<IBlueprintPartDB> | undefined
+	getPart(id?: string): Readonly<IBlueprintPartInstance> | undefined
 	/**
 	 * Returns a piece.
 	 * @param id Id of piece to fetch. If omitted, return the piece related to this AsRunEvent
 	 */
-	getPiece(pieceId?: string): Readonly<IBlueprintPiece> | undefined
+	getPiece(pieceId?: string): Readonly<IBlueprintPieceInstance> | undefined
 	/**
 	 * Returns pieces in a part
 	 * @param id Id of part to fetch items in
 	 */
-	getPieces(partId: string): Readonly<IBlueprintPiece[]>
+	getPieces(partId: string): Readonly<IBlueprintPieceInstance[]>
 	/** Get the ingest data related to a part */
-	getIngestDataForPart(part: Readonly<IBlueprintPartDB>): Readonly<IngestPart> | undefined
+	getIngestDataForPart(part: Readonly<IBlueprintPartInstance>): Readonly<IngestPart> | undefined
 }

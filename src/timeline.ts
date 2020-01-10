@@ -1,4 +1,4 @@
-import { IBlueprintPartDB, IBlueprintPiece } from './rundown'
+import { IBlueprintPartInstance, IBlueprintPiece } from './rundown'
 
 import * as TSR from 'timeline-state-resolver-types'
 export { TSR }
@@ -12,7 +12,7 @@ export enum PlayoutTimelinePrefixes {
 	PIECE_GROUP_FIRST_ITEM_PREFIX = 'piece_group_firstobject_'
 }
 
-export function getPartGroupId(part: IBlueprintPartDB | string) {
+export function getPartGroupId(part: IBlueprintPartInstance | string) {
 	if (typeof part === 'string') {
 		return PlayoutTimelinePrefixes.PART_GROUP_PREFIX + part
 	}
@@ -25,7 +25,7 @@ export function getPieceGroupId(piece: IBlueprintPiece | string) {
 
 	return PlayoutTimelinePrefixes.PIECE_GROUP_PREFIX + piece._id
 }
-export function getPartFirstObjectId(part: IBlueprintPartDB | string) {
+export function getPartFirstObjectId(part: IBlueprintPartInstance | string) {
 	if (typeof part === 'string') {
 		return PlayoutTimelinePrefixes.PART_GROUP_FIRST_ITEM_PREFIX + part
 	}
