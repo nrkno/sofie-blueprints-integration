@@ -264,6 +264,10 @@ export interface IBlueprintPieceInstance {
 
 	piece: IBlueprintPieceDB
 }
+export interface IBlueprintResolvedPieceInstance extends IBlueprintPieceInstance {
+	resolvedStart: number
+	resolvedDuration?: number
+}
 
 export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	/** Used for sorting in the UI */
