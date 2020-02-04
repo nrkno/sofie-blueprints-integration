@@ -1,3 +1,4 @@
+import { DeviceType as TSR_DeviceType } from 'timeline-state-resolver-types'
 import { Time } from './common'
 import { SomeContent } from './content'
 import { Omit } from './lib'
@@ -224,6 +225,25 @@ export interface IBlueprintPieceGeneric {
 
 	/** Duration to preroll/overlap when running this adlib */
 	adlibPreroll?: number
+
+	expectedPlayoutItems?: ExpectedPlayoutItemGeneric[]
+}
+
+export interface ExpectedPlayoutItemGeneric {
+	/** What type of playout device this item should be handled by */
+	deviceSubType: TSR_DeviceType // subset of PeripheralDeviceAPI.DeviceSubType
+	/** Which playout device this item should be handled by */
+	// deviceId: string // Todo: implement deviceId support (later)
+	/** Content of the expectedPlayoutItem */
+	content: ExpectedPlayoutItemContent
+}
+export type ExpectedPlayoutItemContent = ExpectedPlayoutItemContentVizMSE
+
+// TODO: This is a temporary implementation, and is a copy of the TSR typings. To be replaced ny typings exposed by TSR-types:
+export interface ExpectedPlayoutItemContentVizMSE {
+	templateName: string
+	elementName: string | number // if number, it's a vizPilot element
+	dataFields: string[]
 }
 
 export type PieceEnable = Omit<Timeline.TimelineEnable, 'while' | 'repeating'>
