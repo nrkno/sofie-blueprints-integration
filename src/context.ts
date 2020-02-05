@@ -3,6 +3,7 @@ import { ConfigItemValue } from './common'
 import { IngestPart, IngestRundown } from './ingest'
 import {
 	BlueprintRuntimeArguments,
+	IBlueprintPartDB,
 	IBlueprintPartInstance,
 	IBlueprintPieceInstance,
 	IBlueprintRundownDB,
@@ -82,14 +83,14 @@ export interface PartEventContext extends EventContext, RundownContext {
 export interface AsRunEventContext extends RundownContext {
 	readonly asRunEvent: Readonly<IBlueprintAsRunLogEvent>
 
-	/** Get the ingest data related to the rundown */
-	getIngestDataForRundown: () => Readonly<IngestRundown> | undefined
-
-	formatDateAsTimecode: (time: number) => string
-	formatDurationAsTimecode: (time: number) => string
+	formatDateAsTimecode(time: number): string
+	formatDurationAsTimecode(time: number): string
 
 	/** Get all asRunEvents in the rundown */
 	getAllAsRunEvents(): Readonly<IBlueprintAsRunLogEvent[]>
+
+	/** Originals */
+
 	/** Get all segments in this rundown */
 	getSegments(): Readonly<IBlueprintSegmentDB[]>
 	/**
@@ -99,22 +100,34 @@ export interface AsRunEventContext extends RundownContext {
 	getSegment(id?: string): Readonly<IBlueprintSegmentDB> | undefined
 
 	/** Get all parts in this rundown */
-	getParts(): Readonly<IBlueprintPartInstance[]>
+	getParts(): Readonly<IBlueprintPartDB[]>
+
+	/** Instances */
+
 	/**
-	 * Returns a part.
-	 * @param id Id of part to fetch. If omitted, return the part related to this AsRunEvent
+	 * Returns a partInstance.
+	 * @param id Id of partInstance to fetch. If omitted, return the partInstance related to this AsRunEvent
 	 */
-	getPart(id?: string): Readonly<IBlueprintPartInstance> | undefined
+	getPartInstance(id?: string): Readonly<IBlueprintPartInstance> | undefined
 	/**
-	 * Returns a piece.
-	 * @param id Id of piece to fetch. If omitted, return the piece related to this AsRunEvent
+	 * Returns a pieceInstance.
+	 * @param id Id of pieceInstance to fetch. If omitted, return the pieceInstance related to this AsRunEvent
 	 */
-	getPiece(pieceId?: string): Readonly<IBlueprintPieceInstance> | undefined
+	getPieceInstance(pieceInstanceId?: string): Readonly<IBlueprintPieceInstance> | undefined
 	/**
-	 * Returns pieces in a part
-	 * @param id Id of part to fetch items in
+	 * Returns pieces in a partInstance
+	 * @param id Id of partInstance to fetch items in
 	 */
-	getPieces(partId: string): Readonly<IBlueprintPieceInstance[]>
+	getPieceInstances(partInstanceId: string): Readonly<IBlueprintPieceInstance[]>
+
+	/** Ingest Data */
+
+	/** Get the ingest data related to the rundown */
+	getIngestDataForRundown(): Readonly<IngestRundown> | undefined
+
 	/** Get the ingest data related to a part */
-	getIngestDataForPart(part: Readonly<IBlueprintPartInstance>): Readonly<IngestPart> | undefined
+	getIngestDataForPart(part: Readonly<IBlueprintPartDB>): Readonly<IngestPart> | undefined
+
+	/** Get the ingest data related to a partInstance */
+	getIngestDataForPartInstance(partInstance: Readonly<IBlueprintPartInstance>): Readonly<IngestPart> | undefined
 }
