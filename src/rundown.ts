@@ -226,6 +226,8 @@ export interface IBlueprintPieceGeneric {
 
 	/** Duration to preroll/overlap when running this adlib */
 	adlibPreroll?: number
+	/** Whether the adlib should always be inserted queued */
+	toBeQueued?: boolean
 }
 
 export type PieceEnable = Omit<Timeline.TimelineEnable, 'while' | 'repeating'>
