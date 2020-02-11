@@ -64,6 +64,8 @@ export interface IBlueprintSegment {
 	name: string
 	/** Arbitrary data storage for plugins */
 	metaData?: { [key: string]: any }
+	/** Hide the Segment in the UI */
+	isHidden?: boolean
 }
 /** The Segment sent from Core */
 export interface IBlueprintSegmentDB extends IBlueprintSegment {
