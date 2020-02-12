@@ -22,7 +22,7 @@ import {
 	SegmentContext,
 	ShowStyleContext
 } from './context'
-import { IngestRundown, IngestSegment, IngestAdlib } from './ingest'
+import { IngestAdlib, IngestRundown, IngestSegment } from './ingest'
 import { MigrationStep } from './migrations'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
