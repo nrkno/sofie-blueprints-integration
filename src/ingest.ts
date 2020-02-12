@@ -37,3 +37,15 @@ export interface IngestPart {
 	/** Raw payload of the part. Only used by the blueprints */
 	payload?: any
 }
+
+export interface IngestAdlib {
+	/** Id of the adlib as reported by the ingest source. Must be unique for each adlib */
+	externalId: string
+	/** Name of the adlib */
+	name: string
+
+	/** Type of the raw payload. Only used by the blueprints */
+	payloadType: string
+	/** Raw payload of the adlib. Only used by the blueprints */
+	payload?: any
+}
