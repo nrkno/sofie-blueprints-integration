@@ -67,7 +67,7 @@ export interface VTContent extends BaseContent {
 	proxyPath?: string
 	thumbnail?: string
 	loop?: boolean
-	sourceDuration: number
+	sourceDuration?: number
 	objectDuration?: number
 	metadata?: MetadataElement[]
 	timelineObjects: TimelineObjectCoreExt[]
