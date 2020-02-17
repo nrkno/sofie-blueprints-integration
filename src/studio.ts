@@ -3,7 +3,7 @@ import { Mapping, Mappings } from 'timeline-state-resolver-types'
 export enum LookaheadMode {
 	NONE = 0,
 	PRELOAD = 1,
-	RETAIN = 2,
+	// RETAIN = 2, // Removed due to complexity and it being possible to emulate with WHEN_CLEAR and infinites
 	WHEN_CLEAR = 3
 }
 
