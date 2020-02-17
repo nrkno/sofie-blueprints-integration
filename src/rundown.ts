@@ -1,4 +1,4 @@
-import { DeviceType as TSR_DeviceType } from 'timeline-state-resolver-types'
+import { DeviceType as TSR_DeviceType, ExpectedPlayoutItemContentVizMSE } from 'timeline-state-resolver-types'
 import { Time } from './common'
 import { SomeContent } from './content'
 import { Omit } from './lib'
@@ -244,13 +244,6 @@ export interface ExpectedPlayoutItemGeneric {
 	content: ExpectedPlayoutItemContent
 }
 export type ExpectedPlayoutItemContent = ExpectedPlayoutItemContentVizMSE
-
-// TODO: This is a temporary implementation, and is a copy of the TSR typings. To be replaced ny typings exposed by TSR-types:
-export interface ExpectedPlayoutItemContentVizMSE {
-	templateName: string
-	elementName: string | number // if number, it's a vizPilot element
-	dataFields: string[]
-}
 
 export type PieceEnable = Omit<Timeline.TimelineEnable, 'while' | 'repeating'>
 
