@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ExpectedPlayoutItemGeneric | tv-automation-sofie-blueprints-integration</title>
+	<title>IBlueprintPartInstance | tv-automation-sofie-blueprints-integration</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2373,13 +2373,16 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class="current tsd-kind-interface tsd-is-external">
-			<a href="expectedplayoutitemgeneric.html" class="tsd-kind-icon">Expected<wbr>Playout<wbr>Item<wbr>Generic</a>
+			<a href="iblueprintpartinstance.html" class="tsd-kind-icon">IBlueprint<wbr>Part<wbr>Instance</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="expectedplayoutitemgeneric.html#content" class="tsd-kind-icon">content</a>
+					<a href="iblueprintpartinstance.html#_id" class="tsd-kind-icon">_id</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="expectedplayoutitemgeneric.html#devicesubtype" class="tsd-kind-icon">device<wbr>Sub<wbr>Type</a>
+					<a href="iblueprintpartinstance.html#part" class="tsd-kind-icon">part</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="iblueprintpartinstance.html#segmentid" class="tsd-kind-icon">segment<wbr>Id</a>
 				</li>
 			</ul>
 		</li>
@@ -2387,11 +2390,18 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>The Part instance sent from Core</p>
+				</div>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">ExpectedPlayoutItemGeneric</span>
+					<span class="target">IBlueprintPartInstance</span>
 				</li>
 			</ul>
 		</section>
@@ -2402,8 +2412,9 @@ img {
 					<section class="tsd-index-section tsd-is-external">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="expectedplayoutitemgeneric.html#content" class="tsd-kind-icon">content</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="expectedplayoutitemgeneric.html#devicesubtype" class="tsd-kind-icon">device<wbr>Sub<wbr>Type</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iblueprintpartinstance.html#_id" class="tsd-kind-icon">_id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iblueprintpartinstance.html#part" class="tsd-kind-icon">part</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iblueprintpartinstance.html#segmentid" class="tsd-kind-icon">segment<wbr>Id</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2412,32 +2423,37 @@ img {
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="content" class="tsd-anchor"></a>
-				<h3>content</h3>
-				<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <a href="../globals.html#expectedplayoutitemcontent" class="tsd-signature-type">ExpectedPlayoutItemContent</a></div>
+				<a name="_id" class="tsd-anchor"></a>
+				<h3>_id</h3>
+				<div class="tsd-signature tsd-kind-icon">_id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/45e602f/src/rundown.ts#L244">src/rundown.ts:244</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/bc70e01/src/rundown.ts#L169">src/rundown.ts:169</a></li>
 					</ul>
 				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Content of the expectedPlayoutItem</p>
-					</div>
-				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="devicesubtype" class="tsd-anchor"></a>
-				<h3>device<wbr>Sub<wbr>Type</h3>
-				<div class="tsd-signature tsd-kind-icon">device<wbr>Sub<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TSR_DeviceType</span></div>
+				<a name="part" class="tsd-anchor"></a>
+				<h3>part</h3>
+				<div class="tsd-signature tsd-kind-icon">part<span class="tsd-signature-symbol">:</span> <a href="iblueprintpartdb.html" class="tsd-signature-type">IBlueprintPartDB</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/45e602f/src/rundown.ts#L240">src/rundown.ts:240</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/bc70e01/src/rundown.ts#L173">src/rundown.ts:173</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="segmentid" class="tsd-anchor"></a>
+				<h3>segment<wbr>Id</h3>
+				<div class="tsd-signature tsd-kind-icon">segment<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/bc70e01/src/rundown.ts#L171">src/rundown.ts:171</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>What type of playout device this item should be handled by</p>
+						<p>The segment (&quot;Title&quot;) this line belongs to</p>
 					</div>
 				</div>
 			</section>
