@@ -155,6 +155,9 @@ export interface IBlueprintPart {
 
 	/** When the NRCS informs us that the producer marked the part as floated, we can prevent the user from TAKE'ing and NEXT'ing it, but still have it visible and allow manipulation */
 	floated?: boolean
+
+	/** When this part is just a filler to fill space in a segment. Generally, used with invalid: true */
+	gap?: boolean
 }
 /** The Part sent from Core */
 export interface IBlueprintPartDB extends IBlueprintPart {
