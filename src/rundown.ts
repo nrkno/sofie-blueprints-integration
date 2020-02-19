@@ -122,6 +122,9 @@ export interface IBlueprintPart {
 
 	/** When something bad has happened, we can mark the part as invalid, which will prevent the user from TAKE:ing it */
 	invalid?: boolean
+
+	/** When this part is just a filler to fill space in a segment. Generally, used with invalid: true */
+	gap?: boolean
 }
 /** The Part sent from Core */
 export interface IBlueprintPartDB extends IBlueprintPart {
