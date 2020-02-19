@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.7.0...1.8.0) (2020-02-19)
+
+
+### Features
+
+* add isHidden property to segment [publish] ([a12f6c7](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a12f6c7667e91e2872521f5b99ba9d69a9ea5715))
+* add toBeQueued to pieces [publish] ([002a2b5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/002a2b50e9902654cc23eb5383bba3c763abdd76))
+* publish prereleases of branches ([2415a7f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2415a7f141380f99a3caf43794dcf5cfc93f3d71))
+
 ## [1.7.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.6.0...1.7.0) (2020-01-07)
 
 
