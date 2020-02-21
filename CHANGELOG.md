@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.8.0...1.9.0) (2020-02-21)
+
+
+### Features
+
+* gap parts ([#56](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/issues/56)) ([2e84199](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2e841995d0bec7a9e79ba909133990e1738bbf8c))
+
 ## [1.8.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.7.0...1.8.0) (2020-02-19)
 
 
