@@ -104,10 +104,6 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
-	/** Generate Part from ingest data. If null, then getSegment is used instead */
-	// TODO: Not used in core yet
-	// getPart?: (context: PartContext, ingestPart: IngestPart) => BlueprintResultPart | null
-
 	// Events
 
 	onRundownActivate?: (context: EventContext & RundownContext) => Promise<void>

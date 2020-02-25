@@ -27,7 +27,6 @@ export interface ICommonContext {
 export interface NotesContext extends ICommonContext {
 	error: (message: string) => void
 	warning: (message: string) => void
-	getNotes: () => any[]
 }
 
 /** Studio */
@@ -63,10 +62,9 @@ export interface RundownContext extends ShowStyleContext {
 
 export interface SegmentContext extends RundownContext {
 	getRuntimeArguments: (externalId: string) => Readonly<BlueprintRuntimeArguments> | undefined
-}
 
-export interface PartContext extends RundownContext {
-	getRuntimeArguments: () => Readonly<BlueprintRuntimeArguments>
+	error: (message: string, partExternalId?: string) => void
+	warning: (message: string, partExternalId?: string) => void
 }
 
 /** Events */
