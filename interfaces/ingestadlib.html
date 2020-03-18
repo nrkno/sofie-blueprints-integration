@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ExpectedPlayoutItemGeneric | tv-automation-sofie-blueprints-integration - v1.9.0</title>
+	<title>IngestAdlib | tv-automation-sofie-blueprints-integration - v1.9.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2366,13 +2366,19 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class="current tsd-kind-interface tsd-is-external">
-			<a href="expectedplayoutitemgeneric.html" class="tsd-kind-icon">Expected<wbr>Playout<wbr>Item<wbr>Generic</a>
+			<a href="ingestadlib.html" class="tsd-kind-icon">Ingest<wbr>Adlib</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="expectedplayoutitemgeneric.html#content" class="tsd-kind-icon">content</a>
+					<a href="ingestadlib.html#externalid" class="tsd-kind-icon">external<wbr>Id</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="expectedplayoutitemgeneric.html#devicesubtype" class="tsd-kind-icon">device<wbr>Sub<wbr>Type</a>
+					<a href="ingestadlib.html#name" class="tsd-kind-icon">name</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="ingestadlib.html#payload" class="tsd-kind-icon">payload</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="ingestadlib.html#payloadtype" class="tsd-kind-icon">payload<wbr>Type</a>
 				</li>
 			</ul>
 		</li>
@@ -2384,7 +2390,7 @@ img {
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">ExpectedPlayoutItemGeneric</span>
+					<span class="target">IngestAdlib</span>
 				</li>
 			</ul>
 		</section>
@@ -2395,8 +2401,10 @@ img {
 					<section class="tsd-index-section tsd-is-external">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="expectedplayoutitemgeneric.html#content" class="tsd-kind-icon">content</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="expectedplayoutitemgeneric.html#devicesubtype" class="tsd-kind-icon">device<wbr>Sub<wbr>Type</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ingestadlib.html#externalid" class="tsd-kind-icon">external<wbr>Id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ingestadlib.html#name" class="tsd-kind-icon">name</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ingestadlib.html#payload" class="tsd-kind-icon">payload</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ingestadlib.html#payloadtype" class="tsd-kind-icon">payload<wbr>Type</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2405,32 +2413,62 @@ img {
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="content" class="tsd-anchor"></a>
-				<h3>content</h3>
-				<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <a href="../globals.html#expectedplayoutitemcontent" class="tsd-signature-type">ExpectedPlayoutItemContent</a></div>
+				<a name="externalid" class="tsd-anchor"></a>
+				<h3>external<wbr>Id</h3>
+				<div class="tsd-signature tsd-kind-icon">external<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/507774e/src/rundown.ts#L254">src/rundown.ts:254</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/3d7cf4a/src/ingest.ts#L43">src/ingest.ts:43</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Content of the expectedPlayoutItem</p>
+						<p>Id of the adlib as reported by the ingest source. Must be unique for each adlib</p>
 					</div>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="devicesubtype" class="tsd-anchor"></a>
-				<h3>device<wbr>Sub<wbr>Type</h3>
-				<div class="tsd-signature tsd-kind-icon">device<wbr>Sub<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TSR_DeviceType</span></div>
+				<a name="name" class="tsd-anchor"></a>
+				<h3>name</h3>
+				<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/507774e/src/rundown.ts#L250">src/rundown.ts:250</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/3d7cf4a/src/ingest.ts#L45">src/ingest.ts:45</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>What type of playout device this item should be handled by</p>
+						<p>Name of the adlib</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="payload" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> payload</h3>
+				<div class="tsd-signature tsd-kind-icon">payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/3d7cf4a/src/ingest.ts#L50">src/ingest.ts:50</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Raw payload of the adlib. Only used by the blueprints</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="payloadtype" class="tsd-anchor"></a>
+				<h3>payload<wbr>Type</h3>
+				<div class="tsd-signature tsd-kind-icon">payload<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/3d7cf4a/src/ingest.ts#L48">src/ingest.ts:48</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Type of the raw payload. Only used by the blueprints</p>
 					</div>
 				</div>
 			</section>
