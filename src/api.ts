@@ -6,7 +6,7 @@ import {
 	IBlueprintAdLibPiece,
 	IBlueprintPart,
 	IBlueprintPiece,
-	IBlueprintPieceDB,
+	IBlueprintResolvedPieceInstance,
 	IBlueprintRundown,
 	IBlueprintRundownPlaylistInfo,
 	IBlueprintSegment
@@ -127,7 +127,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 		timeline: OnGenerateTimelineObj[],
 		previousPersistentState: TimelinePersistentState | undefined,
 		previousPartEndState: PartEndState | undefined,
-		resolvedPieces: IBlueprintPieceDB[]
+		resolvedPieces: IBlueprintResolvedPieceInstance[]
 	) => Promise<BlueprintResultTimeline>
 
 	/** Called just before taking the next part. This generates some persisted data used by onTimelineGenerate to modify the timeline based on the previous part (eg, persist audio levels) */
@@ -135,7 +135,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 		context: RundownContext,
 		previousPersistentState: TimelinePersistentState | undefined,
 		previousPartEndState: PartEndState | undefined,
-		resolvedPieces: IBlueprintPiece[],
+		resolvedPieces: IBlueprintResolvedPieceInstance[],
 		time: number
 	) => PartEndState
 
