@@ -159,6 +159,9 @@ export interface IBlueprintPart {
 
 	/** When this part is just a filler to fill space in a segment. Generally, used with invalid: true */
 	gap?: boolean
+
+	/** User-facing identifier that can be used by the User to identify the contents of a segment in the Rundown source system */
+	identifier?: string
 }
 /** The Part sent from Core */
 export interface IBlueprintPartDB extends IBlueprintPart {
