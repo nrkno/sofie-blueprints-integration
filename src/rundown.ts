@@ -187,6 +187,8 @@ export interface IBlueprintPieceGeneric {
 	adlibAutoNextOverlap?: number
 	/** When queued, block transition at the end of the part */
 	adlibDisableOutTransition?: boolean
+	/** Whether the adlib can be combined with an already queued adlib */
+	canCombineQueue?: boolean
 }
 
 export type PieceEnable = Omit<Timeline.TimelineEnable, 'while' | 'repeating'>
