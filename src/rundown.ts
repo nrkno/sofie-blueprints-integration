@@ -125,6 +125,9 @@ export interface IBlueprintPart {
 
 	/** When this part is just a filler to fill space in a segment. Generally, used with invalid: true */
 	gap?: boolean
+
+	/** Whether queued adlibs can be combined into this part. Usually set by core. */
+	canCombineQueue?: boolean
 }
 /** The Part sent from Core */
 export interface IBlueprintPartDB extends IBlueprintPart {
