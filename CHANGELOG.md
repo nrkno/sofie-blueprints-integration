@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.9.0...1.10.0) (2020-03-24)
+
+
+### Features
+
+* **ci:** option to ignore security audits ([428708d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/428708ded180c7097cc2e15a4dbdb0b5ce15bca0))
+* **identifier:** add an optional identifier to the segment ([b84feca](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b84feca4744c4cb13d1825b6f45bc66cb2a6b82b))
+* **identifier:** optional part identifier ([1746de5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/1746de54f900172d8546076277d7f45e09a1e007))
+* remove LookaheadMode.RETAIN (breaking change) [publish] ([1b999a3](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/1b999a3d5b8efc84e0f7268292a100657ff0fae1))
+* ResolvedPieceInstance (breaking change) ([22bea64](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/22bea6463e3d9ec1d34958e30ce134bdf41bd943))
+* restructure NotesContext ([40ec784](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/40ec7841d7488065154a329fb9225767a1fae4ab))
+
+
+### Bug Fixes
+
+* OnGenerateTimelineObj references pieceInstanceId not pieceId [publish] ([c1eeeb1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c1eeeb138a064f95b118740ccd76f3ad9b5b5465))
+* update for changes required by metadata [publish] ([bc70e01](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/bc70e0113915565e3877d9e7d137847fa4db0c33))
+
 ## [1.9.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.8.0...1.9.0) (2020-02-21)
 
 
