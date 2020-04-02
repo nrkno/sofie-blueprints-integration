@@ -71,7 +71,7 @@
   },
   "dependencies": {
     "moment": "^2.22.2",
-    "timeline-state-resolver-types": "3.18.0-nightly-feat-vizMSE-and-sisyfos-20200217-124847-05b9ffc5.0",
+    "timeline-state-resolver-types": "^3.20.0-nightly-feat-vizMSE-and-sisyfos-20200402-145842-e5498a89.0",
     "tslib": "^1.10.0",
     "underscore": "^1.9.1"
   },
