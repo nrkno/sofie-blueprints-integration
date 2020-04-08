@@ -5,7 +5,13 @@ export enum ConfigManifestEntryType {
 	NUMBER = 'number',
 	BOOLEAN = 'boolean',
 	ENUM = 'enum',
-	TABLE = 'table'
+	TABLE = 'table',
+	SELECT = 'select',
+}
+
+export enum ConfigManifestSelectType {
+	SOURCE_LAYERS = 'source_layers',
+	LAYER_MAPPINGS = 'layer_mappings',
 }
 
 export type BasicConfigManifestEntry =
@@ -13,6 +19,7 @@ export type BasicConfigManifestEntry =
 	| ConfigManifestEntryNumber
 	| ConfigManifestEntryBoolean
 	| ConfigManifestEntryEnum
+	| ConfigManifestEntrySelect
 
 export type ConfigManifestEntry = BasicConfigManifestEntry | ConfigManifestEntryTable
 
@@ -45,4 +52,10 @@ export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.TABLE
 	columns: BasicConfigManifestEntry[]
 	defaultVal: TableConfigItemValue
+}
+export interface ConfigManifestEntrySelect extends ConfigManifestEntryBase {
+	type: ConfigManifestEntryType.SELECT
+	selectType: ConfigManifestSelectType
+	multiple: boolean
+	defaultVal: string
 }
