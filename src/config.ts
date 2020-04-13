@@ -1,3 +1,4 @@
+import { DeviceType } from 'timeline-state-resolver-types'
 import { ConfigItemValue, TableConfigItemValue } from './common'
 
 export enum ConfigManifestEntryType {
@@ -6,12 +7,8 @@ export enum ConfigManifestEntryType {
 	BOOLEAN = 'boolean',
 	ENUM = 'enum',
 	TABLE = 'table',
-	SELECT = 'select',
-}
-
-export enum ConfigManifestSelectType {
 	SOURCE_LAYERS = 'source_layers',
-	LAYER_MAPPINGS = 'layer_mappings',
+	LAYER_MAPPINGS = 'layer_mappings'
 }
 
 export type BasicConfigManifestEntry =
@@ -19,7 +16,8 @@ export type BasicConfigManifestEntry =
 	| ConfigManifestEntryNumber
 	| ConfigManifestEntryBoolean
 	| ConfigManifestEntryEnum
-	| ConfigManifestEntrySelect
+	| ConfigManifestEntrySourceLayers
+	| ConfigManifestEntryLayerMappings
 
 export type ConfigManifestEntry = BasicConfigManifestEntry | ConfigManifestEntryTable
 
@@ -53,9 +51,16 @@ export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
 	columns: BasicConfigManifestEntry[]
 	defaultVal: TableConfigItemValue
 }
-export interface ConfigManifestEntrySelect extends ConfigManifestEntryBase {
-	type: ConfigManifestEntryType.SELECT
-	selectType: ConfigManifestSelectType
+export interface ConfigManifestEntrySourceLayers extends ConfigManifestEntryBase {
+	type: ConfigManifestEntryType.SOURCE_LAYERS
 	multiple: boolean
-	defaultVal: string
+	defaultVal: string | string[]
+}
+export interface ConfigManifestEntryLayerMappings extends ConfigManifestEntryBase {
+	type: ConfigManifestEntryType.LAYER_MAPPINGS
+	multiple: boolean
+	filters?: {
+		deviceTypes?: DeviceType[]
+	}
+	defaultVal: string | string[]
 }

@@ -10,4 +10,4 @@ export type TableConfigItemValue = Array<{
 	_id: string
 	[key: string]: BasicConfigItemValue
 }>
-export type BasicConfigItemValue = string | number | boolean
+export type BasicConfigItemValue = string | number | boolean | string[]
