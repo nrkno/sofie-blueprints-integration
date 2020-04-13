@@ -1,5 +1,6 @@
 import { DeviceType } from 'timeline-state-resolver-types'
 import { ConfigItemValue, TableConfigItemValue } from './common'
+import { SourceLayerType } from './content'
 
 export enum ConfigManifestEntryType {
 	STRING = 'string',
@@ -54,6 +55,9 @@ export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
 export interface ConfigManifestEntrySourceLayers extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.SOURCE_LAYERS
 	multiple: boolean
+	filters?: {
+		sourceLayerTypes?: SourceLayerType[]
+	}
 	defaultVal: string | string[]
 }
 export interface ConfigManifestEntryLayerMappings extends ConfigManifestEntryBase {
