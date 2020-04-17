@@ -8,6 +8,7 @@ export enum ConfigManifestEntryType {
 	BOOLEAN = 'boolean',
 	ENUM = 'enum',
 	TABLE = 'table',
+	SELECT = 'select',
 	SOURCE_LAYERS = 'source_layers',
 	LAYER_MAPPINGS = 'layer_mappings'
 }
@@ -17,8 +18,12 @@ export type BasicConfigManifestEntry =
 	| ConfigManifestEntryNumber
 	| ConfigManifestEntryBoolean
 	| ConfigManifestEntryEnum
-	| ConfigManifestEntrySourceLayers
-	| ConfigManifestEntryLayerMappings
+	| ConfigManifestEntrySelectFromOptions<true>
+	| ConfigManifestEntrySelectFromOptions<false>
+	| ConfigManifestEntrySourceLayers<true>
+	| ConfigManifestEntrySourceLayers<false>
+	| ConfigManifestEntryLayerMappings<true>
+	| ConfigManifestEntryLayerMappings<false>
 
 export type ConfigManifestEntry = BasicConfigManifestEntry | ConfigManifestEntryTable
 
@@ -57,19 +62,29 @@ export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
 	>
 	defaultVal: TableConfigItemValue
 }
-export interface ConfigManifestEntrySourceLayers extends ConfigManifestEntryBase {
+
+interface ConfigManifestEntrySelectBase<Multiple extends boolean> extends ConfigManifestEntryBase {
+	defaultVal: Multiple extends true ? string[] : string
+	multiple: Multiple
+}
+
+export interface ConfigManifestEntrySelectFromOptions<Multiple extends boolean>
+	extends ConfigManifestEntrySelectBase<Multiple> {
+	type: ConfigManifestEntryType.SELECT
+	options: string[]
+}
+
+export interface ConfigManifestEntrySourceLayers<Multiple extends boolean>
+	extends ConfigManifestEntrySelectBase<Multiple> {
 	type: ConfigManifestEntryType.SOURCE_LAYERS
-	multiple: boolean
 	filters?: {
 		sourceLayerTypes?: SourceLayerType[]
 	}
-	defaultVal: string | string[]
 }
-export interface ConfigManifestEntryLayerMappings extends ConfigManifestEntryBase {
+export interface ConfigManifestEntryLayerMappings<Multiple extends boolean>
+	extends ConfigManifestEntrySelectBase<Multiple> {
 	type: ConfigManifestEntryType.LAYER_MAPPINGS
-	multiple: boolean
 	filters?: {
 		deviceTypes?: DeviceType[]
 	}
-	defaultVal: string | string[]
 }
