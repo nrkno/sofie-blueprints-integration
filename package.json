@@ -70,10 +70,10 @@
     "typescript": "~3.6.4"
   },
   "dependencies": {
-    "moment": "^2.22.2",
-    "timeline-state-resolver-types": "^3.18.0",
+    "moment": "2.22.2",
+    "timeline-state-resolver-types": "^3.19.0",
     "tslib": "^1.10.0",
-    "underscore": "^1.9.1"
+    "underscore": "1.9.1"
   },
   "standard-version": {
     "message": "chore(release): %s [skip ci]",
