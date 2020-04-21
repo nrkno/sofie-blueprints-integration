@@ -2377,7 +2377,7 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="timelineobjectcoreext.html#islookahead" class="tsd-kind-icon">is<wbr>Lookahead</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 					<a href="timelineobjectcoreext.html#keyframes" class="tsd-kind-icon">keyframes</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
@@ -2420,7 +2420,7 @@ img {
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="timelineobjectcoreext.html#content" class="tsd-kind-icon">content</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="timelineobjectcoreext.html#holdmode" class="tsd-kind-icon">hold<wbr>Mode</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="timelineobjectcoreext.html#islookahead" class="tsd-kind-icon">is<wbr>Lookahead</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="timelineobjectcoreext.html#keyframes" class="tsd-kind-icon">keyframes</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="timelineobjectcoreext.html#keyframes" class="tsd-kind-icon">keyframes</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="timelineobjectcoreext.html#lookaheadforlayer" class="tsd-kind-icon">lookahead<wbr>For<wbr>Layer</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="timelineobjectcoreext.html#metadata" class="tsd-kind-icon">meta<wbr>Data</a></li>
 						</ul>
@@ -2455,7 +2455,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">hold<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/timelineobjholdmode.html" class="tsd-signature-type">TimelineObjHoldMode</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ae505e8/src/timeline.ts#L50">src/timeline.ts:50</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/53ed4a6/src/timeline.ts#L51">src/timeline.ts:51</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2480,16 +2480,21 @@ img {
 					</div>
 				</div>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 				<a name="keyframes" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagOptional">Optional</span> keyframes</h3>
-				<div class="tsd-signature tsd-kind-icon">keyframes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TSRTimelineKeyframe</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">this[&quot;content&quot;]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<div class="tsd-signature tsd-kind-icon">keyframes<span class="tsd-signature-symbol">:</span> <a href="../globals.html#combinearraytype" class="tsd-signature-type">CombineArrayType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TSRTimelineObjBase[&quot;keyframes&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
-					<p>Inherited from TSRTimelineObjBase.keyframes</p>
+					<p>Overrides TSRTimelineObjBase.keyframes</p>
 					<ul>
-						<li>Defined in node_modules/timeline-state-resolver-types/dist/index.d.ts:57</li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/53ed4a6/src/timeline.ts#L55">src/timeline.ts:55</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Keyframes: Arbitrary data storage for plugins</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 				<a name="lookaheadforlayer" class="tsd-anchor"></a>
@@ -2513,7 +2518,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">meta<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/ae505e8/src/timeline.ts#L52">src/timeline.ts:52</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/53ed4a6/src/timeline.ts#L53">src/timeline.ts:53</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
