@@ -4,3 +4,6 @@ export interface ObjId {
 	_id: string
 }
 export type OmitId<T> = Omit<T & ObjId, '_id'>
+
+export type UnwrapArray<T> = T extends any[] ? T[0] : never
+export type CombineArrayType<T, T2> = Array<UnwrapArray<T> & T2>
