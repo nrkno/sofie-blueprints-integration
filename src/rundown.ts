@@ -273,6 +273,12 @@ export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 	continuesRefId?: string
 	isTransition?: boolean
 	extendOnHold?: boolean
+
+	// TODO - how do these work in a queuedPart, or with mutations?
+	// /** The action which created this piece (if any) */
+	// sourceActionId?: string
+	// /** The action payload used to create this piece (if any) */
+	// sourceActionUserData?: { [key: string]: any }
 }
 export interface IBlueprintPieceDB extends IBlueprintPiece {
 	playoutDuration?: number

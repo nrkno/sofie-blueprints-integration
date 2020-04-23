@@ -3,8 +3,10 @@ import { ConfigItemValue } from './common'
 import { IngestPart, IngestRundown } from './ingest'
 import {
 	BlueprintRuntimeArguments,
+	IBlueprintPart,
 	IBlueprintPartDB,
 	IBlueprintPartInstance,
+	IBlueprintPiece,
 	IBlueprintPieceInstance,
 	IBlueprintRundownDB,
 	IBlueprintSegmentDB
@@ -65,6 +67,38 @@ export interface SegmentContext extends RundownContext {
 
 	error: (message: string, partExternalId?: string) => void
 	warning: (message: string, partExternalId?: string) => void
+}
+
+/** Actions */
+
+export interface ActionExecutionContext extends RundownContext {
+	/** Data fetching */
+	// getIngestRundown(): IngestRundown // TODO - for which part?
+	/** Get a PartInstance which can be modified */
+	getPartInstance(part: 'current' | 'next'): IBlueprintPartInstance | undefined
+	/** Get the PieceInstances for a modifiable PartInstance */
+	getPieceInstances(part: 'current' | 'next'): IBlueprintPieceInstance[]
+	/** Get the last active piece before the current part on given layers */
+	findLastPieceOnLayers(...sourceLayerIds: string[]): IBlueprintPieceInstance[]
+
+	/** Creative actions */
+	/** Insert a piece. Returns id of new PieceInstance */
+	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): string // id
+	/** Update a piecesInstances */
+	updatePieceInstance(pieceInstanceId: string, piece: Partial<IBlueprintPiece>): void // TODO - how do we ensure blueprints dont delete core owned properties? could be a problem until PartInstances is completed
+	/** Insert a queued part to follow the current part */
+	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): void
+
+	/** Destructive actions */
+	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */
+	stopPieceOnLayers(sourceLayerIds: string[], timeOffset?: number): string[]
+	/** Stop piecesInstances by id. Returns ids of piecesInstances that were removed */
+	stopPieceInstances(pieceInstanceIds: string[], timeOffset?: number): string[]
+
+	/** Misc actions */
+	// updateAction(newManifest: Pick<IBlueprintAdLibActionManifest, 'description' | 'payload'>): void // only updates itself. to allow for the next one to do something different
+	// executePeripheralDeviceAction(deviceId: string, functionName: string, args: any[]): Promise<any>
+	// openUIDialogue(message: string) // ?????
 }
 
 /** Events */
