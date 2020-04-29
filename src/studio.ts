@@ -15,4 +15,6 @@ export interface BlueprintMapping extends Mapping {
 	lookahead: LookaheadMode
 	/** How many lookahead objects to create for this layer. Default = 1 */
 	lookaheadDepth?: number
+	/** Maximum distance to search for lookahead. Default = undefined */
+	lookaheadMaxSearchDistance?: number
 }
