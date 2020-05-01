@@ -31,8 +31,8 @@ export interface IBlueprintActionManifest {
 	/** Properties defining the action behaviour */
 	userData: ActionUserData
 
-	/** Used for segment-specific adlibs */
-	segmentId?: string
+	/** Set if ad-lib action should be limited in context to the current part/segment */
+	partId?: string
 
 	userDataManifest: {
 		/** List of editable fields in userData, to allow for customising */
