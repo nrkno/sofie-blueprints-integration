@@ -1,8 +1,28 @@
 import { ConfigManifestEntry } from './config'
-import { SourceLayerType } from './content'
+import { SomeContent } from './content'
 
 export interface ActionUserData {
 	[key: string]: any
+}
+
+export interface IBlueprintActionManifestDisplay {
+	label: string
+	description?: string
+
+	// hotkeys?: string // maybe we should assume that triggers will exist for this to work?
+	tags?: string[]
+}
+
+// I think we still need to allow specyfing sourceLayerId and outputLayerId for the actions,
+// so that content-specific adlibs can be grouped together and approriate thumbnail
+// handling applied on various types of lists
+export interface IBlueprintActionManifestDisplayContent extends IBlueprintActionManifestDisplay {
+	/** Source layer the timeline item belongs to */
+	sourceLayerId: string
+	/** Layer output this piece belongs to */
+	outputLayerId: string
+	/** Description used to produce the thumbnail, sourceDuration, etc. information for the adlib */
+	content?: Omit<SomeContent, 'timelineObjects'>
 }
 
 export interface IBlueprintActionManifest {
@@ -10,6 +30,9 @@ export interface IBlueprintActionManifest {
 	actionId: string
 	/** Properties defining the action behaviour */
 	userData: ActionUserData
+
+	/** Used for segment-specific adlibs */
+	segmentId?: string
 
 	userDataManifest: {
 		/** List of editable fields in userData, to allow for customising */
@@ -19,15 +42,5 @@ export interface IBlueprintActionManifest {
 		// asloDisplayACtionButton: boolean
 	}
 
-	display: {
-		label: string
-		description?: string
-
-		sourceLayerType: SourceLayerType
-		hotkeys?: string // ??
-		tags?: string[]
-		// TODO - whatever properties are wanted for the ui
-		// identifier / tags / grouping?
-		// source layer type of some sort?
-	}
+	display: IBlueprintActionManifestDisplay
 }
