@@ -107,10 +107,6 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** Generate adlib piece from ingest data */
 	getAdlibItem: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
 
-	/** Generate Part from ingest data. If null, then getSegment is used instead */
-	// TODO: Not used in core yet
-	// getPart?: (context: PartContext, ingestPart: IngestPart) => BlueprintResultPart | null
-
 	// Events
 
 	onRundownActivate?: (context: EventContext & RundownContext) => Promise<void>
