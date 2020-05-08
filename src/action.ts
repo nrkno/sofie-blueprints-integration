@@ -8,6 +8,7 @@ export interface ActionUserData {
 export interface IBlueprintActionManifestDisplay {
 	label: string
 	description?: string
+	_rank?: number
 
 	// hotkeys?: string // maybe we should assume that triggers will exist for this to work?
 	tags?: string[]
