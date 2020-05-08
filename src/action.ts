@@ -42,5 +42,5 @@ export interface IBlueprintActionManifest {
 		// asloDisplayACtionButton: boolean
 	}
 
-	display: IBlueprintActionManifestDisplay
+	display: IBlueprintActionManifestDisplay | IBlueprintActionManifestDisplayContent
 }
