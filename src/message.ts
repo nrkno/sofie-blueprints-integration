@@ -1,8 +1,13 @@
 import { Time } from './common'
 
 export interface IBlueprintExternalMessageQueueObj {
+	/** If set, the message references an existing message (that is to be overrritten) */
+	_id?: string
+
 	/** Type of message */
 	type: IBlueprintExternalMessageQueueType
+	/** If true, the message won't be sent automatically */
+	queueForLater?: boolean
 	/** Receiver details */
 	receiver: any
 	/** Messate details */
