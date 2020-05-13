@@ -9,9 +9,11 @@ import {
 	IBlueprintPiece,
 	IBlueprintPieceInstance,
 	IBlueprintRundownDB,
-	IBlueprintSegmentDB
+	IBlueprintSegmentDB,
+	IBlueprintResolvedPieceInstance
 } from './rundown'
 import { BlueprintMappings } from './studio'
+import { OmitId } from './lib'
 
 /** Common */
 
@@ -71,27 +73,31 @@ export interface SegmentContext extends RundownContext {
 
 /** Actions */
 
-export interface ActionExecutionContext extends RundownContext {
+export interface ActionExecutionContext extends ShowStyleContext {
 	/** Data fetching */
 	// getIngestRundown(): IngestRundown // TODO - for which part?
 	/** Get a PartInstance which can be modified */
 	getPartInstance(part: 'current' | 'next'): IBlueprintPartInstance | undefined
 	/** Get the PieceInstances for a modifiable PartInstance */
 	getPieceInstances(part: 'current' | 'next'): IBlueprintPieceInstance[]
-	/** Get the last active piece before the current part on given layers */
-	findLastPieceOnLayers(...sourceLayerIds: string[]): IBlueprintPieceInstance[]
+	/** Get the resolved PieceInstances for a modifiable PartInstance */
+	getResolvedPieceInstances(part: 'current' | 'next'): IBlueprintResolvedPieceInstance[]
+	/** Get the last active piece before the current part on given layer */
+	findLastPieceOnLayer(sourceLayerId: string, originalOnly?: boolean): IBlueprintPieceInstance | undefined
+	/** Fetch the showstyle config for the specified part */
+	// getNextShowStyleConfig(): Readonly<{ [key: string]: ConfigItemValue }>
 
 	/** Creative actions */
 	/** Insert a piece. Returns id of new PieceInstance */
 	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): string // id
 	/** Update a piecesInstances */
-	updatePieceInstance(pieceInstanceId: string, piece: Partial<IBlueprintPiece>): void // TODO - how do we ensure blueprints dont delete core owned properties? could be a problem until PartInstances is completed
+	updatePieceInstance(pieceInstanceId: string, piece: Partial<OmitId<IBlueprintPiece>>): IBlueprintPieceInstance
 	/** Insert a queued part to follow the current part */
 	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): void
 
 	/** Destructive actions */
 	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */
-	stopPieceOnLayers(sourceLayerIds: string[], timeOffset?: number): string[]
+	stopPiecesOnLayers(sourceLayerIds: string[], timeOffset?: number): string[]
 	/** Stop piecesInstances by id. Returns ids of piecesInstances that were removed */
 	stopPieceInstances(pieceInstanceIds: string[], timeOffset?: number): string[]
 

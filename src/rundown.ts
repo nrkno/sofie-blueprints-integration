@@ -222,8 +222,6 @@ export interface PieceMetaData {
 export interface IBlueprintPieceGeneric {
 	/** ID of the source object in the gateway */
 	externalId: string
-	/** The segment line this item belongs to - can be undefined for global ad lib pieces */
-	partId?: string
 	/** User-presentable name for the timeline item */
 	name: string
 	/** Arbitrary data storage for plugins */
@@ -288,6 +286,9 @@ export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 }
 export interface IBlueprintPieceDB extends IBlueprintPiece {
 	playoutDuration?: number
+
+	/** The part this item belongs to */
+	partId: string
 
 	/** This is the id of the original segment of an infinite piece chain. If it matches the id of itself then it is the first in the chain */
 	infiniteId?: string
