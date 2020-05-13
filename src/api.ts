@@ -22,7 +22,7 @@ import {
 	SegmentContext,
 	ShowStyleContext
 } from './context'
-import { IngestRundown, IngestSegment } from './ingest'
+import { IngestAdlib, IngestRundown, IngestSegment } from './ingest'
 import { MigrationStep } from './migrations'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -103,6 +103,9 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
+
+	/** Generate adlib piece from ingest data */
+	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
 
 	// Events
 
