@@ -10,7 +10,6 @@ All notable changes to this project will be documented in this file. See [standa
 * add lookaheadMaxSearchDepth property to mappings ([d92f60f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/d92f60f64080bc605781a02819c8abd018cb79f2))
 * add metaData field to timeline object keyframes ([2227640](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2227640986dd9830781c5ba780ff239f6fdb924e))
 * add stickyOriginalOnly property ([0d1725b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0d1725b7df5aa2977cbc2ebed575358c0666203d))
-* adlib mos plugin ([#61](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/issues/61)) ([56e06ff](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/56e06ff92b906b8fe3c71fac841c53c8543838f0))
 * expectedPlayoutItems ([42b45b1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/42b45b15c35d1c7388fd63f2915c2a01df7d596d))
 * introduce isDefaultCollapsed and isFlattened ([c5f2507](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c5f25077603bb323a9336d0ad2b0bb3028c15e45))
 * Make sourceDuration optional ([a70a8a2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a70a8a2a09bf592d25b562ce8e3998b8324a721c))
