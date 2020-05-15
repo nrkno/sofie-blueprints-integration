@@ -8,6 +8,8 @@ export interface IBlueprintExternalMessageQueueObj {
 	type: IBlueprintExternalMessageQueueType
 	/** If true, the message won't be sent automatically */
 	queueForLater?: boolean
+	/** The reason for why the message was queued and not sent */
+	queueForLaterReason?: string
 	/** Receiver details */
 	receiver: any
 	/** Messate details */
