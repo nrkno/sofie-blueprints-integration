@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.10.0...1.11.0) (2020-05-06)
+
+
+### Features
+
+* add lookaheadMaxSearchDepth property to mappings ([d92f60f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/d92f60f64080bc605781a02819c8abd018cb79f2))
+* add metaData field to timeline object keyframes ([2227640](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2227640986dd9830781c5ba780ff239f6fdb924e))
+* add stickyOriginalOnly property ([0d1725b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0d1725b7df5aa2977cbc2ebed575358c0666203d))
+* expectedPlayoutItems ([42b45b1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/42b45b15c35d1c7388fd63f2915c2a01df7d596d))
+* introduce isDefaultCollapsed and isFlattened ([c5f2507](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c5f25077603bb323a9336d0ad2b0bb3028c15e45))
+* Make sourceDuration optional ([a70a8a2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a70a8a2a09bf592d25b562ce8e3998b8324a721c))
+* Out-of-order playback timing and playlist looping ([#59](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/issues/59)) [publish] ([c7ad522](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c7ad522a2d46d69dfc3bf2b1f79caa8173f4d049))
+* Property to force adlibs to be inserted queued ([6111ea1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/6111ea1361192a43dd37e393e8a05ff7361a9b4e))
+* use experimental TSR version [publish] ([f8d5cc7](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/f8d5cc7ad7f13e68636e4fddf804f79717e69688))
+* **hidden:** allow hiding the segment in the UI ([82de87d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/82de87d1ff9797d9483c8349859ae0689755b2c5))
+* **identifier:** add an optional identifier to the segment ([2e879e9](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2e879e9c459d7f95a02b964d854cf047893cf52e))
+
+
+### Bug Fixes
+
+* DeviceOptionsAny ([88748d3](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/88748d3f90a4d7edaad19e2f78460fe85307fbfa))
+* merge marker ([2d1978d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2d1978dee5c7e44c63e9ab5d6159ae1ea6bdb9b4))
+* missing export ([894fe36](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/894fe361fb33fad093250db6dd18e5122ce02600))
+* non-adlib pieces need to set toBeQueued ([fdf5a38](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/fdf5a38389beed024c8d690da7a7146de015476f))
+* try different git url ([c1a511e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/c1a511e8ac2b1fcc78ee2e850127383f8c2ba332))
+* update TSR-types dep ([d8c3eb8](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/d8c3eb83d763de7c7476022dd1c4b3299ecc9ddb))
+* use TSR types for ExpectedPlayoutItems [publish] ([45e602f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/45e602fe0af68678499199082099e3e7546094f1))
+
 ## [1.10.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.9.0...1.10.0) (2020-03-24)
 
 
