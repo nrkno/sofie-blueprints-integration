@@ -13,7 +13,7 @@ import {
 	SegmentContext,
 	ShowStyleContext
 } from './context'
-import { IngestRundown, IngestSegment } from './ingest'
+import { IngestAdlib, IngestRundown, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { MigrationStep } from './migrations'
 import {
@@ -111,6 +111,9 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 		actionId: string,
 		userData: ActionUserData
 	) => Promise<void> | void
+
+	/** Generate adlib piece from ingest data */
+	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
 
 	// Events
 
