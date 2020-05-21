@@ -106,11 +106,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
 	/** Execute an action defined by an IBlueprintActionManifest */
-	executeAction?: (
-		context: EventContext & ActionExecutionContext,
-		actionId: string,
-		userData: ActionUserData
-	) => Promise<void> | void
+	executeAction?: (context: EventContext & ActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
 
 	/** Generate adlib piece from ingest data */
 	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null

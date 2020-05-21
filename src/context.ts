@@ -82,18 +82,22 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	getPieceInstances(part: 'current' | 'next'): IBlueprintPieceInstance[]
 	/** Get the resolved PieceInstances for a modifiable PartInstance */
 	getResolvedPieceInstances(part: 'current' | 'next'): IBlueprintResolvedPieceInstance[]
-	/** Get the last active piece before the current part on given layer */
-	findLastPieceOnLayer(sourceLayerId: string, originalOnly?: boolean): IBlueprintPieceInstance | undefined
+	/** Get the last active piece on given layer */
+	findLastPieceOnLayer(
+		sourceLayerId: string,
+		excludeCurrentPart?: boolean,
+		originalOnly?: boolean
+	): IBlueprintPieceInstance | undefined
 	/** Fetch the showstyle config for the specified part */
 	// getNextShowStyleConfig(): Readonly<{ [key: string]: ConfigItemValue }>
 
 	/** Creative actions */
 	/** Insert a piece. Returns id of new PieceInstance */
-	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): string // id
+	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): IBlueprintPieceInstance
 	/** Update a piecesInstances */
 	updatePieceInstance(pieceInstanceId: string, piece: Partial<OmitId<IBlueprintPiece>>): IBlueprintPieceInstance
 	/** Insert a queued part to follow the current part */
-	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): void
+	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): IBlueprintPartInstance
 
 	/** Destructive actions */
 	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */

@@ -108,7 +108,7 @@ export interface IBlueprintPart {
 	expectedDuration?: number
 
 	/** The type of the segmentLiene, could be the name of the template that created it */
-	typeVariant: string
+	typeVariant?: string
 	/** The subtype fo the part */
 	subTypeVariant?: string
 
