@@ -72,6 +72,7 @@ export interface SegmentContext extends RundownContext {
 // tslint:disable-next-line: no-empty-interface
 export interface EventContext {
 	// TDB: Certain actions that can be triggered in Core by the Blueprint
+	getCurrentTime(): number
 }
 
 export interface PartEventContext extends EventContext, RundownContext {

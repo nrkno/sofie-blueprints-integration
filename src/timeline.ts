@@ -58,6 +58,8 @@ export interface TimelineObjectCoreExt extends TSR.TSRTimelineObjBase {
 			metaData?: {
 				[key: string]: any
 			}
+			/** Whether to keep this keyframe when the object is copied for lookahead. By default all keyframes are removed */
+			preserveForLookahead?: boolean
 		}
 	>
 }
