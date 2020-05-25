@@ -2372,6 +2372,15 @@ img {
 					<a href="iblueprintadlibpiece.html#_rank" class="tsd-kind-icon">_rank</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="iblueprintadlibpiece.html#adlibautonext" class="tsd-kind-icon">adlib<wbr>Auto<wbr>Next</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="iblueprintadlibpiece.html#adlibautonextoverlap" class="tsd-kind-icon">adlib<wbr>Auto<wbr>Next<wbr>Overlap</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="iblueprintadlibpiece.html#adlibdisableouttransition" class="tsd-kind-icon">adlib<wbr>Disable<wbr>Out<wbr>Transition</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="iblueprintadlibpiece.html#adlibpreroll" class="tsd-kind-icon">adlib<wbr>Preroll</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
@@ -2451,6 +2460,9 @@ img {
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iblueprintadlibpiece.html#_rank" class="tsd-kind-icon">_rank</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintadlibpiece.html#adlibautonext" class="tsd-kind-icon">adlib<wbr>Auto<wbr>Next</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintadlibpiece.html#adlibautonextoverlap" class="tsd-kind-icon">adlib<wbr>Auto<wbr>Next<wbr>Overlap</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintadlibpiece.html#adlibdisableouttransition" class="tsd-kind-icon">adlib<wbr>Disable<wbr>Out<wbr>Transition</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintadlibpiece.html#adlibpreroll" class="tsd-kind-icon">adlib<wbr>Preroll</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintadlibpiece.html#content" class="tsd-kind-icon">content</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iblueprintadlibpiece.html#expectedduration" class="tsd-kind-icon">expected<wbr>Duration</a></li>
@@ -2480,12 +2492,60 @@ img {
 				<div class="tsd-signature tsd-kind-icon">_rank<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L301">src/rundown.ts:301</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L307">src/rundown.ts:307</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>Used for sorting in the UI</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="adlibautonext" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> adlib<wbr>Auto<wbr>Next</h3>
+				<div class="tsd-signature tsd-kind-icon">adlib<wbr>Auto<wbr>Next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#adlibautonext">adlibAutoNext</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L256">src/rundown.ts:256</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>When queued, should the adlib autonext</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="adlibautonextoverlap" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> adlib<wbr>Auto<wbr>Next<wbr>Overlap</h3>
+				<div class="tsd-signature tsd-kind-icon">adlib<wbr>Auto<wbr>Next<wbr>Overlap<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#adlibautonextoverlap">adlibAutoNextOverlap</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L258">src/rundown.ts:258</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>When queued, how much overlap with the next part</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="adlibdisableouttransition" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> adlib<wbr>Disable<wbr>Out<wbr>Transition</h3>
+				<div class="tsd-signature tsd-kind-icon">adlib<wbr>Disable<wbr>Out<wbr>Transition<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#adlibdisableouttransition">adlibDisableOutTransition</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L260">src/rundown.ts:260</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>When queued, block transition at the end of the part</p>
 					</div>
 				</div>
 			</section>
@@ -2496,7 +2556,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#adlibpreroll">adlibPreroll</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L250">src/rundown.ts:250</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L250">src/rundown.ts:250</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2512,7 +2572,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#content">content</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L237">src/rundown.ts:237</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L237">src/rundown.ts:237</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2527,7 +2587,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">expected<wbr>Duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L305">src/rundown.ts:305</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L311">src/rundown.ts:311</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2543,7 +2603,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#expectedplayoutitems">expectedPlayoutItems</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L254">src/rundown.ts:254</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L254">src/rundown.ts:254</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2559,7 +2619,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#externalid">externalId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L224">src/rundown.ts:224</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L224">src/rundown.ts:224</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2574,7 +2634,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">floated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L309">src/rundown.ts:309</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L315">src/rundown.ts:315</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2590,7 +2650,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#infinitemode">infiniteMode</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L247">src/rundown.ts:247</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L247">src/rundown.ts:247</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2600,7 +2660,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">invalid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L303">src/rundown.ts:303</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L309">src/rundown.ts:309</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2616,7 +2676,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#metadata">metaData</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L230">src/rundown.ts:230</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L230">src/rundown.ts:230</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2632,7 +2692,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#name">name</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L228">src/rundown.ts:228</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L228">src/rundown.ts:228</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2648,7 +2708,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#outputlayerid">outputLayerId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L235">src/rundown.ts:235</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L235">src/rundown.ts:235</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2664,7 +2724,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#partid">partId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L226">src/rundown.ts:226</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L226">src/rundown.ts:226</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2680,7 +2740,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#sourcelayerid">sourceLayerId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L233">src/rundown.ts:233</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L233">src/rundown.ts:233</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2695,7 +2755,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L307">src/rundown.ts:307</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L313">src/rundown.ts:313</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2711,7 +2771,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#tobequeued">toBeQueued</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L252">src/rundown.ts:252</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L252">src/rundown.ts:252</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2727,7 +2787,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpiecegeneric.html">IBlueprintPieceGeneric</a>.<a href="iblueprintpiecegeneric.html#transitions">transitions</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/38735c5/src/rundown.ts#L240">src/rundown.ts:240</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/d222be6/src/rundown.ts#L240">src/rundown.ts:240</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
