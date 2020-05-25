@@ -4,13 +4,19 @@ import { SomeContent } from './content'
 import { Timeline } from './timeline'
 
 export interface IBlueprintRundownPlaylistInfo {
+	/** Rundown playlist slug - user-presentable name */
 	name: string
 
 	externalId: string
 
+	/** Expected start should be set to the expected time this rundown playlist should run on air */
 	expectedStart?: Time
-
+	/** Expected duration of the rundown playlist */
 	expectedDuration?: number
+	/** Should the rundown playlist use out-of-order timing mode (unplayed content will be played eventually) as opposed to normal timing mode (unplayed content behind the OnAir line has been skipped) */
+	outOfOrderTiming?: boolean
+	/** Should the rundown playlist loop at the end */
+	loop?: boolean
 }
 
 /** The Rundown generated from Blueprint */

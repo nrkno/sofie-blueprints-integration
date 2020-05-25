@@ -1,6 +1,6 @@
 {
   "name": "tv-automation-sofie-blueprints-integration",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "Library to define the interaction between core and the blueprints.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -33,7 +33,7 @@
     "reset": "git clean -dfx && git reset --hard && yarn",
     "validate:dependencies": "yarn audit --groups dependencies && yarn license-validate",
     "validate:dev-dependencies": "yarn audit --groups devDependencies",
-    "license-validate": "node-license-validator -p -d --allow-licenses MIT BSD BSD-3-Clause ISC Apache Unlicense --allow-packages cycle"
+    "license-validate": "node-license-validator -p -d --allow-licenses MIT BSD BSD-3-Clause 0BSD ISC Apache Unlicense --allow-packages cycle"
   },
   "engines": {
     "node": ">=4.5"
@@ -70,10 +70,10 @@
     "typescript": "~3.6.4"
   },
   "dependencies": {
-    "moment": "^2.22.2",
-    "timeline-state-resolver-types": "^3.20.0-nightly-feat-vizMSE-and-sisyfos-20200402-145842-e5498a89.0",
+    "moment": "2.22.2",
+    "timeline-state-resolver-types": "3.20.0",
     "tslib": "^1.10.0",
-    "underscore": "^1.9.1"
+    "underscore": "1.9.1"
   },
   "standard-version": {
     "message": "chore(release): %s [skip ci]",

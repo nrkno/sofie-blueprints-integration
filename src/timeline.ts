@@ -1,6 +1,7 @@
 import { IBlueprintPartInstance, IBlueprintPiece } from './rundown'
 
 import * as TSR from 'timeline-state-resolver-types'
+import { CombineArrayType } from './lib'
 export { TSR }
 
 export { Timeline } from 'timeline-state-resolver-types'
@@ -50,6 +51,17 @@ export interface TimelineObjectCoreExt extends TSR.TSRTimelineObjBase {
 	holdMode?: TimelineObjHoldMode
 	/** Arbitrary data storage for plugins */
 	metaData?: { [key: string]: any }
+	/** Keyframes: Arbitrary data storage for plugins */
+	keyframes?: CombineArrayType<
+		TSR.TSRTimelineObjBase['keyframes'],
+		{
+			metaData?: {
+				[key: string]: any
+			}
+			/** Whether to keep this keyframe when the object is copied for lookahead. By default all keyframes are removed */
+			preserveForLookahead?: boolean
+		}
+	>
 }
 
 /** TimelineObject extension for additional fields needed by onTimelineGenerate */
