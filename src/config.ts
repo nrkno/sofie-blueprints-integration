@@ -1,11 +1,16 @@
+import { DeviceType } from 'timeline-state-resolver-types'
 import { ConfigItemValue, TableConfigItemValue } from './common'
+import { SourceLayerType } from './content'
 
 export enum ConfigManifestEntryType {
 	STRING = 'string',
 	NUMBER = 'number',
 	BOOLEAN = 'boolean',
 	ENUM = 'enum',
-	TABLE = 'table'
+	TABLE = 'table',
+	SELECT = 'select',
+	SOURCE_LAYERS = 'source_layers',
+	LAYER_MAPPINGS = 'layer_mappings'
 }
 
 export type BasicConfigManifestEntry =
@@ -13,6 +18,12 @@ export type BasicConfigManifestEntry =
 	| ConfigManifestEntryNumber
 	| ConfigManifestEntryBoolean
 	| ConfigManifestEntryEnum
+	| ConfigManifestEntrySelectFromOptions<true>
+	| ConfigManifestEntrySelectFromOptions<false>
+	| ConfigManifestEntrySourceLayers<true>
+	| ConfigManifestEntrySourceLayers<false>
+	| ConfigManifestEntryLayerMappings<true>
+	| ConfigManifestEntryLayerMappings<false>
 
 export type ConfigManifestEntry = BasicConfigManifestEntry | ConfigManifestEntryTable
 
@@ -43,6 +54,37 @@ export interface ConfigManifestEntryEnum extends ConfigManifestEntryBase {
 }
 export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.TABLE
-	columns: BasicConfigManifestEntry[]
+	columns: Array<
+		BasicConfigManifestEntry & {
+			/** Column rank (left to right, lowest to highest) */
+			rank: number
+		}
+	>
 	defaultVal: TableConfigItemValue
+}
+
+interface ConfigManifestEntrySelectBase<Multiple extends boolean> extends ConfigManifestEntryBase {
+	defaultVal: Multiple extends true ? string[] : string
+	multiple: Multiple
+}
+
+export interface ConfigManifestEntrySelectFromOptions<Multiple extends boolean>
+	extends ConfigManifestEntrySelectBase<Multiple> {
+	type: ConfigManifestEntryType.SELECT
+	options: string[]
+}
+
+export interface ConfigManifestEntrySourceLayers<Multiple extends boolean>
+	extends ConfigManifestEntrySelectBase<Multiple> {
+	type: ConfigManifestEntryType.SOURCE_LAYERS
+	filters?: {
+		sourceLayerTypes?: SourceLayerType[]
+	}
+}
+export interface ConfigManifestEntryLayerMappings<Multiple extends boolean>
+	extends ConfigManifestEntrySelectBase<Multiple> {
+	type: ConfigManifestEntryType.LAYER_MAPPINGS
+	filters?: {
+		deviceTypes?: DeviceType[]
+	}
 }
