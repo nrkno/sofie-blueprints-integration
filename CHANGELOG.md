@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.11.0...1.12.0) (2020-05-28)
+
+
+### Features
+
+* Add Select type to config manifest ([1f0f58e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/1f0f58e1aaf01d08de42ab4cb6cd33dd78a3b549))
+* Add transition properties to adlibs ([9c1457e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/9c1457ef3a1f6f8f63d39793e23902a451c76047))
+* mos plugin data ingest ([5a77cb7](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/5a77cb7c36661bf87b2144eeccb567bc94ae4d59))
+* option to preserve keyframes in lookahead, and give events the current time [publish] ([38735c5](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/38735c592a98188616a1cbc6e3d3d647bdf9fae1))
+* Table column ranks ([2214d26](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/2214d267b0f264f3f0c15330d48612385bb08050))
+
 ## [1.11.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.10.0...1.11.0) (2020-05-06)
 
 
