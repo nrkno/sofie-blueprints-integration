@@ -9,7 +9,7 @@ import {
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundown,
 	IBlueprintRundownPlaylistInfo,
-	IBlueprintSegment
+	IBlueprintSegment,
 } from './rundown'
 
 import {
@@ -20,7 +20,7 @@ import {
 	PartEventContext,
 	RundownContext,
 	SegmentContext,
-	ShowStyleContext
+	ShowStyleContext,
 } from './context'
 import { IngestAdlib, IngestRundown, IngestSegment } from './ingest'
 import { MigrationStep } from './migrations'
@@ -30,7 +30,7 @@ import { OnGenerateTimelineObj } from './timeline'
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
 	STUDIO = 'studio',
-	SHOWSTYLE = 'showstyle'
+	SHOWSTYLE = 'showstyle',
 }
 
 export interface BlueprintManifestSet {

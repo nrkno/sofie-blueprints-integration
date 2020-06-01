@@ -7,13 +7,13 @@ describe('Util', () => {
 				{
 					attr0: {
 						subattr0: {
-							_txt: 'foo'
+							_txt: 'foo',
 						},
-						subattr1: 'world'
+						subattr1: 'world',
 					},
-					attr1: 'hello'
+					attr1: 'hello',
 				},
-				val => {
+				(val) => {
 					if (typeof val === 'object') {
 						if (val._txt) {
 							return val._txt
@@ -25,9 +25,9 @@ describe('Util', () => {
 		).toEqual({
 			attr0: {
 				subattr0: 'foo',
-				subattr1: 'world'
+				subattr1: 'world',
 			},
-			attr1: 'hello'
+			attr1: 'hello',
 		})
 	})
 
@@ -37,14 +37,14 @@ describe('Util', () => {
 				{
 					attr0: {
 						subattr0: {
-							_txt: 'foo'
+							_txt: 'foo',
 						},
-						subattr1: 'world'
+						subattr1: 'world',
 					},
-					attr1: 'hello'
+					attr1: 'hello',
 				},
-				val => {
-					return new Promise(resolve => {
+				(val) => {
+					return new Promise((resolve) => {
 						const f = () => {
 							if (typeof val === 'object') {
 								if (val._txt) {
@@ -62,9 +62,9 @@ describe('Util', () => {
 		).toEqual({
 			attr0: {
 				subattr0: 'foo',
-				subattr1: 'world'
+				subattr1: 'world',
 			},
-			attr1: 'hello'
+			attr1: 'hello',
 		})
 	})
 })

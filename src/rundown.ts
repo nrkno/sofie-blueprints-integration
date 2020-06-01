@@ -205,12 +205,12 @@ export interface IBlueprintPartDBTimings {
 export enum PartHoldMode {
 	NONE = 0,
 	FROM = 1,
-	TO = 2
+	TO = 2,
 }
 
 export declare enum PieceTransitionType {
 	MIX = 'MIX',
-	WIPE = 'WIPE'
+	WIPE = 'WIPE',
 }
 export interface PieceTransition {
 	type: PieceTransitionType
@@ -323,5 +323,5 @@ export enum PieceLifespan {
 	Normal = 0,
 	OutOnNextPart = 1,
 	OutOnNextSegment = 2,
-	Infinite = 3
+	Infinite = 3,
 }
