@@ -85,8 +85,11 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	/** Get the last active piece on given layer */
 	findLastPieceOnLayer(
 		sourceLayerId: string,
-		excludeCurrentPart?: boolean,
-		originalOnly?: boolean
+		options?: {
+			excludeCurrentPart?: boolean
+			originalOnly?: boolean
+			pieceMetaDataFilter?: any // Mongo query against properties inside of piece.metaData
+		}
 	): IBlueprintPieceInstance | undefined
 	/** Fetch the showstyle config for the specified part */
 	// getNextShowStyleConfig(): Readonly<{ [key: string]: ConfigItemValue }>
