@@ -10,7 +10,8 @@ export enum ConfigManifestEntryType {
 	TABLE = 'table',
 	SELECT = 'select',
 	SOURCE_LAYERS = 'source_layers',
-	LAYER_MAPPINGS = 'layer_mappings'
+	LAYER_MAPPINGS = 'layer_mappings',
+	JSON = 'json'
 }
 
 export type BasicConfigManifestEntry =
@@ -24,6 +25,7 @@ export type BasicConfigManifestEntry =
 	| ConfigManifestEntrySourceLayers<false>
 	| ConfigManifestEntryLayerMappings<true>
 	| ConfigManifestEntryLayerMappings<false>
+	| ConfigManifestEntryJson
 
 export type ConfigManifestEntry = BasicConfigManifestEntry | ConfigManifestEntryTable
 
@@ -50,6 +52,10 @@ export interface ConfigManifestEntryBoolean extends ConfigManifestEntryBase {
 export interface ConfigManifestEntryEnum extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.ENUM
 	options: string[]
+	defaultVal: string
+}
+export interface ConfigManifestEntryJson extends ConfigManifestEntryBase {
+	type: ConfigManifestEntryType.JSON
 	defaultVal: string
 }
 export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
