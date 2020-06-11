@@ -178,6 +178,9 @@ export interface IBlueprintPartDB extends IBlueprintPart {
 
 	/** Playout timings, in here we log times when playout happens */
 	timings?: IBlueprintPartDBTimings
+
+	/** if the part was dunamically inserted (adlib) */
+	dynamicallyInserted?: boolean
 }
 /** The Part instance sent from Core */
 export interface IBlueprintPartInstance {

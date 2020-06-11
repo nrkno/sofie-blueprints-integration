@@ -95,7 +95,7 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	// getNextShowStyleConfig(): Readonly<{ [key: string]: ConfigItemValue }>
 
 	/** Creative actions */
-	/** Insert a piece. Returns id of new PieceInstance */
+	/** Insert a piece. Returns id of new PieceInstance. Any timelineObjects will have their ids changed, so are not safe to reference from another piece */
 	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): IBlueprintPieceInstance
 	/** Update a piecesInstances */
 	updatePieceInstance(pieceInstanceId: string, piece: Partial<OmitId<IBlueprintPiece>>): IBlueprintPieceInstance
