@@ -229,9 +229,9 @@ export interface IBlueprintPieceGeneric {
 	/** Arbitrary data storage for plugins */
 	metaData?: PieceMetaData
 
-	/** Source layer the timeline item belongs to */
+	/** Id of the Source layer the timeline item belongs to */
 	sourceLayerId: string
-	/** Layer output this piece belongs to */
+	/** Id of the Output channel this piece belongs to */
 	outputLayerId: string
 	/** The object describing the item in detail */
 	content?: SomeContent
