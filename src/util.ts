@@ -1,7 +1,7 @@
 import * as _ from 'underscore'
 
 export enum iterateDeeplyEnum {
-	CONTINUE = '$continue'
+	CONTINUE = '$continue',
 }
 
 /**

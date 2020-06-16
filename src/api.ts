@@ -11,7 +11,7 @@ import {
 	PartEventContext,
 	RundownContext,
 	SegmentContext,
-	ShowStyleContext
+	ShowStyleContext,
 } from './context'
 import { IngestAdlib, IngestRundown, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
@@ -23,7 +23,7 @@ import {
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundown,
 	IBlueprintRundownPlaylistInfo,
-	IBlueprintSegment
+	IBlueprintSegment,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -31,7 +31,7 @@ import { OnGenerateTimelineObj } from './timeline'
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
 	STUDIO = 'studio',
-	SHOWSTYLE = 'showstyle'
+	SHOWSTYLE = 'showstyle',
 }
 
 export interface BlueprintManifestSet {

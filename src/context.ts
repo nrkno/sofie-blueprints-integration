@@ -11,7 +11,7 @@ import {
 	IBlueprintPieceInstance,
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundownDB,
-	IBlueprintSegmentDB
+	IBlueprintSegmentDB,
 } from './rundown'
 import { BlueprintMappings } from './studio'
 

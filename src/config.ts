@@ -10,7 +10,7 @@ export enum ConfigManifestEntryType {
 	TABLE = 'table',
 	SELECT = 'select',
 	SOURCE_LAYERS = 'source_layers',
-	LAYER_MAPPINGS = 'layer_mappings'
+	LAYER_MAPPINGS = 'layer_mappings',
 }
 
 export type BasicConfigManifestEntry =
@@ -54,12 +54,10 @@ export interface ConfigManifestEntryEnum extends ConfigManifestEntryBase {
 }
 export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.TABLE
-	columns: Array<
-		BasicConfigManifestEntry & {
-			/** Column rank (left to right, lowest to highest) */
-			rank: number
-		}
-	>
+	columns: (BasicConfigManifestEntry & {
+		/** Column rank (left to right, lowest to highest) */
+		rank: number
+	})[]
 	defaultVal: TableConfigItemValue
 }
 

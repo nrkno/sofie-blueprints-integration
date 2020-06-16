@@ -10,7 +10,7 @@ export enum PlayoutTimelinePrefixes {
 	PART_GROUP_PREFIX = 'part_group_',
 	PART_GROUP_FIRST_ITEM_PREFIX = 'part_group_firstobject_',
 	PIECE_GROUP_PREFIX = 'piece_group_',
-	PIECE_GROUP_FIRST_ITEM_PREFIX = 'piece_group_firstobject_'
+	PIECE_GROUP_FIRST_ITEM_PREFIX = 'piece_group_firstobject_',
 }
 
 export function getPartGroupId(part: IBlueprintPartInstance | string) {
@@ -43,7 +43,7 @@ export function getPieceFirstObjectId(piece: IBlueprintPiece | string) {
 export enum TimelineObjHoldMode {
 	NORMAL = 0,
 	ONLY = 1, // Only use when in HOLD
-	EXCEPT = 2 // Only use when not in HOLD
+	EXCEPT = 2, // Only use when not in HOLD
 }
 
 export interface TimelineObjectCoreExt extends TSR.TSRTimelineObjBase {

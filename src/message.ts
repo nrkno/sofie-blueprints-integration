@@ -13,7 +13,7 @@ export interface IBlueprintExternalMessageQueueObj {
 export enum IBlueprintExternalMessageQueueType {
 	SOAP = 'soap',
 	SLACK = 'slack',
-	RABBIT_MQ = 'rabbitmq'
+	RABBIT_MQ = 'rabbitmq',
 }
 export interface ExternalMessageQueueObjSOAP extends IBlueprintExternalMessageQueueObj {
 	type: IBlueprintExternalMessageQueueType.SOAP

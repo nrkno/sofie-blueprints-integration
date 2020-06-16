@@ -24,5 +24,5 @@ export interface IBlueprintAsRunLogEvent {
 }
 export enum IBlueprintAsRunLogEventContent {
 	STARTEDPLAYBACK = 'startedPlayback',
-	STOPPEDPLAYBACK = 'stoppedPlayback'
+	STOPPEDPLAYBACK = 'stoppedPlayback',
 }

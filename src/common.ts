@@ -6,8 +6,8 @@ export interface IConfigItem {
 }
 
 export type ConfigItemValue = BasicConfigItemValue | TableConfigItemValue
-export type TableConfigItemValue = Array<{
+export type TableConfigItemValue = {
 	_id: string
 	[key: string]: BasicConfigItemValue
-}>
+}[]
 export type BasicConfigItemValue = string | number | boolean | string[]
