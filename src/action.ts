@@ -10,13 +10,9 @@ export interface IBlueprintActionManifestDisplay {
 	description?: string
 	_rank?: number
 
-	// hotkeys?: string // maybe we should assume that triggers will exist for this to work?
 	tags?: string[]
 }
 
-// I think we still need to allow specyfing sourceLayerId and outputLayerId for the actions,
-// so that content-specific adlibs can be grouped together and approriate thumbnail
-// handling applied on various types of lists
 export interface IBlueprintActionManifestDisplayContent extends IBlueprintActionManifestDisplay {
 	/** Source layer the timeline item belongs to */
 	sourceLayerId: string

@@ -208,12 +208,12 @@ export interface IBlueprintPartDBTimings {
 export enum PartHoldMode {
 	NONE = 0,
 	FROM = 1,
-	TO = 2
+	TO = 2,
 }
 
 export declare enum PieceTransitionType {
 	MIX = 'MIX',
-	WIPE = 'WIPE'
+	WIPE = 'WIPE',
 }
 export interface PieceTransition {
 	type: PieceTransitionType
@@ -286,12 +286,6 @@ export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 	continuesRefId?: string
 	isTransition?: boolean
 	extendOnHold?: boolean
-
-	// TODO - how do these work in a queuedPart, or with mutations?
-	// /** The action which created this piece (if any) */
-	// sourceActionId?: string
-	// /** The action payload used to create this piece (if any) */
-	// sourceActionUserData?: { [key: string]: any }
 }
 export interface IBlueprintPieceDB extends IBlueprintPiece {
 	playoutDuration?: number
@@ -333,5 +327,5 @@ export enum PieceLifespan {
 	Normal = 0,
 	OutOnNextPart = 1,
 	OutOnNextSegment = 2,
-	Infinite = 3
+	Infinite = 3,
 }
