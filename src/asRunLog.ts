@@ -23,6 +23,7 @@ export interface IBlueprintAsRunLogEvent {
 	rehersal: boolean
 }
 export enum IBlueprintAsRunLogEventContent {
+	DATACHANGED = 'dataChanged',
 	STARTEDPLAYBACK = 'startedPlayback',
 	STOPPEDPLAYBACK = 'stoppedPlayback',
 }

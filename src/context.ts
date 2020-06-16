@@ -1,6 +1,7 @@
 import { IBlueprintAsRunLogEvent } from './asRunLog'
 import { ConfigItemValue } from './common'
 import { IngestPart, IngestRundown } from './ingest'
+import { IBlueprintExternalMessageQueueObj } from './message'
 import {
 	BlueprintRuntimeArguments,
 	IBlueprintPartDB,
@@ -87,6 +88,9 @@ export interface AsRunEventContext extends RundownContext {
 
 	/** Get all asRunEvents in the rundown */
 	getAllAsRunEvents(): Readonly<IBlueprintAsRunLogEvent[]>
+
+	/** Get all unsent and queued messages in the rundown */
+	getAllQueuedMessages(): Readonly<IBlueprintExternalMessageQueueObj[]>
 
 	/** Originals */
 
