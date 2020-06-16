@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.12.0...2.0.0) (2020-06-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop node 8 support
+
+### Features
+
+* a proposal to allow adlib piece-like metadata on an adlib action to provide UI information like thumbnails, sourceDuration, etc. ([64cbef6](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/64cbef6c2f8293d50ad62dfc34e04054240f0bb8))
+* add custom mongo filtering to action.findLastPieceOnLayer [publish] ([7d18cb0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/7d18cb0595dbc2895cbdde1484d358f49c758a4b))
+* add dynamicallyInserted to IBlueprintPartDB [publish] ([eeca279](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/eeca279a57e7b0d5a14c6cc0b131d02feb047df4))
+* add rank to adlib actions ([b5bbc4a](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b5bbc4aa9a6a5f19cc3801f436eb735551307b9d))
+* change segmentId to partId like in AdLibs [publish] ([b7f5329](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b7f53295056ef3e060454f38ea125b627d8d45b3))
+* drop node 8 support ([b67be0e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/b67be0ea645cd80a694dca9c0b2a8815b635c6ff))
+* first draft of adlib-actions api [publish] ([95a475c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/95a475cfb2cc32a444ba781080d6449c748d6103))
+* more properties related to queuedForLater asRun messages ([371a7c2](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/371a7c2dddf4ac5f0237a34470dd248bdcc80f80))
+* support for asRunLog events for when rundown data has changed ([0a1986c](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0a1986cdf61251bc6da57e15214cd0e65ffa8aea))
+* support for asRunLog messages that can be queued to be sent later, and picked up to be updated ([70ce9fc](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/70ce9fc9c05ba5076e87353099854fe04c7bedd1))
+* update ActionExecutionContext ([a71dfd6](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a71dfd6fbd3cf6edb11c66c5bfa516fe5c87886b))
+
+
+### Bug Fixes
+
+* tweaks during tests [publish] ([364d344](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/364d34457fd3e02fe5c8e0eaef11e9f5cb83dc4b))
+* use only queueForLaterReason ([ae364c1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/ae364c10d4d3a91db4184558a89e0d8347cd2542))
+
 ## [1.12.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.11.0...1.12.0) (2020-05-28)
 
 
