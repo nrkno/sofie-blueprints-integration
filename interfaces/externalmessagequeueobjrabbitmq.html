@@ -2368,8 +2368,14 @@ img {
 		<li class="current tsd-kind-interface tsd-is-external">
 			<a href="externalmessagequeueobjrabbitmq.html" class="tsd-kind-icon">External<wbr>Message<wbr>Queue<wbr>Obj<wbr>RabbitMQ</a>
 			<ul>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="externalmessagequeueobjrabbitmq.html#_id" class="tsd-kind-icon">_id</a>
+				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 					<a href="externalmessagequeueobjrabbitmq.html#message" class="tsd-kind-icon">message</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="externalmessagequeueobjrabbitmq.html#queueforlaterreason" class="tsd-kind-icon">queue<wbr>For<wbr>Later<wbr>Reason</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 					<a href="externalmessagequeueobjrabbitmq.html#receiver" class="tsd-kind-icon">receiver</a>
@@ -2406,7 +2412,9 @@ img {
 					<section class="tsd-index-section tsd-is-external">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="externalmessagequeueobjrabbitmq.html#_id" class="tsd-kind-icon">_id</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="externalmessagequeueobjrabbitmq.html#message" class="tsd-kind-icon">message</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="externalmessagequeueobjrabbitmq.html#queueforlaterreason" class="tsd-kind-icon">queue<wbr>For<wbr>Later<wbr>Reason</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="externalmessagequeueobjrabbitmq.html#receiver" class="tsd-kind-icon">receiver</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="externalmessagequeueobjrabbitmq.html#retryuntil" class="tsd-kind-icon">retry<wbr>Until</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external"><a href="externalmessagequeueobjrabbitmq.html#type" class="tsd-kind-icon">type</a></li>
@@ -2417,6 +2425,22 @@ img {
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="_id" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> _id</h3>
+				<div class="tsd-signature tsd-kind-icon">_id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#_id">_id</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/da1fb2a/src/message.ts#L5">src/message.ts:5</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>If set, the message references an existing message (that is to be overrritten)</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 				<a name="message" class="tsd-anchor"></a>
 				<h3>message</h3>
@@ -2424,7 +2448,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Overrides <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#message">message</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/90dc963/src/message.ts#L63">src/message.ts:63</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/da1fb2a/src/message.ts#L71">src/message.ts:71</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -2462,6 +2486,23 @@ img {
 					</ul>
 				</div>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="queueforlaterreason" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> queue<wbr>For<wbr>Later<wbr>Reason</h3>
+				<div class="tsd-signature tsd-kind-icon">queue<wbr>For<wbr>Later<wbr>Reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#queueforlaterreason">queueForLaterReason</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/da1fb2a/src/message.ts#L13">src/message.ts:13</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>If set, the message won&#39;t be sent automatically.
+						Contains the reason for why the message was queued and not sent.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-external">
 				<a name="receiver" class="tsd-anchor"></a>
 				<h3>receiver</h3>
@@ -2469,7 +2510,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Overrides <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#receiver">receiver</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/90dc963/src/message.ts#L57">src/message.ts:57</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/da1fb2a/src/message.ts#L65">src/message.ts:65</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -2501,7 +2542,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#retryuntil">retryUntil</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/90dc963/src/message.ts#L11">src/message.ts:11</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/da1fb2a/src/message.ts#L19">src/message.ts:19</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2517,7 +2558,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Overrides <a href="iblueprintexternalmessagequeueobj.html">IBlueprintExternalMessageQueueObj</a>.<a href="iblueprintexternalmessagequeueobj.html#type">type</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/90dc963/src/message.ts#L56">src/message.ts:56</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/da1fb2a/src/message.ts#L64">src/message.ts:64</a></li>
 					</ul>
 				</aside>
 			</section>
