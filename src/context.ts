@@ -2,11 +2,15 @@ import { IBlueprintAsRunLogEvent } from './asRunLog'
 import { ConfigItemValue } from './common'
 import { IngestPart, IngestRundown } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
+import { OmitId } from './lib'
 import {
 	BlueprintRuntimeArguments,
+	IBlueprintPart,
 	IBlueprintPartDB,
 	IBlueprintPartInstance,
+	IBlueprintPiece,
 	IBlueprintPieceInstance,
+	IBlueprintResolvedPieceInstance,
 	IBlueprintRundownDB,
 	IBlueprintSegmentDB,
 } from './rundown'
@@ -66,6 +70,49 @@ export interface SegmentContext extends RundownContext {
 
 	error: (message: string, partExternalId?: string) => void
 	warning: (message: string, partExternalId?: string) => void
+}
+
+/** Actions */
+
+export interface ActionExecutionContext extends ShowStyleContext {
+	/** Data fetching */
+	// getIngestRundown(): IngestRundown // TODO - for which part?
+	/** Get a PartInstance which can be modified */
+	getPartInstance(part: 'current' | 'next'): IBlueprintPartInstance | undefined
+	/** Get the PieceInstances for a modifiable PartInstance */
+	getPieceInstances(part: 'current' | 'next'): IBlueprintPieceInstance[]
+	/** Get the resolved PieceInstances for a modifiable PartInstance */
+	getResolvedPieceInstances(part: 'current' | 'next'): IBlueprintResolvedPieceInstance[]
+	/** Get the last active piece on given layer */
+	findLastPieceOnLayer(
+		sourceLayerId: string,
+		options?: {
+			excludeCurrentPart?: boolean
+			originalOnly?: boolean
+			pieceMetaDataFilter?: any // Mongo query against properties inside of piece.metaData
+		}
+	): IBlueprintPieceInstance | undefined
+	/** Fetch the showstyle config for the specified part */
+	// getNextShowStyleConfig(): Readonly<{ [key: string]: ConfigItemValue }>
+
+	/** Creative actions */
+	/** Insert a piece. Returns id of new PieceInstance. Any timelineObjects will have their ids changed, so are not safe to reference from another piece */
+	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): IBlueprintPieceInstance
+	/** Update a piecesInstances */
+	updatePieceInstance(pieceInstanceId: string, piece: Partial<OmitId<IBlueprintPiece>>): IBlueprintPieceInstance
+	/** Insert a queued part to follow the current part */
+	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): IBlueprintPartInstance
+
+	/** Destructive actions */
+	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */
+	stopPiecesOnLayers(sourceLayerIds: string[], timeOffset?: number): string[]
+	/** Stop piecesInstances by id. Returns ids of piecesInstances that were removed */
+	stopPieceInstances(pieceInstanceIds: string[], timeOffset?: number): string[]
+
+	/** Misc actions */
+	// updateAction(newManifest: Pick<IBlueprintAdLibActionManifest, 'description' | 'payload'>): void // only updates itself. to allow for the next one to do something different
+	// executePeripheralDeviceAction(deviceId: string, functionName: string, args: any[]): Promise<any>
+	// openUIDialogue(message: string) // ?????
 }
 
 /** Events */

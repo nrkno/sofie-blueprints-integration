@@ -1,18 +1,9 @@
 import { TSRTimelineObjBase } from 'timeline-state-resolver-types'
 
+import { ActionUserData, IBlueprintActionManifest } from './action'
 import { ConfigManifestEntry } from './config'
-import { IBlueprintExternalMessageQueueObj } from './message'
 import {
-	IBlueprintAdLibPiece,
-	IBlueprintPart,
-	IBlueprintPiece,
-	IBlueprintResolvedPieceInstance,
-	IBlueprintRundown,
-	IBlueprintRundownPlaylistInfo,
-	IBlueprintSegment,
-} from './rundown'
-
-import {
+	ActionExecutionContext,
 	AsRunEventContext,
 	EventContext,
 	IStudioConfigContext,
@@ -23,7 +14,17 @@ import {
 	ShowStyleContext,
 } from './context'
 import { IngestAdlib, IngestRundown, IngestSegment } from './ingest'
+import { IBlueprintExternalMessageQueueObj } from './message'
 import { MigrationStep } from './migrations'
+import {
+	IBlueprintAdLibPiece,
+	IBlueprintPart,
+	IBlueprintPiece,
+	IBlueprintResolvedPieceInstance,
+	IBlueprintRundown,
+	IBlueprintRundownPlaylistInfo,
+	IBlueprintSegment,
+} from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
 
@@ -104,6 +105,9 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
+	/** Execute an action defined by an IBlueprintActionManifest */
+	executeAction?: (context: EventContext & ActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
+
 	/** Generate adlib piece from ingest data */
 	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
 
@@ -154,6 +158,7 @@ export interface BlueprintResultTimeline {
 export interface BlueprintResultRundown {
 	rundown: IBlueprintRundown
 	globalAdLibPieces: IBlueprintAdLibPiece[]
+	globalActions?: IBlueprintActionManifest[]
 	baseline: TSRTimelineObjBase[]
 }
 export interface BlueprintResultSegment {
@@ -165,6 +170,7 @@ export interface BlueprintResultPart {
 	part: IBlueprintPart
 	pieces: IBlueprintPiece[]
 	adLibPieces: IBlueprintAdLibPiece[]
+	actions?: IBlueprintActionManifest[]
 }
 
 /** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
