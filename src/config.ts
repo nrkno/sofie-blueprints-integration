@@ -4,6 +4,7 @@ import { SourceLayerType } from './content'
 
 export enum ConfigManifestEntryType {
 	STRING = 'string',
+	MULTILINE_STRING = 'multiline_string',
 	NUMBER = 'number',
 	BOOLEAN = 'boolean',
 	ENUM = 'enum',
@@ -15,6 +16,7 @@ export enum ConfigManifestEntryType {
 
 export type BasicConfigManifestEntry =
 	| ConfigManifestEntryString
+	| ConfigManifestEntryMultilineString
 	| ConfigManifestEntryNumber
 	| ConfigManifestEntryBoolean
 	| ConfigManifestEntryEnum
@@ -38,6 +40,12 @@ export interface ConfigManifestEntryBase {
 export interface ConfigManifestEntryString extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.STRING
 	defaultVal: string
+}
+
+/** Text area, each line entered is a string in an array */
+export interface ConfigManifestEntryMultilineString extends ConfigManifestEntryBase {
+	type: ConfigManifestEntryType.MULTILINE_STRING
+	defaultVal: string[]
 }
 export interface ConfigManifestEntryNumber extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.NUMBER
