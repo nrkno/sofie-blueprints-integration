@@ -164,6 +164,9 @@ export interface IBlueprintPart {
 
 	/** User-facing identifier that can be used by the User to identify the contents of a segment in the Rundown source system */
 	identifier?: string
+
+	/** Whether queued adlibs can be combined into this part. Usually set by core. */
+	canCombineQueue?: boolean
 }
 /** The Part sent from Core */
 export interface IBlueprintPartDB extends IBlueprintPart {
@@ -203,12 +206,12 @@ export interface IBlueprintPartDBTimings {
 export enum PartHoldMode {
 	NONE = 0,
 	FROM = 1,
-	TO = 2,
+	TO = 2
 }
 
 export declare enum PieceTransitionType {
 	MIX = 'MIX',
-	WIPE = 'WIPE',
+	WIPE = 'WIPE'
 }
 export interface PieceTransition {
 	type: PieceTransitionType
@@ -254,6 +257,10 @@ export interface IBlueprintPieceGeneric {
 	adlibAutoNextOverlap?: number
 	/** When queued, block transition at the end of the part */
 	adlibDisableOutTransition?: boolean
+	/** When queued, how long to keep the old part alive */
+	adlibTransitionKeepAlive?: number
+	/** Whether the adlib can be combined with an already queued adlib */
+	canCombineQueue?: boolean
 }
 
 export interface ExpectedPlayoutItemGeneric {
@@ -312,6 +319,8 @@ export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	tags?: string[]
 	/** When the NRCS informs us that the producer marked the part as floated, we can prevent the user from TAKE'ing it, but still have it visible and allow manipulation */
 	floated?: boolean
+	/** HACK: Remove when adlib actions are ready. */
+	additionalPieces?: IBlueprintAdLibPiece[]
 }
 /** The AdLib piece sent from Core */
 export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
@@ -322,5 +331,5 @@ export enum PieceLifespan {
 	Normal = 0,
 	OutOnNextPart = 1,
 	OutOnNextSegment = 2,
-	Infinite = 3,
+	Infinite = 3
 }
