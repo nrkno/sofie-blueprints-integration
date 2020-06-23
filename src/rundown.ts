@@ -188,6 +188,8 @@ export interface IBlueprintPieceGeneric {
 	adlibAutoNext?: boolean
 	/** When queued, how much overlap with the next part */
 	adlibAutoNextOverlap?: number
+	/** When queued, how long to keep the old part alive */
+	adlibTransitionKeepAlive?: number
 	/** When queued, block transition at the end of the part */
 	adlibDisableOutTransition?: boolean
 	/** Whether the adlib can be combined with an already queued adlib */
