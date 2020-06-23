@@ -37,7 +37,9 @@ export interface IBlueprintRundown {
 	playlistExternalId?: string
 }
 /** The Rundown sent from Core */
-export interface IBlueprintRundownDB extends IBlueprintRundown {
+export interface IBlueprintRundownDB extends IBlueprintRundown, IBlueprintRundownDBData {}
+/** Properties added to a rundown in Core */
+export interface IBlueprintRundownDBData {
 	_id: string
 
 	/** Id of the showStyle variant used */
@@ -48,6 +50,9 @@ export interface IBlueprintRundownDB extends IBlueprintRundown {
 
 	/** Rundown's place in the RundownPlaylist */
 	_rank?: number
+
+	/** Air-status, comes from NCS, examples: "READY" | "NOT READY" */
+	airStatus?: string
 }
 
 /** Collection of runtime arguments to apply */

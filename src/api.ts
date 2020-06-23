@@ -13,7 +13,7 @@ import {
 	SegmentContext,
 	ShowStyleContext,
 } from './context'
-import { IngestAdlib, IngestRundown, IngestSegment } from './ingest'
+import { IngestAdlib, ExtendedIngestRundown, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { MigrationStep } from './migrations'
 import {
@@ -24,6 +24,7 @@ import {
 	IBlueprintRundown,
 	IBlueprintRundownPlaylistInfo,
 	IBlueprintSegment,
+	IBlueprintRundownDB,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -74,11 +75,11 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getShowStyleId: (
 		context: IStudioConfigContext,
 		showStyles: IBlueprintShowStyleBase[],
-		ingestRundown: IngestRundown
+		ingestRundown: ExtendedIngestRundown
 	) => string | null
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
-	getRundownPlaylistInfo?: (rundowns: IBlueprintRundown[]) => BlueprintResultRundownPlaylist | null
+	getRundownPlaylistInfo?: (rundowns: IBlueprintRundownDB[]) => BlueprintResultRundownPlaylist | null
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -96,11 +97,11 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	getShowStyleVariantId: (
 		context: IStudioConfigContext,
 		showStyleVariants: IBlueprintShowStyleVariant[],
-		ingestRundown: IngestRundown
+		ingestRundown: ExtendedIngestRundown
 	) => string | null
 
 	/** Generate rundown from ingest data. return null to ignore that rundown */
-	getRundown: (context: ShowStyleContext, ingestRundown: IngestRundown) => BlueprintResultRundown
+	getRundown: (context: ShowStyleContext, ingestRundown: ExtendedIngestRundown) => BlueprintResultRundown
 
 	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment

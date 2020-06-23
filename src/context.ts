@@ -1,6 +1,6 @@
 import { IBlueprintAsRunLogEvent } from './asRunLog'
 import { ConfigItemValue } from './common'
-import { IngestPart, IngestRundown } from './ingest'
+import { IngestPart, ExtendedIngestRundown } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { OmitId } from './lib'
 import {
@@ -173,7 +173,7 @@ export interface AsRunEventContext extends RundownContext {
 	/** Ingest Data */
 
 	/** Get the ingest data related to the rundown */
-	getIngestDataForRundown(): Readonly<IngestRundown> | undefined
+	getIngestDataForRundown(): Readonly<ExtendedIngestRundown> | undefined
 
 	/** Get the ingest data related to a part */
 	getIngestDataForPart(part: Readonly<IBlueprintPartDB>): Readonly<IngestPart> | undefined
