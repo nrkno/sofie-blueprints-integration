@@ -180,7 +180,7 @@ export interface BlueprintResultOrderedRundowns {
 }
 
 export interface BlueprintResultRundownPlaylist {
-	playlist: Omit<IBlueprintRundownPlaylistInfo, 'externalId'>
+	playlist: IBlueprintRundownPlaylistInfo
 	/** Returns information about the order of rundowns in a playlist, null will use natural sorting on rundown name */
 	order: BlueprintResultOrderedRundowns | null
 }

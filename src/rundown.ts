@@ -7,8 +7,6 @@ export interface IBlueprintRundownPlaylistInfo {
 	/** Rundown playlist slug - user-presentable name */
 	name: string
 
-	externalId: string
-
 	/** Expected start should be set to the expected time this rundown playlist should run on air */
 	expectedStart?: Time
 	/** Expected duration of the rundown playlist */
