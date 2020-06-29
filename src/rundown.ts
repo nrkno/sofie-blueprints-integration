@@ -177,7 +177,7 @@ export interface IBlueprintPartDB extends IBlueprintPart {
 	timings?: IBlueprintPartDBTimings
 
 	/** if the part was dunamically inserted (adlib) */
-	dynamicallyInserted?: boolean
+	dynamicallyInsertedAfterPartId?: string
 }
 /** The Part instance sent from Core */
 export interface IBlueprintPartInstance {
