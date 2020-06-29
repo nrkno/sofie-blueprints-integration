@@ -83,6 +83,9 @@ export interface IBlueprintSegmentDB extends IBlueprintSegment {
 	_id: string
 }
 
+export interface PartMetaData {
+	[key: string]: any
+}
 /** The Part generated from Blueprint */
 export interface IBlueprintPart {
 	/** Id of the part from the gateway if this part does not map directly to an IngestPart. This must be unique for each part */
@@ -90,7 +93,7 @@ export interface IBlueprintPart {
 	/** The story title */
 	title: string
 	/** Arbitrary data storage for plugins */
-	metaData?: { [key: string]: any }
+	metaData?: PartMetaData
 
 	/** Should this item should progress to the next automatically */
 	autoNext?: boolean
