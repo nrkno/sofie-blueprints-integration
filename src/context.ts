@@ -13,6 +13,7 @@ import {
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundownDB,
 	IBlueprintSegmentDB,
+	IBlueprintMutatablePart,
 } from './rundown'
 import { BlueprintMappings } from './studio'
 
@@ -73,18 +74,6 @@ export interface SegmentContext extends RundownContext {
 }
 
 /** Actions */
-
-export type AdlibActionMutatablePart = Pick<
-	IBlueprintPart,
-	// TODO, do this pick properly.. and does it differ for current vs next?
-	| 'metaData'
-	| 'expectedDuration'
-	| 'prerollDuration'
-	| 'transitionDuration'
-	| 'transitionKeepaliveDuration'
-	| 'transitionPrerollDuration'
->
-
 export interface ActionExecutionContext extends ShowStyleContext {
 	/** Data fetching */
 	// getIngestRundown(): IngestRundown // TODO - for which part?
@@ -114,7 +103,7 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	/** Insert a queued part to follow the current part */
 	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): IBlueprintPartInstance
 	/** Update a partInstance */
-	updatePartInstance(part: 'current' | 'next', props: AdlibActionMutatablePart): void
+	updatePartInstance(part: 'current' | 'next', props: Partial<IBlueprintMutatablePart>): void
 
 	/** Destructive actions */
 	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */
