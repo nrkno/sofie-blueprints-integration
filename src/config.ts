@@ -4,6 +4,7 @@ import { SourceLayerType } from './content'
 
 export enum ConfigManifestEntryType {
 	STRING = 'string',
+	MULTILINE_STRING = 'multiline_string',
 	NUMBER = 'number',
 	BOOLEAN = 'boolean',
 	ENUM = 'enum',
@@ -11,10 +12,12 @@ export enum ConfigManifestEntryType {
 	SELECT = 'select',
 	SOURCE_LAYERS = 'source_layers',
 	LAYER_MAPPINGS = 'layer_mappings',
+	JSON = 'json',
 }
 
 export type BasicConfigManifestEntry =
 	| ConfigManifestEntryString
+	| ConfigManifestEntryMultilineString
 	| ConfigManifestEntryNumber
 	| ConfigManifestEntryBoolean
 	| ConfigManifestEntryEnum
@@ -24,6 +27,7 @@ export type BasicConfigManifestEntry =
 	| ConfigManifestEntrySourceLayers<false>
 	| ConfigManifestEntryLayerMappings<true>
 	| ConfigManifestEntryLayerMappings<false>
+	| ConfigManifestEntryJson
 
 export type ConfigManifestEntry = BasicConfigManifestEntry | ConfigManifestEntryTable
 
@@ -39,6 +43,12 @@ export interface ConfigManifestEntryString extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.STRING
 	defaultVal: string
 }
+
+/** Text area, each line entered is a string in an array */
+export interface ConfigManifestEntryMultilineString extends ConfigManifestEntryBase {
+	type: ConfigManifestEntryType.MULTILINE_STRING
+	defaultVal: string[]
+}
 export interface ConfigManifestEntryNumber extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.NUMBER
 	defaultVal: number
@@ -50,6 +60,10 @@ export interface ConfigManifestEntryBoolean extends ConfigManifestEntryBase {
 export interface ConfigManifestEntryEnum extends ConfigManifestEntryBase {
 	type: ConfigManifestEntryType.ENUM
 	options: string[]
+	defaultVal: string
+}
+export interface ConfigManifestEntryJson extends ConfigManifestEntryBase {
+	type: ConfigManifestEntryType.JSON
 	defaultVal: string
 }
 export interface ConfigManifestEntryTable extends ConfigManifestEntryBase {
