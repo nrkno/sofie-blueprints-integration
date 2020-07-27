@@ -12,7 +12,7 @@ export enum ConfigManifestEntryType {
 	SELECT = 'select',
 	SOURCE_LAYERS = 'source_layers',
 	LAYER_MAPPINGS = 'layer_mappings',
-	JSON = 'json'
+	JSON = 'json',
 }
 
 export type BasicConfigManifestEntry =
