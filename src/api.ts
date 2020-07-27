@@ -1,5 +1,4 @@
 import { TSRTimelineObjBase } from 'timeline-state-resolver-types'
-
 import { ActionUserData, IBlueprintActionManifest } from './action'
 import { ConfigManifestEntry } from './config'
 import {
@@ -11,9 +10,9 @@ import {
 	PartEventContext,
 	RundownContext,
 	SegmentContext,
-	ShowStyleContext,
+	ShowStyleContext
 } from './context'
-import { IngestAdlib, ExtendedIngestRundown, IngestSegment } from './ingest'
+import { ExtendedIngestRundown, IngestAdlib, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { MigrationStep } from './migrations'
 import {
@@ -22,17 +21,18 @@ import {
 	IBlueprintPiece,
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundown,
-	IBlueprintRundownPlaylistInfo,
-	IBlueprintSegment,
 	IBlueprintRundownDB,
+	IBlueprintRundownPlaylistInfo,
+	IBlueprintSegment
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
+import { TranslationsBundle } from './translations'
 
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
 	STUDIO = 'studio',
-	SHOWSTYLE = 'showstyle',
+	SHOWSTYLE = 'showstyle'
 }
 
 export interface BlueprintManifestSet {
@@ -68,6 +68,9 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	/** A list of Migration steps related to a Studio */
 	studioMigrations: MigrationStep[]
 
+	/** Translations connected to the studio */
+	translations?: [TranslationsBundle]
+
 	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active rundown */
 	getBaseline: (context: IStudioContext) => TSRTimelineObjBase[]
 
@@ -89,6 +92,9 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	showStyleConfigManifest: ConfigManifestEntry[]
 	/** A list of Migration steps related to a ShowStyle */
 	showStyleMigrations: MigrationStep[]
+
+	/** Translations connected to the show style */
+	translations?: [TranslationsBundle]
 
 	// --------------------------------------------------------------
 	// Callbacks called by Core:
