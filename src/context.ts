@@ -109,6 +109,9 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	/** Stop piecesInstances by id. Returns ids of piecesInstances that were removed */
 	stopPieceInstances(pieceInstanceIds: string[], timeOffset?: number): string[]
 
+	/** Set flag to perform take after executing the current action. Returns state of the flag after each call. */
+	takeAfterExecuteAction(take: boolean): boolean
+
 	/** Misc actions */
 	// updateAction(newManifest: Pick<IBlueprintAdLibActionManifest, 'description' | 'payload'>): void // only updates itself. to allow for the next one to do something different
 	// executePeripheralDeviceAction(deviceId: string, functionName: string, args: any[]): Promise<any>
