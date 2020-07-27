@@ -10,7 +10,7 @@ import {
 	PartEventContext,
 	RundownContext,
 	SegmentContext,
-	ShowStyleContext
+	ShowStyleContext,
 } from './context'
 import { ExtendedIngestRundown, IngestAdlib, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
@@ -23,7 +23,7 @@ import {
 	IBlueprintRundown,
 	IBlueprintRundownDB,
 	IBlueprintRundownPlaylistInfo,
-	IBlueprintSegment
+	IBlueprintSegment,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -32,7 +32,7 @@ import { TranslationsBundle } from './translations'
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
 	STUDIO = 'studio',
-	SHOWSTYLE = 'showstyle'
+	SHOWSTYLE = 'showstyle',
 }
 
 export interface BlueprintManifestSet {

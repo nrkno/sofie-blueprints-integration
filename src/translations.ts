@@ -2,7 +2,7 @@ export { TranslationsBundle }
 
 enum TranslationsBundleType {
 	/** i18next JSON data */
-	I18NEXT = 'i18next'
+	I18NEXT = 'i18next',
 }
 
 interface I18NextData {
