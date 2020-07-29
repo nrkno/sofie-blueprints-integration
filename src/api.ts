@@ -68,8 +68,8 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	/** A list of Migration steps related to a Studio */
 	studioMigrations: MigrationStep[]
 
-	/** Translations connected to the studio */
-	translations?: TranslationsBundle[]
+	/** Translations connected to the studio (as stringified JSON) */
+	translations?: string
 
 	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active rundown */
 	getBaseline: (context: IStudioContext) => TSRTimelineObjBase[]
@@ -83,6 +83,9 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
 	getRundownPlaylistInfo?: (rundowns: IBlueprintRundownDB[]) => BlueprintResultRundownPlaylist | null
+
+	/** Returns connected translation bundles as an array of typed objects */
+	getTranslations: () => TranslationsBundle[]
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -93,8 +96,8 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** A list of Migration steps related to a ShowStyle */
 	showStyleMigrations: MigrationStep[]
 
-	/** Translations connected to the show style */
-	translations?: TranslationsBundle[]
+	/** Translations connected to the show style (as stringified JSON) */
+	translations?: string
 
 	// --------------------------------------------------------------
 	// Callbacks called by Core:
@@ -117,6 +120,9 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 	/** Generate adlib piece from ingest data */
 	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
+
+	/** Returns connected translation bundles as an array of typed objects */
+	getTranslations: () => TranslationsBundle[]
 
 	// Events
 
