@@ -27,7 +27,6 @@ import {
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
-import { TranslationsBundle } from './translations'
 
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
