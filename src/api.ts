@@ -83,9 +83,6 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
 	getRundownPlaylistInfo?: (rundowns: IBlueprintRundownDB[]) => BlueprintResultRundownPlaylist | null
-
-	/** Returns connected translation bundles as an array of typed objects */
-	getTranslations: () => TranslationsBundle[]
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -120,9 +117,6 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 	/** Generate adlib piece from ingest data */
 	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
-
-	/** Returns connected translation bundles as an array of typed objects */
-	getTranslations: () => TranslationsBundle[]
 
 	// Events
 
