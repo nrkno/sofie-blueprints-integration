@@ -110,8 +110,8 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	stopPiecesOnLayers(sourceLayerIds: string[], timeOffset?: number): string[]
 	/** Stop piecesInstances by id. Returns ids of piecesInstances that were removed */
 	stopPieceInstances(pieceInstanceIds: string[], timeOffset?: number): string[]
-	/** Remove piecesInstances by id. Returns ids of piecesInstances that were removed */
-	removePieceInstances(part: 'current' | 'next', pieceInstanceIds: string[]): void // TODO - should this return something?
+	/** Remove piecesInstances by id. Returns ids of piecesInstances that were removed. Note: For now we only allow removing from the next, but this might change to include current if there is justification */
+	removePieceInstances(part: 'next', pieceInstanceIds: string[]): void // TODO - should this return something?
 
 	/** Misc actions */
 	// updateAction(newManifest: Pick<IBlueprintAdLibActionManifest, 'description' | 'payload'>): void // only updates itself. to allow for the next one to do something different
