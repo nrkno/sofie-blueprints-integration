@@ -103,7 +103,7 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	/** Insert a queued part to follow the current part */
 	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): IBlueprintPartInstance
 	/** Update a partInstance */
-	updatePartInstance(part: 'current' | 'next', props: Partial<IBlueprintMutatablePart>): void
+	updatePartInstance(part: 'current' | 'next', props: Partial<IBlueprintMutatablePart>): IBlueprintPartInstance
 
 	/** Destructive actions */
 	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */
