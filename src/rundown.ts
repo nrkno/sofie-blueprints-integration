@@ -273,7 +273,7 @@ export type ExpectedPlayoutItemContent = ExpectedPlayoutItemContentVizMSE
 export interface IBlueprintPiece extends IBlueprintPieceGeneric {
 	/** Timeline enabler. When the piece should be active on the timeline. */
 	enable: {
-		start: number
+		start: number | 'now' // TODO - now will be removed from this eventually, but as it is not an acceptable value 99% of the time, that is not really breaking
 		duration?: number
 	}
 
