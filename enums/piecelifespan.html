@@ -2369,16 +2369,19 @@ img {
 			<a href="piecelifespan.html" class="tsd-kind-icon">Piece<wbr>Lifespan</a>
 			<ul>
 				<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a href="piecelifespan.html#infinite" class="tsd-kind-icon">Infinite</a>
+					<a href="piecelifespan.html#outonrundownchange" class="tsd-kind-icon">Out<wbr>OnRundown<wbr>Change</a>
 				</li>
 				<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a href="piecelifespan.html#normal" class="tsd-kind-icon">Normal</a>
+					<a href="piecelifespan.html#outonrundownend" class="tsd-kind-icon">Out<wbr>OnRundown<wbr>End</a>
 				</li>
 				<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a href="piecelifespan.html#outonnextpart" class="tsd-kind-icon">Out<wbr>OnNext<wbr>Part</a>
+					<a href="piecelifespan.html#outonsegmentchange" class="tsd-kind-icon">Out<wbr>OnSegment<wbr>Change</a>
 				</li>
 				<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a href="piecelifespan.html#outonnextsegment" class="tsd-kind-icon">Out<wbr>OnNext<wbr>Segment</a>
+					<a href="piecelifespan.html#outonsegmentend" class="tsd-kind-icon">Out<wbr>OnSegment<wbr>End</a>
+				</li>
+				<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+					<a href="piecelifespan.html#withinpart" class="tsd-kind-icon">Within<wbr>Part</a>
 				</li>
 			</ul>
 		</li>
@@ -2393,10 +2396,11 @@ img {
 					<section class="tsd-index-section tsd-is-external">
 						<h3>Enumeration members</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#infinite" class="tsd-kind-icon">Infinite</a></li>
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#normal" class="tsd-kind-icon">Normal</a></li>
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#outonnextpart" class="tsd-kind-icon">Out<wbr>OnNext<wbr>Part</a></li>
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#outonnextsegment" class="tsd-kind-icon">Out<wbr>OnNext<wbr>Segment</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#outonrundownchange" class="tsd-kind-icon">Out<wbr>OnRundown<wbr>Change</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#outonrundownend" class="tsd-kind-icon">Out<wbr>OnRundown<wbr>End</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#outonsegmentchange" class="tsd-kind-icon">Out<wbr>OnSegment<wbr>Change</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#outonsegmentend" class="tsd-kind-icon">Out<wbr>OnSegment<wbr>End</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="piecelifespan.html#withinpart" class="tsd-kind-icon">Within<wbr>Part</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2405,42 +2409,52 @@ img {
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Enumeration members</h2>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-				<a name="infinite" class="tsd-anchor"></a>
-				<h3>Infinite</h3>
-				<div class="tsd-signature tsd-kind-icon">Infinite<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 3</span></div>
+				<a name="outonrundownchange" class="tsd-anchor"></a>
+				<h3>Out<wbr>OnRundown<wbr>Change</h3>
+				<div class="tsd-signature tsd-kind-icon">Out<wbr>OnRundown<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;rundown-change&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6d1ef74/src/rundown.ts#L328">src/rundown.ts:328</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/2d14248/src/rundown.ts#L332">src/rundown.ts:332</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-				<a name="normal" class="tsd-anchor"></a>
-				<h3>Normal</h3>
-				<div class="tsd-signature tsd-kind-icon">Normal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 0</span></div>
+				<a name="outonrundownend" class="tsd-anchor"></a>
+				<h3>Out<wbr>OnRundown<wbr>End</h3>
+				<div class="tsd-signature tsd-kind-icon">Out<wbr>OnRundown<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;rundown-end&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6d1ef74/src/rundown.ts#L325">src/rundown.ts:325</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/2d14248/src/rundown.ts#L333">src/rundown.ts:333</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-				<a name="outonnextpart" class="tsd-anchor"></a>
-				<h3>Out<wbr>OnNext<wbr>Part</h3>
-				<div class="tsd-signature tsd-kind-icon">Out<wbr>OnNext<wbr>Part<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 1</span></div>
+				<a name="outonsegmentchange" class="tsd-anchor"></a>
+				<h3>Out<wbr>OnSegment<wbr>Change</h3>
+				<div class="tsd-signature tsd-kind-icon">Out<wbr>OnSegment<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;segment-change&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6d1ef74/src/rundown.ts#L326">src/rundown.ts:326</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/2d14248/src/rundown.ts#L330">src/rundown.ts:330</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-				<a name="outonnextsegment" class="tsd-anchor"></a>
-				<h3>Out<wbr>OnNext<wbr>Segment</h3>
-				<div class="tsd-signature tsd-kind-icon">Out<wbr>OnNext<wbr>Segment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 2</span></div>
+				<a name="outonsegmentend" class="tsd-anchor"></a>
+				<h3>Out<wbr>OnSegment<wbr>End</h3>
+				<div class="tsd-signature tsd-kind-icon">Out<wbr>OnSegment<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;segment-end&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/6d1ef74/src/rundown.ts#L327">src/rundown.ts:327</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/2d14248/src/rundown.ts#L331">src/rundown.ts:331</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+				<a name="withinpart" class="tsd-anchor"></a>
+				<h3>Within<wbr>Part</h3>
+				<div class="tsd-signature tsd-kind-icon">Within<wbr>Part<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;part-only&quot;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/2d14248/src/rundown.ts#L329">src/rundown.ts:329</a></li>
 					</ul>
 				</aside>
 			</section>
