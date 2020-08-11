@@ -30,8 +30,8 @@ export interface ICommonContext {
 }
 
 export interface NotesContext extends ICommonContext {
-	error: (message: string) => void
-	warning: (message: string) => void
+	error: (message: string, params?: { [key: string]: any }) => void
+	warning: (message: string, params?: { [key: string]: any }) => void
 }
 
 /** Studio */
@@ -68,8 +68,8 @@ export interface RundownContext extends ShowStyleContext {
 export interface SegmentContext extends RundownContext {
 	getRuntimeArguments: (externalId: string) => Readonly<BlueprintRuntimeArguments> | undefined
 
-	error: (message: string, partExternalId?: string) => void
-	warning: (message: string, partExternalId?: string) => void
+	error: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
+	warning: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
 }
 
 /** Actions */
