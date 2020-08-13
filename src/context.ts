@@ -13,6 +13,7 @@ import {
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundownDB,
 	IBlueprintSegmentDB,
+	IBlueprintMutatablePart,
 } from './rundown'
 import { BlueprintMappings } from './studio'
 
@@ -73,7 +74,6 @@ export interface SegmentContext extends RundownContext {
 }
 
 /** Actions */
-
 export interface ActionExecutionContext extends ShowStyleContext {
 	/** Data fetching */
 	// getIngestRundown(): IngestRundown // TODO - for which part?
@@ -98,16 +98,20 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	/** Creative actions */
 	/** Insert a piece. Returns id of new PieceInstance. Any timelineObjects will have their ids changed, so are not safe to reference from another piece */
 	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): IBlueprintPieceInstance
-	/** Update a piecesInstances */
+	/** Update a piecesInstance */
 	updatePieceInstance(pieceInstanceId: string, piece: Partial<OmitId<IBlueprintPiece>>): IBlueprintPieceInstance
 	/** Insert a queued part to follow the current part */
 	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): IBlueprintPartInstance
+	/** Update a partInstance */
+	updatePartInstance(part: 'current' | 'next', props: Partial<IBlueprintMutatablePart>): IBlueprintPartInstance
 
 	/** Destructive actions */
 	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */
 	stopPiecesOnLayers(sourceLayerIds: string[], timeOffset?: number): string[]
 	/** Stop piecesInstances by id. Returns ids of piecesInstances that were removed */
 	stopPieceInstances(pieceInstanceIds: string[], timeOffset?: number): string[]
+	/** Remove piecesInstances by id. Returns ids of piecesInstances that were removed. Note: For now we only allow removing from the next, but this might change to include current if there is justification */
+	removePieceInstances(part: 'next', pieceInstanceIds: string[]): string[]
 
 	/** Misc actions */
 	// updateAction(newManifest: Pick<IBlueprintAdLibActionManifest, 'description' | 'payload'>): void // only updates itself. to allow for the next one to do something different
