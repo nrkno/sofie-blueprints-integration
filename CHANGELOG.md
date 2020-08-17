@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/2.0.0...2.1.0) (2020-08-17)
+
+
+### Features
+
+* add ExtendedIngestRundown type, to allow blueprint to use properties from Core, that are not present in IngestRundown ([290d35e](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/290d35eb2947b378c799dce4ab303181819b7369))
+
+
+### Bug Fixes
+
+* remove externalId from BlueprintResultRundownPlaylist, since Core shouldn't use that anyway (the playlist.externalId is tied to the rundown that initiated the call to getRundownPlaylistInfo) ([0b94097](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0b94097d9d24dccb381026a1e96a65938c2110d3))
+
 ## [2.0.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/1.12.0...2.0.0) (2020-06-16)
 
 
