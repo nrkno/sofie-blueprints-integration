@@ -214,12 +214,14 @@ workflows:
             branches:
               only:
                 - master
+                - release22
                 - develop
       - validate-dependencies:
           filters:
             branches:
               only:
                 - master
+                - release22
                 - develop
       - release:
           requires:
@@ -229,6 +231,7 @@ workflows:
           filters:
             branches:
               only:
+                - release22
                 - master
       - prerelease:
           requires:
@@ -239,4 +242,5 @@ workflows:
               ignore: /.*/
             branches:
               ignore:
+                - release22
                 - master
