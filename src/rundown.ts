@@ -52,20 +52,6 @@ export interface IBlueprintRundownDBData {
 	airStatus?: string
 }
 
-/** Collection of runtime arguments to apply */
-export interface BlueprintRuntimeArguments {
-	[key: string]: string
-}
-
-/** Base type of the runtime arguments */
-export interface IBlueprintRuntimeArgumentsItem {
-	_id: string
-	label?: string
-	hotkeys: string
-	property: string
-	value: string
-}
-
 /** The Segment generated from Blueprint */
 export interface IBlueprintSegment {
 	/** User-presentable name (Slug) for the Title */
