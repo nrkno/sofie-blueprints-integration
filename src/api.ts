@@ -28,6 +28,7 @@ import {
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
+import { IBlueprintConfig } from './common'
 
 export enum BlueprintManifestType {
 	SYSTEM = 'system',
@@ -80,6 +81,9 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
 	getRundownPlaylistInfo?: (rundowns: IBlueprintRundownDB[]) => BlueprintResultRundownPlaylist | null
+
+	/** Process config before storing it by core to later be returned by context's getShowStyleConfig */
+	parseConfig?: (config: IBlueprintConfig) => any
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -111,6 +115,9 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 	/** Generate adlib piece from ingest data */
 	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
+
+	/** Process config before storing it by core to later be returned by context's getShowStyleConfig */
+	parseConfig?: (config: IBlueprintConfig) => any
 
 	// Events
 
