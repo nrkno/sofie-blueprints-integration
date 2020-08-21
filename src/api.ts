@@ -83,7 +83,7 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	getRundownPlaylistInfo?: (rundowns: IBlueprintRundownDB[]) => BlueprintResultRundownPlaylist | null
 
 	/** Process config before storing it by core to later be returned by context's getShowStyleConfig */
-	parseConfig?: (config: IBlueprintConfig) => any
+	parseConfig?: (config: IBlueprintConfig) => unknown
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -117,7 +117,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
 
 	/** Process config before storing it by core to later be returned by context's getShowStyleConfig */
-	parseConfig?: (config: IBlueprintConfig) => any
+	parseConfig?: (config: IBlueprintConfig) => unknown
 
 	// Events
 
