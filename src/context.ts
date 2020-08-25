@@ -37,7 +37,7 @@ export interface NotesContext extends ICommonContext {
 /** Studio */
 
 export interface IStudioConfigContext {
-	/** Returns the Studio blueprint config */
+	/** Returns the Studio blueprint config. If StudioBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
 	getStudioConfig: () => unknown
 	/** Returns a reference to a studio config value, that can later be resolved in Core */
 	getStudioConfigRef(configKey: string): string
@@ -50,7 +50,7 @@ export interface IStudioContext extends IStudioConfigContext {
 /** Show Style Variant */
 
 export interface IShowStyleConfigContext {
-	/** Returns a ShowStyle blueprint config */
+	/** Returns a ShowStyle blueprint config. If ShowStyleBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
 	getShowStyleConfig: () => unknown
 	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
 	getShowStyleConfigRef(configKey: string): string
