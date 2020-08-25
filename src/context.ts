@@ -1,5 +1,4 @@
 import { IBlueprintAsRunLogEvent } from './asRunLog'
-import { ConfigItemValue } from './common'
 import { IngestPart, ExtendedIngestRundown } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { OmitId } from './lib'
@@ -37,8 +36,8 @@ export interface NotesContext extends ICommonContext {
 /** Studio */
 
 export interface IStudioConfigContext {
-	/** Returns a map of the studio configs */
-	getStudioConfig: () => Readonly<{ [key: string]: ConfigItemValue }>
+	/** Returns the Studio blueprint config. If StudioBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
+	getStudioConfig: () => unknown
 	/** Returns a reference to a studio config value, that can later be resolved in Core */
 	getStudioConfigRef(configKey: string): string
 }
@@ -50,8 +49,8 @@ export interface IStudioContext extends IStudioConfigContext {
 /** Show Style Variant */
 
 export interface IShowStyleConfigContext {
-	/** Returns a map of the ShowStyle configs */
-	getShowStyleConfig: () => Readonly<{ [key: string]: ConfigItemValue }>
+	/** Returns a ShowStyle blueprint config. If ShowStyleBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
+	getShowStyleConfig: () => unknown
 	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
 	getShowStyleConfigRef(configKey: string): string
 }
