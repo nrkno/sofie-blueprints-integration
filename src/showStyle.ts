@@ -1,5 +1,5 @@
-import { IConfigItem } from './common'
 import { SourceLayerType } from './content'
+import { IBlueprintConfig } from './common'
 
 export interface IBlueprintShowStyleBase {
 	_id: string
@@ -13,14 +13,14 @@ export interface IBlueprintShowStyleBase {
 	sourceLayers: ISourceLayer[]
 
 	/** Config values are used by the Blueprints */
-	config: IConfigItem[]
+	blueprintConfig: IBlueprintConfig
 }
 export interface IBlueprintShowStyleVariant {
 	_id: string
 	name: string
 
 	/** Config values are used by the Blueprints */
-	config: IConfigItem[]
+	blueprintConfig: IBlueprintConfig
 }
 
 /** A single source layer, f.g Cameras, VT, Graphics, Remotes */

@@ -1,7 +1,6 @@
 import { DeviceOptionsAny } from 'timeline-state-resolver-types'
 import { ConfigItemValue } from './common'
 import { OmitId } from './lib'
-import { IBlueprintRuntimeArgumentsItem } from './rundown'
 import { IBlueprintShowStyleVariant, IOutputLayer, ISourceLayer } from './showStyle'
 import { BlueprintMapping } from './studio'
 
@@ -89,11 +88,6 @@ export interface MigrationContextShowStyle {
 	getVariantConfig: (variantId: string, configId: string) => ConfigItemValue | undefined
 	setVariantConfig: (variantId: string, configId: string, value: ConfigItemValue) => void
 	removeVariantConfig: (variantId: string, configId: string) => void
-
-	getRuntimeArgument: (argumentId: string) => IBlueprintRuntimeArgumentsItem | undefined
-	insertRuntimeArgument: (argumentId: string, argument: IBlueprintRuntimeArgumentsItem) => void
-	updateRuntimeArgument: (argumentId: string, argument: Partial<OmitId<IBlueprintRuntimeArgumentsItem>>) => void
-	removeRuntimeArgument: (argumentId: string) => void
 }
 
 export interface MigrationStepBase {

@@ -1,10 +1,8 @@
 import { IBlueprintAsRunLogEvent } from './asRunLog'
-import { ConfigItemValue } from './common'
 import { IngestPart, ExtendedIngestRundown } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { OmitId } from './lib'
 import {
-	BlueprintRuntimeArguments,
 	IBlueprintPart,
 	IBlueprintPartDB,
 	IBlueprintPartInstance,
@@ -13,6 +11,7 @@ import {
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundownDB,
 	IBlueprintSegmentDB,
+	IBlueprintMutatablePart,
 } from './rundown'
 import { BlueprintMappings } from './studio'
 
@@ -37,8 +36,8 @@ export interface NotesContext extends ICommonContext {
 /** Studio */
 
 export interface IStudioConfigContext {
-	/** Returns a map of the studio configs */
-	getStudioConfig: () => Readonly<{ [key: string]: ConfigItemValue }>
+	/** Returns the Studio blueprint config. If StudioBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
+	getStudioConfig: () => unknown
 	/** Returns a reference to a studio config value, that can later be resolved in Core */
 	getStudioConfigRef(configKey: string): string
 }
@@ -50,8 +49,8 @@ export interface IStudioContext extends IStudioConfigContext {
 /** Show Style Variant */
 
 export interface IShowStyleConfigContext {
-	/** Returns a map of the ShowStyle configs */
-	getShowStyleConfig: () => Readonly<{ [key: string]: ConfigItemValue }>
+	/** Returns a ShowStyle blueprint config. If ShowStyleBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
+	getShowStyleConfig: () => unknown
 	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
 	getShowStyleConfigRef(configKey: string): string
 }
@@ -66,14 +65,11 @@ export interface RundownContext extends ShowStyleContext {
 }
 
 export interface SegmentContext extends RundownContext {
-	getRuntimeArguments: (externalId: string) => Readonly<BlueprintRuntimeArguments> | undefined
-
 	error: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
 	warning: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
 }
 
 /** Actions */
-
 export interface ActionExecutionContext extends ShowStyleContext {
 	/** Data fetching */
 	// getIngestRundown(): IngestRundown // TODO - for which part?
@@ -98,16 +94,20 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	/** Creative actions */
 	/** Insert a piece. Returns id of new PieceInstance. Any timelineObjects will have their ids changed, so are not safe to reference from another piece */
 	insertPiece(part: 'current' | 'next', piece: IBlueprintPiece): IBlueprintPieceInstance
-	/** Update a piecesInstances */
+	/** Update a piecesInstance */
 	updatePieceInstance(pieceInstanceId: string, piece: Partial<OmitId<IBlueprintPiece>>): IBlueprintPieceInstance
 	/** Insert a queued part to follow the current part */
 	queuePart(part: IBlueprintPart, pieces: IBlueprintPiece[]): IBlueprintPartInstance
+	/** Update a partInstance */
+	updatePartInstance(part: 'current' | 'next', props: Partial<IBlueprintMutatablePart>): IBlueprintPartInstance
 
 	/** Destructive actions */
 	/** Stop any piecesInstances on the specified sourceLayers. Returns ids of piecesInstances that were affected */
 	stopPiecesOnLayers(sourceLayerIds: string[], timeOffset?: number): string[]
 	/** Stop piecesInstances by id. Returns ids of piecesInstances that were removed */
 	stopPieceInstances(pieceInstanceIds: string[], timeOffset?: number): string[]
+	/** Remove piecesInstances by id. Returns ids of piecesInstances that were removed. Note: For now we only allow removing from the next, but this might change to include current if there is justification */
+	removePieceInstances(part: 'next', pieceInstanceIds: string[]): string[]
 
 	/** Misc actions */
 	// updateAction(newManifest: Pick<IBlueprintAdLibActionManifest, 'description' | 'payload'>): void // only updates itself. to allow for the next one to do something different

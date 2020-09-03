@@ -1,6 +1,6 @@
 {
   "name": "tv-automation-sofie-blueprints-integration",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Library to define the interaction between core and the blueprints.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -70,7 +70,7 @@
   },
   "dependencies": {
     "moment": "2.22.2",
-    "timeline-state-resolver-types": "4.0.0-nightly-20200611-075605-93ae546a.0",
+    "timeline-state-resolver-types": "^4.0.0",
     "tslib": "^1.13.0",
     "underscore": "1.9.1"
   },
