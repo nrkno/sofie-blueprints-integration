@@ -28,7 +28,7 @@ export interface IBlueprintRundown {
 	expectedDuration?: number
 
 	/** Arbitrary data storage for plugins */
-	metaData?: { [key: string]: any }
+	metaData?: unknown
 
 	/** A hint to the Core that the Rundown should be a part of a playlist */
 	playlistExternalId?: string
@@ -57,7 +57,7 @@ export interface IBlueprintSegment {
 	/** User-presentable name (Slug) for the Title */
 	name: string
 	/** Arbitrary data storage for plugins */
-	metaData?: { [key: string]: any }
+	metaData?: unknown
 	/** Hide the Segment in the UI */
 	isHidden?: boolean
 	/** User-facing identifier that can be used by the User to identify the contents of a segment in the Rundown source system */
@@ -68,9 +68,9 @@ export interface IBlueprintSegmentDB extends IBlueprintSegment {
 	_id: string
 }
 
-export interface PartMetaData {
-	[key: string]: any
-}
+/** @deprecated Use unknown instead */
+export type PartMetaData = unknown
+
 export interface IBlueprintMutatablePart {
 	/** The story title */
 	title: string
@@ -205,9 +205,10 @@ export interface PieceTransition {
 	type: PieceTransitionType
 	duration: number
 }
-export interface PieceMetaData {
-	[key: string]: any
-}
+
+/** @deprecated Use unknown instead */
+export type PieceMetaData = unknown
+
 export interface IBlueprintPieceGeneric {
 	/** ID of the source object in the gateway */
 	externalId: string
