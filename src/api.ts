@@ -151,12 +151,8 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
 }
 
-export interface PartEndState {
-	[key: string]: any
-}
-export interface TimelinePersistentState {
-	[key: string]: any
-}
+export type PartEndState = unknown
+export type TimelinePersistentState = unknown
 
 export interface BlueprintResultTimeline {
 	timeline: OnGenerateTimelineObj[]
