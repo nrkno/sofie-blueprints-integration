@@ -1,5 +1,5 @@
 {
-	"extends": "./config/tsconfig.base",
+	"extends": "./tsconfig.build",
 	"exclude": ["node_modules/**"],
 	"compilerOptions": {
 		"types": ["node", "jest"]

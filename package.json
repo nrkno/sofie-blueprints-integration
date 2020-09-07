@@ -16,7 +16,7 @@
   "scripts": {
     "build": "trash dist && yarn build:main",
     "build:main": "tsc -p tsconfig.build.json",
-    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "lint": "eslint . --ext .ts --ignore-pattern dist",
     "unit": "jest",
     "test": "yarn lint && yarn unit",
     "watch": "jest --watch",
@@ -33,7 +33,7 @@
     "reset": "git clean -dfx && git reset --hard && yarn",
     "validate:dependencies": "yarn audit --groups dependencies && yarn license-validate",
     "validate:dev-dependencies": "yarn audit --groups devDependencies",
-    "license-validate": "node-license-validator -p -d --allow-licenses MIT BSD BSD-3-Clause 0BSD ISC Apache Unlicense --allow-packages cycle"
+    "license-validate": "yarn sofie-licensecheck -r --filter MIT --filter BSD --filter ISC --filter Apache --filter Unlicense --plain --border ascii"
   },
   "engines": {
     "node": ">=10.10"
@@ -45,6 +45,7 @@
     "/LICENSE"
   ],
   "devDependencies": {
+    "@sofietv/code-standard-preset": "file:../sofie-code-standard-preset",
     "@types/jest": "^25.2.3",
     "@types/node": "^12.11.7",
     "@types/underscore": "^1.8.13",
@@ -55,16 +56,12 @@
     "jest-haste-map": "^26.0.1",
     "jest-resolve": "^26.0.1",
     "lint-staged": "^10.2.7",
-    "node-license-validator": "^1.3.0",
     "open-cli": "^6.0.1",
     "prettier": "^2.0.5",
     "sleep-ms": "^2.0.1",
     "standard-version": "^8.0.0",
     "trash-cli": "^3.0.0",
     "ts-jest": "^26.1.0",
-    "tslint": "^6.1.2",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
     "typedoc": "^0.16.0",
     "typescript": "~3.6.4"
   },
@@ -82,6 +79,7 @@
     "message": "chore(release): %s [skip ci]",
     "tagPrefix": ""
   },
+  "prettier": "@sofietv/code-standard-preset/.prettierrc.json",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
