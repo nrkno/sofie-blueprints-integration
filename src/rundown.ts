@@ -164,9 +164,6 @@ export interface IBlueprintPartDB extends IBlueprintPart {
 	/** The segment ("Title") this line belongs to */
 	segmentId: string
 
-	/** Playout timings, in here we log times when playout happens */
-	timings?: IBlueprintPartDBTimings
-
 	/** if the part was dunamically inserted (adlib) */
 	dynamicallyInsertedAfterPartId?: string
 }
@@ -179,20 +176,21 @@ export interface IBlueprintPartInstance {
 	part: IBlueprintPartDB // TODO - omit some duplicated fields?
 }
 
-export interface IBlueprintPartDBTimings {
+export interface IBlueprintPartInstanceTimings {
 	/** Point in time the Part was taken, (ie the time of the user action) */
-	take: Time[]
+	take?: Time
 	/** Point in time the "take" action has finished executing */
-	takeDone: Time[]
+	takeDone?: Time
 	/** Point in time the Part started playing (ie the time of the playout) */
-	startedPlayback: Time[]
+	startedPlayback?: Time
 	/** Point in time the Part stopped playing (ie the time of the user action) */
-	takeOut: Time[]
+	takeOut?: Time
 	/** Point in time the Part stopped playing (ie the time of the playout) */
-	stoppedPlayback: Time[]
+	stoppedPlayback?: Time
 	/** Point in time the Part was set as Next (ie the time of the user action) */
-	next: Time[]
+	next?: Time
 }
+
 export enum PartHoldMode {
 	NONE = 0,
 	FROM = 1,
