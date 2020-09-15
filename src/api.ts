@@ -12,6 +12,7 @@ import {
 	RundownContext,
 	SegmentContext,
 	ShowStyleContext,
+	TimelineEventContext,
 } from './context'
 import { IngestAdlib, ExtendedIngestRundown, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
@@ -131,7 +132,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
 	onTimelineGenerate?: (
-		context: PartEventContext,
+		context: TimelineEventContext,
 		timeline: OnGenerateTimelineObj[],
 		previousPersistentState: TimelinePersistentState | undefined,
 		previousPartEndState: PartEndState | undefined,
