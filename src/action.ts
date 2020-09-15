@@ -11,10 +11,10 @@ export interface IBlueprintActionManifestDisplay {
 	_rank?: number
 
 	tags?: string[]
-	/** Piece tags to use to determine if action is on-air */
-	onAirTags?: string[]
+	/** Piece tags to use to determine if action is currently active */
+	currentPieceTags?: string[]
 	/** Piece tags to use to determine if action is set as next */
-	setNextTags?: string[]
+	nextPieceTags?: string[]
 }
 
 export interface IBlueprintActionManifestDisplayContent extends IBlueprintActionManifestDisplay {

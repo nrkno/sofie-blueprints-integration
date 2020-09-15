@@ -307,10 +307,10 @@ export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	expectedDuration?: number
 	/** When the NRCS informs us that the producer marked the part as floated, we can prevent the user from TAKE'ing it, but still have it visible and allow manipulation */
 	floated?: boolean
-	/** Piece tags to use to determine if adlib is on-air */
-	onAirTags?: string[]
-	/** Piece tags to use to determine if adlib is set as next */
-	setNextTags?: string[]
+	/** Piece tags to use to determine if action is currently active */
+	currentPieceTags?: string[]
+	/** Piece tags to use to determine if action is set as next */
+	nextPieceTags?: string[]
 }
 /** The AdLib piece sent from Core */
 export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
