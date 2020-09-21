@@ -26,36 +26,41 @@ export interface ICommonContext {
 	getHashId: (originString: string, originIsNotUnique?: boolean) => string
 	/** Un-hash, is return the string that created the hash */
 	unhashId: (hash: string) => string
+
+	logDebug: (message: string) => void
+	logInfo: (message: string) => void
+	logWarning: (message: string) => void
+	logError: (message: string) => void
 }
 
-export interface NotesContext extends ICommonContext {
-	error: (message: string, params?: { [key: string]: any }) => void
-	warning: (message: string, params?: { [key: string]: any }) => void
+export interface IUserNotesContext extends ICommonContext {
+	userError: (message: string, params?: { [key: string]: any }) => void
+	userWarning: (message: string, params?: { [key: string]: any }) => void
 }
 
 /** Studio */
 
-export interface IStudioConfigContext {
+export interface StudioContext extends ICommonContext {
 	/** Returns the Studio blueprint config. If StudioBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
 	getStudioConfig: () => unknown
 	/** Returns a reference to a studio config value, that can later be resolved in Core */
 	getStudioConfigRef(configKey: string): string
-}
-export interface IStudioContext extends IStudioConfigContext {
 	/** Get the mappings for the studio */
 	getStudioMappings: () => Readonly<BlueprintMappings>
 }
 
+export interface StudioUserContext extends IUserNotesContext, StudioContext {}
+
 /** Show Style Variant */
 
-export interface IShowStyleConfigContext {
+export interface ShowStyleContext extends ICommonContext, StudioContext {
 	/** Returns a ShowStyle blueprint config. If ShowStyleBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
 	getShowStyleConfig: () => unknown
 	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
 	getShowStyleConfigRef(configKey: string): string
 }
 
-export interface ShowStyleContext extends NotesContext, IStudioContext, IShowStyleConfigContext {}
+export interface ShowStyleUserContext extends IUserNotesContext, ShowStyleContext {}
 
 /** Rundown */
 
@@ -64,13 +69,13 @@ export interface RundownContext extends ShowStyleContext {
 	readonly rundown: Readonly<IBlueprintRundownDB>
 }
 
-export interface SegmentContext extends RundownContext {
-	error: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
-	warning: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
+export interface SegmentUserContext extends IUserNotesContext, RundownContext {
+	userError: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
+	userWarning: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
 }
 
 /** Actions */
-export interface ActionExecutionContext extends ShowStyleContext {
+export interface ActionExecutionContext extends IUserNotesContext, ShowStyleContext, EventContext {
 	/** Data fetching */
 	// getIngestRundown(): IngestRundown // TODO - for which part?
 	/** Get a PartInstance which can be modified */
@@ -126,7 +131,7 @@ export interface EventContext {
 	getCurrentTime(): number
 }
 
-export interface TimelineEventContext extends EventContext, RundownContext {
+export interface TimelineEventContext extends IUserNotesContext, EventContext, RundownContext {
 	readonly currentPartInstance: Readonly<IBlueprintPartInstance> | undefined
 	readonly nextPartInstance: Readonly<IBlueprintPartInstance> | undefined
 }
@@ -135,7 +140,7 @@ export interface PartEventContext extends EventContext, RundownContext {
 	readonly part: Readonly<IBlueprintPartInstance>
 }
 
-export interface AsRunEventContext extends RundownContext {
+export interface AsRunEventContext extends RundownContext, EventContext {
 	readonly asRunEvent: Readonly<IBlueprintAsRunLogEvent>
 
 	formatDateAsTimecode(time: number): string

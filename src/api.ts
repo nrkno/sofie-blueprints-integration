@@ -5,13 +5,14 @@ import {
 	ActionExecutionContext,
 	AsRunEventContext,
 	EventContext,
-	IStudioConfigContext,
-	IStudioContext,
 	PartEventContext,
 	RundownContext,
-	SegmentContext,
-	ShowStyleContext,
+	SegmentUserContext,
 	TimelineEventContext,
+	StudioContext,
+	StudioUserContext,
+	ShowStyleUserContext,
+	ICommonContext,
 } from './context'
 import { ExtendedIngestRundown, IngestAdlib, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
@@ -73,20 +74,23 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	translations?: string
 
 	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active rundown */
-	getBaseline: (context: IStudioContext) => TSRTimelineObjBase[]
+	getBaseline: (context: StudioContext) => TSRTimelineObjBase[]
 
 	/** Returns the id of the show style to use for a rundown, return null to ignore that rundown */
 	getShowStyleId: (
-		context: IStudioConfigContext,
+		context: StudioUserContext,
 		showStyles: IBlueprintShowStyleBase[],
 		ingestRundown: ExtendedIngestRundown
 	) => string | null
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
-	getRundownPlaylistInfo?: (rundowns: IBlueprintRundownDB[]) => BlueprintResultRundownPlaylist | null
+	getRundownPlaylistInfo?: (
+		context: StudioUserContext,
+		rundowns: IBlueprintRundownDB[]
+	) => BlueprintResultRundownPlaylist | null
 
 	/** Preprocess config before storing it by core to later be returned by context's getStudioConfig. If not provided, getStudioConfig will return unprocessed blueprint config */
-	preprocessConfig?: (config: IBlueprintConfig) => unknown
+	preprocessConfig?: (context: ICommonContext, config: IBlueprintConfig) => unknown
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -105,25 +109,25 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 	/** Returns the id of the show style variant to use for a rundown, return null to ignore that rundown */
 	getShowStyleVariantId: (
-		context: IStudioConfigContext,
+		context: StudioUserContext,
 		showStyleVariants: IBlueprintShowStyleVariant[],
 		ingestRundown: ExtendedIngestRundown
 	) => string | null
 
 	/** Generate rundown from ingest data. return null to ignore that rundown */
-	getRundown: (context: ShowStyleContext, ingestRundown: ExtendedIngestRundown) => BlueprintResultRundown
+	getRundown: (context: ShowStyleUserContext, ingestRundown: ExtendedIngestRundown) => BlueprintResultRundown
 
 	/** Generate segment from ingest data */
-	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
+	getSegment: (context: SegmentUserContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
 	/** Execute an action defined by an IBlueprintActionManifest */
-	executeAction?: (context: EventContext & ActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
+	executeAction?: (context: ActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
 
 	/** Generate adlib piece from ingest data */
-	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
+	getAdlibItem?: (context: ShowStyleUserContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
 
 	/** Preprocess config before storing it by core to later be returned by context's getShowStyleConfig. If not provided, getShowStyleConfig will return unprocessed blueprint config */
-	preprocessConfig?: (config: IBlueprintConfig) => unknown
+	preprocessConfig?: (context: ICommonContext, config: IBlueprintConfig) => unknown
 
 	// Events
 
