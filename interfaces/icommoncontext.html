@@ -2372,6 +2372,18 @@ img {
 					<a href="icommoncontext.html#gethashid" class="tsd-kind-icon">get<wbr>Hash<wbr>Id</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="icommoncontext.html#logdebug" class="tsd-kind-icon">log<wbr>Debug</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="icommoncontext.html#logerror" class="tsd-kind-icon">log<wbr>Error</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="icommoncontext.html#loginfo" class="tsd-kind-icon">log<wbr>Info</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="icommoncontext.html#logwarning" class="tsd-kind-icon">log<wbr>Warning</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a href="icommoncontext.html#unhashid" class="tsd-kind-icon">unhash<wbr>Id</a>
 				</li>
 			</ul>
@@ -2394,7 +2406,13 @@ img {
 					<span class="target">ICommonContext</span>
 					<ul class="tsd-hierarchy">
 						<li>
-							<a href="notescontext.html" class="tsd-signature-type">NotesContext</a>
+							<a href="iusernotescontext.html" class="tsd-signature-type">IUserNotesContext</a>
+						</li>
+						<li>
+							<a href="studiocontext.html" class="tsd-signature-type">StudioContext</a>
+						</li>
+						<li>
+							<a href="showstylecontext.html" class="tsd-signature-type">ShowStyleContext</a>
 						</li>
 					</ul>
 				</li>
@@ -2408,6 +2426,10 @@ img {
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icommoncontext.html#gethashid" class="tsd-kind-icon">get<wbr>Hash<wbr>Id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icommoncontext.html#logdebug" class="tsd-kind-icon">log<wbr>Debug</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icommoncontext.html#logerror" class="tsd-kind-icon">log<wbr>Error</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icommoncontext.html#loginfo" class="tsd-kind-icon">log<wbr>Info</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icommoncontext.html#logwarning" class="tsd-kind-icon">log<wbr>Warning</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icommoncontext.html#unhashid" class="tsd-kind-icon">unhash<wbr>Id</a></li>
 						</ul>
 					</section>
@@ -2422,7 +2444,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">get<wbr>Hash<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>originString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, originIsNotUnique<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/fdcc08a3/src/context.ts#L26">src/context.ts:26</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/65f11616/src/context.ts#L26">src/context.ts:26</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2464,12 +2486,136 @@ img {
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="logdebug" class="tsd-anchor"></a>
+				<h3>log<wbr>Debug</h3>
+				<div class="tsd-signature tsd-kind-icon">log<wbr>Debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/65f11616/src/context.ts#L30">src/context.ts:30</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="logerror" class="tsd-anchor"></a>
+				<h3>log<wbr>Error</h3>
+				<div class="tsd-signature tsd-kind-icon">log<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/65f11616/src/context.ts#L33">src/context.ts:33</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="loginfo" class="tsd-anchor"></a>
+				<h3>log<wbr>Info</h3>
+				<div class="tsd-signature tsd-kind-icon">log<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/65f11616/src/context.ts#L31">src/context.ts:31</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="logwarning" class="tsd-anchor"></a>
+				<h3>log<wbr>Warning</h3>
+				<div class="tsd-signature tsd-kind-icon">log<wbr>Warning<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/65f11616/src/context.ts#L32">src/context.ts:32</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 				<a name="unhashid" class="tsd-anchor"></a>
 				<h3>unhash<wbr>Id</h3>
 				<div class="tsd-signature tsd-kind-icon">unhash<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/fdcc08a3/src/context.ts#L28">src/context.ts:28</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/65f11616/src/context.ts#L28">src/context.ts:28</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
