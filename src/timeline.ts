@@ -46,18 +46,17 @@ export enum TimelineObjHoldMode {
 	EXCEPT = 2, // Only use when not in HOLD
 }
 
-export interface TimelineObjectCoreExt extends TSR.TSRTimelineObjBase {
+export interface TimelineObjectCoreExt<TMetadata = unknown, TKeyframeMetadata = unknown>
+	extends TSR.TSRTimelineObjBase {
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode
 	/** Arbitrary data storage for plugins */
-	metaData?: { [key: string]: any }
+	metaData?: TMetadata
 	/** Keyframes: Arbitrary data storage for plugins */
 	keyframes?: CombineArrayType<
 		TSR.TSRTimelineObjBase['keyframes'],
 		{
-			metaData?: {
-				[key: string]: any
-			}
+			metaData?: TKeyframeMetadata
 			/** Whether to keep this keyframe when the object is copied for lookahead. By default all keyframes are removed */
 			preserveForLookahead?: boolean
 		}
@@ -65,7 +64,8 @@ export interface TimelineObjectCoreExt extends TSR.TSRTimelineObjBase {
 }
 
 /** TimelineObject extension for additional fields needed by onTimelineGenerate */
-export interface OnGenerateTimelineObj extends TimelineObjectCoreExt {
+export interface OnGenerateTimelineObj<TMetadata = unknown, TKeyframeMetadata = unknown>
+	extends TimelineObjectCoreExt<TMetadata, TKeyframeMetadata> {
 	pieceInstanceId?: string
 	infinitePieceId?: string
 }

@@ -123,6 +123,11 @@ export interface EventContext {
 	getCurrentTime(): number
 }
 
+export interface TimelineEventContext extends EventContext, RundownContext {
+	readonly currentPartInstance: Readonly<IBlueprintPartInstance> | undefined
+	readonly nextPartInstance: Readonly<IBlueprintPartInstance> | undefined
+}
+
 export interface PartEventContext extends EventContext, RundownContext {
 	readonly part: Readonly<IBlueprintPartInstance>
 }
