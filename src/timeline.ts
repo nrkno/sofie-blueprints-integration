@@ -46,18 +46,28 @@ export enum TimelineObjHoldMode {
 	EXCEPT = 2, // Only use when not in HOLD
 }
 
-export interface TimelineObjectCoreExt<TMetadata = unknown, TKeyframeMetadata = unknown>
-	extends TSR.TSRTimelineObjBase {
-	// Even though timeline supports enable being an array, we're not using that feature in Sofie:
+export interface TimelineObjectSofieBase extends Omit<TSR.TSRTimelineObjBase, 'children'> {
+	// Even though Timeline supports enable being an array, we're not using that feature in Sofie:
 	enable: TSR.Timeline.TimelineEnable
+	children?: TimelineObjectSofieBase[]
 
+	keyframes?: CombineArrayType<
+		TSR.TSRTimelineObjBase['keyframes'],
+		{
+			enable: TimelineObjectSofieBase['enable']
+		}
+	>
+}
+
+export interface TimelineObjectCoreExt<TMetadata = unknown, TKeyframeMetadata = unknown>
+	extends TimelineObjectSofieBase {
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode
 	/** Arbitrary data storage for plugins */
 	metaData?: TMetadata
 	/** Keyframes: Arbitrary data storage for plugins */
 	keyframes?: CombineArrayType<
-		TSR.TSRTimelineObjBase['keyframes'],
+		TimelineObjectSofieBase['keyframes'],
 		{
 			metaData?: TKeyframeMetadata
 			/** Whether to keep this keyframe when the object is copied for lookahead. By default all keyframes are removed */

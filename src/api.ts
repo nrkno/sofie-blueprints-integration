@@ -1,5 +1,3 @@
-import { TSRTimelineObjBase } from 'timeline-state-resolver-types'
-
 import { ActionUserData, IBlueprintActionManifest } from './action'
 import { ConfigManifestEntry } from './config'
 import {
@@ -28,7 +26,7 @@ import {
 	IBlueprintRundownDB,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
-import { OnGenerateTimelineObj } from './timeline'
+import { OnGenerateTimelineObj, TimelineObjectSofieBase } from './timeline'
 import { IBlueprintConfig } from './common'
 
 export enum BlueprintManifestType {
@@ -71,7 +69,7 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	studioMigrations: MigrationStep[]
 
 	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active rundown */
-	getBaseline: (context: IStudioContext) => TSRTimelineObjBase[]
+	getBaseline: (context: IStudioContext) => TimelineObjectSofieBase[]
 
 	/** Returns the id of the show style to use for a rundown, return null to ignore that rundown */
 	getShowStyleId: (
@@ -164,7 +162,7 @@ export interface BlueprintResultRundown {
 	rundown: IBlueprintRundown
 	globalAdLibPieces: IBlueprintAdLibPiece[]
 	globalActions?: IBlueprintActionManifest[]
-	baseline: TSRTimelineObjBase[]
+	baseline: TimelineObjectSofieBase[]
 }
 export interface BlueprintResultSegment {
 	segment: IBlueprintSegment
