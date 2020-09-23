@@ -48,6 +48,9 @@ export enum TimelineObjHoldMode {
 
 export interface TimelineObjectCoreExt<TMetadata = unknown, TKeyframeMetadata = unknown>
 	extends TSR.TSRTimelineObjBase {
+	// Even though timeline supports enable being an array, we're not using that feature in Sofie:
+	enable: TSR.Timeline.TimelineEnable
+
 	/** Restrict object usage according to whether we are currently in a hold */
 	holdMode?: TimelineObjHoldMode
 	/** Arbitrary data storage for plugins */
