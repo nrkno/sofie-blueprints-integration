@@ -27,20 +27,26 @@ export interface ICommonContext {
 	/** Un-hash, is return the string that created the hash */
 	unhashId: (hash: string) => string
 
+	/** Log a message to the sofie log with level 'debug' */
 	logDebug: (message: string) => void
+	/** Log a message to the sofie log with level 'info' */
 	logInfo: (message: string) => void
+	/** Log a message to the sofie log with level 'warn' */
 	logWarning: (message: string) => void
+	/** Log a message to the sofie log with level 'error' */
 	logError: (message: string) => void
 }
 
 export interface IUserNotesContext extends ICommonContext {
-	userError: (message: string, params?: { [key: string]: any }) => void
-	userWarning: (message: string, params?: { [key: string]: any }) => void
+	/** Display a notification to the user of an error */
+	notifyUserError: (message: string, params?: { [key: string]: any }) => void
+	/** Display a notification to the user of an warning */
+	notifyUserWarning: (message: string, params?: { [key: string]: any }) => void
 }
 
 /** Studio */
 
-export interface StudioContext extends ICommonContext {
+export interface IStudioContext extends ICommonContext {
 	/** Returns the Studio blueprint config. If StudioBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
 	getStudioConfig: () => unknown
 	/** Returns a reference to a studio config value, that can later be resolved in Core */
@@ -49,33 +55,35 @@ export interface StudioContext extends ICommonContext {
 	getStudioMappings: () => Readonly<BlueprintMappings>
 }
 
-export interface StudioUserContext extends IUserNotesContext, StudioContext {}
+export interface IStudioUserContext extends IUserNotesContext, IStudioContext {}
 
 /** Show Style Variant */
 
-export interface ShowStyleContext extends ICommonContext, StudioContext {
+export interface IShowStyleContext extends ICommonContext, IStudioContext {
 	/** Returns a ShowStyle blueprint config. If ShowStyleBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed */
 	getShowStyleConfig: () => unknown
 	/** Returns a reference to a showStyle config value, that can later be resolved in Core */
 	getShowStyleConfigRef(configKey: string): string
 }
 
-export interface ShowStyleUserContext extends IUserNotesContext, ShowStyleContext {}
+export interface IShowStyleUserContext extends IUserNotesContext, IShowStyleContext {}
 
 /** Rundown */
 
-export interface RundownContext extends ShowStyleContext {
+export interface IRundownContext extends IShowStyleContext {
 	readonly rundownId: string
 	readonly rundown: Readonly<IBlueprintRundownDB>
 }
 
-export interface SegmentUserContext extends IUserNotesContext, RundownContext {
-	userError: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
-	userWarning: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
+export interface ISegmentUserContext extends IUserNotesContext, IRundownContext {
+	/** Display a notification to the user of an error */
+	notifyUserError: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
+	/** Display a notification to the user of an warning */
+	notifyUserWarning: (message: string, params?: { [key: string]: any }, partExternalId?: string) => void
 }
 
 /** Actions */
-export interface ActionExecutionContext extends IUserNotesContext, ShowStyleContext, EventContext {
+export interface IActionExecutionContext extends IUserNotesContext, IShowStyleContext, IEventContext {
 	/** Data fetching */
 	// getIngestRundown(): IngestRundown // TODO - for which part?
 	/** Get a PartInstance which can be modified */
@@ -126,21 +134,21 @@ export interface ActionExecutionContext extends IUserNotesContext, ShowStyleCont
 /** Events */
 
 // tslint:disable-next-line: no-empty-interface
-export interface EventContext {
+export interface IEventContext {
 	// TDB: Certain actions that can be triggered in Core by the Blueprint
 	getCurrentTime(): number
 }
 
-export interface TimelineEventContext extends IUserNotesContext, EventContext, RundownContext {
+export interface ITimelineEventContext extends IUserNotesContext, IEventContext, IRundownContext {
 	readonly currentPartInstance: Readonly<IBlueprintPartInstance> | undefined
 	readonly nextPartInstance: Readonly<IBlueprintPartInstance> | undefined
 }
 
-export interface PartEventContext extends EventContext, RundownContext {
+export interface IPartEventContext extends IEventContext, IRundownContext {
 	readonly part: Readonly<IBlueprintPartInstance>
 }
 
-export interface AsRunEventContext extends RundownContext, EventContext {
+export interface IAsRunEventContext extends IRundownContext, IEventContext {
 	readonly asRunEvent: Readonly<IBlueprintAsRunLogEvent>
 
 	formatDateAsTimecode(time: number): string
