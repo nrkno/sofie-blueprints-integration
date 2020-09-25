@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IEventContext | tv-automation-sofie-blueprints-integration</title>
+	<title>RundownContext | tv-automation-sofie-blueprints-integration</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2366,10 +2366,40 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class="current tsd-kind-interface tsd-is-external">
-			<a href="ieventcontext.html" class="tsd-kind-icon">IEvent<wbr>Context</a>
+			<a href="rundowncontext.html" class="tsd-kind-icon">Rundown<wbr>Context</a>
 			<ul>
-				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<a href="ieventcontext.html#getcurrenttime" class="tsd-kind-icon">get<wbr>Current<wbr>Time</a>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#error" class="tsd-kind-icon">error</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#gethashid" class="tsd-kind-icon">get<wbr>Hash<wbr>Id</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#getshowstyleconfig" class="tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Config</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#getstudioconfig" class="tsd-kind-icon">get<wbr>Studio<wbr>Config</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#getstudiomappings" class="tsd-kind-icon">get<wbr>Studio<wbr>Mappings</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="rundowncontext.html#rundown" class="tsd-kind-icon">rundown</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a href="rundowncontext.html#rundownid" class="tsd-kind-icon">rundown<wbr>Id</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#unhashid" class="tsd-kind-icon">unhash<wbr>Id</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#warning" class="tsd-kind-icon">warning</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#getshowstyleconfigref" class="tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Config<wbr>Ref</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="rundowncontext.html#getstudioconfigref" class="tsd-kind-icon">get<wbr>Studio<wbr>Config<wbr>Ref</a>
 				</li>
 			</ul>
 		</li>
@@ -2380,7 +2410,7 @@ img {
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>Events</p>
+					<p>Rundown</p>
 				</div>
 			</div>
 		</section>
@@ -2388,19 +2418,24 @@ img {
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">IEventContext</span>
+					<a href="showstylecontext.html" class="tsd-signature-type">ShowStyleContext</a>
 					<ul class="tsd-hierarchy">
 						<li>
-							<a href="iactionexecutioncontext.html" class="tsd-signature-type">IActionExecutionContext</a>
-						</li>
-						<li>
-							<a href="itimelineeventcontext.html" class="tsd-signature-type">ITimelineEventContext</a>
-						</li>
-						<li>
-							<a href="iparteventcontext.html" class="tsd-signature-type">IPartEventContext</a>
-						</li>
-						<li>
-							<a href="iasruneventcontext.html" class="tsd-signature-type">IAsRunEventContext</a>
+							<span class="target">RundownContext</span>
+							<ul class="tsd-hierarchy">
+								<li>
+									<a href="segmentcontext.html" class="tsd-signature-type">SegmentContext</a>
+								</li>
+								<li>
+									<a href="timelineeventcontext.html" class="tsd-signature-type">TimelineEventContext</a>
+								</li>
+								<li>
+									<a href="parteventcontext.html" class="tsd-signature-type">PartEventContext</a>
+								</li>
+								<li>
+									<a href="asruneventcontext.html" class="tsd-signature-type">AsRunEventContext</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</li>
@@ -2411,30 +2446,357 @@ img {
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section tsd-is-external">
+						<h3>Properties</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#error" class="tsd-kind-icon">error</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#gethashid" class="tsd-kind-icon">get<wbr>Hash<wbr>Id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#getshowstyleconfig" class="tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Config</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#getstudioconfig" class="tsd-kind-icon">get<wbr>Studio<wbr>Config</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#getstudiomappings" class="tsd-kind-icon">get<wbr>Studio<wbr>Mappings</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="rundowncontext.html#rundown" class="tsd-kind-icon">rundown</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="rundowncontext.html#rundownid" class="tsd-kind-icon">rundown<wbr>Id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#unhashid" class="tsd-kind-icon">unhash<wbr>Id</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#warning" class="tsd-kind-icon">warning</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-inherited tsd-is-external">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="ieventcontext.html#getcurrenttime" class="tsd-kind-icon">get<wbr>Current<wbr>Time</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#getshowstyleconfigref" class="tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Config<wbr>Ref</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="rundowncontext.html#getstudioconfigref" class="tsd-kind-icon">get<wbr>Studio<wbr>Config<wbr>Ref</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="error" class="tsd-anchor"></a>
+				<h3>error</h3>
+				<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#error">error</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L32">src/context.ts:32</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="gethashid" class="tsd-anchor"></a>
+				<h3>get<wbr>Hash<wbr>Id</h3>
+				<div class="tsd-signature tsd-kind-icon">get<wbr>Hash<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>originString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, originIsNotUnique<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="icommoncontext.html">ICommonContext</a>.<a href="icommoncontext.html#gethashid">getHashId</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L26">src/context.ts:26</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Hash a string. Will return a unique string, to be used for all _id:s that are to be inserted in database</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>param</dt>
+						<dd><p>A representation of the origin of the hash (for logging)</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>If the originString is not guaranteed to be unique, set this to true</p>
+						</dd>
+					</dl>
+				</div>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>originString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, originIsNotUnique<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>originString: <span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> originIsNotUnique: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="getshowstyleconfig" class="tsd-anchor"></a>
+				<h3>get<wbr>Show<wbr>Style<wbr>Config</h3>
+				<div class="tsd-signature tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">unknown</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="ishowstyleconfigcontext.html">IShowStyleConfigContext</a>.<a href="ishowstyleconfigcontext.html#getshowstyleconfig">getShowStyleConfig</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L53">src/context.ts:53</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Returns a ShowStyle blueprint config. If ShowStyleBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed</p>
+					</div>
+				</div>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">unknown</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="getstudioconfig" class="tsd-anchor"></a>
+				<h3>get<wbr>Studio<wbr>Config</h3>
+				<div class="tsd-signature tsd-kind-icon">get<wbr>Studio<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">unknown</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="istudioconfigcontext.html">IStudioConfigContext</a>.<a href="istudioconfigcontext.html#getstudioconfig">getStudioConfig</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L40">src/context.ts:40</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Returns the Studio blueprint config. If StudioBlueprintManifest.preprocessConfig is provided, a config preprocessed by that function is returned, otherwise it is returned unprocessed</p>
+					</div>
+				</div>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">unknown</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="getstudiomappings" class="tsd-anchor"></a>
+				<h3>get<wbr>Studio<wbr>Mappings</h3>
+				<div class="tsd-signature tsd-kind-icon">get<wbr>Studio<wbr>Mappings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="blueprintmappings.html" class="tsd-signature-type">BlueprintMappings</a><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="istudiocontext.html">IStudioContext</a>.<a href="istudiocontext.html#getstudiomappings">getStudioMappings</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L46">src/context.ts:46</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Get the mappings for the studio</p>
+					</div>
+				</div>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="blueprintmappings.html" class="tsd-signature-type">BlueprintMappings</a><span class="tsd-signature-symbol">&gt;</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="blueprintmappings.html" class="tsd-signature-type">BlueprintMappings</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="rundown" class="tsd-anchor"></a>
+				<h3>rundown</h3>
+				<div class="tsd-signature tsd-kind-icon">rundown<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="iblueprintrundowndb.html" class="tsd-signature-type">IBlueprintRundownDB</a><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L64">src/context.ts:64</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<a name="rundownid" class="tsd-anchor"></a>
+				<h3>rundown<wbr>Id</h3>
+				<div class="tsd-signature tsd-kind-icon">rundown<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L63">src/context.ts:63</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="unhashid" class="tsd-anchor"></a>
+				<h3>unhash<wbr>Id</h3>
+				<div class="tsd-signature tsd-kind-icon">unhash<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="icommoncontext.html">ICommonContext</a>.<a href="icommoncontext.html#unhashid">unhashId</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L28">src/context.ts:28</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Un-hash, is return the string that created the hash</p>
+					</div>
+				</div>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>hash: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="warning" class="tsd-anchor"></a>
+				<h3>warning</h3>
+				<div class="tsd-signature tsd-kind-icon">warning<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="notescontext.html">NotesContext</a>.<a href="notescontext.html#warning">warning</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L33">src/context.ts:33</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>message: <span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-external">
 			<h2>Methods</h2>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-				<a name="getcurrenttime" class="tsd-anchor"></a>
-				<h3>get<wbr>Current<wbr>Time</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Current<wbr>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="getshowstyleconfigref" class="tsd-anchor"></a>
+				<h3>get<wbr>Show<wbr>Style<wbr>Config<wbr>Ref</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Show<wbr>Style<wbr>Config<wbr>Ref<span class="tsd-signature-symbol">(</span>configKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Inherited from <a href="ishowstyleconfigcontext.html">IShowStyleConfigContext</a>.<a href="ishowstyleconfigcontext.html#getshowstyleconfigref">getShowStyleConfigRef</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/844351b2/src/context.ts#L136">src/context.ts:136</a></li>
+								<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L55">src/context.ts:55</a></li>
 							</ul>
 						</aside>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Returns a reference to a showStyle config value, that can later be resolved in Core</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>configKey: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="getstudioconfigref" class="tsd-anchor"></a>
+				<h3>get<wbr>Studio<wbr>Config<wbr>Ref</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Studio<wbr>Config<wbr>Ref<span class="tsd-signature-symbol">(</span>configKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="istudioconfigcontext.html">IStudioConfigContext</a>.<a href="istudioconfigcontext.html#getstudioconfigref">getStudioConfigRef</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/a7a0fd91/src/context.ts#L42">src/context.ts:42</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Returns a reference to a studio config value, that can later be resolved in Core</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>configKey: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 					</li>
 				</ul>
 			</section>
