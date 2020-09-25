@@ -247,6 +247,8 @@ export interface IBlueprintPieceGeneric {
 	adlibAutoNextOverlap?: number
 	/** When queued, block transition at the end of the part */
 	adlibDisableOutTransition?: boolean
+	/** User-defined tags that can be used for filtering adlibs in the shelf and identifying pieces by actions */
+	tags?: string[]
 }
 
 export interface ExpectedPlayoutItemGeneric {
@@ -294,13 +296,12 @@ export interface IBlueprintAdLibPiece extends IBlueprintPieceGeneric {
 	invalid?: boolean
 	/** Expected duration of the piece, in milliseconds */
 	expectedDuration?: number
-	/** User-defined tags that can be used for filtering in the Rundown Layouts without modifying the label */
-	tags?: string[]
 	/** When the NRCS informs us that the producer marked the part as floated, we can prevent the user from TAKE'ing it, but still have it visible and allow manipulation */
 	floated?: boolean
-
-	// TODO - stricter range of lifespan
-	// lifespan: PieceLifespan
+	/** Piece tags to use to determine if action is currently active */
+	currentPieceTags?: string[]
+	/** Piece tags to use to determine if action is set as next */
+	nextPieceTags?: string[]
 }
 /** The AdLib piece sent from Core */
 export interface IBlueprintAdLibPieceDB extends IBlueprintAdLibPiece {
