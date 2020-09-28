@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/2.1.0...2.2.0) (2020-09-28)
+
+
+### Features
+
+* Add JSON entry type ([0a27dee](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0a27dee5887521f513eeea35b217baa30de05d79))
+* add parseConfig callback to blueprint manifests ([133e238](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/133e238ab77fe1a06453e49aa25781697e68750c))
+* expose more functions to adlib-actions ([#68](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/issues/68)) ([0e4f14d](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/0e4f14d0ca43516bc9c821c7692aa9b7acaacd8d))
+* Multiline strings ([83498fb](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/83498fb0cb6aa1addb0cf3163ce79424eb2c940e))
+* remove runtime arguments api [publish] ([d49f7dd](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/d49f7dd943612eb73868fea1728efa00339eb07e))
+* use PieceInstance._id in timeline piece group ids ([88f8e83](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/88f8e83cba6a98dc44e723244c1fce078e3d3b2f))
+
+
+### Bug Fixes
+
+* change any to unknown for better types ([80239dc](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/80239dc6a677f396069074e01f9edc960526ee20))
+* return configs as unknown ([07a0431](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/07a0431a939cd25916f799aa2c8851178e0b514d))
+
 ## [2.1.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/2.0.0...2.1.0) (2020-08-17)
 
 ### Features
