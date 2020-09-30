@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/2.2.1...2.3.0) (2020-09-30)
+
+
+### Features
+
+* add TimelineEventContext for use in onTimelineGenerate, to allow the current and next part to be provided (if they are set) [publish] ([e8ed966](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/e8ed9664aee1c3b9562ae85e07fa1259e6ca19a3))
+* Allow adlib actions to call take ([e5b1008](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/e5b10087a2e726005062e337bfa829436ecf89a9))
+* move playout properties from Part to PartInstance [publish] ([6edbee3](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/6edbee33520ab44a75ab2ca70e0b81f6f51614c6))
+* replace some key-value interfaces with unknown [publish] ([7346f2f](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/7346f2fa61104ba03aa550f8ed780d3c4e5452f7))
+* Tally tags ([#74](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/issues/74)) ([a0fc99b](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/commit/a0fc99b9e299e67f6c4b252cd97db907384dc04d))
+
 ### [2.2.1](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/2.2.0...2.2.1) (2020-09-28)
 
 ## [2.2.0](https://github.com/nrkno/tv-automation-sofie-blueprints-integration/compare/2.1.0...2.2.0) (2020-09-28)
