@@ -14,6 +14,7 @@ import {
 	IBlueprintMutatablePart,
 } from './rundown'
 import { BlueprintMappings } from './studio'
+import { OnGenerateTimelineObj } from './timeline'
 
 /** Common */
 
@@ -139,6 +140,11 @@ export interface EventContext {
 export interface TimelineEventContext extends EventContext, RundownContext {
 	readonly currentPartInstance: Readonly<IBlueprintPartInstance> | undefined
 	readonly nextPartInstance: Readonly<IBlueprintPartInstance> | undefined
+
+	/** Get the full session id for an ab playback session */
+	getPieceABSessionId(piece: IBlueprintPieceInstance, sessionName: string): string
+	/** Get the full session id for a timelineobject that belongs to an ab playback session */
+	getTimelineObjectAbSessionId(obj: OnGenerateTimelineObj, name: string): string | undefined
 }
 
 export interface PartEventContext extends EventContext, RundownContext {
