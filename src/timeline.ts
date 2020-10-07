@@ -67,6 +67,4 @@ export interface TimelineObjectCoreExt<TMetadata = unknown, TKeyframeMetadata = 
 export interface OnGenerateTimelineObj<TMetadata = unknown, TKeyframeMetadata = unknown>
 	extends TimelineObjectCoreExt<TMetadata, TKeyframeMetadata> {
 	pieceInstanceId?: string
-	// segmentId: string
-	// infinitePieceId?: string
 }

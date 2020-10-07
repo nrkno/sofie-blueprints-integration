@@ -141,10 +141,16 @@ export interface TimelineEventContext extends EventContext, RundownContext {
 	readonly currentPartInstance: Readonly<IBlueprintPartInstance> | undefined
 	readonly nextPartInstance: Readonly<IBlueprintPartInstance> | undefined
 
-	/** Get the full session id for an ab playback session */
+	/**
+	 * Get the full session id for an ab playback session.
+	 * Note: sessionName should be unique within the segment unless pieces want to share a session
+	 */
 	getPieceABSessionId(piece: IBlueprintPieceInstance, sessionName: string): string
-	/** Get the full session id for a timelineobject that belongs to an ab playback session */
-	getTimelineObjectAbSessionId(obj: OnGenerateTimelineObj, name: string): string | undefined
+	/**
+	 * Get the full session id for a timelineobject that belongs to an ab playback session
+	 * sessionName should also be used in calls to getPieceABSessionId for the owning piece
+	 */
+	getTimelineObjectAbSessionId(obj: OnGenerateTimelineObj, sessionName: string): string | undefined
 }
 
 export interface PartEventContext extends EventContext, RundownContext {
