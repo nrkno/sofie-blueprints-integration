@@ -22,6 +22,9 @@ export interface IBlueprintRundown {
 	/** Rundown slug - user-presentable name */
 	name: string
 
+	/** Rundown description: Longer user-presentable description of the rundown */
+	description?: string
+
 	/** Expected start should be set to the expected time this rundown should run on air */
 	expectedStart?: Time
 	/** Expected duration of the rundown */
