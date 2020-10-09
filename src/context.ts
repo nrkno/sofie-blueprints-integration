@@ -118,7 +118,6 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	// openUIDialogue(message: string) // ?????
 }
 
-
 /** Actions */
 export interface SyncIngestUpdateToPartInstanceContext extends RundownContext {
 	/** Insert a piece. Returns id of new PieceInstance. Any timelineObjects will have their ids changed, so are not safe to reference from another piece */

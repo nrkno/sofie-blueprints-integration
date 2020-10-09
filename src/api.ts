@@ -26,7 +26,9 @@ import {
 	IBlueprintRundown,
 	IBlueprintRundownPlaylistInfo,
 	IBlueprintSegment,
-	IBlueprintRundownDB, IBlueprintPieceInstance, IBlueprintPartInstance
+	IBlueprintRundownDB,
+	IBlueprintPieceInstance,
+	IBlueprintPartInstance,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -193,7 +195,6 @@ export interface BlueprintResultPartInstance {
 	// Possibly in the future:
 	// adLibPieces
 }
-
 
 /** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
 export interface BlueprintResultOrderedRundowns {
