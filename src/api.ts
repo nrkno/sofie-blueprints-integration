@@ -1,20 +1,20 @@
 import { TSRTimelineObjBase } from 'timeline-state-resolver-types'
-
 import { ActionUserData, IBlueprintActionManifest } from './action'
 import { ConfigManifestEntry } from './config'
 import {
-	ActionExecutionContext,
-	AsRunEventContext,
-	EventContext,
-	IStudioConfigContext,
+	IActionExecutionContext,
+	IAsRunEventContext,
+	IEventContext,
+	IPartEventContext,
+	IRundownContext,
+	ISegmentUserContext,
+	ITimelineEventContext,
 	IStudioContext,
-	PartEventContext,
-	RundownContext,
-	SegmentContext,
-	ShowStyleContext,
-	TimelineEventContext,
+	IStudioUserContext,
+	IShowStyleUserContext,
+	ICommonContext,
 } from './context'
-import { IngestAdlib, ExtendedIngestRundown, IngestSegment } from './ingest'
+import { ExtendedIngestRundown, IngestAdlib, IngestSegment } from './ingest'
 import { IBlueprintExternalMessageQueueObj } from './message'
 import { MigrationStep } from './migrations'
 import {
@@ -23,9 +23,9 @@ import {
 	IBlueprintPiece,
 	IBlueprintResolvedPieceInstance,
 	IBlueprintRundown,
+	IBlueprintRundownDB,
 	IBlueprintRundownPlaylistInfo,
 	IBlueprintSegment,
-	IBlueprintRundownDB,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -70,21 +70,27 @@ export interface StudioBlueprintManifest extends BlueprintManifestBase {
 	/** A list of Migration steps related to a Studio */
 	studioMigrations: MigrationStep[]
 
+	/** Translations connected to the studio (as stringified JSON) */
+	translations?: string
+
 	/** Returns the items used to build the baseline (default state) of a studio, this is the baseline used when there's no active rundown */
 	getBaseline: (context: IStudioContext) => TSRTimelineObjBase[]
 
 	/** Returns the id of the show style to use for a rundown, return null to ignore that rundown */
 	getShowStyleId: (
-		context: IStudioConfigContext,
+		context: IStudioUserContext,
 		showStyles: IBlueprintShowStyleBase[],
 		ingestRundown: ExtendedIngestRundown
 	) => string | null
 
 	/** Returns information about the playlist this rundown is a part of, return null to not make it a part of a playlist */
-	getRundownPlaylistInfo?: (rundowns: IBlueprintRundownDB[]) => BlueprintResultRundownPlaylist | null
+	getRundownPlaylistInfo?: (
+		context: IStudioUserContext,
+		rundowns: IBlueprintRundownDB[]
+	) => BlueprintResultRundownPlaylist | null
 
 	/** Preprocess config before storing it by core to later be returned by context's getStudioConfig. If not provided, getStudioConfig will return unprocessed blueprint config */
-	preprocessConfig?: (config: IBlueprintConfig) => unknown
+	preprocessConfig?: (context: ICommonContext, config: IBlueprintConfig) => unknown
 }
 
 export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
@@ -95,44 +101,47 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** A list of Migration steps related to a ShowStyle */
 	showStyleMigrations: MigrationStep[]
 
+	/** Translations connected to the show style (as stringified JSON) */
+	translations?: string
+
 	// --------------------------------------------------------------
 	// Callbacks called by Core:
 
 	/** Returns the id of the show style variant to use for a rundown, return null to ignore that rundown */
 	getShowStyleVariantId: (
-		context: IStudioConfigContext,
+		context: IStudioUserContext,
 		showStyleVariants: IBlueprintShowStyleVariant[],
 		ingestRundown: ExtendedIngestRundown
 	) => string | null
 
 	/** Generate rundown from ingest data. return null to ignore that rundown */
-	getRundown: (context: ShowStyleContext, ingestRundown: ExtendedIngestRundown) => BlueprintResultRundown
+	getRundown: (context: IShowStyleUserContext, ingestRundown: ExtendedIngestRundown) => BlueprintResultRundown
 
 	/** Generate segment from ingest data */
-	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
+	getSegment: (context: ISegmentUserContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
 	/** Execute an action defined by an IBlueprintActionManifest */
-	executeAction?: (context: EventContext & ActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
+	executeAction?: (context: IActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
 
 	/** Generate adlib piece from ingest data */
-	getAdlibItem?: (context: ShowStyleContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
+	getAdlibItem?: (context: IShowStyleUserContext, ingestItem: IngestAdlib) => IBlueprintAdLibPiece | null
 
 	/** Preprocess config before storing it by core to later be returned by context's getShowStyleConfig. If not provided, getShowStyleConfig will return unprocessed blueprint config */
-	preprocessConfig?: (config: IBlueprintConfig) => unknown
+	preprocessConfig?: (context: ICommonContext, config: IBlueprintConfig) => unknown
 
 	// Events
 
-	onRundownActivate?: (context: EventContext & RundownContext) => Promise<void>
-	onRundownFirstTake?: (context: EventContext & PartEventContext) => Promise<void>
-	onRundownDeActivate?: (context: EventContext & RundownContext) => Promise<void>
+	onRundownActivate?: (context: IEventContext & IRundownContext) => Promise<void>
+	onRundownFirstTake?: (context: IEventContext & IPartEventContext) => Promise<void>
+	onRundownDeActivate?: (context: IEventContext & IRundownContext) => Promise<void>
 
 	/** Called after a Take action */
-	onPreTake?: (context: EventContext & PartEventContext) => Promise<void>
-	onPostTake?: (context: EventContext & PartEventContext) => Promise<void>
+	onPreTake?: (context: IEventContext & IPartEventContext) => Promise<void>
+	onPostTake?: (context: IEventContext & IPartEventContext) => Promise<void>
 
 	/** Called after the timeline has been generated, used to manipulate the timeline */
 	onTimelineGenerate?: (
-		context: TimelineEventContext,
+		context: ITimelineEventContext,
 		timeline: OnGenerateTimelineObj[],
 		previousPersistentState: TimelinePersistentState | undefined,
 		previousPartEndState: PartEndState | undefined,
@@ -141,7 +150,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 
 	/** Called just before taking the next part. This generates some persisted data used by onTimelineGenerate to modify the timeline based on the previous part (eg, persist audio levels) */
 	getEndStateForPart?: (
-		context: RundownContext,
+		context: IRundownContext,
 		previousPersistentState: TimelinePersistentState | undefined,
 		previousPartEndState: PartEndState | undefined,
 		resolvedPieces: IBlueprintResolvedPieceInstance[],
@@ -149,7 +158,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	) => PartEndState
 
 	/** Called after an as-run event is created */
-	onAsRunEvent?: (context: EventContext & AsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
+	onAsRunEvent?: (context: IEventContext & IAsRunEventContext) => Promise<IBlueprintExternalMessageQueueObj[]>
 }
 
 export type PartEndState = unknown
