@@ -4,6 +4,7 @@ import { ActionUserData, IBlueprintActionManifest } from './action'
 import { ConfigManifestEntry } from './config'
 import {
 	ActionExecutionContext,
+	SyncIngestUpdateToPartInstanceContext,
 	AsRunEventContext,
 	EventContext,
 	IStudioConfigContext,
@@ -25,7 +26,7 @@ import {
 	IBlueprintRundown,
 	IBlueprintRundownPlaylistInfo,
 	IBlueprintSegment,
-	IBlueprintRundownDB,
+	IBlueprintRundownDB, IBlueprintPieceInstance, IBlueprintPartInstance
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -111,6 +112,14 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
+	/** Allows the blueprint to custom-modify the PartInstance, on ingest data update (this is run after getSegment() ) */
+	syncIngestUpdateToPartInstance?: (
+		context: SyncIngestUpdateToPartInstanceContext,
+		existingPartInstance: BlueprintResultPartInstance,
+		newPart: BlueprintResultPart,
+		playoutStatus: 'current' | 'next'
+	) => void
+
 	/** Execute an action defined by an IBlueprintActionManifest */
 	executeAction?: (context: EventContext & ActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
 
@@ -177,6 +186,14 @@ export interface BlueprintResultPart {
 	adLibPieces: IBlueprintAdLibPiece[]
 	actions?: IBlueprintActionManifest[]
 }
+
+export interface BlueprintResultPartInstance {
+	partInstance: IBlueprintPartInstance
+	pieceInstancess: IBlueprintPieceInstance[]
+	// Possibly in the future:
+	// adLibPieces
+}
+
 
 /** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
 export interface BlueprintResultOrderedRundowns {

@@ -118,11 +118,22 @@ export interface ActionExecutionContext extends ShowStyleContext {
 	// openUIDialogue(message: string) // ?????
 }
 
+
+/** Actions */
+export interface SyncIngestUpdateToPartInstanceContext extends RundownContext {
+	/** Insert a piece. Returns id of new PieceInstance. Any timelineObjects will have their ids changed, so are not safe to reference from another piece */
+	insertPieceInstance(piece: IBlueprintPiece): IBlueprintPieceInstance
+	/** Update a piecesInstance */
+	updatePieceInstance(pieceInstanceId: string, piece: Partial<OmitId<IBlueprintPiece>>): IBlueprintPieceInstance
+	/** Update a partInstance */
+	updatePartInstance(props: Partial<IBlueprintMutatablePart>): IBlueprintPartInstance
+
+	removePieceInstances(...pieceInstanceIds: string[]): string[]
+}
+
 /** Events */
 
-// tslint:disable-next-line: no-empty-interface
 export interface EventContext {
-	// TDB: Certain actions that can be triggered in Core by the Blueprint
 	getCurrentTime(): number
 }
 
