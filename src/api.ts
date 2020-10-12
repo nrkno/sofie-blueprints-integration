@@ -29,6 +29,9 @@ import {
 	IBlueprintRundownDB,
 	IBlueprintPieceInstance,
 	IBlueprintPartInstance,
+	IBlueprintAdLibPieceDB,
+	IBlueprintPartDB,
+	IBlueprintPieceDB,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -118,7 +121,7 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	syncIngestUpdateToPartInstance?: (
 		context: SyncIngestUpdateToPartInstanceContext,
 		existingPartInstance: BlueprintResultPartInstance,
-		newPart: BlueprintResultPart,
+		newPart: BlueprintResultPartDB,
 		playoutStatus: 'current' | 'next'
 	) => void
 
@@ -189,9 +192,16 @@ export interface BlueprintResultPart {
 	actions?: IBlueprintActionManifest[]
 }
 
+export interface BlueprintResultPartDB {
+	part: IBlueprintPartDB
+	pieces: IBlueprintPieceDB[]
+	adLibPieces: IBlueprintAdLibPieceDB[]
+	actions?: IBlueprintActionManifest[]
+}
+
 export interface BlueprintResultPartInstance {
 	partInstance: IBlueprintPartInstance
-	pieceInstancess: IBlueprintPieceInstance[]
+	pieceInstances: IBlueprintPieceInstance[]
 	// Possibly in the future:
 	// adLibPieces
 }
