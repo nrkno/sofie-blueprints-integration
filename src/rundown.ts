@@ -282,6 +282,11 @@ export interface IBlueprintPieceDB extends IBlueprintPiece {
 export interface IBlueprintPieceInstance {
 	_id: string
 
+	/** If this piece has been created play-time using an AdLibPiece, this should be set to it's source piece */
+	adLibSourceId?: string
+	/** If this piece has been insterted during run of rundown (such as adLibs), then this is set to the timestamp it was inserted */
+	dynamicallyInserted?: Time
+
 	piece: IBlueprintPieceDB
 }
 export interface IBlueprintResolvedPieceInstance extends IBlueprintPieceInstance {
