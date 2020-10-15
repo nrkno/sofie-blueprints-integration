@@ -117,7 +117,10 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
-	/** Allows the blueprint to custom-modify the PartInstance, on ingest data update (this is run after getSegment() ) */
+	/**
+	 * Allows the blueprint to custom-modify the PartInstance, on ingest data update (this is run after getSegment() )
+	 * Warning: This is currently an experimental api, and is likely to break in the next release
+	 */
 	syncIngestUpdateToPartInstance?: (
 		context: SyncIngestUpdateToPartInstanceContext,
 		existingPartInstance: BlueprintResultPartInstance,
@@ -196,7 +199,7 @@ export interface BlueprintResultPartDB {
 	part: IBlueprintPartDB
 	pieces: IBlueprintPieceDB[]
 	adLibPieces: IBlueprintAdLibPieceDB[]
-	actions?: IBlueprintActionManifest[]
+	actions: IBlueprintActionManifest[]
 }
 
 export interface BlueprintResultPartInstance {
