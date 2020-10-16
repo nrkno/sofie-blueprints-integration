@@ -4,6 +4,7 @@ import { ActionUserData, IBlueprintActionManifest } from './action'
 import { ConfigManifestEntry } from './config'
 import {
 	ActionExecutionContext,
+	SyncIngestUpdateToPartInstanceContext,
 	AsRunEventContext,
 	EventContext,
 	IStudioConfigContext,
@@ -26,6 +27,11 @@ import {
 	IBlueprintRundownPlaylistInfo,
 	IBlueprintSegment,
 	IBlueprintRundownDB,
+	IBlueprintPieceInstance,
+	IBlueprintPartInstance,
+	IBlueprintAdLibPieceDB,
+	IBlueprintPartDB,
+	IBlueprintPieceDB,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
@@ -111,6 +117,17 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	/** Generate segment from ingest data */
 	getSegment: (context: SegmentContext, ingestSegment: IngestSegment) => BlueprintResultSegment
 
+	/**
+	 * Allows the blueprint to custom-modify the PartInstance, on ingest data update (this is run after getSegment() )
+	 * Warning: This is currently an experimental api, and is likely to break in the next release
+	 */
+	syncIngestUpdateToPartInstance?: (
+		context: SyncIngestUpdateToPartInstanceContext,
+		existingPartInstance: BlueprintResultPartInstance,
+		newPart: BlueprintResultPartDB,
+		playoutStatus: 'current' | 'next'
+	) => void
+
 	/** Execute an action defined by an IBlueprintActionManifest */
 	executeAction?: (context: EventContext & ActionExecutionContext, actionId: string, userData: ActionUserData) => void // Promise<void> | void
 
@@ -176,6 +193,20 @@ export interface BlueprintResultPart {
 	pieces: IBlueprintPiece[]
 	adLibPieces: IBlueprintAdLibPiece[]
 	actions?: IBlueprintActionManifest[]
+}
+
+export interface BlueprintResultPartDB {
+	part: IBlueprintPartDB
+	pieces: IBlueprintPieceDB[]
+	adLibPieces: IBlueprintAdLibPieceDB[]
+	actions: IBlueprintActionManifest[]
+}
+
+export interface BlueprintResultPartInstance {
+	partInstance: IBlueprintPartInstance
+	pieceInstances: IBlueprintPieceInstance[]
+	// Possibly in the future:
+	// adLibPieces
 }
 
 /** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
