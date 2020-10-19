@@ -33,7 +33,7 @@
     "reset": "git clean -dfx && git reset --hard && yarn",
     "validate:dependencies": "yarn audit --groups dependencies && yarn license-validate",
     "validate:dev-dependencies": "yarn audit --groups devDependencies",
-    "license-validate": "node-license-validator -p -d --allow-licenses MIT BSD BSD-3-Clause 0BSD ISC Apache Unlicense --allow-packages cycle"
+    "license-validate": "node-license-validator -p -d --allow-licenses MIT BSD BSD-3-Clause 0BSD ISC Apache Unlicense"
   },
   "engines": {
     "node": ">=10.10"
@@ -45,7 +45,7 @@
     "/LICENSE"
   ],
   "devDependencies": {
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^26.0.14",
     "@types/node": "^12.11.7",
     "@types/underscore": "^1.8.13",
     "codecov": "^3.0.2",
@@ -59,24 +59,23 @@
     "open-cli": "^6.0.1",
     "prettier": "^2.0.5",
     "sleep-ms": "^2.0.1",
-    "standard-version": "^8.0.0",
+    "standard-version": "^9.0.0",
     "trash-cli": "^3.0.0",
     "ts-jest": "^26.1.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typedoc": "^0.16.0",
-    "typescript": "~3.6.4"
+    "typedoc": "^0.19.2",
+    "typescript": "~4.0"
   },
   "dependencies": {
-    "moment": "2.22.2",
-    "timeline-state-resolver-types": "5.1.0",
-    "tslib": "^1.13.0",
-    "underscore": "1.9.1"
+    "moment": "2.29.1",
+    "timeline-state-resolver-types": "5.1.1",
+    "tslib": "^2.0.3",
+    "underscore": "1.11.0"
   },
   "resolutions": {
-    "yargs-parser": "^18.1.2",
-    "minimist": "^1.2.3"
+    "node-license-validator/**/minimist": "^1.2.3"
   },
   "standard-version": {
     "message": "chore(release): %s [skip ci]",
