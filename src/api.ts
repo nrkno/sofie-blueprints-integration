@@ -123,8 +123,8 @@ export interface ShowStyleBlueprintManifest extends BlueprintManifestBase {
 	 */
 	syncIngestUpdateToPartInstance?: (
 		context: SyncIngestUpdateToPartInstanceContext,
-		existingPartInstance: BlueprintResultPartInstance,
-		newPart: BlueprintResultPartDB,
+		existingPartInstance: BlueprintSyncIngestPartInstance,
+		newData: BlueprintSyncIngestNewData,
 		playoutStatus: 'current' | 'next'
 	) => void
 
@@ -195,18 +195,33 @@ export interface BlueprintResultPart {
 	actions?: IBlueprintActionManifest[]
 }
 
-export interface BlueprintResultPartDB {
+export interface BlueprintSyncIngestNewData {
+	// source: BlueprintSyncIngestDataSource
 	part: IBlueprintPartDB
 	pieces: IBlueprintPieceDB[]
 	adLibPieces: IBlueprintAdLibPieceDB[]
 	actions: IBlueprintActionManifest[]
+	/** A list of infinites that affect the partInstance in question */
+	infinites: IBlueprintPieceDB[]
+	/** A list of adlibs that have pieceInstances in the partInstance in question */
+	referencedAdlibs: IBlueprintAdLibPieceDB[]
 }
+// TODO: add something like this later?
+// export enum BlueprintSyncIngestDataSource {
+// 	/** The data update came from the same segment */
+// 	SEGMENT = 'segment',
+// 	/** The data update came from another infinite being updated */
+// 	INFINITE = 'infinite',
+// 	ADLIB = 'adlib',
+// 	UNKNOWN = 'unknown'
+// }
 
-export interface BlueprintResultPartInstance {
+export interface BlueprintSyncIngestPartInstance {
 	partInstance: IBlueprintPartInstance
 	pieceInstances: IBlueprintPieceInstance[]
-	// Possibly in the future:
-	// adLibPieces
+	// Upcoming interface:
+	// adLibPieceInstances: IBlueprintAdlibPieceInstance[]
+	// adLibActionInstances: IBlueprintAdlibActionInstance[]
 }
 
 /** Key is the ID of the external ID of the Rundown, Value is the rank to be assigned */
