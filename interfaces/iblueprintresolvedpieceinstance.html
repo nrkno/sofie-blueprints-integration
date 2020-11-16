@@ -58,6 +58,9 @@
 					<a href="iblueprintresolvedpieceinstance.html#dynamicallyinserted" class="tsd-kind-icon">dynamically<wbr>Inserted</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a href="iblueprintresolvedpieceinstance.html#infinite" class="tsd-kind-icon">infinite</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a href="iblueprintresolvedpieceinstance.html#piece" class="tsd-kind-icon">piece</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
@@ -95,6 +98,7 @@
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintresolvedpieceinstance.html#_id" class="tsd-kind-icon">_id</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintresolvedpieceinstance.html#adlibsourceid" class="tsd-kind-icon">ad<wbr>Lib<wbr>Source<wbr>Id</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintresolvedpieceinstance.html#dynamicallyinserted" class="tsd-kind-icon">dynamically<wbr>Inserted</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintresolvedpieceinstance.html#infinite" class="tsd-kind-icon">infinite</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="iblueprintresolvedpieceinstance.html#piece" class="tsd-kind-icon">piece</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iblueprintresolvedpieceinstance.html#resolvedduration" class="tsd-kind-icon">resolved<wbr>Duration</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iblueprintresolvedpieceinstance.html#resolvedstart" class="tsd-kind-icon">resolved<wbr>Start</a></li>
@@ -112,7 +116,7 @@
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpieceinstance.html">IBlueprintPieceInstance</a>.<a href="iblueprintpieceinstance.html#_id">_id</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/4f100b09/src/rundown.ts#L286">src/rundown.ts:286</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/14b2cd7c/src/rundown.ts#L286">src/rundown.ts:286</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -123,7 +127,7 @@
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpieceinstance.html">IBlueprintPieceInstance</a>.<a href="iblueprintpieceinstance.html#adlibsourceid">adLibSourceId</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/4f100b09/src/rundown.ts#L289">src/rundown.ts:289</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/14b2cd7c/src/rundown.ts#L289">src/rundown.ts:289</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -139,7 +143,7 @@
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpieceinstance.html">IBlueprintPieceInstance</a>.<a href="iblueprintpieceinstance.html#dynamicallyinserted">dynamicallyInserted</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/4f100b09/src/rundown.ts#L291">src/rundown.ts:291</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/14b2cd7c/src/rundown.ts#L291">src/rundown.ts:291</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -149,13 +153,24 @@
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<a name="infinite" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> infinite</h3>
+				<div class="tsd-signature tsd-kind-icon">infinite<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>fromHold<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>fromPreviousPart<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>fromPreviousPlayhead<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>infinitePieceId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="iblueprintpieceinstance.html">IBlueprintPieceInstance</a>.<a href="iblueprintpieceinstance.html#infinite">infinite</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/14b2cd7c/src/rundown.ts#L295">src/rundown.ts:295</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 				<a name="piece" class="tsd-anchor"></a>
 				<h3>piece</h3>
 				<div class="tsd-signature tsd-kind-icon">piece<span class="tsd-signature-symbol">:</span> <a href="iblueprintpiecedb.html" class="tsd-signature-type">IBlueprintPieceDB</a></div>
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="iblueprintpieceinstance.html">IBlueprintPieceInstance</a>.<a href="iblueprintpieceinstance.html#piece">piece</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/4f100b09/src/rundown.ts#L293">src/rundown.ts:293</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/14b2cd7c/src/rundown.ts#L293">src/rundown.ts:293</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -165,7 +180,7 @@
 				<div class="tsd-signature tsd-kind-icon">resolved<wbr>Duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/4f100b09/src/rundown.ts#L297">src/rundown.ts:297</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/14b2cd7c/src/rundown.ts#L308">src/rundown.ts:308</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -175,7 +190,7 @@
 				<div class="tsd-signature tsd-kind-icon">resolved<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/4f100b09/src/rundown.ts#L296">src/rundown.ts:296</a></li>
+						<li>Defined in <a href="https://github.com/nrkno/tv-automation-sofie-blueprints-integration/blob/14b2cd7c/src/rundown.ts#L307">src/rundown.ts:307</a></li>
 					</ul>
 				</aside>
 			</section>
