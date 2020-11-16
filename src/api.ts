@@ -31,7 +31,6 @@ import {
 	IBlueprintPartInstance,
 	IBlueprintAdLibPieceDB,
 	IBlueprintPartDB,
-	IBlueprintPieceDB,
 } from './rundown'
 import { IBlueprintShowStyleBase, IBlueprintShowStyleVariant } from './showStyle'
 import { OnGenerateTimelineObj } from './timeline'
