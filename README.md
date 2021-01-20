@@ -4,6 +4,12 @@
 [![codecov](https://codecov.io/gh/nrkno/tv-automation-sofie-blueprints-integration/branch/master/graph/badge.svg)](https://codecov.io/gh/nrkno/tv-automation-sofie-blueprints-integration)
 [![npm](https://img.shields.io/npm/v/tv-automation-sofie-blueprints-integration)](https://www.npmjs.com/package/tv-automation-sofie-blueprints-integration)
 
+# This library has moved
+
+As of release28 of Sofie, this library has been absorbed into the [main Sofie repository](https://github.com/nrkno/tv-automation-server-core/tree/master/packages/blueprints-integration)
+
+## 
+
 This library is used to define the interfaces and common code between [Sofie Server Core](https://github.com/nrkno/tv-automation-server-core) and the blueprints.
 
 This is a part of the [**Sofie** TV News Studio Automation System](https://github.com/nrkno/Sofie-TV-automation/).
